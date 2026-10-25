@@ -18,20 +18,16 @@ SPARQL = "https://query.wikidata.org/sparql"
 COMMONS = "https://commons.wikimedia.org/w/api.php"
 WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 
-LABEL_QUERY = """
-SELECT ?item ?ma ?de ?descDe ?descEn WHERE {
-  VALUES ?wdt { %s }
-  ?item ?wdt ?ma .
+# Wikidata verknüpft Memory-Alpha-Artikel über die Eigenschaft P6262 (Fandom-Artikel-ID),
+# Werte haben die Form "memory-alpha:Artikel_Titel".
+QUERY = """
+SELECT ?item ?fid ?de ?descDe ?descEn ?image WHERE {
+  VALUES ?fid { %s }
+  ?item wdt:P6262 ?fid .
   OPTIONAL { ?item rdfs:label ?de FILTER(LANG(?de) = "de") }
   OPTIONAL { ?item schema:description ?descDe FILTER(LANG(?descDe) = "de") }
   OPTIONAL { ?item schema:description ?descEn FILTER(LANG(?descEn) = "en") }
-}
-"""
-
-IMAGE_QUERY = """
-SELECT ?item ?ma ?image WHERE {
-  VALUES ?wdt { %s }
-  ?item ?wdt ?ma ; wdt:P18 ?image .
+  OPTIONAL { ?item wdt:P18 ?image }
 }
 """
 
@@ -57,30 +53,32 @@ def sparql(query):
     return fetch(SPARQL, data=body)["results"]["bindings"]
 
 
-def find_properties():
-    """Sucht Wikidata-Eigenschaften, deren Name „Memory Alpha“ enthält."""
-    params = {"action": "wbsearchentities", "search": "Memory Alpha", "type": "property",
-              "language": "en", "limit": 20, "format": "json"}
-    res = fetch(f"{WIKIDATA_API}?{urllib.parse.urlencode(params)}").get("search", [])
-    props = [r["id"] for r in res if "memory alpha" in (r.get("label") or "").lower()]
-    for r in res:
-        print("Gefundene Eigenschaft:", r["id"], r.get("label"))
-    return props
+def ma_titles():
+    """Alle Memory-Alpha-Titel aus den Rohdaten."""
+    pages = json.loads((OUT / "memory_alpha_pages.json").read_text()) if (OUT / "memory_alpha_pages.json").exists() else []
+    return sorted({p["title"] for p in pages})
+
+
+def lit(s):
+    return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
 def wikidata():
-    props = find_properties()
-    if not props:
-        raise RuntimeError("Keine Memory-Alpha-Eigenschaft in Wikidata gefunden")
-    wdts = " ".join(f"wdt:{p}" for p in props)
+    titles = ma_titles()
     rows = []
-    for name, q in (("Bezeichnungen", LABEL_QUERY), ("Bilder", IMAGE_QUERY)):
+    for i in range(0, len(titles), 150):
+        chunk = titles[i:i + 150]
+        values = " ".join(lit("memory-alpha:" + t.replace(" ", "_")) + " " + lit("memory-alpha:" + t) for t in chunk)
         try:
-            part = sparql(q % wdts)
-            print(f"{name}: {len(part)} Zeilen")
-            rows.extend(part)
+            part = sparql(QUERY % values)
         except RuntimeError as e:
-            print(f"{name} übersprungen: {e}", file=sys.stderr)
+            print(f"Abschnitt {i} übersprungen: {e}", file=sys.stderr)
+            continue
+        rows.extend(part)
+        print(f"Titel {min(i + 150, len(titles))}/{len(titles)}: {len(part)} Treffer")
+        time.sleep(1)
+    for r in rows:
+        r["ma"] = {"value": r["fid"]["value"].removeprefix("memory-alpha:").replace("_", " ")}
     items = {}
     for r in rows:
         v = {k: x["value"] for k, x in r.items()}
