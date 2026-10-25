@@ -19,7 +19,7 @@ COMMONS = "https://commons.wikimedia.org/w/api.php"
 
 QUERY = """
 SELECT ?item ?ma ?en ?de ?descEn ?descDe ?image ?type ?typeLabel WHERE {
-  ?prop rdfs:label "Memory Alpha ID"@en ; wikibase:directClaim ?wdt .
+  VALUES ?wdt { %s }
   ?item ?wdt ?ma .
   OPTIONAL { ?item rdfs:label ?en FILTER(LANG(?en) = "en") }
   OPTIONAL { ?item rdfs:label ?de FILTER(LANG(?de) = "de") }
@@ -47,9 +47,27 @@ def fetch(url, data=None):
     raise RuntimeError(f"Abruf fehlgeschlagen: {url}")
 
 
+PROP_QUERY = """
+SELECT ?prop ?wdt ?l WHERE {
+  ?prop a wikibase:Property ; wikibase:directClaim ?wdt ; rdfs:label ?l .
+  FILTER(LANG(?l) = "en" && CONTAINS(LCASE(?l), "memory alpha"))
+}
+"""
+
+
+def sparql(query):
+    body = urllib.parse.urlencode({"query": query, "format": "json"}).encode()
+    return fetch(SPARQL, data=body)["results"]["bindings"]
+
+
 def wikidata():
-    body = urllib.parse.urlencode({"query": QUERY, "format": "json"}).encode()
-    rows = fetch(SPARQL, data=body)["results"]["bindings"]
+    props = sparql(PROP_QUERY)
+    for p in props:
+        print("Memory-Alpha-Eigenschaft:", p["prop"]["value"], p["l"]["value"])
+    wdts = " ".join("<%s>" % p["wdt"]["value"] for p in props)
+    if not wdts:
+        raise RuntimeError("Keine Memory-Alpha-Eigenschaft in Wikidata gefunden")
+    rows = sparql(QUERY % wdts)
     items = {}
     for r in rows:
         v = {k: x["value"] for k, x in r.items()}

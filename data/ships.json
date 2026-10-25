@@ -1,0 +1,77 @@
+{
+ "built": "2026-10-25",
+ "quadrants": [
+  {
+   "id": "alpha",
+   "name": "Alpha-Quadrant",
+   "sub": "Erde, Föderation, Cardassia, Ferengi, Bajor"
+  },
+  {
+   "id": "beta",
+   "name": "Beta-Quadrant",
+   "sub": "Klingonisches Reich, Romulanisches Sternenimperium"
+  },
+  {
+   "id": "gamma",
+   "name": "Gamma-Quadrant",
+   "sub": "Dominion und die Welten jenseits des bajoranischen Wurmlochs"
+  },
+  {
+   "id": "delta",
+   "name": "Delta-Quadrant",
+   "sub": "Borg, Kazon, Hirogen und die Reiseroute der Voyager"
+  },
+  {
+   "id": "extra",
+   "name": "Jenseits der Galaxis",
+   "sub": "Fluidraum, andere Galaxien, Anomalien"
+  },
+  {
+   "id": "none",
+   "name": "Ohne Zuordnung",
+   "sub": "Schiffe und Klassen ohne erkennbare Fraktion"
+  }
+ ],
+ "factions": [],
+ "sources": [
+  {
+   "name": "STAPI",
+   "license": "Code: MIT",
+   "url": "https://stapi.co",
+   "licenseUrl": "https://github.com/cezarykluczynski/stapi/blob/master/LICENSE",
+   "count": 0,
+   "unit": "Datensätze",
+   "text": "Freie Star-Trek-Programmierschnittstelle. Liefert Schiffe, Klassen, Bewaffnung, Status und Zugehörigkeit in strukturierter Form."
+  },
+  {
+   "name": "Memory Alpha",
+   "license": "CC BY-NC 4.0",
+   "url": "https://memory-alpha.fandom.com",
+   "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.de",
+   "count": 0,
+   "unit": "",
+   "text": "Das Fan-Wiki zum Star-Trek-Kanon ist die Quelle hinter STAPI. Seine Lizenz erlaubt Weitergabe mit Namensnennung, aber keine kommerzielle Nutzung."
+  },
+  {
+   "name": "Wikidata",
+   "license": "CC0",
+   "url": "https://www.wikidata.org",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.de",
+   "count": 0,
+   "unit": "verknüpfte Einträge",
+   "text": "Freie Wissensdatenbank. Liefert deutsche Namen, Kurzbeschreibungen und Verknüpfungen zu Bildern."
+  },
+  {
+   "name": "Wikimedia Commons",
+   "license": "je Bild",
+   "url": "https://commons.wikimedia.org",
+   "licenseUrl": "",
+   "count": 0,
+   "unit": "Bilder genutzt",
+   "text": "Freie Mediensammlung. Jedes Bild bringt Urheber und Lizenz mit, meist CC BY-SA oder gemeinfrei."
+  }
+ ],
+ "classes": [],
+ "ships": [],
+ "images": {}
+}
