@@ -18,30 +18,32 @@ SPARQL = "https://query.wikidata.org/sparql"
 COMMONS = "https://commons.wikimedia.org/w/api.php"
 WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 
-QUERY = """
-SELECT ?item ?ma ?en ?de ?descEn ?descDe ?image ?type ?typeLabel WHERE {
-  { VALUES ?wdt { %s } ?item ?wdt ?ma . }
-  UNION
-  { ?item wdt:P6262 ?fandom . FILTER(STRSTARTS(?fandom, "memory-alpha:"))
-    BIND(SUBSTR(?fandom, 14) AS ?ma) }
-  OPTIONAL { ?item rdfs:label ?en FILTER(LANG(?en) = "en") }
+LABEL_QUERY = """
+SELECT ?item ?ma ?de ?descDe ?descEn WHERE {
+  VALUES ?wdt { %s }
+  ?item ?wdt ?ma .
   OPTIONAL { ?item rdfs:label ?de FILTER(LANG(?de) = "de") }
-  OPTIONAL { ?item schema:description ?descEn FILTER(LANG(?descEn) = "en") }
   OPTIONAL { ?item schema:description ?descDe FILTER(LANG(?descDe) = "de") }
-  OPTIONAL { ?item wdt:P18 ?image }
-  OPTIONAL { ?item wdt:P31 ?type . ?type rdfs:label ?typeLabel FILTER(LANG(?typeLabel) = "en") }
+  OPTIONAL { ?item schema:description ?descEn FILTER(LANG(?descEn) = "en") }
+}
+"""
+
+IMAGE_QUERY = """
+SELECT ?item ?ma ?image WHERE {
+  VALUES ?wdt { %s }
+  ?item ?wdt ?ma ; wdt:P18 ?image .
 }
 """
 
 
 def fetch(url, data=None):
-    for attempt in range(5):
+    for attempt in range(3):
         try:
             req = urllib.request.Request(url, data=data, headers={
                 "User-Agent": UA,
                 "Accept": "application/sparql-results+json, application/json",
             })
-            with urllib.request.urlopen(req, timeout=300) as r:
+            with urllib.request.urlopen(req, timeout=90) as r:
                 return json.load(r)
         except Exception as e:  # noqa: BLE001
             wait = 5 * 2 ** attempt
@@ -68,18 +70,25 @@ def find_properties():
 
 def wikidata():
     props = find_properties()
-    wdts = " ".join(f"wdt:{p}" for p in props) or "wdt:P6262"
-    rows = sparql(QUERY % wdts)
+    if not props:
+        raise RuntimeError("Keine Memory-Alpha-Eigenschaft in Wikidata gefunden")
+    wdts = " ".join(f"wdt:{p}" for p in props)
+    rows = []
+    for name, q in (("Bezeichnungen", LABEL_QUERY), ("Bilder", IMAGE_QUERY)):
+        try:
+            part = sparql(q % wdts)
+            print(f"{name}: {len(part)} Zeilen")
+            rows.extend(part)
+        except RuntimeError as e:
+            print(f"{name} übersprungen: {e}", file=sys.stderr)
     items = {}
     for r in rows:
         v = {k: x["value"] for k, x in r.items()}
         qid = v["item"].rsplit("/", 1)[-1]
-        it = items.setdefault(qid, {"qid": qid, "memoryAlpha": v["ma"], "types": [], "images": []})
-        for k in ("en", "de", "descEn", "descDe"):
+        it = items.setdefault(qid, {"qid": qid, "memoryAlpha": v["ma"], "images": []})
+        for k in ("de", "descEn", "descDe"):
             if k in v:
                 it[k] = v[k]
-        if "typeLabel" in v and v["typeLabel"] not in it["types"]:
-            it["types"].append(v["typeLabel"])
         if "image" in v:
             name = urllib.parse.unquote(v["image"].rsplit("/", 1)[-1]).replace("_", " ")
             if name not in it["images"]:

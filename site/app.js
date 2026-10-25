@@ -176,7 +176,7 @@
   function cardHTML(c, shipCount) {
     const fac = factions.get(c.f);
     const color = fac ? fac.color : "#8a9";
-    const era = c.fr || c.to ? `${c.fr || "?"}–${c.to || ""}` : "";
+    const era = !c.fr && !c.to ? "" : c.fr === c.to || !c.to ? c.fr : `${c.fr || "?"}–${c.to}`;
     const tags = [];
     if (c.m) tags.push('<span class="tag alt">Spiegeluniversum</span>');
     if (c.a) tags.push('<span class="tag alt">Kelvin-Zeitlinie</span>');
@@ -270,6 +270,10 @@
     }
     return h;
   }
+  function introBlock(item) {
+    if (!item.intro) return "";
+    return `<p class="d-intro">${esc(item.intro)}</p><p class="credit">Text: <a href="${esc(item.ma)}" target="_blank" rel="noopener">Memory Alpha</a>, CC BY-NC 4.0, auf Englisch.</p>`;
+  }
   function spec(rows) {
     return `<dl class="specs">${rows.filter((r) => r[1] !== undefined && r[1] !== null && r[1] !== "").map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>`;
   }
@@ -286,12 +290,12 @@
     const ships = c.ships.map((j) => D.ships[j]).sort((a, b) => a.n.localeCompare(b.n));
     let h = `<div style="--fc:${color}"><p class="d-kicker">Schiffsklasse · ${esc(f ? f.name : "")}</p><h3 class="d-title" id="d-title">${esc(c.n)}</h3>`;
     if (c.desc) h += `<p class="d-sub">${esc(c.desc)}</p>`;
-    h += imgBlock(c, color);
+    h += imgBlock(c, color) + introBlock(c);
     h += spec([
       ["Deutsch", c.de && c.de !== c.n ? esc(c.de) : ""],
       ["Spezies", esc(c.sp || "")],
       ["Typ", esc((c.ty || []).join(", "))],
-      ["Im Dienst", c.fr || c.to ? esc(`${c.fr || "?"} bis ${c.to || "?"}`) : ""],
+      ["Im Dienst", !c.fr && !c.to ? "" : c.fr === c.to ? esc(c.fr) : esc(`${c.fr || "?"} bis ${c.to || "?"}`)],
       ["Decks", c.dk || ""],
       ["Besatzung", esc(c.cr || "")],
       ["Warp", c.w === true ? "ja" : c.w === false ? "nein" : ""],
@@ -316,10 +320,10 @@
     const art = s.img ? s : cls && cls.img ? { ...cls, n: s.n } : { ...s, ty: cls ? cls.ty : s.ty, f: s.f };
     let h = `<div style="--fc:${color}"><p class="d-kicker">Raumschiff · ${esc(f ? f.name : "Ohne Zuordnung")}</p><h3 class="d-title" id="d-title">${esc(s.n)}</h3>`;
     if (s.desc) h += `<p class="d-sub">${esc(s.desc)}</p>`;
-    h += imgBlock(art, color);
+    h += imgBlock(art, color) + introBlock(s);
     h += spec([
       ["Registrierung", esc(s.r || "")],
-      ["Klasse", cls ? `<a href="#" data-class="${cls.i}">${esc(cls.n)}</a>` : ""],
+      ["Klasse", cls ? `<a href="#" data-class="${cls.i}">${esc(cls.n)}</a>` : esc(s.cn || "")],
       ["Status", s.st ? `<span class="tag ${statusTone(s.st)}">${esc(statusDe(s.st))}</span>${s.d ? ` <span class="muted">(${esc(s.d)})</span>` : ""}` : ""],
       ["Eigentümer", esc(s.own || "")],
       ["Betreiber", esc(s.op || "")],

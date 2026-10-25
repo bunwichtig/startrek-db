@@ -7,6 +7,7 @@ import datetime as dt
 import html
 import json
 import re
+import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -24,9 +25,9 @@ QUADRANTS = [
 # (id, Name, Quadrant, Farbe, Muster für Organisations- oder Speziesnamen, Hinweis)
 FACTIONS = [
     ("federation", "Vereinigte Föderation der Planeten", "alpha", "#5b9cf0",
-     r"federation|starfleet|\bufp\b|section 31|daystrom|federation news|temporal integrity|kelvin|utopia planitia", ""),
+     r"\bfederation|starfleet|\bufp\b|section 31|daystrom|federation news|temporal integrity|kelvin|utopia planitia", ""),
     ("earth", "Erde (vor der Föderation)", "alpha", "#7fb8d8",
-     r"united earth|earth starfleet|\bnasa\b|national aeronautics|space agency|space probe agency|esa\b|space shuttle|apollo|gemini|mercury capsule|agena|atlas|\bares\b|\bdy-\d|saturn v|soyuz|vostok|skylab|phoenix|space capsule|olympus|friendship 1|charybdis|merchant marine|madred|\bhuman\b|united nations|\bunsc\b|earth cargo|\becs\b|zefram|confederation of earth|eugenics|augment|european|soviet|united states|us air force|royal navy|terran(?! empire)",
+     r"united earth|earth starfleet|^earth |confederation|\bnasa\b|national aeronautics|space agency|space probe agency|esa\b|space shuttle|apollo|gemini|mercury capsule|agena|atlas|\bares\b|\bdy-\d|saturn v|soyuz|vostok|skylab|phoenix|space capsule|olympus|friendship 1|charybdis|merchant marine|madred|\bhuman\b|united nations|\bunsc\b|earth cargo|\becs\b|zefram|confederation of earth|eugenics|augment|european|soviet|united states|us air force|royal navy|terran(?! empire)",
      "Raumfahrt der Menschen bis zur Gründung der Föderation 2161."),
     ("terran", "Terranisches Imperium", "alpha", "#c9a227", r"terran empire|imperial starfleet", "Spiegeluniversum."),
     ("vulcan", "Vulkan", "alpha", "#c98a52", r"vulcan|v'tosh|syrrannite", ""),
@@ -129,6 +130,60 @@ def from_name(name, registry, date):
     return "none"
 
 
+MA_URL = "https://memory-alpha.fandom.com/wiki/"
+MA_SKIP_CATS = {"Spacecraft sections", "Spacecraft components", "Prefixes", "Starfleet dedication plaques",
+                "Dedication plaques", "Spacecraft parts", "Cosmic Duchess locations", "Fictional starships"}
+MA_SKIP_SIDEBARS = {"planet", "individual", "star system", "astronomical object", "species"}
+
+
+def wclean(v):
+    """Wikitext einer Infobox-Zeile in Klartext umwandeln."""
+    if not v:
+        return None
+    v = re.sub(r"<ref[^>]*/>|<ref.*?</ref>", "", v, flags=re.S)
+    v = re.sub(r"<br\s*/?>", ", ", v)
+    v = re.sub(r"<[^>]+>", "", v)
+    for _ in range(6):
+        nv = re.sub(r"\{\{([^{}]*)\}\}", lambda m: (m.group(1).split("|") + [""])[1 if "|" in m.group(1) else 0], v)
+        if nv == v:
+            break
+        v = nv
+    v = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", v)
+    v = re.sub(r"\[https?://\S+ ([^\]]+)\]", r"\1", v)
+    v = re.sub(r"'{2,}", "", v)
+    v = re.sub(r"\s+", " ", v).strip(" ,;")
+    return v or None
+
+
+def wlinks(v):
+    """Linkziele einer Infobox-Zeile."""
+    return [m.split("|")[0].strip() for m in re.findall(r"\[\[([^\]]+)\]\]", v or "")]
+
+
+def ma_kind(page):
+    cats = set(page["categories"])
+    if page["sidebar"] in MA_SKIP_SIDEBARS or page["title"] in cats:
+        return None
+    if cats and cats <= MA_SKIP_CATS:
+        return None
+    if page["sidebar"] == "starship class" or any(re.search(r"classes", c) for c in cats):
+        return "class"
+    if page["sidebar"] in ("starship", "station"):
+        return "ship"
+    if any(re.search(r"starships|spacecraft$|spacecraft \(|shuttles|probes|starbases|outposts|space stations|escape pods", c, re.I) for c in cats):
+        return "ship"
+    return None
+
+
+def ma_reality(page):
+    cats = " ".join(page["categories"]) + " " + page["title"]
+    return ("mirror" in cats.lower() or page["title"].startswith("ISS "), "alternate reality" in cats.lower())
+
+
+def base_title(t):
+    return re.sub(r"\s*\([^)]*\)$", "", t)
+
+
 def org_name(o):
     return (o or {}).get("name") if isinstance(o, dict) else None
 
@@ -157,7 +212,7 @@ def main():
     # Wikidata über den Memory-Alpha-Titel und den Namen zuordnen
     wd_by_name = {}
     for it in wd_items:
-        for key in (it.get("memoryAlpha", "").replace("_", " "), it.get("en")):
+        for key in (it.get("memoryAlpha", "").replace("_", " "),):
             if key:
                 wd_by_name.setdefault(norm_name(key), it)
 
@@ -192,8 +247,8 @@ def main():
             rec["de"] = it["de"]
         if it.get("descDe") or it.get("descEn"):
             rec["desc"] = it.get("descDe") or it.get("descEn")
-        if it.get("memoryAlpha"):
-            rec["ma"] = "https://memory-alpha.fandom.com/wiki/" + it["memoryAlpha"].replace(" ", "_")
+        if it.get("memoryAlpha") and not rec.get("ma"):
+            rec["ma"] = MA_URL + urllib.parse.quote(it["memoryAlpha"].replace(" ", "_"))
         img = image_for(it)
         if img:
             rec["img"] = img
@@ -216,9 +271,49 @@ def main():
         }
         if rec["f"] == "terran" or rec["m"]:
             rec["m"] = True
-        wd_fields([c["name"], c["name"] + " class", c["name"].removesuffix(" class")], rec)
         class_idx[c["uid"]] = rec["i"]
         classes.append({k: v for k, v in rec.items() if v not in (None, "", [], False) or k in ("ships", "i")})
+
+    ma_pages = load("memory_alpha_pages.json", [])
+    ma_classes = [p for p in ma_pages if ma_kind(p) == "class"]
+    ma_ships = [p for p in ma_pages if ma_kind(p) == "ship"]
+    class_by_name = {}
+    for c in classes:
+        class_by_name.setdefault(norm_name(c["n"]), c)
+
+    def enrich(rec, page):
+        rec["ma"] = MA_URL + urllib.parse.quote(page["title"].replace(" ", "_"))
+        if page.get("intro") and not rec.get("intro"):
+            rec["intro"] = page["intro"]
+
+    seen_class_pages = set()
+    for page in ma_classes:
+        if page["title"] in seen_class_pages:
+            continue
+        seen_class_pages.add(page["title"])
+        ib = {k: wclean(v) for k, v in page["infobox"].items()}
+        c = class_by_name.get(norm_name(page["title"])) or class_by_name.get(norm_name(ib.get("name")))
+        if c:
+            enrich(c, page)
+            continue
+        mirror, alt = ma_reality(page)
+        split = lambda v: [x.strip() for x in re.split(r",|;", v or "") if x.strip()]  # noqa: E731
+        own, op, aff = split(ib.get("owner")), split(ib.get("operator")), split(ib.get("affiliation"))
+        active = ib.get("active") or ""
+        rec = {
+            "i": len(classes), "n": page["title"],
+            "f": classify(*aff, *own, *op, *page["categories"], page["title"]),
+            "cr": ib.get("crew"), "dk": ib.get("decks"), "m": mirror, "a": alt,
+            "fr": active or None,
+            "ty": split(ib.get("type")), "ar": split(ib.get("armament")), "df": split(ib.get("defenses")),
+            "own": own, "op": op, "aff": aff, "ships": [], "src": "ma",
+        }
+        if rec["f"] == "terran":
+            rec["m"] = True
+        enrich(rec, page)
+        rec = {k: v for k, v in rec.items() if v not in (None, "", [], False) or k in ("ships", "i")}
+        classes.append(rec)
+        class_by_name[norm_name(page["title"])] = rec
 
     ships = []
     for s in sorted(ships_raw, key=lambda s: s["name"].lower()):
@@ -226,7 +321,7 @@ def main():
         ci = class_idx.get(cls_uid, -1)
         cls = classes[ci] if ci >= 0 else None
         own, op, aff = org_name(s.get("owner")), org_name(s.get("operator")), org_name(s.get("affiliation"))
-        f = classify(aff, own, op)
+        f = "terran" if s["name"].startswith("ISS ") else classify(aff, own, op)
         if f == "none" and cls:
             f = cls["f"]
         if f == "none":
@@ -239,10 +334,59 @@ def main():
             "own": own, "op": op, "aff": aff,
             "alt": bool(cls and (cls.get("m") or cls.get("a"))) or f == "terran",
         }
-        wd_fields([s["name"], f"{s['name']} ({s.get('registry')})" if s.get("registry") else ""], rec)
         if cls is not None:
             cls["ships"].append(rec["i"])
         ships.append({k: v for k, v in rec.items() if v not in (None, "", [], False) or k in ("c", "i")})
+
+    ship_by_key, ship_by_name = {}, {}
+    for r in ships:
+        ship_by_key.setdefault(norm_name(r["n"]) + norm_name(r.get("r")), r)
+        ship_by_name.setdefault(norm_name(r["n"]), []).append(r)
+    added, seen_ship_pages = 0, set()
+    for page in ma_ships:
+        if page["title"] in seen_ship_pages or page["title"].startswith("Unnamed"):
+            continue
+        seen_ship_pages.add(page["title"])
+        raw = page["infobox"]
+        ib = {k: wclean(v) for k, v in raw.items()}
+        name = base_title(page["title"])
+        reg = ib.get("registry")
+        r = ship_by_key.get(norm_name(name) + norm_name(reg)) or ship_by_key.get(norm_name(ib.get("name")) + norm_name(reg))
+        if not r and len(ship_by_name.get(norm_name(name), [])) == 1 and not reg:
+            r = ship_by_name[norm_name(name)][0]
+        if r:
+            if "ma" not in r:
+                enrich(r, page)
+            continue
+        cls = None
+        for target in wlinks(raw.get("class")):
+            cls = class_by_name.get(norm_name(target))
+            if cls:
+                break
+        mirror, alt = ma_reality(page)
+        own, op, aff = ib.get("owner"), ib.get("operator"), ib.get("affiliation")
+        f = "terran" if mirror and name.startswith("ISS ") else classify(aff, own, op, *page["categories"])
+        if f == "none" and cls:
+            f = cls["f"]
+        if f == "none":
+            f = from_name(name, reg, ib.get("datestatus"))
+        rec = {
+            "i": len(ships), "n": name, "r": reg, "st": ib.get("status"), "d": ib.get("datestatus"),
+            "c": cls["i"] if cls else -1, "f": f, "own": own, "op": op, "aff": aff,
+            "ty": [ib["type"]] if ib.get("type") else [], "cn": None if cls else ib.get("class"),
+            "alt": mirror or alt or bool(cls and (cls.get("m") or cls.get("a"))), "src": "ma",
+        }
+        enrich(rec, page)
+        rec = {k: v for k, v in rec.items() if v not in (None, "", [], False) or k in ("c", "i")}
+        if cls is not None:
+            cls["ships"].append(rec["i"])
+        ships.append(rec)
+        added += 1
+    print(f"Memory Alpha: {len(ma_ships)} Schiffsartikel, {added} neu ergänzt; {len(ma_classes)} Klassenartikel")
+
+    for rec in classes + ships:
+        title = urllib.parse.unquote(rec["ma"].removeprefix(MA_URL)).replace("_", " ") if rec.get("ma") else None
+        wd_fields([title] if title else [rec["n"]], rec)
 
     used = {c["f"] for c in classes} | {s["f"] for s in ships}
     factions = [
@@ -258,8 +402,8 @@ def main():
          "count": len(ships_raw) + len(classes_raw), "unit": "Datensätze",
          "text": "Freie Star-Trek-Programmierschnittstelle. Liefert Schiffe, Klassen, Bewaffnung, Status und Zugehörigkeit in strukturierter Form."},
         {"name": "Memory Alpha", "license": "CC BY-NC 4.0", "url": "https://memory-alpha.fandom.com", "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.de",
-         "count": 0, "unit": "",
-         "text": "Das Fan-Wiki zum Star-Trek-Kanon ist die Quelle hinter STAPI. Seine Lizenz erlaubt Weitergabe mit Namensnennung, aber keine kommerzielle Nutzung."},
+         "count": len(ma_pages), "unit": "Artikel ausgewertet",
+         "text": "Das Fan-Wiki zum Star-Trek-Kanon. Direkt gelesen werden Kategorien, Infoboxen und der erste Absatz jedes Schiffsartikels. Die Lizenz erlaubt Weitergabe mit Namensnennung, aber keine kommerzielle Nutzung. Bilder aus Memory Alpha werden nicht übernommen."},
         {"name": "Wikidata", "license": "CC0", "url": "https://www.wikidata.org", "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.de",
          "count": len(wd_items), "unit": "verknüpfte Einträge",
          "text": "Freie Wissensdatenbank. Liefert deutsche Namen, Kurzbeschreibungen und Verknüpfungen zu Bildern."},

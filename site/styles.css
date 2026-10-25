@@ -198,6 +198,7 @@ details[open] > summary .chev { transform: rotate(90deg); }
 .d-art svg { width: 80%; height: 80%; }
 .d-art img { width: 100%; height: 100%; object-fit: contain; background: #000; }
 .credit { font-size: 12px; color: var(--muted); margin: 6px 0 0; overflow-wrap: anywhere; }
+.d-intro { margin: 18px 0 0; font-size: 15px; line-height: 1.6; max-width: 62ch; }
 .specs { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 20px 0; font-size: 14px; }
 .specs dt { color: var(--muted); font: 12px/1.6 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; }
 .specs dd { margin: 0; min-width: 0; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
@@ -233,6 +234,9 @@ details[open] > summary .chev { transform: rotate(90deg); }
   .quad-count { grid-column: 2; text-align: left; }
   .quad-count b { display: inline; font-size: 16px; margin-right: 4px; }
   .controls { position: static; }
-  .tabs a { padding: 8px 9px; font-size: 13px; }
-  .brand span { font-size: 16px; }
+  .brand span { font-size: 15px; }
+  .top-in { gap: 8px; }
+  .tabs { gap: 2px; }
+  .tabs a { padding: 8px 7px; font-size: 12px; letter-spacing: 0.05em; }
 }
+@media (max-width: 380px) { .brand span { display: none; } }
