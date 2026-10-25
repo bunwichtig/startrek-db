@@ -1,0 +1,1286 @@
+[
+ {
+  "qid": "Q20074",
+  "memoryAlpha": "Enterprise (NX-01)",
+  "images": [],
+  "de": "Enterprise",
+  "descEn": "fictional interstellar spacecraft from Star Trek: Enterprise",
+  "descDe": "fiktives interstellares Raumschiff"
+ },
+ {
+  "qid": "Q20080",
+  "memoryAlpha": "USS Voyager",
+  "images": [],
+  "de": "USS Voyager",
+  "descEn": "fictional spacecraft in Star Trek",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q20082",
+  "memoryAlpha": "USS Defiant (2370)",
+  "images": [],
+  "de": "USS Defiant",
+  "descEn": "fictional starship from Star Trek: Deep Space Nine",
+  "descDe": "fiktives Raumschiff aus Star Trek: Deep Space Nine"
+ },
+ {
+  "qid": "Q31948",
+  "memoryAlpha": "Lobby",
+  "images": [
+   "BRKM secondary section corridor.jpg"
+  ],
+  "de": "Lobby",
+  "descEn": "room in a building used for entry from the outside",
+  "descDe": "Vor- oder Empfangsraum in einem Gebäude"
+ },
+ {
+  "qid": "Q180516",
+  "memoryAlpha": "Room",
+  "images": [
+   "Japanese youth hostel room.jpg"
+  ],
+  "de": "Zimmer",
+  "descEn": "distinguishable space for humans within an enclosed structure",
+  "descDe": "Teil eines Gebäudes oder einer anderen Struktur"
+ },
+ {
+  "qid": "Q193837",
+  "memoryAlpha": "Bedroom",
+  "images": [
+   "Berlin Villa Borsig Tegel asv2019-08 img09.jpg"
+  ],
+  "de": "Schlafzimmer",
+  "descEn": "private room where people usually sleep for the night or relax during the day",
+  "descDe": "Zimmer einer Wohnung oder eines Wohnhauses, in dem dessen Bewohner schlafen"
+ },
+ {
+  "qid": "Q222929",
+  "memoryAlpha": "Deep Space 9",
+  "images": [
+   "Deep Space Nine filming model - Star Trek - Exploring New Worlds Exhibit at the Henry Ford Museum, Dearborn, Michigan - 49785772831.jpg"
+  ],
+  "de": "Deep Space Nine",
+  "descEn": "fictional space station in Star Trek",
+  "descDe": "fiktive Raumstation, Handlungsort von Star Trek: Deep Space Nine"
+ },
+ {
+  "qid": "Q497741",
+  "memoryAlpha": "Galley",
+  "images": [
+   "Aboard Carol M. (boat) 10.jpg"
+  ],
+  "de": "Bordküche",
+  "descEn": "kitchen onboard a vehicle",
+  "descDe": "Küche am Bord eines Fahrzeugs"
+ },
+ {
+  "qid": "Q594958",
+  "memoryAlpha": "Airlock",
+  "images": [],
+  "de": "Druckschleuse",
+  "descEn": "compartment allowing easy transfer between environments with different air pressures",
+  "descDe": "Vorrichtung für Druckausgleich"
+ },
+ {
+  "qid": "Q600142",
+  "memoryAlpha": "Shuttlecraft",
+  "images": [
+   "Galileo Shuttle Space Centre Houston.jpg"
+  ],
+  "de": "Shuttle",
+  "descEn": "fictional spacecraft class"
+ },
+ {
+  "qid": "Q667801",
+  "memoryAlpha": "Escape pod",
+  "images": [
+   "North American XB-70A Valkyrie escape capsule during a test 061122-F-1234P-030.jpg"
+  ],
+  "de": "Rettungskapsel",
+  "descEn": "small capsule or craft used to evacuate a larger vessel in an emergency",
+  "descDe": "Rettungsmittel"
+ },
+ {
+  "qid": "Q721681",
+  "memoryAlpha": "USS Enterprise (XCV 330)",
+  "images": [],
+  "descEn": "fictional starship from Star Trek: The Motion Picture"
+ },
+ {
+  "qid": "Q834003",
+  "memoryAlpha": "USS Enterprise (NCC-1701)",
+  "images": [],
+  "de": "USS Starship Enterprise",
+  "descEn": "fictional starship in Star Trek with registry number NCC-1701",
+  "descDe": "fiktives Raumschiff aus der Serie Star Trek"
+ },
+ {
+  "qid": "Q834845",
+  "memoryAlpha": "Borg starships",
+  "images": [],
+  "de": "Borg-Raumschiff"
+ },
+ {
+  "qid": "Q841052",
+  "memoryAlpha": "Oberth class",
+  "images": []
+ },
+ {
+  "qid": "Q845684",
+  "memoryAlpha": "USS Enterprise (NCC-1701-D)",
+  "images": [],
+  "de": "USS Enterprise (NCC-1701-D)",
+  "descEn": "fictional starship from Star Trek: The Next Generation with registry number NCC-1701-D",
+  "descDe": "fiktives Raumschiff aus der Serie Star Trek: The Next Generation"
+ },
+ {
+  "qid": "Q866693",
+  "memoryAlpha": "Akira class",
+  "images": [],
+  "de": "Akira-Klasse",
+  "descEn": "fictional spaceship type"
+ },
+ {
+  "qid": "Q969464",
+  "memoryAlpha": "USS Enterprise (NCC-1701-B)",
+  "images": [],
+  "de": "USS Enterprise (NCC-1701-B)",
+  "descEn": "fictional starship from the film Star Trek: Generations",
+  "descDe": "fiktives Raumschiff aus der Serie Star Trek"
+ },
+ {
+  "qid": "Q1051324",
+  "memoryAlpha": "USS Enterprise (NCC-1701-E)",
+  "images": [
+   "Colossus-1701-Langley.jpg"
+  ],
+  "de": "USS Enterprise (NCC-1701-E)",
+  "descEn": "fictional starship from Star Trek: First Contact",
+  "descDe": "fiktives Raumschiff aus den Star Trek Filmen Star Trek: First Contact bis Star Trek: Nemesis"
+ },
+ {
+  "qid": "Q1082886",
+  "memoryAlpha": "USS Excelsior (NCC-2000)",
+  "images": [],
+  "descEn": "spacecraft in Star Trek"
+ },
+ {
+  "qid": "Q1113883",
+  "memoryAlpha": "Klingon starships",
+  "images": [
+   "Klingon Battle Cruiser - Star Trek - The Next Generation - Star Trek- Exploring New Worlds Exhibit at the Henry Ford Museum, Dearborn, Michigan.jpg"
+  ],
+  "de": "Klingonische Raumschiffe",
+  "descEn": "ships in Star Trek",
+  "descDe": "Raumschiffe in Star Trek"
+ },
+ {
+  "qid": "Q1193198",
+  "memoryAlpha": "USS Enterprise (NCC-1701-A)",
+  "images": [
+   "At London 2023 066.jpg"
+  ],
+  "de": "USS Enterprise (NCC-1701-A)",
+  "descEn": "fictional starship in Star Trek V: The Final Frontier with registry number NCC-1701-A",
+  "descDe": "fiktives Raumschiff in Star Trek V"
+ },
+ {
+  "qid": "Q1193849",
+  "memoryAlpha": "USS Enterprise (NCC-1701-C)",
+  "images": [],
+  "de": "USS Enterprise-C",
+  "descEn": "fictional starship from the Star Trek: The Next Generation episode Yesterday's Enterprise"
+ },
+ {
+  "qid": "Q2069486",
+  "memoryAlpha": "Holodeck",
+  "images": [
+   "The holodeck in USS Eclipse, Star Trek, Second life - 1.png"
+  ],
+  "de": "Holographischer Umgebungssimulator",
+  "descEn": "virtual reality device in Star Trek",
+  "descDe": "fiktive Technologie"
+ },
+ {
+  "qid": "Q2248682",
+  "memoryAlpha": "USS Enterprise (NCC-1701-J)",
+  "images": [],
+  "de": "USS Enterprise (NCC-1701-J)",
+  "descEn": "fictional 26th century starship",
+  "descDe": "fiktives Raumschiff aus 'Azati Prime'"
+ },
+ {
+  "qid": "Q2254729",
+  "memoryAlpha": "SS Botany Bay",
+  "images": [],
+  "de": "SS Botany Bay",
+  "descEn": "fictional spacecraft",
+  "descDe": "Fiktives Raumschiff"
+ },
+ {
+  "qid": "Q2302286",
+  "memoryAlpha": "Memory Alpha",
+  "images": [],
+  "de": "Memory Alpha",
+  "descEn": "library in Star Trek",
+  "descDe": "Datenbank in Star Trek"
+ },
+ {
+  "qid": "Q2393368",
+  "memoryAlpha": "Sovereign class",
+  "images": [],
+  "de": "Sovereign-Klasse",
+  "descEn": "Fictional spacecraft class from the Star Trek multiverse",
+  "descDe": "Raumschiffsklasse im Star-Trek-Universum"
+ },
+ {
+  "qid": "Q2434182",
+  "memoryAlpha": "USS Grissom (NCC-638)",
+  "images": [],
+  "descEn": "fictional spaceship"
+ },
+ {
+  "qid": "Q2490563",
+  "memoryAlpha": "IKS Pagh",
+  "images": [],
+  "de": "IKS Pagh",
+  "descEn": "fictional alien spacecraft"
+ },
+ {
+  "qid": "Q2523931",
+  "memoryAlpha": "Viewport",
+  "images": [],
+  "de": "Viewport",
+  "descEn": "polygon viewing region in computer graphics",
+  "descDe": "Begriff aus den Computerwissenschaften"
+ },
+ {
+  "qid": "Q2920913",
+  "memoryAlpha": "USS Ajax",
+  "images": [],
+  "de": "USS Ajax",
+  "descEn": "fictional spaceship"
+ },
+ {
+  "qid": "Q2925386",
+  "memoryAlpha": "Kronos One",
+  "images": [],
+  "de": "IKS Kronos-Eins",
+  "descEn": "fictional spacecraft"
+ },
+ {
+  "qid": "Q3153734",
+  "memoryAlpha": "Intrepid class",
+  "images": [],
+  "de": "Intrepid-Klasse",
+  "descEn": "fictional spacecraft class in the Star Trek universe"
+ },
+ {
+  "qid": "Q3196184",
+  "memoryAlpha": "Khitomer",
+  "images": [],
+  "descEn": "fictional planet in Star Trek"
+ },
+ {
+  "qid": "Q3265302",
+  "memoryAlpha": "Constitution class",
+  "images": [],
+  "de": "Constitution-Klasse",
+  "descEn": "class of fictional spacecraft"
+ },
+ {
+  "qid": "Q3274400",
+  "memoryAlpha": "Defiant class",
+  "images": [],
+  "de": "Defiant-Klasse",
+  "descEn": "fictional spacecraft class"
+ },
+ {
+  "qid": "Q3274408",
+  "memoryAlpha": "Galaxy class",
+  "images": [
+   "USD307923 art (Andrew Probert, toy starship, Enterprise).png"
+  ],
+  "de": "Galaxy-Klasse",
+  "descEn": "class of fictional spacecraft",
+  "descDe": "fiktive Raumschiffsklasse"
+ },
+ {
+  "qid": "Q3274411",
+  "memoryAlpha": "Excelsior class",
+  "images": [],
+  "descEn": "fictional spacecraft type in the Star Trek multiverse"
+ },
+ {
+  "qid": "Q3274629",
+  "memoryAlpha": "Miranda class",
+  "images": [],
+  "de": "Miranda-Klasse",
+  "descEn": "Fictional spacecraft class from the Star Trek multiverse"
+ },
+ {
+  "qid": "Q3275517",
+  "memoryAlpha": "Ambassador class",
+  "images": [],
+  "descEn": "starship type in Star Trek"
+ },
+ {
+  "qid": "Q3383632",
+  "memoryAlpha": "Assimilation chamber",
+  "images": [],
+  "de": "Assimilationskammer"
+ },
+ {
+  "qid": "Q3487258",
+  "memoryAlpha": "Danube class",
+  "images": [],
+  "descEn": "Starship class in Star Trek"
+ },
+ {
+  "qid": "Q3492749",
+  "memoryAlpha": "Phoenix",
+  "images": [],
+  "descEn": "fictional interstellar spacecraft in the Star Trek multiverse"
+ },
+ {
+  "qid": "Q3493396",
+  "memoryAlpha": "Borg sphere",
+  "images": [],
+  "de": "Borg-Sphäre",
+  "descEn": "Fictional spacecraft class, named after sphere from Star Trek multiverse and A Singular Destiny"
+ },
+ {
+  "qid": "Q3508514",
+  "memoryAlpha": "Nebula class",
+  "images": [],
+  "descEn": "fictional spaceship class"
+ },
+ {
+  "qid": "Q3541773",
+  "memoryAlpha": "Jefferies tube",
+  "images": [],
+  "de": "Jefferies-Röhre",
+  "descEn": "fictional part of Star Trek spaceships"
+ },
+ {
+  "qid": "Q3547448",
+  "memoryAlpha": "USS Stargazer (NCC-2893)",
+  "images": [],
+  "de": "USS Stargazer",
+  "descEn": "fictional spacecraft in Star Trek",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q3547451",
+  "memoryAlpha": "USS Valiant (NCC-74210)",
+  "images": [],
+  "descEn": "fictional spacecraft"
+ },
+ {
+  "qid": "Q3553329",
+  "memoryAlpha": "Daedalus class",
+  "images": [],
+  "descEn": "fictional class of ships in the Stargate universe"
+ },
+ {
+  "qid": "Q3724837",
+  "memoryAlpha": "Empok Nor",
+  "images": [],
+  "de": "Empok Nor",
+  "descEn": "fictional orbital space station in the Star Trek multiverse",
+  "descDe": "fiktive Raumstation"
+ },
+ {
+  "qid": "Q3776617",
+  "memoryAlpha": "USS Reliant (NCC-1864)",
+  "images": [],
+  "de": "USS Reliant",
+  "descEn": "fictional space ship",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q4387918",
+  "memoryAlpha": "Delta Flyer (2375)",
+  "images": [],
+  "descEn": "Fictional spacecraft and Starfleet ship from Star Trek multiverse, Star Trek: Voyager, and Over a Torrent Sea"
+ },
+ {
+  "qid": "Q5778052",
+  "memoryAlpha": "Columbia",
+  "images": [],
+  "de": "Columbia",
+  "descEn": "fictional spacecraft in Star Trek",
+  "descDe": "Fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q7412395",
+  "memoryAlpha": "USS Equinox",
+  "images": [],
+  "de": "USS Equinox",
+  "descEn": "ship in Star Trek"
+ },
+ {
+  "qid": "Q7601467",
+  "memoryAlpha": "Starbase",
+  "images": [],
+  "descEn": "science fiction concept"
+ },
+ {
+  "qid": "Q9254142",
+  "memoryAlpha": "USS Enterprise (NCC-1701-F)",
+  "images": [],
+  "de": "USS Enterprise-F",
+  "descEn": "fictional starship in Star Trek Online",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q10386185",
+  "memoryAlpha": "USS Grissom (24th century)",
+  "images": [],
+  "descEn": "name of several fictional spacecrafts"
+ },
+ {
+  "qid": "Q10387054",
+  "memoryAlpha": "USS Monitor",
+  "images": [],
+  "descEn": "name of several fictional spacecrafts"
+ },
+ {
+  "qid": "Q11251751",
+  "memoryAlpha": "USS Titan (NCC-80102)",
+  "images": [],
+  "de": "USS Titan",
+  "descEn": "fictional spacecraft in Star Trek",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q11251752",
+  "memoryAlpha": "USS Victory",
+  "images": [],
+  "descEn": "Starfleet ship from Star Trek multiverse"
+ },
+ {
+  "qid": "Q11284829",
+  "memoryAlpha": "Apollo class",
+  "images": [],
+  "descEn": "fictional spacecraft class"
+ },
+ {
+  "qid": "Q11288594",
+  "memoryAlpha": "Wells class",
+  "images": []
+ },
+ {
+  "qid": "Q11296338",
+  "memoryAlpha": "Galor class",
+  "images": []
+ },
+ {
+  "qid": "Q11298740",
+  "memoryAlpha": "D7 class",
+  "images": [],
+  "descEn": "fictional alien spaceship class"
+ },
+ {
+  "qid": "Q11298803",
+  "memoryAlpha": "Andorian battle cruiser",
+  "images": [],
+  "descEn": "fictional spacecraft class in the Star Trek multiverse"
+ },
+ {
+  "qid": "Q11307609",
+  "memoryAlpha": "Cheyenne class",
+  "images": []
+ },
+ {
+  "qid": "Q11313354",
+  "memoryAlpha": "Surak class",
+  "images": []
+ },
+ {
+  "qid": "Q11316588",
+  "memoryAlpha": "Turbolift",
+  "images": [],
+  "de": "Turbolift",
+  "descEn": "fictional type of lift that can go sideward"
+ },
+ {
+  "qid": "Q11320271",
+  "memoryAlpha": "D'deridex class",
+  "images": [],
+  "descEn": "fictional alien spacecraft"
+ },
+ {
+  "qid": "Q11333846",
+  "memoryAlpha": "Freedom class (24th century)",
+  "images": [],
+  "de": "Freedom-Klasse",
+  "descEn": "fictional spacecraft class from Star Trek"
+ },
+ {
+  "qid": "Q11338913",
+  "memoryAlpha": "Borg cube",
+  "images": [],
+  "de": "Borg-Würfel",
+  "descEn": "fictional spacecraft type in Star Trek"
+ },
+ {
+  "qid": "Q11349002",
+  "memoryAlpha": "Luna class",
+  "images": [],
+  "descEn": "Fictional spacecraft class from the Star Trek universe"
+ },
+ {
+  "qid": "Q11349011",
+  "memoryAlpha": "Renaissance class",
+  "images": []
+ },
+ {
+  "qid": "Q11351914",
+  "memoryAlpha": "Valdore type",
+  "images": []
+ },
+ {
+  "qid": "Q11352202",
+  "memoryAlpha": "Vor'cha class",
+  "images": []
+ },
+ {
+  "qid": "Q12582088",
+  "memoryAlpha": "USS Defiant (NCC-1764)",
+  "images": [],
+  "de": "USS Defiant",
+  "descEn": "fictional spacecraft"
+ },
+ {
+  "qid": "Q12631126",
+  "memoryAlpha": "Photon torpedo",
+  "images": [],
+  "de": "Photonentorpedo",
+  "descEn": "fictional space combat weapon",
+  "descDe": "fiktive Waffe aus Star Trek"
+ },
+ {
+  "qid": "Q12816621",
+  "memoryAlpha": "USS Saratoga (NCC-31911)",
+  "images": [],
+  "descEn": "fictional starship, registry number NCC-31911"
+ },
+ {
+  "qid": "Q13403594",
+  "memoryAlpha": "NX class",
+  "images": [],
+  "de": "NX-Klasse",
+  "descEn": "Fictional spacecraft class from the Star Trek multiverse"
+ },
+ {
+  "qid": "Q15920300",
+  "memoryAlpha": "USS Vengeance",
+  "images": [],
+  "de": "USS Vengeance",
+  "descEn": "fictional Star Trek spacecraft"
+ },
+ {
+  "qid": "Q16260997",
+  "memoryAlpha": "USS Kelvin",
+  "images": [],
+  "de": "USS Kelvin",
+  "descEn": "fictional spacecraft"
+ },
+ {
+  "qid": "Q17189693",
+  "memoryAlpha": "Antares",
+  "images": [],
+  "de": "Antares",
+  "descEn": "fictional spaceship"
+ },
+ {
+  "qid": "Q17232008",
+  "memoryAlpha": "Olympic class",
+  "images": [],
+  "de": "Olympic-Klasse",
+  "descEn": "fictional spaceship type"
+ },
+ {
+  "qid": "Q18533645",
+  "memoryAlpha": "Starship",
+  "images": [],
+  "de": "Raumschiff aus Star Trek",
+  "descEn": "fictional spacecraft from the Star Trek universe"
+ },
+ {
+  "qid": "Q19483485",
+  "memoryAlpha": "USS Thunderchild",
+  "images": [],
+  "de": "USS Thunderchild",
+  "descEn": "fictional spacecraft"
+ },
+ {
+  "qid": "Q20052541",
+  "memoryAlpha": "USS Al-Batani",
+  "images": [],
+  "de": "USS Al-Batani",
+  "descEn": "fictional spaceship"
+ },
+ {
+  "qid": "Q24855720",
+  "memoryAlpha": "USS Bozeman",
+  "images": [],
+  "descEn": "fictional spacecraft"
+ },
+ {
+  "qid": "Q24855727",
+  "memoryAlpha": "USS Constellation (NCC-1017)",
+  "images": [],
+  "de": "USS Constellation",
+  "descEn": "fictional spacecraft"
+ },
+ {
+  "qid": "Q24855732",
+  "memoryAlpha": "ISS Enterprise (NX-01)",
+  "images": [],
+  "de": "ISS Enterprise",
+  "descEn": "fictional spacecraft in the Star Trek franchise",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q24855738",
+  "memoryAlpha": "USS Pasteur",
+  "images": [],
+  "de": "USS Pasteur",
+  "descEn": "fictional spacecraft"
+ },
+ {
+  "qid": "Q24855740",
+  "memoryAlpha": "USS Jenolan",
+  "images": [],
+  "descEn": "fictional spaceship"
+ },
+ {
+  "qid": "Q24855746",
+  "memoryAlpha": "USS Relativity",
+  "images": []
+ },
+ {
+  "qid": "Q24863011",
+  "memoryAlpha": "Ares IV",
+  "images": []
+ },
+ {
+  "qid": "Q24898239",
+  "memoryAlpha": "New Orleans class",
+  "images": []
+ },
+ {
+  "qid": "Q24900506",
+  "memoryAlpha": "Dreadnought class",
+  "images": []
+ },
+ {
+  "qid": "Q26833700",
+  "memoryAlpha": "Galileo (2267)",
+  "images": [
+   "Galileo Shuttle Space Centre Houston.jpg"
+  ],
+  "descEn": "fictional spaceship that appeared in the 1960s American science-fiction television series Star Trek"
+ },
+ {
+  "qid": "Q29018104",
+  "memoryAlpha": "USS Franklin",
+  "images": [],
+  "descEn": "fictional starship featured in the 2016 film Star Trek Beyond"
+ },
+ {
+  "qid": "Q30587615",
+  "memoryAlpha": "Spacedock One",
+  "images": [],
+  "de": "Raumdock der Erde",
+  "descEn": "fictional space station from the Star Trek multiverse",
+  "descDe": "Fiktive Raumstation in Star Trek"
+ },
+ {
+  "qid": "Q47011823",
+  "memoryAlpha": "USS Budapest",
+  "images": []
+ },
+ {
+  "qid": "Q47459014",
+  "memoryAlpha": "USS Yamato",
+  "images": [],
+  "de": "USS Yamato",
+  "descEn": "fictional Starship",
+  "descDe": "fiktives Raumschiff"
+ },
+ {
+  "qid": "Q47459277",
+  "memoryAlpha": "USS Shenzhou",
+  "images": [],
+  "de": "USS Shenzhou",
+  "descEn": "fictional starship",
+  "descDe": "fiktives Raumschiff"
+ },
+ {
+  "qid": "Q47459827",
+  "memoryAlpha": "Kobayashi Maru",
+  "images": [],
+  "de": "USS Kobayashi Maru",
+  "descEn": "fictional spaceship",
+  "descDe": "fiktives Raumschiff"
+ },
+ {
+  "qid": "Q47462178",
+  "memoryAlpha": "DY-100 class",
+  "images": [],
+  "descEn": "fictional spacecraft class"
+ },
+ {
+  "qid": "Q47462450",
+  "memoryAlpha": "USS Discovery",
+  "images": [],
+  "de": "USS Discovery",
+  "descEn": "fictional spacecraft in Star Trek",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q47526084",
+  "memoryAlpha": "USS Glenn",
+  "images": [],
+  "de": "USS Glenn",
+  "descEn": "fictional spaceship"
+ },
+ {
+  "qid": "Q48322206",
+  "memoryAlpha": "Sarcophagus",
+  "images": [],
+  "descEn": "fictional Klingon starship in the Star Trek universe"
+ },
+ {
+  "qid": "Q48893897",
+  "memoryAlpha": "Starbase 11",
+  "images": [],
+  "de": "Sternenbasis 11",
+  "descEn": "fictional military facility"
+ },
+ {
+  "qid": "Q49263188",
+  "memoryAlpha": "Cestus III",
+  "images": [
+   "Cestus III.svg"
+  ],
+  "de": "Cestus III",
+  "descEn": "fictional planet"
+ },
+ {
+  "qid": "Q49677472",
+  "memoryAlpha": "Yonada",
+  "images": [],
+  "descEn": "fictional astronomic object"
+ },
+ {
+  "qid": "Q53710030",
+  "memoryAlpha": "Federation starships",
+  "images": [],
+  "de": "Sternenflottenraumschiff",
+  "descEn": "spacecraft of fictional spaceflight organisation"
+ },
+ {
+  "qid": "Q53710092",
+  "memoryAlpha": "Nova class",
+  "images": [],
+  "de": "Nova-Klasse",
+  "descEn": "fictional spaceship type"
+ },
+ {
+  "qid": "Q54800547",
+  "memoryAlpha": "Arcade",
+  "images": [],
+  "de": "Arcade",
+  "descEn": "1995 novel by Diana G. Gallagher"
+ },
+ {
+  "qid": "Q56150947",
+  "memoryAlpha": "Saber class",
+  "images": [],
+  "descEn": "Class of fictional starship in Star Trek"
+ },
+ {
+  "qid": "Q56410120",
+  "memoryAlpha": "USS Prometheus (Prometheus class)",
+  "images": [],
+  "descEn": "fictional spacecraft of the Star Trek multiverse"
+ },
+ {
+  "qid": "Q56841651",
+  "memoryAlpha": "Walker class",
+  "images": [],
+  "descEn": "fictional type of spaceship"
+ },
+ {
+  "qid": "Q57032347",
+  "memoryAlpha": "Barradas III",
+  "images": [],
+  "de": "Barradas III",
+  "descEn": "fictional planet",
+  "descDe": "fiktiver Planet"
+ },
+ {
+  "qid": "Q57032355",
+  "memoryAlpha": "Calder II",
+  "images": [],
+  "de": "Calder II",
+  "descEn": "fictional planet",
+  "descDe": "fiktiver Planet"
+ },
+ {
+  "qid": "Q57032747",
+  "memoryAlpha": "Setlik III",
+  "images": [],
+  "de": "Setlik III",
+  "descEn": "fictional planet in the Star Trek franchise",
+  "descDe": "fiktiver Planet aus Star Trek"
+ },
+ {
+  "qid": "Q57033208",
+  "memoryAlpha": "Narendra III",
+  "images": [],
+  "de": "Narendra III",
+  "descEn": "fictional planet in the Star Trek franchise",
+  "descDe": "fiktiver Planet aus Star Trek"
+ },
+ {
+  "qid": "Q57033620",
+  "memoryAlpha": "Berengaria VII",
+  "images": [],
+  "de": "Berengaria VII",
+  "descEn": "fictional planet",
+  "descDe": "fiktiver Planet"
+ },
+ {
+  "qid": "Q57033986",
+  "memoryAlpha": "Delta Vega (Vulcan system)",
+  "images": [],
+  "de": "Delta Vega",
+  "descEn": "fictional planet",
+  "descDe": "fiktiver Planet"
+ },
+ {
+  "qid": "Q57034029",
+  "memoryAlpha": "Kalandan outpost",
+  "images": [],
+  "de": "Kalandan Outpost",
+  "descEn": "fictional planet",
+  "descDe": "fiktiver Planet"
+ },
+ {
+  "qid": "Q57034094",
+  "memoryAlpha": "Pyris VII",
+  "images": [],
+  "de": "Pyris",
+  "descEn": "fictional planet in Star Trek",
+  "descDe": "fiktiver Planet aus Star Trek"
+ },
+ {
+  "qid": "Q57820730",
+  "memoryAlpha": "Yorktown",
+  "images": [],
+  "descEn": "fictional megastructure"
+ },
+ {
+  "qid": "Q58283936",
+  "memoryAlpha": "Deep Space Station K-7",
+  "images": [],
+  "descEn": "Fictional space station"
+ },
+ {
+  "qid": "Q58424542",
+  "memoryAlpha": "Starbase 1",
+  "images": [],
+  "descEn": "fictional space station"
+ },
+ {
+  "qid": "Q58820831",
+  "memoryAlpha": "Starbase 47",
+  "images": [],
+  "descEn": "fictional space station"
+ },
+ {
+  "qid": "Q61292200",
+  "memoryAlpha": "Aldebaran III",
+  "images": [],
+  "descEn": "fictional planet in the Star Trek universe"
+ },
+ {
+  "qid": "Q63136559",
+  "memoryAlpha": "Crossfield class",
+  "images": [],
+  "descEn": "fictional spaceship class"
+ },
+ {
+  "qid": "Q66370813",
+  "memoryAlpha": "Mars",
+  "images": [],
+  "de": "Mars",
+  "descEn": "the planet Mars as depicted in Star Trek",
+  "descDe": "fiktionale Version des Planeten Mars in Star Trek"
+ },
+ {
+  "qid": "Q66707424",
+  "memoryAlpha": "Starbase 74",
+  "images": [],
+  "descEn": "fictional space station"
+ },
+ {
+  "qid": "Q69841809",
+  "memoryAlpha": "Pax class",
+  "images": [],
+  "de": "Devon MacDonald",
+  "descEn": "actress",
+  "descDe": "Schauspielerin"
+ },
+ {
+  "qid": "Q75176155",
+  "memoryAlpha": "Starbase 28",
+  "images": [],
+  "descEn": "Fictional space station from the Star Trek multiverse"
+ },
+ {
+  "qid": "Q75721093",
+  "memoryAlpha": "Starbase 32",
+  "images": []
+ },
+ {
+  "qid": "Q80436154",
+  "memoryAlpha": "Starbase 6",
+  "images": [],
+  "descEn": "fictional space station"
+ },
+ {
+  "qid": "Q83487211",
+  "memoryAlpha": "Scimitar",
+  "images": [],
+  "descEn": "fictional spaceship"
+ },
+ {
+  "qid": "Q84086502",
+  "memoryAlpha": "Artifact (Borg cube)",
+  "images": [],
+  "descEn": "fictional alien spacecraft"
+ },
+ {
+  "qid": "Q85106882",
+  "memoryAlpha": "Amargosa observatory",
+  "images": [],
+  "descEn": "fictional space station"
+ },
+ {
+  "qid": "Q85289930",
+  "memoryAlpha": "Bird-of-Prey",
+  "images": [],
+  "descEn": "fictional type of starship from Star Trek"
+ },
+ {
+  "qid": "Q85290048",
+  "memoryAlpha": "Romulan Bird-of-Prey",
+  "images": [],
+  "descEn": "fictional type of starship"
+ },
+ {
+  "qid": "Q85415599",
+  "memoryAlpha": "Epsilon IX station",
+  "images": [],
+  "descEn": "fictional space station"
+ },
+ {
+  "qid": "Q85416372",
+  "memoryAlpha": "Tactical Cube 138",
+  "images": [],
+  "descEn": "ficitonal spacecraft"
+ },
+ {
+  "qid": "Q96252523",
+  "memoryAlpha": "USS Challenger (NCC-71099)",
+  "images": [],
+  "descEn": "Fictional starship from Star Trek: Voyager with registry number NCC-71099"
+ },
+ {
+  "qid": "Q96257522",
+  "memoryAlpha": "USS Lexington (NCC-30405)",
+  "images": [],
+  "de": "USS Lexington",
+  "descEn": "fictional starship from Star Trek with registry number NCC-30405",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q96261799",
+  "memoryAlpha": "USS Hood (Excelsior class)",
+  "images": [],
+  "de": "USS Hood",
+  "descEn": "Fictional starship from Star Trek: TNG with registry number NCC-42296",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q96279318",
+  "memoryAlpha": "Val Jean",
+  "images": [],
+  "descEn": "Fictional starship from Star Trek: Voyager"
+ },
+ {
+  "qid": "Q96279778",
+  "memoryAlpha": "USS Exeter (NCC-1672)",
+  "images": [],
+  "de": "USS Exeter",
+  "descEn": "Fictional starship from Star Trek: TOS with registry number NCC-1672",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q96313352",
+  "memoryAlpha": "IRW Khazara",
+  "images": [],
+  "descEn": "Fictional Romulan spaceship from Star Trek"
+ },
+ {
+  "qid": "Q96313650",
+  "memoryAlpha": "Narada",
+  "images": [],
+  "descEn": "fictional spacecraft - Romulan mining vessel"
+ },
+ {
+  "qid": "Q96313795",
+  "memoryAlpha": "USS Merrimac (NCC-61827)",
+  "images": [],
+  "descEn": "Fictional starship from Star Trek with registry number NCC-61827"
+ },
+ {
+  "qid": "Q96332680",
+  "memoryAlpha": "USS Hera",
+  "images": [],
+  "descEn": "Fictional starship from Star Trek with registry number NCC-62006"
+ },
+ {
+  "qid": "Q96333004",
+  "memoryAlpha": "USS Lantree",
+  "images": [],
+  "descEn": "Fictional starship from Star Trek with registry number NCC-1837"
+ },
+ {
+  "qid": "Q96333269",
+  "memoryAlpha": "USS Europa (NCC-1648)",
+  "images": [],
+  "descEn": "Fictional starship from Star Trek with registry number NCC-1648"
+ },
+ {
+  "qid": "Q96335309",
+  "memoryAlpha": "USS Cairo",
+  "images": [],
+  "descEn": "Fictional starship from Star Trek with registry number NCC-42136"
+ },
+ {
+  "qid": "Q96335579",
+  "memoryAlpha": "USS Galaxy",
+  "images": [],
+  "descEn": "Fictional starship from Star Trek with registry number NCC-70637"
+ },
+ {
+  "qid": "Q96335645",
+  "memoryAlpha": "USS Bellerophon (NCC-74705)",
+  "images": [],
+  "descEn": "Fictional starship from Star Trek with registry number NCC-74705"
+ },
+ {
+  "qid": "Q96746067",
+  "memoryAlpha": "Automated repair station",
+  "images": [],
+  "de": "Automatische Reparaturstation",
+  "descEn": "fictional space station in Star Trek"
+ },
+ {
+  "qid": "Q97131686",
+  "memoryAlpha": "USS Essex",
+  "images": [],
+  "de": "USS Essex",
+  "descEn": "Starfleet ship from the Star Trek multiverse, Last Full Measure, Kobayashi Maru, Beneath the Raptor's Wing, A Choice of Futures, Uncertain Logic, Live by the Code, and Patterns of Interference"
+ },
+ {
+  "qid": "Q97446072",
+  "memoryAlpha": "ECS Horizon",
+  "images": [],
+  "descEn": "Fictional spacecraft from the Star Trek multiverse"
+ },
+ {
+  "qid": "Q98109680",
+  "memoryAlpha": "USS Cerritos",
+  "images": [],
+  "de": "USS Cerritos",
+  "descEn": "Starfleet spacecraft from Star Trek multiverse",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q98844581",
+  "memoryAlpha": "USS Sarajevo",
+  "images": [],
+  "de": "USS Sarajevo",
+  "descEn": "fictional Star Trek spacecraft",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q98844587",
+  "memoryAlpha": "Sarajevo",
+  "images": [],
+  "de": "Sarajevo",
+  "descEn": "fictional Star Trek spacecraft type"
+ },
+ {
+  "qid": "Q98852254",
+  "memoryAlpha": "Venus",
+  "images": [],
+  "de": "Venus",
+  "descEn": "planet Venus as depicted in Star Trek",
+  "descDe": "fiktionale Version des Planeten Venus in Star Trek"
+ },
+ {
+  "qid": "Q99359117",
+  "memoryAlpha": "Battle cruiser",
+  "images": [],
+  "descEn": "battlecruiser only appearing in works of fiction"
+ },
+ {
+  "qid": "Q106998226",
+  "memoryAlpha": "Prometheus class",
+  "images": [],
+  "de": "Prometheus-Klasse",
+  "descEn": "Fictional spacecraft class"
+ },
+ {
+  "qid": "Q107168477",
+  "memoryAlpha": "Space station",
+  "images": [],
+  "descEn": "orbital space station appearing in the Star Trek multiverse"
+ },
+ {
+  "qid": "Q107619908",
+  "memoryAlpha": "Dreadnought",
+  "images": [],
+  "descEn": "types of spacecraft in the Star Trek multiverse"
+ },
+ {
+  "qid": "Q107690156",
+  "memoryAlpha": "Nomad",
+  "images": [],
+  "descEn": "fictional artificial intelligence and fictional spacecraft"
+ },
+ {
+  "qid": "Q108199292",
+  "memoryAlpha": "Bersallis III",
+  "images": [],
+  "descEn": "fictional planet in the Star Trek multiverse"
+ },
+ {
+  "qid": "Q108199377",
+  "memoryAlpha": "Gagarin IV",
+  "images": [],
+  "descEn": "fictional planet in the Star Trek multiverse"
+ },
+ {
+  "qid": "Q108510582",
+  "memoryAlpha": "Starbase 25",
+  "images": [],
+  "de": "Sternenbasis 25",
+  "descEn": "fictional space station in the Star Trek multiverse"
+ },
+ {
+  "qid": "Q108529910",
+  "memoryAlpha": "USS Berlin",
+  "images": [],
+  "de": "USS Berlin",
+  "descEn": "fictional interstellar spacecraft in the Star Trek multiverse"
+ },
+ {
+  "qid": "Q108544861",
+  "memoryAlpha": "Brig",
+  "images": [],
+  "de": "Arrestzelle",
+  "descEn": "prison cell aboard a ship"
+ },
+ {
+  "qid": "Q108545184",
+  "memoryAlpha": "Cargo bay",
+  "images": [],
+  "de": "Frachtraum",
+  "descEn": "place where cargo is stored"
+ },
+ {
+  "qid": "Q110789283",
+  "memoryAlpha": "Transporter room",
+  "images": [
+   "Transporter Room.jpg"
+  ],
+  "de": "Transporterraum",
+  "descEn": "fictional room in the Star Trek universe, usually inside a spacecraft, containing a transporter"
+ },
+ {
+  "qid": "Q111234800",
+  "memoryAlpha": "USS Protostar",
+  "images": [],
+  "de": "USS Protostar",
+  "descEn": "fictional spacecraft in the Star Trek multiverse",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ },
+ {
+  "qid": "Q112968711",
+  "memoryAlpha": "USS Farragut (NCC-1647)",
+  "images": [],
+  "descEn": "fictional starship with the registry number NCC-1647"
+ },
+ {
+  "qid": "Q113987021",
+  "memoryAlpha": "California class",
+  "images": [],
+  "de": "California-Klasse",
+  "descEn": "class of fictional spacecraft"
+ },
+ {
+  "qid": "Q115787511",
+  "memoryAlpha": "USS Dauntless (NCC-80816)",
+  "images": []
+ },
+ {
+  "qid": "Q117321920",
+  "memoryAlpha": "Spaceship",
+  "images": [],
+  "descEn": "crewed or automated spacecraft designed to transport humans and/or cargo into space"
+ },
+ {
+  "qid": "Q119142891",
+  "memoryAlpha": "USS Enterprise (NCC-1701 alternate reality)",
+  "images": [],
+  "descEn": "fictional spacecraft"
+ },
+ {
+  "qid": "Q123205806",
+  "memoryAlpha": "Unicomplex",
+  "images": [],
+  "de": "Unikomplex",
+  "descEn": "Fictional megastructure from Star Trek universe"
+ },
+ {
+  "qid": "Q129920865",
+  "memoryAlpha": "Constitution III class",
+  "images": [],
+  "descEn": "class of fictional spacecraft"
+ },
+ {
+  "qid": "Q131190970",
+  "memoryAlpha": "Starbase 80",
+  "images": [],
+  "descEn": "episode of television series Star Trek: Lower Decks",
+  "descDe": "2024 Star-Trek-Episode von Bob Suarez"
+ },
+ {
+  "qid": "Q131346951",
+  "memoryAlpha": "USS Intrepid (NCC-79520)",
+  "images": [],
+  "de": "USS Intrepid",
+  "descEn": "fictional starship in Star Trek",
+  "descDe": "fiktives Raumschiff aus Star Trek"
+ }
+]

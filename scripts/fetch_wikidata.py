@@ -16,29 +16,30 @@ UA = "startrek-db/0.1 (+https://github.com/bunwichtig/startrek-db)"
 OUT = Path(__file__).resolve().parent.parent / "data" / "raw"
 SPARQL = "https://query.wikidata.org/sparql"
 COMMONS = "https://commons.wikimedia.org/w/api.php"
+WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 
+# Wikidata verknüpft Memory-Alpha-Artikel über die Eigenschaft P6262 (Fandom-Artikel-ID),
+# Werte haben die Form "memory-alpha:Artikel_Titel".
 QUERY = """
-SELECT ?item ?ma ?en ?de ?descEn ?descDe ?image ?type ?typeLabel WHERE {
-  ?prop rdfs:label "Memory Alpha ID"@en ; wikibase:directClaim ?wdt .
-  ?item ?wdt ?ma .
-  OPTIONAL { ?item rdfs:label ?en FILTER(LANG(?en) = "en") }
+SELECT ?item ?fid ?de ?descDe ?descEn ?image WHERE {
+  VALUES ?fid { %s }
+  ?item wdt:P6262 ?fid .
   OPTIONAL { ?item rdfs:label ?de FILTER(LANG(?de) = "de") }
-  OPTIONAL { ?item schema:description ?descEn FILTER(LANG(?descEn) = "en") }
   OPTIONAL { ?item schema:description ?descDe FILTER(LANG(?descDe) = "de") }
+  OPTIONAL { ?item schema:description ?descEn FILTER(LANG(?descEn) = "en") }
   OPTIONAL { ?item wdt:P18 ?image }
-  OPTIONAL { ?item wdt:P31 ?type . ?type rdfs:label ?typeLabel FILTER(LANG(?typeLabel) = "en") }
 }
 """
 
 
 def fetch(url, data=None):
-    for attempt in range(5):
+    for attempt in range(3):
         try:
             req = urllib.request.Request(url, data=data, headers={
                 "User-Agent": UA,
                 "Accept": "application/sparql-results+json, application/json",
             })
-            with urllib.request.urlopen(req, timeout=300) as r:
+            with urllib.request.urlopen(req, timeout=90) as r:
                 return json.load(r)
         except Exception as e:  # noqa: BLE001
             wait = 5 * 2 ** attempt
@@ -47,19 +48,45 @@ def fetch(url, data=None):
     raise RuntimeError(f"Abruf fehlgeschlagen: {url}")
 
 
+def sparql(query):
+    body = urllib.parse.urlencode({"query": query, "format": "json"}).encode()
+    return fetch(SPARQL, data=body)["results"]["bindings"]
+
+
+def ma_titles():
+    """Alle Memory-Alpha-Titel aus den Rohdaten."""
+    pages = json.loads((OUT / "memory_alpha_pages.json").read_text()) if (OUT / "memory_alpha_pages.json").exists() else []
+    return sorted({p["title"] for p in pages})
+
+
+def lit(s):
+    return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
 def wikidata():
-    body = urllib.parse.urlencode({"query": QUERY, "format": "json"}).encode()
-    rows = fetch(SPARQL, data=body)["results"]["bindings"]
+    titles = ma_titles()
+    rows = []
+    for i in range(0, len(titles), 150):
+        chunk = titles[i:i + 150]
+        values = " ".join(lit("memory-alpha:" + t.replace(" ", "_")) + " " + lit("memory-alpha:" + t) for t in chunk)
+        try:
+            part = sparql(QUERY % values)
+        except RuntimeError as e:
+            print(f"Abschnitt {i} übersprungen: {e}", file=sys.stderr)
+            continue
+        rows.extend(part)
+        print(f"Titel {min(i + 150, len(titles))}/{len(titles)}: {len(part)} Treffer")
+        time.sleep(1)
+    for r in rows:
+        r["ma"] = {"value": r["fid"]["value"].removeprefix("memory-alpha:").replace("_", " ")}
     items = {}
     for r in rows:
         v = {k: x["value"] for k, x in r.items()}
         qid = v["item"].rsplit("/", 1)[-1]
-        it = items.setdefault(qid, {"qid": qid, "memoryAlpha": v["ma"], "types": [], "images": []})
-        for k in ("en", "de", "descEn", "descDe"):
+        it = items.setdefault(qid, {"qid": qid, "memoryAlpha": v["ma"], "images": []})
+        for k in ("de", "descEn", "descDe"):
             if k in v:
                 it[k] = v[k]
-        if "typeLabel" in v and v["typeLabel"] not in it["types"]:
-            it["types"].append(v["typeLabel"])
         if "image" in v:
             name = urllib.parse.unquote(v["image"].rsplit("/", 1)[-1]).replace("_", " ")
             if name not in it["images"]:
@@ -103,11 +130,35 @@ def commons(files):
     return meta
 
 
+def download(images):
+    """Vorschaubilder lokal ablegen, damit die Seite auch ohne Commons-Zugriff Bilder zeigt."""
+    import hashlib
+    img_dir = OUT.parent.parent / "site" / "img"
+    img_dir.mkdir(parents=True, exist_ok=True)
+    for name, meta in images.items():
+        url = meta.get("thumb") or meta.get("url")
+        if not url:
+            continue
+        ext = Path(urllib.parse.urlparse(url).path).suffix.lower() or ".jpg"
+        local = img_dir / (hashlib.sha1(name.encode()).hexdigest()[:16] + ext)
+        if not local.exists():
+            try:
+                req = urllib.request.Request(url, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    local.write_bytes(r.read())
+                time.sleep(0.5)
+            except Exception as e:  # noqa: BLE001
+                print(f"  Bild nicht geladen: {name}: {e}", file=sys.stderr)
+                continue
+        meta["local"] = "img/" + local.name
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     items = wikidata()
     (OUT / "wikidata_items.json").write_text(json.dumps(items, ensure_ascii=False, indent=1))
     images = commons(f for it in items for f in it["images"])
+    download(images)
     (OUT / "commons_images.json").write_text(json.dumps(images, ensure_ascii=False, indent=1, sort_keys=True))
 
 

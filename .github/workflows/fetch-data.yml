@@ -2,11 +2,17 @@ name: Daten abrufen
 
 on:
   workflow_dispatch:
+    inputs:
+      stapi:
+        description: "STAPI neu abrufen (dauert etwa 8 Minuten)"
+        type: boolean
+        default: true
   schedule:
     - cron: "17 3 1 * *"
   push:
     paths:
       - "scripts/fetch_*.py"
+      - "scripts/build.py"
       - ".github/workflows/fetch-data.yml"
 
 permissions:
@@ -22,12 +28,33 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: STAPI (Memory Alpha)
-        run: python scripts/fetch_stapi.py
+        run: |
+          # Bei Pushes nur neu laden, wenn sich der STAPI-Abruf geändert hat oder Rohdaten fehlen.
+          if [ "${{ github.event_name }}" = "push" ] && [ -f data/raw/stapi_spacecraft_classes.json ] \
+             && ! git diff --name-only HEAD~1 HEAD | grep -q "fetch_stapi.py"; then
+            echo "STAPI-Rohdaten vorhanden, Abruf übersprungen"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.stapi }}" = "false" ]; then
+            echo "STAPI-Abruf abgewählt"
+          else
+            python scripts/fetch_stapi.py
+          fi
+      - name: Memory Alpha (Artikel und Infoboxen)
+        continue-on-error: true
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] && [ -f data/raw/memory_alpha_pages.json ] \
+             && ! git diff --name-only HEAD~1 HEAD | grep -q "fetch_memory_alpha.py"; then
+            echo "Memory-Alpha-Rohdaten vorhanden, Abruf übersprungen"
+          else
+            python scripts/fetch_memory_alpha.py
+          fi
       - name: Wikidata und Commons
+        continue-on-error: true
         run: python scripts/fetch_wikidata.py
       - name: Datenbank bauen
         run: |
@@ -36,7 +63,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
-          git add data site || true
+          git add -A data site
           if git diff --cached --quiet; then
             echo "Keine Änderungen"
           else
