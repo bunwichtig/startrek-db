@@ -333,7 +333,7 @@
    "license": "je Bild",
    "url": "https://commons.wikimedia.org",
    "licenseUrl": "",
-   "count": 6,
+   "count": 3,
    "unit": "Bilder genutzt",
    "text": "Freie Mediensammlung. Jedes Bild bringt Urheber und Lizenz mit, meist CC BY-SA oder gemeinfrei."
   }
@@ -4569,8 +4569,7 @@
    "intro": "The Galaxy-class was a Starfleet heavy capital ship class first introduced in the mid 2360s. It was one of the largest and most powerful Federation starship classes of its time, with many serving in the Dominion War. Starfleet had previously operated another type of starship in the 2250s. ()",
    "wd": "Q3274408",
    "de": "Galaxy-Klasse",
-   "desc": "fiktive Raumschiffsklasse",
-   "img": "img0"
+   "desc": "fiktive Raumschiffsklasse"
   },
   {
    "i": 236,
@@ -4584,8 +4583,7 @@
    "wd": "Q3274408",
    "de": "Galaxy-Klasse",
    "desc": "fiktive Raumschiffsklasse",
-   "ma": "https://memory-alpha.fandom.com/wiki/Galaxy_class",
-   "img": "img0"
+   "ma": "https://memory-alpha.fandom.com/wiki/Galaxy_class"
   },
   {
    "i": 237,
@@ -14377,8 +14375,7 @@
    "intro": "In starship classification, a shuttlecraft, shuttle, or glider was a type of auxiliary space vessel typically attached to a starship or a starbase. Most shuttles were short-range transports, possessing only impulse drive or a limited warp capability. Utilization of shuttlecraft was common for most spacefaring civilizations, and along with the transporter, were two of the more common conventional modes of transportation to and from one place to another. () Shuttles were generally used for landings when transporters were inoperable, or not yet within the technological capabilities of a species. At times shuttlecraft were used by individuals who preferred not to use transporters or were unable ",
    "wd": "Q600142",
    "de": "Shuttle",
-   "desc": "fictional spacecraft class",
-   "img": "img1"
+   "desc": "fictional spacecraft class"
   },
   {
    "i": 821,
@@ -15888,7 +15885,7 @@
    "de": "Cestus III",
    "desc": "fictional planet",
    "ma": "https://memory-alpha.fandom.com/wiki/Cestus_III",
-   "img": "img2"
+   "img": "img0"
   },
   {
    "i": 80,
@@ -16789,7 +16786,7 @@
    "wd": "Q222929",
    "de": "Deep Space Nine",
    "desc": "fiktive Raumstation, Handlungsort von Star Trek: Deep Space Nine",
-   "img": "img3"
+   "img": "img1"
   },
   {
    "i": 159,
@@ -26375,8 +26372,7 @@
    "intro": "The USS Enterprise (NCC-1701-E) was a 24th century Federation starship operated by Starfleet. This ship was the sixth Federation starship to bear the name Enterprise.",
    "wd": "Q1051324",
    "de": "USS Enterprise (NCC-1701-E)",
-   "desc": "fiktives Raumschiff aus den Star Trek Filmen Star Trek: First Contact bis Star Trek: Nemesis",
-   "img": "img4"
+   "desc": "fiktives Raumschiff aus den Star Trek Filmen Star Trek: First Contact bis Star Trek: Nemesis"
   },
   {
    "i": 1022,
@@ -31762,8 +31758,7 @@
    "intro": "In spacecraft classification, an escape pod (also known as an evacuation pod, evacuation shuttle, life boat, life craft, life pod, rescue capsule, or rescue pod) was a type of auxiliary space vessel found aboard most starships used in the event the crew needed to leave the ship, particularly in an emergency.",
    "wd": "Q667801",
    "de": "Rettungskapsel",
-   "desc": "Rettungsmittel",
-   "img": "img5"
+   "desc": "Rettungsmittel"
   },
   {
    "i": 1476,
@@ -31911,7 +31906,7 @@
    "intro": "The Galileo (NCC-1701⁄7) was a Federation Class F shuttlecraft that was in service with Starfleet in the mid-23rd century, attached to the .",
    "wd": "Q26833700",
    "desc": "fictional spaceship that appeared in the 1960s American science-fiction television series Star Trek",
-   "img": "img1"
+   "img": "img2"
   },
   {
    "i": 1487,
@@ -34838,22 +34833,6 @@
  ],
  "images": {
   "img0": {
-   "file": "USD307923 art (Andrew Probert, toy starship, Enterprise).png",
-   "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/06/USD307923_art_%28Andrew_Probert%2C_toy_starship%2C_Enterprise%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:USD307923_art_(Andrew_Probert,_toy_starship,_Enterprise).png",
-   "license": "Public domain",
-   "licenseUrl": null,
-   "artist": "Andrew Probert"
-  },
-  "img1": {
-   "file": "Galileo Shuttle Space Centre Houston.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Galileo_Shuttle_Space_Centre_Houston.jpg/960px-Galileo_Shuttle_Space_Centre_Houston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Galileo_Shuttle_Space_Centre_Houston.jpg",
-   "license": "CC BY-SA 2.0",
-   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-   "artist": "GorissenM"
-  },
-  "img2": {
    "file": "Cestus III.svg",
    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Cestus_III.svg/960px-Cestus_III.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://commons.wikimedia.org/wiki/File:Cestus_III.svg",
@@ -34861,7 +34840,7 @@
    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
    "artist": "Shisma"
   },
-  "img3": {
+  "img1": {
    "file": "Deep Space Nine filming model - Star Trek - Exploring New Worlds Exhibit at the Henry Ford Museum, Dearborn, Michigan - 49785772831.jpg",
    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Deep_Space_Nine_filming_model_-_Star_Trek_-_Exploring_New_Worlds_Exhibit_at_the_Henry_Ford_Museum%2C_Dearborn%2C_Michigan_-_49785772831.jpg/960px-Deep_Space_Nine_filming_model_-_Star_Trek_-_Exploring_New_Worlds_Exhibit_at_the_Henry_Ford_Museum%2C_Dearborn%2C_Michigan_-_49785772831.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "page": "https://commons.wikimedia.org/wiki/File:Deep_Space_Nine_filming_model_-_Star_Trek_-_Exploring_New_Worlds_Exhibit_at_the_Henry_Ford_Museum,_Dearborn,_Michigan_-_49785772831.jpg",
@@ -34869,21 +34848,13 @@
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
    "artist": "Joe Ross"
   },
-  "img4": {
-   "file": "Colossus-1701-Langley.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Colossus-1701-Langley.jpg/960px-Colossus-1701-Langley.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Colossus-1701-Langley.jpg",
-   "license": "Public domain",
-   "licenseUrl": null,
-   "artist": "user:Despayre"
-  },
-  "img5": {
-   "file": "North American XB-70A Valkyrie escape capsule during a test 061122-F-1234P-030.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/North_American_XB-70A_Valkyrie_escape_capsule_during_a_test_061122-F-1234P-030.jpg/960px-North_American_XB-70A_Valkyrie_escape_capsule_during_a_test_061122-F-1234P-030.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:North_American_XB-70A_Valkyrie_escape_capsule_during_a_test_061122-F-1234P-030.jpg",
-   "license": "Public domain",
-   "licenseUrl": null,
-   "artist": null
+  "img2": {
+   "file": "Galileo Shuttle Space Centre Houston.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Galileo_Shuttle_Space_Centre_Houston.jpg/960px-Galileo_Shuttle_Space_Centre_Houston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Galileo_Shuttle_Space_Centre_Houston.jpg",
+   "license": "CC BY-SA 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "artist": "GorissenM"
   }
  }
 }

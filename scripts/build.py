@@ -236,14 +236,18 @@ def main():
 
     images = {}
 
-    def image_for(it):
+    def image_for(it, rec_name):
         for f in (it or {}).get("images", []):
             m = commons.get(f)
+            text = (f + " " + strip_html(m.get("description") or "") if m else "").lower()
+            # Nur Bilder, die erkennbar Star Trek oder genau dieses Objekt zeigen
+            if m and "star trek" not in text and rec_name.lower() not in text:
+                continue
             if m and (m.get("thumb") or m.get("url")):
                 key = f"img{len(images)}" if f not in {v['file'] for v in images.values()} else next(k for k, v in images.items() if v["file"] == f)
                 images[key] = {
                     "file": f,
-                    "thumb": m.get("thumb") or m.get("url"),
+                    "thumb": m.get("local") or m.get("thumb") or m.get("url"),
                     "page": m.get("page"),
                     "license": strip_html(m.get("license")),
                     "licenseUrl": m.get("licenseUrl"),
@@ -267,7 +271,7 @@ def main():
             rec["desc"] = it.get("descDe") or it.get("descEn")
         if it.get("memoryAlpha") and not rec.get("ma"):
             rec["ma"] = MA_URL + urllib.parse.quote(it["memoryAlpha"].replace(" ", "_"))
-        img = image_for(it)
+        img = image_for(it, rec["n"])
         if img:
             rec["img"] = img
 

@@ -130,11 +130,35 @@ def commons(files):
     return meta
 
 
+def download(images):
+    """Vorschaubilder lokal ablegen, damit die Seite auch ohne Commons-Zugriff Bilder zeigt."""
+    import hashlib
+    img_dir = OUT.parent.parent / "site" / "img"
+    img_dir.mkdir(parents=True, exist_ok=True)
+    for name, meta in images.items():
+        url = meta.get("thumb") or meta.get("url")
+        if not url:
+            continue
+        ext = Path(urllib.parse.urlparse(url).path).suffix.lower() or ".jpg"
+        local = img_dir / (hashlib.sha1(name.encode()).hexdigest()[:16] + ext)
+        if not local.exists():
+            try:
+                req = urllib.request.Request(url, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    local.write_bytes(r.read())
+                time.sleep(0.5)
+            except Exception as e:  # noqa: BLE001
+                print(f"  Bild nicht geladen: {name}: {e}", file=sys.stderr)
+                continue
+        meta["local"] = "img/" + local.name
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     items = wikidata()
     (OUT / "wikidata_items.json").write_text(json.dumps(items, ensure_ascii=False, indent=1))
     images = commons(f for it in items for f in it["images"])
+    download(images)
     (OUT / "commons_images.json").write_text(json.dumps(images, ensure_ascii=False, indent=1, sort_keys=True))
 
 
