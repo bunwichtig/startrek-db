@@ -1,0 +1,46 @@
+name: Daten abrufen
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 1 * *"
+  push:
+    paths:
+      - "scripts/fetch_*.py"
+      - ".github/workflows/fetch-data.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-data-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: STAPI (Memory Alpha)
+        run: python scripts/fetch_stapi.py
+      - name: Wikidata und Commons
+        run: python scripts/fetch_wikidata.py
+      - name: Datenbank bauen
+        run: |
+          if [ -f scripts/build.py ]; then python scripts/build.py; fi
+      - name: Änderungen committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add data site || true
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen"
+          else
+            git commit -m "Daten aktualisiert ($(date -u +%Y-%m-%d))"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
