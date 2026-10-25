@@ -324,7 +324,7 @@
    "license": "CC0",
    "url": "https://www.wikidata.org",
    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.de",
-   "count": 0,
+   "count": 186,
    "unit": "verknüpfte Einträge",
    "text": "Freie Wissensdatenbank. Liefert deutsche Namen, Kurzbeschreibungen und Verknüpfungen zu Bildern."
   },
@@ -333,7 +333,7 @@
    "license": "je Bild",
    "url": "https://commons.wikimedia.org",
    "licenseUrl": "",
-   "count": 0,
+   "count": 6,
    "unit": "Bilder genutzt",
    "text": "Freie Mediensammlung. Jedes Bild bringt Urheber und Lizenz mit, meist CC BY-SA oder gemeinfrei."
   }
@@ -432,7 +432,10 @@
     1370
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Akira_class",
-   "intro": "The Akira-class was a class of Federation starship that was in service with Starfleet by the early 2370s."
+   "intro": "The Akira-class was a class of Federation starship that was in service with Starfleet by the early 2370s.",
+   "wd": "Q866693",
+   "de": "Akira-Klasse",
+   "desc": "fictional spaceship type"
   },
   {
    "i": 5,
@@ -522,7 +525,9 @@
     1398
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Ambassador_class",
-   "intro": "The Ambassador-class starship was a type of heavy cruiser in service with Starfleet during the mid- to late-24th century. ()"
+   "intro": "The Ambassador-class starship was a type of heavy cruiser in service with Starfleet during the mid- to late-24th century. ()",
+   "wd": "Q3275517",
+   "desc": "starship type in Star Trek"
   },
   {
    "i": 11,
@@ -554,7 +559,9 @@
     834
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Andorian_battle_cruiser",
-   "intro": "The Andorian battle cruiser was a type of warship in service with the Andorian Imperial Guard during the mid-22nd century through the late 24th century."
+   "intro": "The Andorian battle cruiser was a type of warship in service with the Andorian Imperial Guard during the mid-22nd century through the late 24th century.",
+   "wd": "Q11298803",
+   "desc": "fictional spacecraft class in the Star Trek multiverse"
   },
   {
    "i": 12,
@@ -782,7 +789,11 @@
    "uid": "SCMA0000018495",
    "n": "Antares class",
    "f": "none",
-   "ships": []
+   "ships": [],
+   "wd": "Q17189693",
+   "de": "Antares",
+   "desc": "fictional spaceship",
+   "ma": "https://memory-alpha.fandom.com/wiki/Antares"
   },
   {
    "i": 29,
@@ -810,7 +821,11 @@
     22,
     468,
     686
-   ]
+   ],
+   "wd": "Q17189693",
+   "de": "Antares",
+   "desc": "fictional spaceship",
+   "ma": "https://memory-alpha.fandom.com/wiki/Antares"
   },
   {
    "i": 30,
@@ -911,7 +926,9 @@
     874
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Apollo_class",
-   "intro": "The Apollo-class was a class of Federation starship in operation during the 24th century."
+   "intro": "The Apollo-class was a class of Federation starship in operation during the 24th century.",
+   "wd": "Q11284829",
+   "desc": "fictional spacecraft class"
   },
   {
    "i": 36,
@@ -1518,7 +1535,10 @@
     1458
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Borg_cube",
-   "intro": "The Borg cube was a type of starship used by the Borg Collective in the 24th century. Along with the Borg sphere, cubes were among the primary types of vessel for its fleet. (; )"
+   "intro": "The Borg cube was a type of starship used by the Borg Collective in the 24th century. Along with the Borg sphere, cubes were among the primary types of vessel for its fleet. (; )",
+   "wd": "Q11338913",
+   "de": "Borg-Würfel",
+   "desc": "fictional spacecraft type in Star Trek"
   },
   {
    "i": 81,
@@ -1608,7 +1628,10 @@
     647
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Borg_sphere",
-   "intro": "The Borg long-range tactical vessel, commonly referred to by the Federation as a Borg sphere, was a sphere-shaped starship used by the Borg Collective during the late 24th century."
+   "intro": "The Borg long-range tactical vessel, commonly referred to by the Federation as a Borg sphere, was a sphere-shaped starship used by the Borg Collective during the late 24th century.",
+   "wd": "Q3493396",
+   "de": "Borg-Sphäre",
+   "desc": "Fictional spacecraft class, named after sphere from Star Trek multiverse and A Singular Destiny"
   },
   {
    "i": 85,
@@ -1871,7 +1894,10 @@
     1371
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/California_class",
-   "intro": "The California class, nicknamed the Cali class, was a type of Federation starship in service during the late 24th century. They were support ships designed for second contact missions. ()"
+   "intro": "The California class, nicknamed the Cali class, was a type of Federation starship in service during the late 24th century. They were support ships designed for second contact missions. ()",
+   "wd": "Q113987021",
+   "de": "California-Klasse",
+   "desc": "class of fictional spacecraft"
   },
   {
    "i": 100,
@@ -2161,7 +2187,8 @@
     873
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Cheyenne_class",
-   "intro": "The Cheyenne class was a type of starship in service with Starfleet during the late 24th century."
+   "intro": "The Cheyenne class was a type of starship in service with Starfleet during the late 24th century.",
+   "wd": "Q11307609"
   },
   {
    "i": 116,
@@ -2478,7 +2505,11 @@
     1188,
     1222,
     1239
-   ]
+   ],
+   "wd": "Q3265302",
+   "de": "Constitution-Klasse",
+   "desc": "class of fictional spacecraft",
+   "ma": "https://memory-alpha.fandom.com/wiki/Constitution_class"
   },
   {
    "i": 130,
@@ -2502,7 +2533,11 @@
    "ships": [
     1020,
     1022
-   ]
+   ],
+   "wd": "Q3265302",
+   "de": "Constitution-Klasse",
+   "desc": "class of fictional spacecraft",
+   "ma": "https://memory-alpha.fandom.com/wiki/Constitution_class"
   },
   {
    "i": 131,
@@ -2587,7 +2622,9 @@
     1025
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Constitution_III_class",
-   "intro": "The Constitution III class, also known as the Neo-Constitution class, was a Federation starship that served as an exploration vessel and was operated by Starfleet during the 24th and 25th centuries. (; )"
+   "intro": "The Constitution III class, also known as the Neo-Constitution class, was a Federation starship that served as an exploration vessel and was operated by Starfleet during the 24th and 25th centuries. (; )",
+   "wd": "Q129920865",
+   "desc": "class of fictional spacecraft"
   },
   {
    "i": 134,
@@ -2756,7 +2793,9 @@
     1074
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Crossfield_class",
-   "intro": "The Crossfield class was a type of Federation starship in service during the mid-23rd century. Though officially designated as a science vessel, during the the class was re-classified as a warship. ()"
+   "intro": "The Crossfield class was a type of Federation starship in service during the mid-23rd century. Though officially designated as a science vessel, during the the class was re-classified as a warship. ()",
+   "wd": "Q63136559",
+   "desc": "fictional spaceship class"
   },
   {
    "i": 144,
@@ -2850,7 +2889,9 @@
     838
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/D%27deridex_class",
-   "intro": "The D'deridex class, alternately known as the B-type warbird, or warbird class starship, was one of the largest and most powerful mainstays of the Romulan Star Empire. It served as the backbone of the Romulan fleet during the latter half of the 24th century."
+   "intro": "The D'deridex class, alternately known as the B-type warbird, or warbird class starship, was one of the largest and most powerful mainstays of the Romulan Star Empire. It served as the backbone of the Romulan fleet during the latter half of the 24th century.",
+   "wd": "Q11320271",
+   "desc": "fictional alien spacecraft"
   },
   {
    "i": 148,
@@ -3076,7 +3117,9 @@
    ],
    "ships": [],
    "ma": "https://memory-alpha.fandom.com/wiki/D7_class",
-   "intro": "The D7 class cruiser was a 23rd century warship originally designed and used by the Klingon Imperial Fleet, before being used by the Romulan military during the late 2260s."
+   "intro": "The D7 class cruiser was a 23rd century warship originally designed and used by the Klingon Imperial Fleet, before being used by the Romulan military during the late 2260s.",
+   "wd": "Q11298740",
+   "desc": "fictional alien spaceship class"
   },
   {
    "i": 156,
@@ -3091,7 +3134,10 @@
    "aff": [
     "Klingon Empire"
    ],
-   "ships": []
+   "ships": [],
+   "wd": "Q11298740",
+   "desc": "fictional alien spaceship class",
+   "ma": "https://memory-alpha.fandom.com/wiki/D7_class"
   },
   {
    "i": 157,
@@ -3112,7 +3158,9 @@
     1106
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Daedalus_class",
-   "intro": "The Daedalus-class was an early class of Starfleet vessel that, unlike most Federation starship designs, was designed with a spherical primary hull, outwardly similar to the later . This class, which operated with a crew of approximately 229, had a unique subspace distress call among starship classes. ()"
+   "intro": "The Daedalus-class was an early class of Starfleet vessel that, unlike most Federation starship designs, was designed with a spherical primary hull, outwardly similar to the later . This class, which operated with a crew of approximately 229, had a unique subspace distress call among starship classes. ()",
+   "wd": "Q3553329",
+   "desc": "fictional class of ships in the Stargate universe"
   },
   {
    "i": 158,
@@ -3152,7 +3200,9 @@
     1394
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Danube_class",
-   "intro": "The Danube-class, also known as Runabout-class, was a type of Federation runabout in operation during the latter half of the 24th century."
+   "intro": "The Danube-class, also known as Runabout-class, was a type of Federation runabout in operation during the latter half of the 24th century.",
+   "wd": "Q3487258",
+   "desc": "Starship class in Star Trek"
   },
   {
    "i": 159,
@@ -3233,7 +3283,10 @@
     1343
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Defiant_class",
-   "intro": "The Defiant-class warship, officially an escort vessel, began development in 2366 as a small, highly powered, heavily armed warship intended to defend the against the Borg. The was the prototype of what was to be a new Federation battle fleet. However, the ship had numerous design problems that were made apparent during its shakedown cruise. These flaws, combined with the decreased urgency of the Borg threat, caused Starfleet to table its plans for a battle fleet and put the Defiant in storage. ()"
+   "intro": "The Defiant-class warship, officially an escort vessel, began development in 2366 as a small, highly powered, heavily armed warship intended to defend the against the Borg. The was the prototype of what was to be a new Federation battle fleet. However, the ship had numerous design problems that were made apparent during its shakedown cruise. These flaws, combined with the decreased urgency of the Borg threat, caused Starfleet to table its plans for a battle fleet and put the Defiant in storage. ()",
+   "wd": "Q3274400",
+   "de": "Defiant-Klasse",
+   "desc": "fictional spacecraft class"
   },
   {
    "i": 162,
@@ -3493,7 +3546,8 @@
     1353
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Dreadnought_class",
-   "intro": "The Dreadnought-class was an experimental class of dreadnought warship designed by Section 31 of Starfleet with the help of . The only known vessel of this class, the , was launched from a secret facility orbiting Io in 2259. ()"
+   "intro": "The Dreadnought-class was an experimental class of dreadnought warship designed by Section 31 of Starfleet with the help of . The only known vessel of this class, the , was launched from a secret facility orbiting Io in 2259. ()",
+   "wd": "Q24900506"
   },
   {
    "i": 180,
@@ -3596,7 +3650,9 @@
     655
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/DY-100_class",
-   "intro": "The DY-100 class was an early design of Earth pre-warp vessels that were in operation during the late 20th century."
+   "intro": "The DY-100 class was an early design of Earth pre-warp vessels that were in operation during the late 20th century.",
+   "wd": "Q47462178",
+   "desc": "fictional spacecraft class"
   },
   {
    "i": 186,
@@ -3968,7 +4024,9 @@
     1348
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Excelsior_class",
-   "intro": "The Excelsior-class was a type of Federation starship used by Starfleet between the late 23rd and late 24th centuries. It was the backbone of Starfleet for over a century, making it one of the fleet's longest-serving and most recognizable starship designs."
+   "intro": "The Excelsior-class was a type of Federation starship used by Starfleet between the late 23rd and late 24th centuries. It was the backbone of Starfleet for over a century, making it one of the fleet's longest-serving and most recognizable starship designs.",
+   "wd": "Q3274411",
+   "desc": "fictional spacecraft type in the Star Trek multiverse"
   },
   {
    "i": 208,
@@ -4376,7 +4434,10 @@
     1052
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Freedom_class_%2824th_century%29",
-   "intro": "The Freedom class was a small starship design operated by Starfleet in the mid-22nd century. After the formation of the in 2161, the Freedom-class cruiser was in the ."
+   "intro": "The Freedom class was a small starship design operated by Starfleet in the mid-22nd century. After the formation of the in 2161, the Freedom-class cruiser was in the .",
+   "wd": "Q11333846",
+   "de": "Freedom-Klasse",
+   "desc": "fictional spacecraft class from Star Trek"
   },
   {
    "i": 230,
@@ -4505,7 +4566,11 @@
     1378
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Galaxy_class",
-   "intro": "The Galaxy-class was a Starfleet heavy capital ship class first introduced in the mid 2360s. It was one of the largest and most powerful Federation starship classes of its time, with many serving in the Dominion War. Starfleet had previously operated another type of starship in the 2250s. ()"
+   "intro": "The Galaxy-class was a Starfleet heavy capital ship class first introduced in the mid 2360s. It was one of the largest and most powerful Federation starship classes of its time, with many serving in the Dominion War. Starfleet had previously operated another type of starship in the 2250s. ()",
+   "wd": "Q3274408",
+   "de": "Galaxy-Klasse",
+   "desc": "fiktive Raumschiffsklasse",
+   "img": "img0"
   },
   {
    "i": 236,
@@ -4515,7 +4580,12 @@
    "aff": [
     "United Federation of Planets"
    ],
-   "ships": []
+   "ships": [],
+   "wd": "Q3274408",
+   "de": "Galaxy-Klasse",
+   "desc": "fiktive Raumschiffsklasse",
+   "ma": "https://memory-alpha.fandom.com/wiki/Galaxy_class",
+   "img": "img0"
   },
   {
    "i": 237,
@@ -4586,7 +4656,8 @@
     1409
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Galor_class",
-   "intro": "Galor-class cruisers were the primary class of warship used by the Cardassian military during the latter half of the 24th century."
+   "intro": "Galor-class cruisers were the primary class of warship used by the Cardassian military during the latter half of the 24th century.",
+   "wd": "Q11296338"
   },
   {
    "i": 240,
@@ -5165,7 +5236,11 @@
    ],
    "ships": [
     1362
-   ]
+   ],
+   "wd": "Q3153734",
+   "de": "Intrepid-Klasse",
+   "desc": "fictional spacecraft class in the Star Trek universe",
+   "ma": "https://memory-alpha.fandom.com/wiki/Intrepid_class"
   },
   {
    "i": 272,
@@ -6632,7 +6707,9 @@
     1327
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Luna_class",
-   "intro": "The Luna-class was a type of Federation starship operated by Starfleet during the late 24th century."
+   "intro": "The Luna-class was a type of Federation starship operated by Starfleet during the late 24th century.",
+   "wd": "Q11349002",
+   "desc": "Fictional spacecraft class from the Star Trek universe"
   },
   {
    "i": 356,
@@ -6948,7 +7025,10 @@
    ],
    "ships": [],
    "ma": "https://memory-alpha.fandom.com/wiki/Mars_class",
-   "intro": "The Mars class was a type of Federation starship operated by Starfleet during the 32nd century into the 33rd century. It featured a diamond-shaped primary hull, with detached chevron-shaped nacelles each to the lower port and starboard."
+   "intro": "The Mars class was a type of Federation starship operated by Starfleet during the 32nd century into the 33rd century. It featured a diamond-shaped primary hull, with detached chevron-shaped nacelles each to the lower port and starboard.",
+   "wd": "Q66370813",
+   "de": "Mars",
+   "desc": "fiktionale Version des Planeten Mars in Star Trek"
   },
   {
    "i": 376,
@@ -7177,7 +7257,10 @@
     1329
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Miranda_class",
-   "intro": "The Miranda-class starship was a type of Federation starship operated by Starfleet during the 23rd and the 24th century."
+   "intro": "The Miranda-class starship was a type of Federation starship operated by Starfleet during the 23rd and the 24th century.",
+   "wd": "Q3274629",
+   "de": "Miranda-Klasse",
+   "desc": "Fictional spacecraft class from the Star Trek multiverse"
   },
   {
    "i": 390,
@@ -7431,7 +7514,9 @@
     1312
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Nebula_class",
-   "intro": "The Nebula class was a type of Federation starship that was in service in Starfleet during the second half of the 24th century."
+   "intro": "The Nebula class was a type of Federation starship that was in service in Starfleet during the second half of the 24th century.",
+   "wd": "Q3508514",
+   "desc": "fictional spaceship class"
   },
   {
    "i": 405,
@@ -7511,7 +7596,8 @@
     1315
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/New_Orleans_class",
-   "intro": "The New Orleans-class frigate was a Federation starship class that was in service during the mid-24th century. ()"
+   "intro": "The New Orleans-class frigate was a Federation starship class that was in service during the mid-24th century. ()",
+   "wd": "Q24898239"
   },
   {
    "i": 409,
@@ -7655,7 +7741,10 @@
     1251
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Nova_class",
-   "intro": "The Nova class was a type of Federation starship designed for short-term planetary research missions. It was placed in service starting in the late 24th century."
+   "intro": "The Nova class was a type of Federation starship designed for short-term planetary research missions. It was placed in service starting in the late 24th century.",
+   "wd": "Q53710092",
+   "de": "Nova-Klasse",
+   "desc": "fictional spaceship type"
   },
   {
    "i": 417,
@@ -7711,7 +7800,10 @@
     350
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/NX_class",
-   "intro": "The NX-class was a type of United Earth starship in Starfleet service during the mid-22nd century. The class is notable for having been the first to be constructed with the warp five engine, allowing Humanity to explore beyond neighboring star systems. The lead ship of the class, , was launched in 2151, weeks ahead of schedule, while the second, , was launched in 2154, after lengthy delays in drydock. ()"
+   "intro": "The NX-class was a type of United Earth starship in Starfleet service during the mid-22nd century. The class is notable for having been the first to be constructed with the warp five engine, allowing Humanity to explore beyond neighboring star systems. The lead ship of the class, , was launched in 2151, weeks ahead of schedule, while the second, , was launched in 2154, after lengthy delays in drydock. ()",
+   "wd": "Q13403594",
+   "de": "NX-Klasse",
+   "desc": "Fictional spacecraft class from the Star Trek multiverse"
   },
   {
    "i": 420,
@@ -7829,7 +7921,8 @@
     1393
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Oberth_class",
-   "intro": "The Oberth class was a small Federation starship used primarily by Starfleet and civilian scientists alike, as a scout class and science vessel, from the late-23rd to the late-24th century."
+   "intro": "The Oberth class was a small Federation starship used primarily by Starfleet and civilian scientists alike, as a scout class and science vessel, from the late-23rd to the late-24th century.",
+   "wd": "Q841052"
   },
   {
    "i": 427,
@@ -7905,7 +7998,10 @@
     1235
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Olympic_class",
-   "intro": "The Olympic class was a class of starship in service with Starfleet during the late 24th century."
+   "intro": "The Olympic class was a class of starship in service with Starfleet during the late 24th century.",
+   "wd": "Q17232008",
+   "de": "Olympic-Klasse",
+   "desc": "fictional spaceship type"
   },
   {
    "i": 430,
@@ -8201,7 +8297,10 @@
     1051
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Pax_class",
-   "intro": "The Pax class was a class of Federation starship that could also be configured as a space station operated by Starfleet during the 32nd century and into the 33rd century. It featured a central trunk, that could also blossom outward in a series of spiral arms."
+   "intro": "The Pax class was a class of Federation starship that could also be configured as a space station operated by Starfleet during the 32nd century and into the 33rd century. It featured a central trunk, that could also blossom outward in a series of spiral arms.",
+   "wd": "Q69841809",
+   "de": "Devon MacDonald",
+   "desc": "Schauspielerin"
   },
   {
    "i": 450,
@@ -8290,7 +8389,9 @@
     661
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Phoenix_class",
-   "intro": "The Phoenix warp ship was the first man-made, manned spacecraft to achieve light speed using warp drive. Constructed during the mid-21st century and launched in 2063, the Phoenix was remembered as the ship that instigated Earth's First Contact with Vulcans."
+   "intro": "The Phoenix warp ship was the first man-made, manned spacecraft to achieve light speed using warp drive. Constructed during the mid-21st century and launched in 2063, the Phoenix was remembered as the ship that instigated Earth's First Contact with Vulcans.",
+   "wd": "Q3492749",
+   "desc": "fictional interstellar spacecraft in the Star Trek multiverse"
   },
   {
    "i": 455,
@@ -8421,7 +8522,10 @@
     1227
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Prometheus_class",
-   "intro": "The Prometheus class was a highly classified Federation starship designed for deep space tactical assignments. It was one of the most advanced Starfleet vessels in operation during the later half of the 24th century, as well as later use in the 25th century, and in an alternate timeline of the 26th century."
+   "intro": "The Prometheus class was a highly classified Federation starship designed for deep space tactical assignments. It was one of the most advanced Starfleet vessels in operation during the later half of the 24th century, as well as later use in the 25th century, and in an alternate timeline of the 26th century.",
+   "wd": "Q106998226",
+   "de": "Prometheus-Klasse",
+   "desc": "Fictional spacecraft class"
   },
   {
    "i": 462,
@@ -8855,7 +8959,8 @@
     901
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Renaissance_class",
-   "intro": "The Renaissance class was a class of Federation starship that was in service with Starfleet during the 24th century."
+   "intro": "The Renaissance class was a class of Federation starship that was in service with Starfleet during the 24th century.",
+   "wd": "Q11349011"
   },
   {
    "i": 487,
@@ -9041,7 +9146,10 @@
    "aff": [
     "Romulan Star Empire"
    ],
-   "ships": []
+   "ships": [],
+   "wd": "Q85290048",
+   "desc": "fictional type of starship",
+   "ma": "https://memory-alpha.fandom.com/wiki/Romulan_Bird-of-Prey"
   },
   {
    "i": 499,
@@ -9326,7 +9434,9 @@
     1383
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Saber_class",
-   "intro": "The Saber class was a class of Federation starship that was in service with Starfleet by the early 2370s."
+   "intro": "The Saber class was a class of Federation starship that was in service with Starfleet by the early 2370s.",
+   "wd": "Q56150947",
+   "desc": "Class of fictional starship in Star Trek"
   },
   {
    "i": 515,
@@ -9867,7 +9977,10 @@
     1368
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Sovereign_class",
-   "intro": "The Sovereign-class starship was introduced in the late 24th century, showcasing some of Starfleet's most recent technological advances."
+   "intro": "The Sovereign-class starship was introduced in the late 24th century, showcasing some of Starfleet's most recent technological advances.",
+   "wd": "Q2393368",
+   "de": "Sovereign-Klasse",
+   "desc": "Raumschiffsklasse im Star-Trek-Universum"
   },
   {
    "i": 544,
@@ -10232,7 +10345,8 @@
    "sp": "Vulcan",
    "ships": [],
    "ma": "https://memory-alpha.fandom.com/wiki/Surak_class",
-   "intro": "The Surak-class was a type of Vulcan starship used by the High Command during the mid-22nd century."
+   "intro": "The Surak-class was a type of Vulcan starship used by the High Command during the mid-22nd century.",
+   "wd": "Q11313354"
   },
   {
    "i": 569,
@@ -11690,7 +11804,8 @@
     1402
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Valdore_type",
-   "intro": "The Valdore type was a Romulan warbird design active in the 24th century."
+   "intro": "The Valdore type was a Romulan warbird design active in the 24th century.",
+   "wd": "Q11351914"
   },
   {
    "i": 658,
@@ -11862,7 +11977,8 @@
    ],
    "ships": [],
    "ma": "https://memory-alpha.fandom.com/wiki/Vor%27cha_class",
-   "intro": "The Vor'cha-class attack cruiser was one of the largest and most powerful mainstays of the Klingon Defense Forces during the mid- to late-24th century."
+   "intro": "The Vor'cha-class attack cruiser was one of the largest and most powerful mainstays of the Klingon Defense Forces during the mid- to late-24th century.",
+   "wd": "Q11352202"
   },
   {
    "i": 669,
@@ -11995,7 +12111,9 @@
     1283
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Walker_class",
-   "intro": "The Walker class was a type of Federation starship in service during the mid-23rd century."
+   "intro": "The Walker class was a type of Federation starship in service during the mid-23rd century.",
+   "wd": "Q56841651",
+   "desc": "fictional type of spaceship"
   },
   {
    "i": 677,
@@ -12079,7 +12197,8 @@
     1241
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Wells_class",
-   "intro": "The Wells class was a timeship used by Starfleet in the 29th century to protect the timeline against temporal incursions."
+   "intro": "The Wells class was a timeship used by Starfleet in the 29th century to protect the timeline against temporal incursions.",
+   "wd": "Q11288594"
   },
   {
    "i": 682,
@@ -14153,7 +14272,9 @@
    "ships": [],
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Scimitar",
-   "intro": "The Scimitar was a massive, heavily-armed Reman warbird. It was constructed under the command of Shinzon as part of a secret plot to overthrow the Romulan Senate, defeat the United Federation of Planets, and liberate the subjugated natives of Remus."
+   "intro": "The Scimitar was a massive, heavily-armed Reman warbird. It was constructed under the command of Shinzon as part of a secret plot to overthrow the Romulan Senate, defeat the United Federation of Planets, and liberate the subjugated natives of Remus.",
+   "wd": "Q83487211",
+   "desc": "fictional spaceship"
   },
   {
    "i": 814,
@@ -14253,7 +14374,11 @@
    "ships": [],
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Shuttlecraft",
-   "intro": "In starship classification, a shuttlecraft, shuttle, or glider was a type of auxiliary space vessel typically attached to a starship or a starbase. Most shuttles were short-range transports, possessing only impulse drive or a limited warp capability. Utilization of shuttlecraft was common for most spacefaring civilizations, and along with the transporter, were two of the more common conventional modes of transportation to and from one place to another. () Shuttles were generally used for landings when transporters were inoperable, or not yet within the technological capabilities of a species. At times shuttlecraft were used by individuals who preferred not to use transporters or were unable "
+   "intro": "In starship classification, a shuttlecraft, shuttle, or glider was a type of auxiliary space vessel typically attached to a starship or a starbase. Most shuttles were short-range transports, possessing only impulse drive or a limited warp capability. Utilization of shuttlecraft was common for most spacefaring civilizations, and along with the transporter, were two of the more common conventional modes of transportation to and from one place to another. () Shuttles were generally used for landings when transporters were inoperable, or not yet within the technological capabilities of a species. At times shuttlecraft were used by individuals who preferred not to use transporters or were unable ",
+   "wd": "Q600142",
+   "de": "Shuttle",
+   "desc": "fictional spacecraft class",
+   "img": "img1"
   },
   {
    "i": 821,
@@ -14884,7 +15009,9 @@
    "ships": [],
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Yonada",
-   "intro": "Yonada was a ten thousand-year-old asteroid ship, built by the Fabrini when they realized that their home sun was about to go supernova and completely destroy their solar system. Yonada was constructed to look like an asteroid and was sent on a computer-controlled course to a habitable colony world. The ship measured two hundred miles (320 kilometers) in diameter. Chemically, it was a typical asteroid; however, it was self-propelled by atomic power and could correct for gravitational stresses. The engines left behind a trail of debris and hard radiation. The ship could defend itself with chemically-fueled missiles."
+   "intro": "Yonada was a ten thousand-year-old asteroid ship, built by the Fabrini when they realized that their home sun was about to go supernova and completely destroy their solar system. Yonada was constructed to look like an asteroid and was sent on a computer-controlled course to a habitable colony world. The ship measured two hundred miles (320 kilometers) in diameter. Chemically, it was a typical asteroid; however, it was self-propelled by atomic power and could correct for gravitational stresses. The engines left behind a trail of debris and hard radiation. The ship could defend itself with chemically-fueled missiles.",
+   "wd": "Q49677472",
+   "desc": "fictional astronomic object"
   }
  ],
  "ships": [
@@ -14996,7 +15123,10 @@
    "uid": "SRMA0000009476",
    "n": "Aldebaran III",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q61292200",
+   "desc": "fictional planet in the Star Trek universe",
+   "ma": "https://memory-alpha.fandom.com/wiki/Aldebaran_III"
   },
   {
    "i": 10,
@@ -15050,7 +15180,9 @@
    "c": -1,
    "f": "none",
    "ma": "https://memory-alpha.fandom.com/wiki/Amargosa_observatory",
-   "intro": "The Amargosa observatory was a Federation K-7D space station operated by Starfleet in the late 24th century. The observatory was located in orbit of the star Amargosa and was used for scientific research regarding the star. Its coordinates were 917358-358268-102879."
+   "intro": "The Amargosa observatory was a Federation K-7D space station operated by Starfleet in the late 24th century. The observatory was located in orbit of the star Amargosa and was used for scientific research regarding the star. Its coordinates were 917358-358268-102879.",
+   "wd": "Q85106882",
+   "desc": "fictional space station"
   },
   {
    "i": 15,
@@ -15083,7 +15215,10 @@
    "c": 30,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/Antares",
-   "intro": "The Antares (NCC-501) was a 23rd century Federation starship operated by Starfleet."
+   "intro": "The Antares (NCC-501) was a 23rd century Federation starship operated by Starfleet.",
+   "wd": "Q17189693",
+   "de": "Antares",
+   "desc": "fictional spaceship"
   },
   {
    "i": 18,
@@ -15161,7 +15296,8 @@
    "f": "earth",
    "aff": "International Space Agency",
    "ma": "https://memory-alpha.fandom.com/wiki/Ares_IV",
-   "intro": "Ares IV was an Earth spacecraft used during one of Humanity's early manned missions to Mars, which took place in 2032 under the command of Lieutenant John Kelly. The other members of the crew were Rose Kumagawa and Andrei Novakovich."
+   "intro": "Ares IV was an Earth spacecraft used during one of Humanity's early manned missions to Mars, which took place in 2032 under the command of Lieutenant John Kelly. The other members of the crew were Rose Kumagawa and Andrei Novakovich.",
+   "wd": "Q24863011"
   },
   {
    "i": 25,
@@ -15228,7 +15364,9 @@
    "f": "borg",
    "aff": "Borg Collective",
    "ma": "https://memory-alpha.fandom.com/wiki/Artifact_%28Borg_cube%29",
-   "intro": "The Artifact was a disabled Borg cube that was abandoned in Romulan space by the Borg Collective during the late 24th century and later captured by the Romulan Free State."
+   "intro": "The Artifact was a disabled Borg cube that was abandoned in Romulan space by the Borg Collective during the late 24th century and later captured by the Romulan Free State.",
+   "wd": "Q84086502",
+   "desc": "fictional alien spacecraft"
   },
   {
    "i": 31,
@@ -15315,7 +15453,10 @@
    "c": -1,
    "f": "none",
    "ma": "https://memory-alpha.fandom.com/wiki/Automated_repair_station",
-   "intro": "The automated repair station was an automated alien space station operational in the 22nd century which repaired vessels for payment. The civilization that built the station was not widely known during this time."
+   "intro": "The automated repair station was an automated alien space station operational in the 22nd century which repaired vessels for payment. The civilization that built the station was not widely known during this time.",
+   "wd": "Q96746067",
+   "de": "Automatische Reparaturstation",
+   "desc": "fictional space station in Star Trek"
   },
   {
    "i": 39,
@@ -15411,7 +15552,11 @@
    "uid": "SRMA0000008785",
    "n": "Barradas III",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q57032347",
+   "de": "Barradas III",
+   "desc": "fiktiver Planet",
+   "ma": "https://memory-alpha.fandom.com/wiki/Barradas_III"
   },
   {
    "i": 48,
@@ -15494,7 +15639,11 @@
    "uid": "SRMA0000011024",
    "n": "Berengaria VII",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q57033620",
+   "de": "Berengaria VII",
+   "desc": "fiktiver Planet",
+   "ma": "https://memory-alpha.fandom.com/wiki/Berengaria_VII"
   },
   {
    "i": 56,
@@ -15512,7 +15661,10 @@
    "uid": "SRMA0000023379",
    "n": "Bersallis III",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q108199292",
+   "desc": "fictional planet in the Star Trek multiverse",
+   "ma": "https://memory-alpha.fandom.com/wiki/Bersallis_III"
   },
   {
    "i": 58,
@@ -15633,7 +15785,11 @@
    "uid": "SRMA0000008831",
    "n": "Calder II",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q57032355",
+   "de": "Calder II",
+   "desc": "fiktiver Planet",
+   "ma": "https://memory-alpha.fandom.com/wiki/Calder_II"
   },
   {
    "i": 70,
@@ -15727,7 +15883,12 @@
    "uid": "SRMA0000249081",
    "n": "Cestus III",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q49263188",
+   "de": "Cestus III",
+   "desc": "fictional planet",
+   "ma": "https://memory-alpha.fandom.com/wiki/Cestus_III",
+   "img": "img2"
   },
   {
    "i": 80,
@@ -15975,7 +16136,10 @@
    "own": "United Earth",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/Columbia",
-   "intro": "Columbia (NX-02) was the second United Earth starship that was in service to Starfleet in the latter half of the 22nd century. Columbia was the second ship outfitted with a warp five engine."
+   "intro": "Columbia (NX-02) was the second United Earth starship that was in service to Starfleet in the latter half of the 22nd century. Columbia was the second ship outfitted with a warp five engine.",
+   "wd": "Q5778052",
+   "de": "Columbia",
+   "desc": "Fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 103,
@@ -16621,7 +16785,11 @@
    "own": "Bajoran Republic",
    "op": "Bajoran Militia",
    "ma": "https://memory-alpha.fandom.com/wiki/Deep_Space_9",
-   "intro": "Deep Space 9, abbreviated as DS9, and originally known as Terok Nor, was one of the most historically, politically, and strategically important space stations in the Alpha Quadrant during the latter half of the 24th century. The space station was constructed by Bajoran slave labor overseen by the Cardassians in orbit of Bajor during their occupation of the planet. Under Federation administration following the Cardassian withdrawal, the station was relocated into the Bajoran system's Denorios belt. There, DS9 became a vital commercial port and defensive outpost due to its location near the mouth of the Bajoran wormhole. It later became a key strategic location during the Dominion War for both"
+   "intro": "Deep Space 9, abbreviated as DS9, and originally known as Terok Nor, was one of the most historically, politically, and strategically important space stations in the Alpha Quadrant during the latter half of the 24th century. The space station was constructed by Bajoran slave labor overseen by the Cardassians in orbit of Bajor during their occupation of the planet. Under Federation administration following the Cardassian withdrawal, the station was relocated into the Bajoran system's Denorios belt. There, DS9 became a vital commercial port and defensive outpost due to its location near the mouth of the Bajoran wormhole. It later became a key strategic location during the Dominion War for both",
+   "wd": "Q222929",
+   "de": "Deep Space Nine",
+   "desc": "fiktive Raumstation, Handlungsort von Star Trek: Deep Space Nine",
+   "img": "img3"
   },
   {
    "i": 159,
@@ -16671,7 +16839,9 @@
    "f": "federation",
    "aff": "United Federation of Planets",
    "ma": "https://memory-alpha.fandom.com/wiki/Deep_Space_Station_K-7",
-   "intro": "Deep Space Station K-7, also called Deep Space K-7, Space Station K-7 or simply K-7, was a Federation deep space station in operation from the mid-23rd century to the early 25th century. The station was constructed by Starfleet and administered by a civilian staff. In 2268, Mister Lurry was the station manager of this facility. ()"
+   "intro": "Deep Space Station K-7, also called Deep Space K-7, Space Station K-7 or simply K-7, was a Federation deep space station in operation from the mid-23rd century to the early 25th century. The station was constructed by Starfleet and administered by a civilian staff. In 2268, Mister Lurry was the station manager of this facility. ()",
+   "wd": "Q58283936",
+   "desc": "Fictional space station"
   },
   {
    "i": 164,
@@ -16696,7 +16866,9 @@
    "c": 164,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/Delta_Flyer_%282375%29",
-   "intro": "The Delta Flyer was a specially designed Starfleet shuttlecraft constructed by the crew of the in the Delta Quadrant in 2375. The vessel was designed to handle environments that would be too hazardous for a standard shuttlecraft and to be slightly larger than the average shuttle, the crew having acknowledged that standard shuttles were of little use in the increasingly hostile and unexplored Delta Quadrant. The vessel was a blend of Starfleet and Borg technology, designed in collaboration between B'Elanna Torres, Tom Paris, Tuvok, Harry Kim, and Seven of Nine. It was conceived as incorporating a tetraburnium alloy hull with ultra-aerodynamic contours, retractable warp nacelles, parametallic "
+   "intro": "The Delta Flyer was a specially designed Starfleet shuttlecraft constructed by the crew of the in the Delta Quadrant in 2375. The vessel was designed to handle environments that would be too hazardous for a standard shuttlecraft and to be slightly larger than the average shuttle, the crew having acknowledged that standard shuttles were of little use in the increasingly hostile and unexplored Delta Quadrant. The vessel was a blend of Starfleet and Borg technology, designed in collaboration between B'Elanna Torres, Tom Paris, Tuvok, Harry Kim, and Seven of Nine. It was conceived as incorporating a tetraburnium alloy hull with ultra-aerodynamic contours, retractable warp nacelles, parametallic ",
+   "wd": "Q4387918",
+   "desc": "Fictional spacecraft and Starfleet ship from Star Trek multiverse, Star Trek: Voyager, and Over a Torrent Sea"
   },
   {
    "i": 167,
@@ -17216,7 +17388,9 @@
    "f": "earth",
    "op": "Earth Cargo Service",
    "ma": "https://memory-alpha.fandom.com/wiki/ECS_Horizon",
-   "intro": "The ECS Horizon was a freighter commissioned in 2102 in the Earth Cargo Service. By 2152, the Horizon was under the command of Captain Paul Mayweather."
+   "intro": "The ECS Horizon was a freighter commissioned in 2102 in the Earth Cargo Service. By 2152, the Horizon was under the command of Captain Paul Mayweather.",
+   "wd": "Q97446072",
+   "desc": "Fictional spacecraft from the Star Trek multiverse"
   },
   {
    "i": 216,
@@ -17338,7 +17512,10 @@
    "f": "cardassian",
    "aff": "Cardassian Union",
    "ma": "https://memory-alpha.fandom.com/wiki/Empok_Nor",
-   "intro": "Empok Nor was a Cardassian space station in the Trivas system, Alpha Quadrant. This station was almost identical to Terok Nor (later known as Deep Space 9), which was no more than three light years away from its sister station."
+   "intro": "Empok Nor was a Cardassian space station in the Trivas system, Alpha Quadrant. This station was almost identical to Terok Nor (later known as Deep Space 9), which was no more than three light years away from its sister station.",
+   "wd": "Q3724837",
+   "de": "Empok Nor",
+   "desc": "fiktive Raumstation"
   },
   {
    "i": 227,
@@ -17366,7 +17543,10 @@
    "op": "Military Assault Command Operations",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/Enterprise_%28NX-01%29",
-   "intro": "One of the most important starships in interstellar history, Enterprise (NX-01), later redesignated the USS Enterprise, was the culmination of the NX Project. The NX-01 was the first starship, launched by the United Earth Starfleet in 2151. ()"
+   "intro": "One of the most important starships in interstellar history, Enterprise (NX-01), later redesignated the USS Enterprise, was the culmination of the NX Project. The NX-01 was the first starship, launched by the United Earth Starfleet in 2151. ()",
+   "wd": "Q20074",
+   "de": "Enterprise",
+   "desc": "fiktives interstellares Raumschiff"
   },
   {
    "i": 229,
@@ -17478,7 +17658,9 @@
    "c": -1,
    "f": "none",
    "ma": "https://memory-alpha.fandom.com/wiki/Epsilon_IX_station",
-   "intro": "The Epsilon IX station was a 23rd century Federation outpost and comm station operated by Starfleet. Located in the Beta Quadrant, this space station, in Federation space, was in the Epsilon IX sector. This station was protected by deflector shields."
+   "intro": "The Epsilon IX station was a 23rd century Federation outpost and comm station operated by Starfleet. Located in the Beta Quadrant, this space station, in Federation space, was in the Epsilon IX sector. This station was protected by deflector shields.",
+   "wd": "Q85415599",
+   "desc": "fictional space station"
   },
   {
    "i": 238,
@@ -17855,7 +18037,10 @@
    "uid": "SRMA0000015579",
    "n": "Gagarin IV",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q108199377",
+   "desc": "fictional planet in the Star Trek multiverse",
+   "ma": "https://memory-alpha.fandom.com/wiki/Gagarin_IV"
   },
   {
    "i": 276,
@@ -18527,7 +18712,10 @@
    "f": "earth",
    "own": "United Earth",
    "ma": "https://memory-alpha.fandom.com/wiki/Intrepid",
-   "intro": "The Intrepid was an United Earth starship that was in service with Starfleet in the mid-22nd century. The ship's motto was \"In Mare In Cælo\" (\"Into the Sea In the Sky\")."
+   "intro": "The Intrepid was an United Earth starship that was in service with Starfleet in the mid-22nd century. The ship's motto was \"In Mare In Cælo\" (\"Into the Sea In the Sky\").",
+   "wd": "Q3153734",
+   "de": "Intrepid-Klasse",
+   "desc": "fictional spacecraft class in the Star Trek universe"
   },
   {
    "i": 340,
@@ -18552,7 +18740,9 @@
    "own": "Romulan Star Empire",
    "op": "Romulan military",
    "ma": "https://memory-alpha.fandom.com/wiki/IRW_Khazara",
-   "intro": "The Imperial Romulan Warbird Khazara was a Romulan warbird that was in service with the Romulan military during the mid-24th century."
+   "intro": "The Imperial Romulan Warbird Khazara was a Romulan warbird that was in service with the Romulan military during the mid-24th century.",
+   "wd": "Q96313352",
+   "desc": "Fictional Romulan spaceship from Star Trek"
   },
   {
    "i": 342,
@@ -18674,7 +18864,10 @@
    "own": "Terran Empire",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/ISS_Enterprise_%28NX-01%29",
-   "intro": "The ISS Enterprise (NX-01) was a battle cruiser that was in service to in the mid-22nd century."
+   "intro": "The ISS Enterprise (NX-01) was a battle cruiser that was in service to in the mid-22nd century.",
+   "wd": "Q24855732",
+   "de": "ISS Enterprise",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 351,
@@ -18797,7 +18990,11 @@
    "uid": "SRMA0000162737",
    "n": "Kalandan outpost",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q57034029",
+   "de": "Kalandan Outpost",
+   "desc": "fiktiver Planet",
+   "ma": "https://memory-alpha.fandom.com/wiki/Kalandan_outpost"
   },
   {
    "i": 362,
@@ -18918,7 +19115,10 @@
    "uid": "SRMA0000004610",
    "n": "Khitomer",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q3196184",
+   "desc": "fictional planet in Star Trek",
+   "ma": "https://memory-alpha.fandom.com/wiki/Khitomer"
   },
   {
    "i": 374,
@@ -18951,7 +19151,11 @@
    "c": 126,
    "f": "federation",
    "aff": "United Federation of Planets",
-   "alt": true
+   "alt": true,
+   "wd": "Q47459827",
+   "de": "USS Kobayashi Maru",
+   "desc": "fiktives Raumschiff",
+   "ma": "https://memory-alpha.fandom.com/wiki/Kobayashi_Maru"
   },
   {
    "i": 377,
@@ -19390,7 +19594,11 @@
    "uid": "SRMA0000000683",
    "n": "Mars",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q66370813",
+   "de": "Mars",
+   "desc": "fiktionale Version des Planeten Mars in Star Trek",
+   "ma": "https://memory-alpha.fandom.com/wiki/Mars"
   },
   {
    "i": 420,
@@ -19482,7 +19690,11 @@
    "uid": "SRMA0000000240",
    "n": "Memory Alpha",
    "c": -1,
-   "f": "federation"
+   "f": "federation",
+   "wd": "Q2302286",
+   "de": "Memory Alpha",
+   "desc": "Datenbank in Star Trek",
+   "ma": "https://memory-alpha.fandom.com/wiki/Memory_Alpha"
   },
   {
    "i": 429,
@@ -19680,14 +19892,20 @@
    "f": "romulan",
    "aff": "Romulan Star Empire",
    "ma": "https://memory-alpha.fandom.com/wiki/Narada",
-   "intro": "The Narada was a Romulan mining vessel that was in service in the late 24th century."
+   "intro": "The Narada was a Romulan mining vessel that was in service in the late 24th century.",
+   "wd": "Q96313650",
+   "desc": "fictional spacecraft - Romulan mining vessel"
   },
   {
    "i": 449,
    "uid": "SRMA0000003594",
    "n": "Narendra III",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q57033208",
+   "de": "Narendra III",
+   "desc": "fiktiver Planet aus Star Trek",
+   "ma": "https://memory-alpha.fandom.com/wiki/Narendra_III"
   },
   {
    "i": 450,
@@ -19871,7 +20089,9 @@
    "c": -1,
    "f": "earth",
    "ma": "https://memory-alpha.fandom.com/wiki/Nomad",
-   "intro": "The Nomad MK-15c (NSSDC ID: 2002-045b) space probe was a Nomad Program spacecraft that was in service in the early 21st century. Dr. Jackson Roykirk designed the probe with two goals in mind: to create a probe that could function as a perfect thinking machine capable of independent logic and that could seek out new lifeforms in interstellar space."
+   "intro": "The Nomad MK-15c (NSSDC ID: 2002-045b) space probe was a Nomad Program spacecraft that was in service in the early 21st century. Dr. Jackson Roykirk designed the probe with two goals in mind: to create a probe that could function as a perfect thinking machine capable of independent logic and that could seek out new lifeforms in interstellar space.",
+   "wd": "Q107690156",
+   "desc": "fictional artificial intelligence and fictional spacecraft"
   },
   {
    "i": 467,
@@ -20535,7 +20755,10 @@
    "uid": "SRMA0000282453",
    "n": "Phoenix",
    "c": -1,
-   "f": "earth"
+   "f": "earth",
+   "wd": "Q3492749",
+   "desc": "fictional interstellar spacecraft in the Star Trek multiverse",
+   "ma": "https://memory-alpha.fandom.com/wiki/Phoenix"
   },
   {
    "i": 529,
@@ -21281,7 +21504,10 @@
    "f": "earth",
    "own": "United Earth",
    "ma": "https://memory-alpha.fandom.com/wiki/Sarajevo",
-   "intro": "The Sarajevo (NC-27) was an United Earth transport that was in service in the mid-22nd century."
+   "intro": "The Sarajevo (NC-27) was an United Earth transport that was in service in the mid-22nd century.",
+   "wd": "Q98844587",
+   "de": "Sarajevo",
+   "desc": "fictional Star Trek spacecraft type"
   },
   {
    "i": 596,
@@ -21362,7 +21588,10 @@
    "uid": "SRMA0000000223",
    "n": "Scimitar",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q83487211",
+   "desc": "fictional spaceship",
+   "ma": "https://memory-alpha.fandom.com/wiki/Scimitar"
   },
   {
    "i": 604,
@@ -21480,7 +21709,11 @@
    "uid": "SRMA0000008355",
    "n": "Setlik III",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q57032747",
+   "de": "Setlik III",
+   "desc": "fiktiver Planet aus Star Trek",
+   "ma": "https://memory-alpha.fandom.com/wiki/Setlik_III"
   },
   {
    "i": 615,
@@ -21819,7 +22052,10 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/Spacedock_One",
-   "intro": "Spacedock One was a Federation space station operated by Starfleet from the late 23rd to the early 25th centuries. The prototypical example of a \"spacedock\", it was located in orbit of Earth for most of its service, until it was moved to Athan Prime sometime before 2401."
+   "intro": "Spacedock One was a Federation space station operated by Starfleet from the late 23rd to the early 25th centuries. The prototypical example of a \"spacedock\", it was located in orbit of Earth for most of its service, until it was moved to Athan Prime sometime before 2401.",
+   "wd": "Q30587615",
+   "de": "Raumdock der Erde",
+   "desc": "Fiktive Raumstation in Star Trek"
   },
   {
    "i": 645,
@@ -21941,7 +22177,10 @@
    "c": 185,
    "f": "earth",
    "ma": "https://memory-alpha.fandom.com/wiki/SS_Botany_Bay",
-   "intro": "The SS Botany Bay was a sleeper ship built on Earth in the late 20th century. The Botany Bay was launched from Earth during the Eugenics Wars under the command of Khan Noonien Singh. The Botany Bay was used by a group of genetically-enhanced Humans known as Augments, led by Khan Noonien Singh, in an attempt to escape from Earth after being defeated by non-Augments."
+   "intro": "The SS Botany Bay was a sleeper ship built on Earth in the late 20th century. The Botany Bay was launched from Earth during the Eugenics Wars under the command of Khan Noonien Singh. The Botany Bay was used by a group of genetically-enhanced Humans known as Augments, led by Khan Noonien Singh, in an attempt to escape from Earth after being defeated by non-Augments.",
+   "wd": "Q2254729",
+   "de": "SS Botany Bay",
+   "desc": "Fiktives Raumschiff"
   },
   {
    "i": 656,
@@ -22328,7 +22567,9 @@
    "f": "federation",
    "own": "United Federation of Planets",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_1",
-   "intro": "Starbase 1, abbreviated as SB1, was a Federation space station administered by Starfleet. Located in the Sol system, it was considered to be one of Starfleet's oldest and most venerable installations. ()"
+   "intro": "Starbase 1, abbreviated as SB1, was a Federation space station administered by Starfleet. Located in the Sol system, it was considered to be one of Starfleet's oldest and most venerable installations. ()",
+   "wd": "Q58424542",
+   "desc": "fictional space station"
   },
   {
    "i": 691,
@@ -22338,7 +22579,10 @@
    "d": "3190",
    "c": -1,
    "f": "federation",
-   "own": "United Federation of Planets"
+   "own": "United Federation of Planets",
+   "wd": "Q58424542",
+   "desc": "fictional space station",
+   "ma": "https://memory-alpha.fandom.com/wiki/Starbase_1"
   },
   {
    "i": 692,
@@ -22383,7 +22627,10 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_11",
-   "intro": "Starbase 11, abbreviated as SB11, was a Federation starbase administered by Starfleet. This starbase, located on planet M-11, was in the Alpha Quadrant. The base had repair and maintenance facilities for starships and at least some facilities were located on the planetary surface. In 2267, command of Starbase 11 passed from Commodore to Commodore Mendez. Starbase 11 was located approximately 2 light years away from Talos IV. (; )"
+   "intro": "Starbase 11, abbreviated as SB11, was a Federation starbase administered by Starfleet. This starbase, located on planet M-11, was in the Alpha Quadrant. The base had repair and maintenance facilities for starships and at least some facilities were located on the planetary surface. In 2267, command of Starbase 11 passed from Commodore to Commodore Mendez. Starbase 11 was located approximately 2 light years away from Talos IV. (; )",
+   "wd": "Q48893897",
+   "de": "Sternenbasis 11",
+   "desc": "fictional military facility"
   },
   {
    "i": 696,
@@ -22842,7 +23089,10 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_25",
-   "intro": "Starbase 25, abbreviated SB25, was a Federation starbase administered by Starfleet, located in orbit of a nearby planet in the Alpha Quadrant."
+   "intro": "Starbase 25, abbreviated SB25, was a Federation starbase administered by Starfleet, located in orbit of a nearby planet in the Alpha Quadrant.",
+   "wd": "Q108510582",
+   "de": "Sternenbasis 25",
+   "desc": "fictional space station in the Star Trek multiverse"
   },
   {
    "i": 737,
@@ -22887,7 +23137,9 @@
    "f": "federation",
    "own": "United Federation of Planets",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_28",
-   "intro": "Starbase 28 was a Federation starbase administered by Starfleet. It was located in the Beta Quadrant."
+   "intro": "Starbase 28 was a Federation starbase administered by Starfleet. It was located in the Beta Quadrant.",
+   "wd": "Q75176155",
+   "desc": "Fictional space station from the Star Trek multiverse"
   },
   {
    "i": 741,
@@ -22964,7 +23216,8 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_32",
-   "intro": "Starbase 32 was a Federation starbase administrated by Starfleet. This base was located in the Maxia sector, a region of space in the Alpha Quadrant, during the mid-24th century."
+   "intro": "Starbase 32 was a Federation starbase administrated by Starfleet. This base was located in the Maxia sector, a region of space in the Alpha Quadrant, during the mid-24th century.",
+   "wd": "Q75721093"
   },
   {
    "i": 748,
@@ -23209,7 +23462,9 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_47",
-   "intro": "Starbase 47, abbreviated as SB47, was a Federation starbase administered by Starfleet."
+   "intro": "Starbase 47, abbreviated as SB47, was a Federation starbase administered by Starfleet.",
+   "wd": "Q58820831",
+   "desc": "fictional space station"
   },
   {
    "i": 770,
@@ -23319,7 +23574,9 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_6",
-   "intro": "Starbase 6, abbreviated as SB6, was a Federation starbase administered by Starfleet. It was located in a sector of the Beta Quadrant, near Sector 39J and Gravesworld. ()"
+   "intro": "Starbase 6, abbreviated as SB6, was a Federation starbase administered by Starfleet. It was located in a sector of the Beta Quadrant, near Sector 39J and Gravesworld. ()",
+   "wd": "Q80436154",
+   "desc": "fictional space station"
   },
   {
    "i": 780,
@@ -23409,7 +23666,9 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_74",
-   "intro": "Starbase 74, abbreviated as SB74, was a Federation starbase administrated by Starfleet. The base orbited the planet Tarsas III in Sector 001. Located in the Beta Quadrant, the starbase worked in conjunction with Starfleet Operational Support Services in the routine maintenance and upgrade of systems and replenishing of supplies aboard starships. This starbase was located near the Beta Magellan system. ( okudagram)"
+   "intro": "Starbase 74, abbreviated as SB74, was a Federation starbase administrated by Starfleet. The base orbited the planet Tarsas III in Sector 001. Located in the Beta Quadrant, the starbase worked in conjunction with Starfleet Operational Support Services in the routine maintenance and upgrade of systems and replenishing of supplies aboard starships. This starbase was located near the Beta Magellan system. ( okudagram)",
+   "wd": "Q66707424",
+   "desc": "fictional space station"
   },
   {
    "i": 788,
@@ -23444,7 +23703,9 @@
    "f": "federation",
    "own": "United Federation of Planets",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_80",
-   "intro": "Starbase 80, abbreviated as SB80, was a Federation starbase operated by Starfleet from at least the 2260s to the late 24th century."
+   "intro": "Starbase 80, abbreviated as SB80, was a Federation starbase operated by Starfleet from at least the 2260s to the late 24th century.",
+   "wd": "Q131190970",
+   "desc": "2024 Star-Trek-Episode von Bob Suarez"
   },
   {
    "i": 791,
@@ -23746,7 +24007,9 @@
    "f": "borg",
    "aff": "Borg Collective",
    "ma": "https://memory-alpha.fandom.com/wiki/Tactical_Cube_138",
-   "intro": "Tactical Cube 138 was a Borg tactical cube in service with the Borg in the 24th century."
+   "intro": "Tactical Cube 138 was a Borg tactical cube in service with the Borg in the 24th century.",
+   "wd": "Q85416372",
+   "desc": "ficitonal spacecraft"
   },
   {
    "i": 818,
@@ -24268,7 +24531,10 @@
    "f": "borg",
    "aff": "Borg Collective",
    "ma": "https://memory-alpha.fandom.com/wiki/Unicomplex",
-   "intro": "The Unicomplex was a vast Borg complex composed of thousands of connected structures and hubs spanning at least 600 kilometers, that housed hundreds of Borg cubes and trillions of drones. ()"
+   "intro": "The Unicomplex was a vast Borg complex composed of thousands of connected structures and hubs spanning at least 600 kilometers, that housed hundreds of Borg cubes and trillions of drones. ()",
+   "wd": "Q123205806",
+   "de": "Unikomplex",
+   "desc": "Fictional megastructure from Star Trek universe"
   },
   {
    "i": 867,
@@ -24353,7 +24619,10 @@
    "c": 35,
    "f": "vulcan",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Ajax",
-   "intro": "The USS Ajax (NCC-11574) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Ajax (NCC-11574) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q2920913",
+   "de": "USS Ajax",
+   "desc": "fictional spaceship"
   },
   {
    "i": 875,
@@ -24388,7 +24657,10 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Al-Batani",
-   "intro": "The USS Al-Batani was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Al-Batani was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q20052541",
+   "de": "USS Al-Batani",
+   "desc": "fictional spaceship"
   },
   {
    "i": 878,
@@ -24813,7 +25085,9 @@
    "c": 270,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Bellerophon_%28NCC-74705%29",
-   "intro": "The USS Bellerophon (NCC-74705) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Bellerophon (NCC-74705) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q96335645",
+   "desc": "Fictional starship from Star Trek with registry number NCC-74705"
   },
   {
    "i": 915,
@@ -24837,7 +25111,10 @@
    "c": 207,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Berlin",
-   "intro": "The USS Berlin (NCC-14232) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Berlin (NCC-14232) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q108529910",
+   "de": "USS Berlin",
+   "desc": "fictional interstellar spacecraft in the Star Trek multiverse"
   },
   {
    "i": 917,
@@ -24920,7 +25197,9 @@
    "c": 546,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Bozeman",
-   "intro": "The USS Bozeman (NCC-1941) was a 23rd century Federation starship operated by Starfleet."
+   "intro": "The USS Bozeman (NCC-1941) was a 23rd century Federation starship operated by Starfleet.",
+   "wd": "Q24855720",
+   "desc": "fictional spacecraft"
   },
   {
    "i": 924,
@@ -24967,7 +25246,8 @@
    "c": 415,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Budapest",
-   "intro": "The USS Budapest (NCC-64923) was a 24th century Federation starship operated by Starfleet. In 2373, the Budapest fought against the second Borg invasion at the Battle of Sector 001. ()"
+   "intro": "The USS Budapest (NCC-64923) was a 24th century Federation starship operated by Starfleet. In 2373, the Budapest fought against the second Borg invasion at the Battle of Sector 001. ()",
+   "wd": "Q47011823"
   },
   {
    "i": 928,
@@ -25037,7 +25317,10 @@
    "n": "USS Cairo",
    "d": "2374",
    "c": 207,
-   "f": "federation"
+   "f": "federation",
+   "wd": "Q96335309",
+   "desc": "Fictional starship from Star Trek with registry number NCC-42136",
+   "ma": "https://memory-alpha.fandom.com/wiki/USS_Cairo"
   },
   {
    "i": 934,
@@ -25124,7 +25407,10 @@
    "c": 99,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Cerritos",
-   "intro": "The USS Cerritos (NCC-75567) was a Federation starship operated by Starfleet in the 24th century, under the command of Captain Carol Freeman and later Jack Ransom. ()"
+   "intro": "The USS Cerritos (NCC-75567) was a Federation starship operated by Starfleet in the 24th century, under the command of Captain Carol Freeman and later Jack Ransom. ()",
+   "wd": "Q98109680",
+   "de": "USS Cerritos",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 942,
@@ -25136,7 +25422,9 @@
    "c": 235,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Challenger_%28NCC-71099%29",
-   "intro": "The USS Challenger (NCC-71099) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Challenger (NCC-71099) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q96252523",
+   "desc": "Fictional starship from Star Trek: Voyager with registry number NCC-71099"
   },
   {
    "i": 943,
@@ -25434,7 +25722,10 @@
    "f": "federation",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Constellation_%28NCC-1017%29",
-   "intro": "The USS Constellation (NCC-1017) was a 23rd century Federation starship operated by Starfleet."
+   "intro": "The USS Constellation (NCC-1017) was a 23rd century Federation starship operated by Starfleet.",
+   "wd": "Q24855727",
+   "de": "USS Constellation",
+   "desc": "fictional spacecraft"
   },
   {
    "i": 968,
@@ -25672,7 +25963,8 @@
    "f": "federation",
    "own": "United Federation of Planets",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Dauntless_%28NCC-80816%29",
-   "intro": "The USS Dauntless (NCC-80816) was a Federation starship operated by Starfleet in the late 24th century."
+   "intro": "The USS Dauntless (NCC-80816) was a Federation starship operated by Starfleet in the late 24th century.",
+   "wd": "Q115787511"
   },
   {
    "i": 989,
@@ -25697,7 +25989,10 @@
    "own": "United Federation of Planets",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Defiant_%282370%29",
-   "intro": "The USS Defiant (NX-74205) was a 24th century Federation starship operated by Starfleet. This was the prototype of the class and the second Federation ship known to bear the name Defiant."
+   "intro": "The USS Defiant (NX-74205) was a 24th century Federation starship operated by Starfleet. This was the prototype of the class and the second Federation ship known to bear the name Defiant.",
+   "wd": "Q20082",
+   "de": "USS Defiant",
+   "desc": "fiktives Raumschiff aus Star Trek: Deep Space Nine"
   },
   {
    "i": 991,
@@ -25723,7 +26018,10 @@
    "own": "United Federation of Planets",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Defiant_%28NCC-1764%29",
-   "intro": "The USS Defiant (NCC-1764) was a 23rd century Federation starship operated by Starfleet. It was the first of three known Federation starships to bear the name Defiant."
+   "intro": "The USS Defiant (NCC-1764) was a 23rd century Federation starship operated by Starfleet. It was the first of three known Federation starships to bear the name Defiant.",
+   "wd": "Q12582088",
+   "de": "USS Defiant",
+   "desc": "fictional spacecraft"
   },
   {
    "i": 993,
@@ -25755,7 +26053,11 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "federation"
+   "f": "federation",
+   "wd": "Q47462450",
+   "de": "USS Discovery",
+   "desc": "fiktives Raumschiff aus Star Trek",
+   "ma": "https://memory-alpha.fandom.com/wiki/USS_Discovery"
   },
   {
    "i": 996,
@@ -25764,7 +26066,11 @@
    "r": "NCC-1031",
    "c": 143,
    "f": "federation",
-   "alt": true
+   "alt": true,
+   "wd": "Q47462450",
+   "de": "USS Discovery",
+   "desc": "fiktives Raumschiff aus Star Trek",
+   "ma": "https://memory-alpha.fandom.com/wiki/USS_Discovery"
   },
   {
    "i": 997,
@@ -25983,7 +26289,10 @@
    "c": 207,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Enterprise_%28NCC-1701-B%29",
-   "intro": "The USS Enterprise (NCC-1701-B) was a 23rd century Federation starship operated by Starfleet. This was the third Federation ship to bear the name Enterprise."
+   "intro": "The USS Enterprise (NCC-1701-B) was a 23rd century Federation starship operated by Starfleet. This was the third Federation ship to bear the name Enterprise.",
+   "wd": "Q969464",
+   "de": "USS Enterprise (NCC-1701-B)",
+   "desc": "fiktives Raumschiff aus der Serie Star Trek"
   },
   {
    "i": 1016,
@@ -25995,7 +26304,10 @@
    "c": 10,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Enterprise_%28NCC-1701-C%29",
-   "intro": "The USS Enterprise (NCC-1701-C) was a 24th century Federation starship operated by Starfleet. It was the fourth Federation starship to bear the name Enterprise. In 2344, Captain Rachel Garrett served as the ship's commanding officer."
+   "intro": "The USS Enterprise (NCC-1701-C) was a 24th century Federation starship operated by Starfleet. It was the fourth Federation starship to bear the name Enterprise. In 2344, Captain Rachel Garrett served as the ship's commanding officer.",
+   "wd": "Q1193849",
+   "de": "USS Enterprise-C",
+   "desc": "fictional starship from the Star Trek: The Next Generation episode Yesterday's Enterprise"
   },
   {
    "i": 1017,
@@ -26005,7 +26317,9 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Enterprise_%28XCV_330%29",
-   "intro": "The USS Enterprise (XCV 330), also labeled Enterprise (XCV 330), was an Earth spacecraft that was in service prior to 2143."
+   "intro": "The USS Enterprise (XCV 330), also labeled Enterprise (XCV 330), was an Earth spacecraft that was in service prior to 2143.",
+   "wd": "Q721681",
+   "desc": "fictional starship from Star Trek: The Motion Picture"
   },
   {
    "i": 1018,
@@ -26029,7 +26343,10 @@
    "c": 235,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Enterprise_%28NCC-1701-D%29",
-   "intro": "The USS Enterprise (NCC-1701-D) was a Federation starship operated by Starfleet, and the fifth Federation vessel to bear the name. The Enterprise served from 2363 to 2371 as the Federation flagship, under the command of Captain Jean-Luc Picard. Following the ship's destruction at Veridian III, it was recovered, and slowly rebuilt as a museum ship. The Enterprise was nearing completion when in 2401, when she was utilized to repel a Borg attack. Following the successful defense of Earth, the Enterprise was finally retired to her permanent berth in 2402."
+   "intro": "The USS Enterprise (NCC-1701-D) was a Federation starship operated by Starfleet, and the fifth Federation vessel to bear the name. The Enterprise served from 2363 to 2371 as the Federation flagship, under the command of Captain Jean-Luc Picard. Following the ship's destruction at Veridian III, it was recovered, and slowly rebuilt as a museum ship. The Enterprise was nearing completion when in 2401, when she was utilized to repel a Borg attack. Following the successful defense of Earth, the Enterprise was finally retired to her permanent berth in 2402.",
+   "wd": "Q845684",
+   "de": "USS Enterprise (NCC-1701-D)",
+   "desc": "fiktives Raumschiff aus der Serie Star Trek: The Next Generation"
   },
   {
    "i": 1020,
@@ -26042,7 +26359,9 @@
    "f": "federation",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Enterprise_%28NCC-1701_alternate_reality%29",
-   "intro": "The USS Enterprise (NCC-1701) was a 23rd century Federation starship operated by Starfleet. Launched in 2258, the vessel was officially made the Federation flagship, and the first Federation starship to bear the name Enterprise. (; )"
+   "intro": "The USS Enterprise (NCC-1701) was a 23rd century Federation starship operated by Starfleet. Launched in 2258, the vessel was officially made the Federation flagship, and the first Federation starship to bear the name Enterprise. (; )",
+   "wd": "Q119142891",
+   "desc": "fictional spacecraft"
   },
   {
    "i": 1021,
@@ -26053,7 +26372,11 @@
    "c": 543,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Enterprise_%28NCC-1701-E%29",
-   "intro": "The USS Enterprise (NCC-1701-E) was a 24th century Federation starship operated by Starfleet. This ship was the sixth Federation starship to bear the name Enterprise."
+   "intro": "The USS Enterprise (NCC-1701-E) was a 24th century Federation starship operated by Starfleet. This ship was the sixth Federation starship to bear the name Enterprise.",
+   "wd": "Q1051324",
+   "de": "USS Enterprise (NCC-1701-E)",
+   "desc": "fiktives Raumschiff aus den Star Trek Filmen Star Trek: First Contact bis Star Trek: Nemesis",
+   "img": "img4"
   },
   {
    "i": 1022,
@@ -26088,7 +26411,10 @@
    "c": 651,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Enterprise_%28NCC-1701-J%29",
-   "intro": "The USS Enterprise (NCC-1701-J) was a 26th century Federation starship operated by Starfleet in a possible future. ()"
+   "intro": "The USS Enterprise (NCC-1701-J) was a 26th century Federation starship operated by Starfleet in a possible future. ()",
+   "wd": "Q2248682",
+   "de": "USS Enterprise (NCC-1701-J)",
+   "desc": "fiktives Raumschiff aus 'Azati Prime'"
   },
   {
    "i": 1025,
@@ -26110,7 +26436,10 @@
    "c": 427,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Enterprise_%28NCC-1701-F%29",
-   "intro": "The USS Enterprise (NCC-1701-F) was an Federation starship operated by Starfleet in the 24th and 25th century. It was the seventh vessel to bear the name Enterprise. She was under the command of Admiral Elizabeth Shelby."
+   "intro": "The USS Enterprise (NCC-1701-F) was an Federation starship operated by Starfleet in the 24th and 25th century. It was the seventh vessel to bear the name Enterprise. She was under the command of Admiral Elizabeth Shelby.",
+   "wd": "Q9254142",
+   "de": "USS Enterprise-F",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1027,
@@ -26134,7 +26463,10 @@
    "c": 416,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Equinox",
-   "intro": "The USS Equinox (NCC-72381) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Equinox (NCC-72381) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q7412395",
+   "de": "USS Equinox",
+   "desc": "ship in Star Trek"
   },
   {
    "i": 1029,
@@ -26159,7 +26491,10 @@
    "c": 157,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Essex",
-   "intro": "The USS Essex (NCC-173) was a 22nd century Federation starship operated by Starfleet."
+   "intro": "The USS Essex (NCC-173) was a 22nd century Federation starship operated by Starfleet.",
+   "wd": "Q97131686",
+   "de": "USS Essex",
+   "desc": "Starfleet ship from the Star Trek multiverse, Last Full Measure, Kobayashi Maru, Beneath the Raptor's Wing, A Choice of Futures, Uncertain Logic, Live by the Code, and Patterns of Interference"
   },
   {
    "i": 1031,
@@ -26196,7 +26531,9 @@
    "c": 413,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Europa_%28NCC-1648%29",
-   "intro": "The USS Europa (NCC-1648) was a 23rd century Federation starship operated by Starfleet under the command of Admiral Brett Anderson."
+   "intro": "The USS Europa (NCC-1648) was a 23rd century Federation starship operated by Starfleet under the command of Admiral Brett Anderson.",
+   "wd": "Q96333269",
+   "desc": "Fictional starship from Star Trek with registry number NCC-1648"
   },
   {
    "i": 1034,
@@ -26269,7 +26606,9 @@
    "c": 207,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Excelsior_%28NCC-2000%29",
-   "intro": "The USS Excelsior (NX-2000, later NCC-2000) was a Federation starship operated by Starfleet from 2285 to 2320. The prototype of its class, the Excelsior achieved renown under the command of Captain Hikaru Sulu."
+   "intro": "The USS Excelsior (NX-2000, later NCC-2000) was a Federation starship operated by Starfleet from 2285 to 2320. The prototype of its class, the Excelsior achieved renown under the command of Captain Hikaru Sulu.",
+   "wd": "Q1082886",
+   "desc": "spacecraft in Star Trek"
   },
   {
    "i": 1040,
@@ -26305,7 +26644,10 @@
    "f": "federation",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Exeter_%28NCC-1672%29",
-   "intro": "The USS Exeter (NCC-1672) was a 23rd century Federation starship operated by Starfleet. In 2267, the Exeter was under the command of Captain Ronald Tracey. ()"
+   "intro": "The USS Exeter (NCC-1672) was a 23rd century Federation starship operated by Starfleet. In 2267, the Exeter was under the command of Captain Ronald Tracey. ()",
+   "wd": "Q96279778",
+   "de": "USS Exeter",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1043,
@@ -26384,7 +26726,9 @@
    "c": 211,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Farragut_%28NCC-1647%29",
-   "intro": "The USS Farragut (NCC-1647) was a Federation starship operated by Starfleet in the 23rd century."
+   "intro": "The USS Farragut (NCC-1647) was a Federation starship operated by Starfleet in the 23rd century.",
+   "wd": "Q112968711",
+   "desc": "fictional starship with the registry number NCC-1647"
   },
   {
    "i": 1050,
@@ -26458,7 +26802,9 @@
    "own": "United Earth",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Franklin",
-   "intro": "The USS Franklin (NX-326) was a 22nd century Federation starship operated by Starfleet. It was the first Earth ship capable of reaching warp factor 4. Its armaments, typical of the era, included pulsed phase cannons and spatial torpedoes. Its defenses included polarized hull plating. Auxiliary craft included a complement of s. ()"
+   "intro": "The USS Franklin (NX-326) was a 22nd century Federation starship operated by Starfleet. It was the first Earth ship capable of reaching warp factor 4. Its armaments, typical of the era, included pulsed phase cannons and spatial torpedoes. Its defenses included polarized hull plating. Auxiliary craft included a complement of s. ()",
+   "wd": "Q29018104",
+   "desc": "fictional starship featured in the 2016 film Star Trek Beyond"
   },
   {
    "i": 1056,
@@ -26542,7 +26888,9 @@
    "c": 235,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Galaxy",
-   "intro": "The USS Galaxy (NCC-70637) was a 24th century Federation starship operated by Starfleet. She was the prototype of her class."
+   "intro": "The USS Galaxy (NCC-70637) was a 24th century Federation starship operated by Starfleet. She was the prototype of her class.",
+   "wd": "Q96335579",
+   "desc": "Fictional starship from Star Trek with registry number NCC-70637"
   },
   {
    "i": 1063,
@@ -26679,7 +27027,10 @@
    "f": "federation",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Glenn",
-   "intro": "The USS Glenn (NCC-1030) was a Federation starship operated by Starfleet in the mid-23rd century. It was the sister ship to the ."
+   "intro": "The USS Glenn (NCC-1030) was a Federation starship operated by Starfleet in the mid-23rd century. It was the sister ship to the .",
+   "wd": "Q47526084",
+   "de": "USS Glenn",
+   "desc": "fictional spaceship"
   },
   {
    "i": 1075,
@@ -26758,7 +27109,9 @@
    "c": 426,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Grissom_%28NCC-638%29",
-   "intro": "The USS Grissom (NCC-638) was a 23rd century Federation starship operated by Starfleet. In 2285, this science vessel was under the command of Captain J.T. Esteban."
+   "intro": "The USS Grissom (NCC-638) was a 23rd century Federation starship operated by Starfleet. In 2285, this science vessel was under the command of Captain J.T. Esteban.",
+   "wd": "Q2434182",
+   "desc": "fictional spaceship"
   },
   {
    "i": 1082,
@@ -26769,7 +27122,9 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Grissom_%2824th_century%29",
-   "intro": "The USS Grissom was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Grissom was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q10386185",
+   "desc": "name of several fictional spacecrafts"
   },
   {
    "i": 1083,
@@ -26883,7 +27238,9 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Hera",
-   "intro": "The USS Hera was a Federation starship operated by Starfleet during the late 24th century."
+   "intro": "The USS Hera was a Federation starship operated by Starfleet during the late 24th century.",
+   "wd": "Q96332680",
+   "desc": "Fictional starship from Star Trek with registry number NCC-62006"
   },
   {
    "i": 1093,
@@ -26990,7 +27347,10 @@
    "c": 207,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Hood_%28Excelsior_class%29",
-   "intro": "The USS Hood (NCC-42296) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Hood (NCC-42296) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q96261799",
+   "de": "USS Hood",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1102,
@@ -27251,7 +27611,10 @@
    "c": 184,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Intrepid_%28NCC-79520%29",
-   "intro": "The USS Intrepid (NCC-79520) was a Federation starship operated by Starfleet during the early 25th century. It was the fifth Starfleet vessel to bear the name."
+   "intro": "The USS Intrepid (NCC-79520) was a Federation starship operated by Starfleet during the early 25th century. It was the fifth Starfleet vessel to bear the name.",
+   "wd": "Q131346951",
+   "de": "USS Intrepid",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1124,
@@ -27322,7 +27685,9 @@
    "c": 573,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Jenolan",
-   "intro": "The USS Jenolan (NCC-2010) was a 23rd century Federation starship operated by Starfleet."
+   "intro": "The USS Jenolan (NCC-2010) was a 23rd century Federation starship operated by Starfleet.",
+   "wd": "Q24855740",
+   "desc": "fictional spaceship"
   },
   {
    "i": 1130,
@@ -27380,7 +27745,10 @@
    "f": "federation",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Kelvin",
-   "intro": "The USS Kelvin (NCC-0514) was a 23rd century Federation starship operated by Starfleet."
+   "intro": "The USS Kelvin (NCC-0514) was a 23rd century Federation starship operated by Starfleet.",
+   "wd": "Q16260997",
+   "de": "USS Kelvin",
+   "desc": "fictional spacecraft"
   },
   {
    "i": 1135,
@@ -27470,7 +27838,9 @@
    "c": 389,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Lantree",
-   "intro": "The USS Lantree (NCC-1837) was a 23rd century Federation starship operated by Starfleet. In 2365, this starship was classified as a class 6 supply ship and was armed with class 3 defensive armaments. ()"
+   "intro": "The USS Lantree (NCC-1837) was a 23rd century Federation starship operated by Starfleet. In 2365, this starship was classified as a class 6 supply ship and was armed with class 3 defensive armaments. ()",
+   "wd": "Q96333004",
+   "desc": "Fictional starship from Star Trek with registry number NCC-1837"
   },
   {
    "i": 1143,
@@ -27517,7 +27887,10 @@
    "c": 404,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Lexington_%28NCC-30405%29",
-   "intro": "The USS Lexington (NCC-30405) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Lexington (NCC-30405) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q96257522",
+   "de": "USS Lexington",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1147,
@@ -27813,7 +28186,9 @@
    "c": 404,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Merrimac_%28NCC-61827%29",
-   "intro": "The USS Merrimac (NCC-61827) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Merrimac (NCC-61827) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q96313795",
+   "desc": "Fictional starship from Star Trek with registry number NCC-61827"
   },
   {
    "i": 1173,
@@ -27884,7 +28259,9 @@
    "c": 404,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Monitor",
-   "intro": "The USS Monitor (NCC-61826) was a Federation starship operated by Starfleet during the mid-24th century."
+   "intro": "The USS Monitor (NCC-61826) was a Federation starship operated by Starfleet during the mid-24th century.",
+   "wd": "Q10387054",
+   "desc": "name of several fictional spacecrafts"
   },
   {
    "i": 1179,
@@ -28286,7 +28663,10 @@
    "f": "federation",
    "op": "Starfleet Medical",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Pasteur",
-   "intro": "The USS Pasteur (NCC-58925) was a Federation starship operated by Starfleet. This ship was constructed by the Skywalker Division at the Marin County Starfleet Yards."
+   "intro": "The USS Pasteur (NCC-58925) was a Federation starship operated by Starfleet. This ship was constructed by the Skywalker Division at the Marin County Starfleet Yards.",
+   "wd": "Q24855738",
+   "de": "USS Pasteur",
+   "desc": "fictional spacecraft"
   },
   {
    "i": 1214,
@@ -28473,7 +28853,10 @@
    "f": "federation",
    "own": "United Federation of Planets",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Protostar",
-   "intro": "The USS Protostar (NX-76884) was a Federation starship launched in 2382. The Protostar was a prototype, which was approved for production into a full ship class after the ship's destruction in 2384 with the following in 2385. Due to an accidental alteration to the timeline, the Protostar was active for a period of time in late 2384 and early 2385 following its destruction. The Protostar was later sent back in time to correct the timeline, averting a universe destroying temporal paradox."
+   "intro": "The USS Protostar (NX-76884) was a Federation starship launched in 2382. The Protostar was a prototype, which was approved for production into a full ship class after the ship's destruction in 2384 with the following in 2385. Due to an accidental alteration to the timeline, the Protostar was active for a period of time in late 2384 and early 2385 following its destruction. The Protostar was later sent back in time to correct the timeline, averting a universe destroying temporal paradox.",
+   "wd": "Q111234800",
+   "de": "USS Protostar",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1230,
@@ -28607,7 +28990,8 @@
    "c": 681,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Relativity",
-   "intro": "The USS Relativity (NCV-474439-G) was a 29th century Federation starship operated by Starfleet. The timeship was commissioned at the University of Copernicus, and was initially under the command of Captain Braxton. The vessel was equipped with powerful sensors capable of scanning throughout spacetime, and a temporal transporter capable of beaming an individual to virtually any point in space and time."
+   "intro": "The USS Relativity (NCV-474439-G) was a 29th century Federation starship operated by Starfleet. The timeship was commissioned at the University of Copernicus, and was initially under the command of Captain Braxton. The vessel was equipped with powerful sensors capable of scanning throughout spacetime, and a temporal transporter capable of beaming an individual to virtually any point in space and time.",
+   "wd": "Q24855746"
   },
   {
    "i": 1242,
@@ -28619,7 +29003,10 @@
    "c": 389,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Reliant_%28NCC-1864%29",
-   "intro": "The USS Reliant (NCC-1864) was a 23rd century Federation starship operated by Starfleet. In 2285, the Reliant was commanded by Captain Clark Terrell. While under his command, the ship's prefix code was 16309. That year, the ship was commandeered by Augments led by Khan Noonien Singh and used in a campaign of vengeance against Admiral James T. Kirk, leading to its destruction in the closing moments of the Battle of the Mutara Nebula when Khan set off the Genesis Device in an attempt to deny Kirk a victory."
+   "intro": "The USS Reliant (NCC-1864) was a 23rd century Federation starship operated by Starfleet. In 2285, the Reliant was commanded by Captain Clark Terrell. While under his command, the ship's prefix code was 16309. That year, the ship was commandeered by Augments led by Khan Noonien Singh and used in a campaign of vengeance against Admiral James T. Kirk, leading to its destruction in the closing moments of the Battle of the Mutara Nebula when Khan set off the Genesis Device in an attempt to deny Kirk a victory.",
+   "wd": "Q3776617",
+   "de": "USS Reliant",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1243,
@@ -28935,7 +29322,10 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Sarajevo",
-   "intro": "The USS Sarajevo (NCC-38529) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Sarajevo (NCC-38529) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q98844581",
+   "de": "USS Sarajevo",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1270,
@@ -28957,7 +29347,9 @@
    "c": 389,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Saratoga_%28NCC-31911%29",
-   "intro": "The USS Saratoga (NCC-31911) was a Federation starship operated by Starfleet during the mid-24th century under the command of a Vulcan captain."
+   "intro": "The USS Saratoga (NCC-31911) was a Federation starship operated by Starfleet during the mid-24th century under the command of a Vulcan captain.",
+   "wd": "Q12816621",
+   "desc": "fictional starship, registry number NCC-31911"
   },
   {
    "i": 1272,
@@ -29093,7 +29485,10 @@
    "f": "federation",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Shenzhou",
-   "intro": "The USS Shenzhou (NCC-1227) was a 23rd century Federation starship operated by Starfleet, under the command of Captain Philippa Georgiou. ()"
+   "intro": "The USS Shenzhou (NCC-1227) was a 23rd century Federation starship operated by Starfleet, under the command of Captain Philippa Georgiou. ()",
+   "wd": "Q47459277",
+   "de": "USS Shenzhou",
+   "desc": "fiktives Raumschiff"
   },
   {
    "i": 1284,
@@ -29301,7 +29696,10 @@
    "c": -1,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Stargazer_%28NCC-2893%29",
-   "intro": "The USS Stargazer (NCC-2893) was a Federation starship operated by Starfleet during the 24th century. It was the second starship to bear the name Stargazer. ()"
+   "intro": "The USS Stargazer (NCC-2893) was a Federation starship operated by Starfleet during the 24th century. It was the second starship to bear the name Stargazer. ()",
+   "wd": "Q3547448",
+   "de": "USS Stargazer",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1302,
@@ -29473,7 +29871,10 @@
    "c": 4,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Thunderchild",
-   "intro": "The USS Thunderchild (NCC-63549) was a Federation starship operated by Starfleet during the 24th and 25th centuries."
+   "intro": "The USS Thunderchild (NCC-63549) was a Federation starship operated by Starfleet during the 24th and 25th centuries.",
+   "wd": "Q19483485",
+   "de": "USS Thunderchild",
+   "desc": "fictional spacecraft"
   },
   {
    "i": 1317,
@@ -29543,7 +29944,10 @@
    "c": 355,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Titan_%28NCC-80102%29",
-   "intro": "The USS Titan (NCC-80102) was a Federation starship operated by Starfleet during the late 24th century, and one of an illustrious line of starships to bear the name Titan."
+   "intro": "The USS Titan (NCC-80102) was a Federation starship operated by Starfleet during the late 24th century, and one of an illustrious line of starships to bear the name Titan.",
+   "wd": "Q11251751",
+   "de": "USS Titan",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1323,
@@ -29779,7 +30183,9 @@
    "f": "federation",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Valiant_%28NCC-74210%29",
-   "intro": "The USS Valiant (NCC-74210) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Valiant (NCC-74210) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q3547451",
+   "desc": "fictional spacecraft"
   },
   {
    "i": 1344,
@@ -29900,7 +30306,10 @@
    "op": "Section 31",
    "alt": true,
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Vengeance",
-   "intro": "The USS Vengeance was a 23rd century Federation starship operated in secret by Starfleet via Section 31. Unlike other ships owned by the Federation and operated by Starfleet, it was created specifically for combat and was completely unmarked, with no registry number or nomenclature visible on the hull. The ship was commissioned in 2259 and it was launched from the Io Facility starbase, a spacedock in orbit of the Jovian moon Io. Its first, and only, commanding officer was Admiral . As of 2263, it was by far the largest ship operated by Starfleet."
+   "intro": "The USS Vengeance was a 23rd century Federation starship operated in secret by Starfleet via Section 31. Unlike other ships owned by the Federation and operated by Starfleet, it was created specifically for combat and was completely unmarked, with no registry number or nomenclature visible on the hull. The ship was commissioned in 2259 and it was launched from the Io Facility starbase, a spacedock in orbit of the Jovian moon Io. Its first, and only, commanding officer was Admiral . As of 2263, it was by far the largest ship operated by Starfleet.",
+   "wd": "Q15920300",
+   "de": "USS Vengeance",
+   "desc": "fictional Star Trek spacecraft"
   },
   {
    "i": 1354,
@@ -29958,7 +30367,9 @@
    "c": 128,
    "f": "federation",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Victory",
-   "intro": "The USS Victory (NCC-9754) was a 24th century Federation starship operated by Starfleet. Captain Zimbata was the commanding officer. The ship was named for the famed . ()"
+   "intro": "The USS Victory (NCC-9754) was a 24th century Federation starship operated by Starfleet. Captain Zimbata was the commanding officer. The ship was named for the famed . ()",
+   "wd": "Q11251752",
+   "desc": "Starfleet ship from Star Trek multiverse"
   },
   {
    "i": 1359,
@@ -29989,7 +30400,10 @@
    "f": "federation",
    "own": "United Federation of Planets",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Voyager",
-   "intro": "The USS Voyager (NCC-74656) was a 24th century Federation starship operated by Starfleet from 2371 to 2378."
+   "intro": "The USS Voyager (NCC-74656) was a 24th century Federation starship operated by Starfleet from 2371 to 2378.",
+   "wd": "Q20080",
+   "de": "USS Voyager",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1362,
@@ -30009,7 +30423,11 @@
    "n": "USS Voyager",
    "r": "NCC-74656-D",
    "c": -1,
-   "f": "federation"
+   "f": "federation",
+   "wd": "Q20080",
+   "de": "USS Voyager",
+   "desc": "fiktives Raumschiff aus Star Trek",
+   "ma": "https://memory-alpha.fandom.com/wiki/USS_Voyager"
   },
   {
    "i": 1364,
@@ -30163,7 +30581,11 @@
    "st": "Destroyed",
    "d": "2365",
    "c": 235,
-   "f": "federation"
+   "f": "federation",
+   "wd": "Q47459014",
+   "de": "USS Yamato",
+   "desc": "fiktives Raumschiff",
+   "ma": "https://memory-alpha.fandom.com/wiki/USS_Yamato"
   },
   {
    "i": 1378,
@@ -30173,7 +30595,11 @@
    "st": "Exposed",
    "d": "2365",
    "c": 235,
-   "f": "federation"
+   "f": "federation",
+   "wd": "Q47459014",
+   "de": "USS Yamato",
+   "desc": "fiktives Raumschiff",
+   "ma": "https://memory-alpha.fandom.com/wiki/USS_Yamato"
   },
   {
    "i": 1379,
@@ -30433,7 +30859,9 @@
    "c": 372,
    "f": "maquis",
    "ma": "https://memory-alpha.fandom.com/wiki/Val_Jean",
-   "intro": "The Val Jean was a small raider-type craft operated by the Maquis during the early 2370s. The impulse engines of Val Jean were originally built in 2332."
+   "intro": "The Val Jean was a small raider-type craft operated by the Maquis during the early 2370s. The impulse engines of Val Jean were originally built in 2332.",
+   "wd": "Q96279318",
+   "desc": "Fictional starship from Star Trek: Voyager"
   },
   {
    "i": 1402,
@@ -30480,7 +30908,11 @@
    "uid": "SRMA0000012757",
    "n": "Venus",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q98852254",
+   "de": "Venus",
+   "desc": "fiktionale Version des Planeten Venus in Star Trek",
+   "ma": "https://memory-alpha.fandom.com/wiki/Venus"
   },
   {
    "i": 1407,
@@ -30798,7 +31230,10 @@
    "uid": "SRMA0000012899",
    "n": "Yonada",
    "c": -1,
-   "f": "none"
+   "f": "none",
+   "wd": "Q49677472",
+   "desc": "fictional astronomic object",
+   "ma": "https://memory-alpha.fandom.com/wiki/Yonada"
   },
   {
    "i": 1436,
@@ -30823,7 +31258,9 @@
    "f": "federation",
    "own": "United Federation of Planets",
    "ma": "https://memory-alpha.fandom.com/wiki/Yorktown",
-   "intro": "Yorktown, also known as Starbase Yorktown, Yorktown Base and Yorktown Station, was a massive Federation space station located on the frontier, near the Necro Cloud nebula, in the . Containing millions of individuals, it was Starfleet's newest and most advanced base as of 2263 and was commanded by Commodore ."
+   "intro": "Yorktown, also known as Starbase Yorktown, Yorktown Base and Yorktown Station, was a massive Federation space station located on the frontier, near the Necro Cloud nebula, in the . Containing millions of individuals, it was Starfleet's newest and most advanced base as of 2263 and was commanded by Commodore .",
+   "wd": "Q57820730",
+   "desc": "fictional megastructure"
   },
   {
    "i": 1438,
@@ -31322,7 +31759,11 @@
    "f": "none",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Escape_pod",
-   "intro": "In spacecraft classification, an escape pod (also known as an evacuation pod, evacuation shuttle, life boat, life craft, life pod, rescue capsule, or rescue pod) was a type of auxiliary space vessel found aboard most starships used in the event the crew needed to leave the ship, particularly in an emergency."
+   "intro": "In spacecraft classification, an escape pod (also known as an evacuation pod, evacuation shuttle, life boat, life craft, life pod, rescue capsule, or rescue pod) was a type of auxiliary space vessel found aboard most starships used in the event the crew needed to leave the ship, particularly in an emergency.",
+   "wd": "Q667801",
+   "de": "Rettungskapsel",
+   "desc": "Rettungsmittel",
+   "img": "img5"
   },
   {
    "i": 1476,
@@ -31467,7 +31908,10 @@
    "aff": "Enterprise",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Galileo_%282267%29",
-   "intro": "The Galileo (NCC-1701⁄7) was a Federation Class F shuttlecraft that was in service with Starfleet in the mid-23rd century, attached to the ."
+   "intro": "The Galileo (NCC-1701⁄7) was a Federation Class F shuttlecraft that was in service with Starfleet in the mid-23rd century, attached to the .",
+   "wd": "Q26833700",
+   "desc": "fictional spaceship that appeared in the 1960s American science-fiction television series Star Trek",
+   "img": "img1"
   },
   {
    "i": 1487,
@@ -31903,7 +32347,10 @@
    "op": "Klingon Defense Force",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/IKS_Pagh",
-   "intro": "The IKS Pagh was a Klingon Bird-of-Prey that was in service with the Klingon Defense Force in the mid-24th century. The Pagh was armed with disruptors and photon torpedoes. In 2365, Captain Kargan was the commanding officer of the ship."
+   "intro": "The IKS Pagh was a Klingon Bird-of-Prey that was in service with the Klingon Defense Force in the mid-24th century. The Pagh was armed with disruptors and photon torpedoes. In 2365, Captain Kargan was the commanding officer of the ship.",
+   "wd": "Q2490563",
+   "de": "IKS Pagh",
+   "desc": "fictional alien spacecraft"
   },
   {
    "i": 1520,
@@ -32170,7 +32617,10 @@
    "cn": "K't'inga",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Kronos_One",
-   "intro": "Kronos One was a Klingon battle cruiser that was in service with the Klingon Imperial Fleet in the late 23rd century. Kronos One was the flagship of the Chancellor of the Klingon High Council."
+   "intro": "Kronos One was a Klingon battle cruiser that was in service with the Klingon Imperial Fleet in the late 23rd century. Kronos One was the flagship of the Chancellor of the Klingon High Council.",
+   "wd": "Q2925386",
+   "de": "IKS Kronos-Eins",
+   "desc": "fictional spacecraft"
   },
   {
    "i": 1540,
@@ -32542,7 +32992,9 @@
    "own": "House of T'Kuvma, House of Kor",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Sarcophagus",
-   "intro": "The Sarcophagus, or Ship of the Dead, was a Klingon starship that originally served as the command vessel of the House of T'Kuvma."
+   "intro": "The Sarcophagus, or Ship of the Dead, was a Klingon starship that originally served as the command vessel of the House of T'Kuvma.",
+   "wd": "Q48322206",
+   "desc": "fictional Klingon starship in the Star Trek universe"
   },
   {
    "i": 1569,
@@ -32613,7 +33065,9 @@
    "f": "none",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Space_station",
-   "intro": "A space station was an artificial structure in space, often built to support life. Space stations could serve many purposes, including research, defense, and starship maintenance. Depending on their purpose, they may have been referred to by another term, such as a spacelab or outpost. Space stations could be in orbit of a planet, or be completely free floating in space."
+   "intro": "A space station was an artificial structure in space, often built to support life. Space stations could serve many purposes, including research, defense, and starship maintenance. Depending on their purpose, they may have been referred to by another term, such as a spacelab or outpost. Space stations could be in orbit of a planet, or be completely free floating in space.",
+   "wd": "Q107168477",
+   "desc": "orbital space station appearing in the Star Trek multiverse"
   },
   {
    "i": 1575,
@@ -32631,7 +33085,9 @@
    "f": "federation",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase",
-   "intro": "A starbase, less commonly called starship base or command base, was a permanent support facility operated by Starfleet, consisting of space stations, drydocks, and/or ground installations. Starbases were hubs of activity and could serve multiple military and civilian functions. (e.g., ; ; )"
+   "intro": "A starbase, less commonly called starship base or command base, was a permanent support facility operated by Starfleet, consisting of space stations, drydocks, and/or ground installations. Starbases were hubs of activity and could serve multiple military and civilian functions. (e.g., ; ; )",
+   "wd": "Q7601467",
+   "desc": "science fiction concept"
   },
   {
    "i": 1577,
@@ -32816,7 +33272,10 @@
    "f": "none",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Starship",
-   "intro": "A starship was any manned spacecraft that was capable of viable interstellar travel, i.e. any manned spacecraft that could transport and support a crew across interstellar distances. Most starships accomplished this via the employment of some form of faster-than-light spacecraft propulsion technology, such as warp drive."
+   "intro": "A starship was any manned spacecraft that was capable of viable interstellar travel, i.e. any manned spacecraft that could transport and support a crew across interstellar distances. Most starships accomplished this via the employment of some form of faster-than-light spacecraft propulsion technology, such as warp drive.",
+   "wd": "Q18533645",
+   "de": "Raumschiff aus Star Trek",
+   "desc": "fictional spacecraft from the Star Trek universe"
   },
   {
    "i": 1590,
@@ -33150,7 +33609,9 @@
    "cn": "Excelsior",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Cairo",
-   "intro": "The USS Cairo (NCC-42136) was a Federation starship operated by Starfleet during the 24th century."
+   "intro": "The USS Cairo (NCC-42136) was a Federation starship operated by Starfleet during the 24th century.",
+   "wd": "Q96335309",
+   "desc": "Fictional starship from Star Trek with registry number NCC-42136"
   },
   {
    "i": 1614,
@@ -33269,7 +33730,10 @@
    "cn": "Crossfield (refit)",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Discovery",
-   "intro": "The USS Discovery (NCC-1031) was a starship operated by the Federation Starfleet in the 23rd century, initially under the command of Captain and, later, Christopher Pike. ()"
+   "intro": "The USS Discovery (NCC-1031) was a starship operated by the Federation Starfleet in the 23rd century, initially under the command of Captain and, later, Christopher Pike. ()",
+   "wd": "Q47462450",
+   "de": "USS Discovery",
+   "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
    "i": 1622,
@@ -33933,7 +34397,9 @@
    "cn": "Prometheus",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Prometheus_%28Prometheus_class%29",
-   "intro": "The USS Prometheus (NX-59650 / NX-74913) was a 24th century Federation starship operated by Starfleet."
+   "intro": "The USS Prometheus (NX-59650 / NX-74913) was a 24th century Federation starship operated by Starfleet.",
+   "wd": "Q56410120",
+   "desc": "fictional spacecraft of the Star Trek multiverse"
   },
   {
    "i": 1668,
@@ -34255,7 +34721,10 @@
    "cn": "Galaxy",
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/USS_Yamato",
-   "intro": "The USS Yamato (NCC-24383/NCC-71807) was a 24th century Federation starship operated by Starfleet. She was a sister ship of the ."
+   "intro": "The USS Yamato (NCC-24383/NCC-71807) was a 24th century Federation starship operated by Starfleet. She was a sister ship of the .",
+   "wd": "Q47459014",
+   "de": "USS Yamato",
+   "desc": "fiktives Raumschiff"
   },
   {
    "i": 1691,
@@ -34367,5 +34836,54 @@
    "intro": "YLT-3069 was the registry number of an Yridian shuttle, operated by the trader Jaglom Shrek during the late 24th century."
   }
  ],
- "images": {}
+ "images": {
+  "img0": {
+   "file": "USD307923 art (Andrew Probert, toy starship, Enterprise).png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/06/USD307923_art_%28Andrew_Probert%2C_toy_starship%2C_Enterprise%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:USD307923_art_(Andrew_Probert,_toy_starship,_Enterprise).png",
+   "license": "Public domain",
+   "licenseUrl": null,
+   "artist": "Andrew Probert"
+  },
+  "img1": {
+   "file": "Galileo Shuttle Space Centre Houston.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Galileo_Shuttle_Space_Centre_Houston.jpg/960px-Galileo_Shuttle_Space_Centre_Houston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Galileo_Shuttle_Space_Centre_Houston.jpg",
+   "license": "CC BY-SA 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "artist": "GorissenM"
+  },
+  "img2": {
+   "file": "Cestus III.svg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Cestus_III.svg/960px-Cestus_III.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Cestus_III.svg",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "artist": "Shisma"
+  },
+  "img3": {
+   "file": "Deep Space Nine filming model - Star Trek - Exploring New Worlds Exhibit at the Henry Ford Museum, Dearborn, Michigan - 49785772831.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Deep_Space_Nine_filming_model_-_Star_Trek_-_Exploring_New_Worlds_Exhibit_at_the_Henry_Ford_Museum%2C_Dearborn%2C_Michigan_-_49785772831.jpg/960px-Deep_Space_Nine_filming_model_-_Star_Trek_-_Exploring_New_Worlds_Exhibit_at_the_Henry_Ford_Museum%2C_Dearborn%2C_Michigan_-_49785772831.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Deep_Space_Nine_filming_model_-_Star_Trek_-_Exploring_New_Worlds_Exhibit_at_the_Henry_Ford_Museum,_Dearborn,_Michigan_-_49785772831.jpg",
+   "license": "CC BY-SA 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "artist": "Joe Ross"
+  },
+  "img4": {
+   "file": "Colossus-1701-Langley.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Colossus-1701-Langley.jpg/960px-Colossus-1701-Langley.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Colossus-1701-Langley.jpg",
+   "license": "Public domain",
+   "licenseUrl": null,
+   "artist": "user:Despayre"
+  },
+  "img5": {
+   "file": "North American XB-70A Valkyrie escape capsule during a test 061122-F-1234P-030.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/North_American_XB-70A_Valkyrie_escape_capsule_during_a_test_061122-F-1234P-030.jpg/960px-North_American_XB-70A_Valkyrie_escape_capsule_during_a_test_061122-F-1234P-030.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:North_American_XB-70A_Valkyrie_escape_capsule_during_a_test_061122-F-1234P-030.jpg",
+   "license": "Public domain",
+   "licenseUrl": null,
+   "artist": null
+  }
+ }
 }
