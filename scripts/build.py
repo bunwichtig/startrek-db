@@ -184,6 +184,24 @@ def base_title(t):
     return re.sub(r"\s*\([^)]*\)$", "", t)
 
 
+STATUSES = ["Active", "Destroyed", "Derelict", "Retired", "Crashed", "Abandoned", "Adrift", "Decommissioned",
+            "Recovered", "Transported", "Assimilated", "Captured", "Missing", "Unknown", "Scrapped", "Lost",
+            "Stolen", "Museum", "Mothballed", "Inactive", "Reserve", "Damaged", "Disabled", "Salvaged"]
+
+
+def norm_status(st):
+    """Status auf ein Schlagwort kürzen, Details bleiben im Langtext."""
+    if not st:
+        return None, None
+    for k in STATUSES:
+        if re.match(k, st, re.I):
+            rest = st[len(k):].strip(" ,;:()")
+            return k, rest or None
+    if re.search(r"destroy", st, re.I):
+        return "Destroyed", st
+    return "Unknown", st
+
+
 def org_name(o):
     return (o or {}).get("name") if isinstance(o, dict) else None
 
@@ -279,7 +297,10 @@ def main():
     ma_ships = [p for p in ma_pages if ma_kind(p) == "ship"]
     class_by_name = {}
     for c in classes:
-        class_by_name.setdefault(norm_name(c["n"]), c)
+        # Bei gleichnamigen Klassen gewinnt die aus der Hauptzeitlinie.
+        prev = class_by_name.get(norm_name(c["n"]))
+        if not prev or ((prev.get("m") or prev.get("a")) and not (c.get("m") or c.get("a"))):
+            class_by_name[norm_name(c["n"])] = c
 
     def enrich(rec, page):
         rec["ma"] = MA_URL + urllib.parse.quote(page["title"].replace(" ", "_"))
@@ -371,7 +392,8 @@ def main():
         if f == "none":
             f = from_name(name, reg, ib.get("datestatus"))
         rec = {
-            "i": len(ships), "n": name, "r": reg, "st": ib.get("status"), "d": ib.get("datestatus"),
+            "i": len(ships), "n": name, "r": reg, "st": norm_status(ib.get("status"))[0],
+            "sd": norm_status(ib.get("status"))[1], "d": ib.get("datestatus"),
             "c": cls["i"] if cls else -1, "f": f, "own": own, "op": op, "aff": aff,
             "ty": [ib["type"]] if ib.get("type") else [], "cn": None if cls else ib.get("class"),
             "alt": mirror or alt or bool(cls and (cls.get("m") or cls.get("a"))), "src": "ma",

@@ -108,7 +108,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; background: var(--surfac
 .sec-head p { margin: 0; font-variant-numeric: tabular-nums; }
 
 /* Steuerung */
-.controls { display: grid; gap: 12px; margin-bottom: 24px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 53px); z-index: 5; background: var(--bg); padding-block: 10px; }
+.controls { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin-bottom: 24px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 53px); z-index: 5; background: var(--bg); padding-block: 10px; }
 .search { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 0 14px; }
 .search:focus-within { border-color: var(--accent); }
 .search svg { width: 18px; height: 18px; color: var(--muted); flex: none; }
@@ -116,6 +116,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; background: var(--surfac
 .filters { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; font-size: 14px; color: var(--muted); }
 .chk { display: flex; align-items: center; gap: 6px; cursor: pointer; }
 .chk input { accent-color: var(--accent); }
+select { max-width: 100%; }
 select, .btn-ghost {
   font: 14px/1 var(--font-body); color: var(--fg); background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--r); padding: 7px 10px; cursor: pointer;
@@ -123,7 +124,7 @@ select, .btn-ghost {
 .btn-ghost:hover { border-color: var(--muted); }
 
 /* Quadranten */
-.quadrants { display: grid; gap: 14px; }
+.quadrants { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
 .quad { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); overflow: hidden; }
 .quad > summary {
   list-style: none; cursor: pointer; display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 16px;
@@ -138,7 +139,7 @@ select, .btn-ghost {
 .quad-count b { display: block; color: var(--fg); font: 700 22px/1 var(--font-display); }
 .chev { transition: transform .2s; display: inline-block; margin-left: 6px; color: var(--muted); }
 details[open] > summary .chev { transform: rotate(90deg); }
-.quad-body { padding: 4px 18px 18px; display: grid; gap: 10px; }
+.quad-body { padding: 4px 18px 18px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
 
 .fac { border-top: 1px solid var(--line); }
 .fac > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 14px 0; }

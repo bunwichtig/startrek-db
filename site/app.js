@@ -12,6 +12,7 @@
     Abandoned: "Aufgegeben", Adrift: "Treibend", Decommissioned: "Außer Dienst", Recovered: "Geborgen",
     Transported: "Transportiert", Assimilated: "Assimiliert", Captured: "Erbeutet", Missing: "Vermisst",
     Unknown: "Unbekannt", Scrapped: "Verschrottet", Lost: "Verschollen", Stolen: "Gestohlen", Museum: "Museum",
+    Mothballed: "Eingemottet", Inactive: "Inaktiv", Reserve: "Reserve", Damaged: "Beschädigt", Disabled: "Manövrierunfähig", Salvaged: "Geborgen", Preserved: "Erhalten", Wrecked: "Wrack", Scuttled: "Selbst versenkt", Cannibalized: "Ausgeschlachtet", Impounded: "Beschlagnahmt", Classified: "Geheim", Disappeared: "Verschwunden", Incomplete: "Unvollendet",
   };
   const statusDe = (s) => (s ? STATUS_DE[s] || s : "");
   const statusTone = (s) => (/Active/.test(s || "") ? "ok" : /Destroy|Crash|Lost|Assimil|Scrap/.test(s || "") ? "bad" : "");
@@ -200,7 +201,7 @@
     ships.forEach((s) => {
       const cls = s.c >= 0 ? D.classes[s.c] : null;
       const clsShown = cls && classes.includes(cls);
-      if (!clsShown) bucket(s.f).loose.push(s);
+      if (!clsShown || terms.length) bucket(s.f).loose.push(s);
     });
 
     $("#db-summary").innerHTML = searching
@@ -212,7 +213,7 @@
       const facs = D.factions.filter((f) => f.q === q.id && byFac.has(f.id));
       if (!facs.length) continue;
       let nC = 0, nS = 0;
-      facs.forEach((f) => { const b = byFac.get(f.id); nC += b.classes.length; nS += b.loose.length + b.classes.reduce((a, c) => a + c.ships.filter((i) => shipSet.has(i)).length, 0); });
+      facs.forEach((f) => { const b = byFac.get(f.id); nC += b.classes.length; nS += shipTotal(b, shipSet); });
       const open = searching || state.open.has(q.id);
       html += `<details class="quad" data-q="${q.id}" ${open ? "open" : ""}><summary>${quadGlyph(q)}
         <div><div class="quad-name">${esc(q.name)}<span class="chev">›</span></div><div class="quad-sub">${esc(q.sub)}</div></div>
@@ -220,7 +221,7 @@
       facs.sort((a, b) => sizeOf(byFac.get(b.id)) - sizeOf(byFac.get(a.id)));
       for (const f of facs) {
         const b = byFac.get(f.id);
-        const shipsIn = b.loose.length + b.classes.reduce((a, c) => a + c.ships.filter((i) => shipSet.has(i)).length, 0);
+        const shipsIn = shipTotal(b, shipSet);
         const fOpen = searching || facs.length === 1;
         html += `<details class="fac" style="--fc:${f.color}" data-f="${f.id}" ${fOpen ? "open" : ""}><summary><span class="fac-dot"></span>
           <span class="fac-name">${esc(f.name)}<span class="chev">›</span></span>
@@ -232,6 +233,11 @@
     $("#quadrants").innerHTML = html || `<div class="empty">Keine Treffer. Andere Schreibweise versuchen oder Filter lockern.</div>`;
     current = { byFac, shipSet };
     document.querySelectorAll(".fac[open] .fac-body[data-lazy]").forEach(fillFaction);
+  }
+  function shipTotal(b, shipSet) {
+    const ids = new Set(b.loose.map((s) => s.i));
+    b.classes.forEach((c) => c.ships.forEach((i) => shipSet.has(i) && ids.add(i)));
+    return ids.size;
   }
   const sizeOf = (b) => b.classes.length * 3 + b.loose.length;
   let current = null;
@@ -251,7 +257,7 @@
     }
     if (b.loose.length) {
       const loose = b.loose.slice().sort((x, y) => x.n.localeCompare(y.n));
-      h += `<div class="loose"><h4>${cls.length ? "Weitere Schiffe" : "Schiffe"} (${fmt(loose.length)})</h4><ul class="shiplist">${loose
+      h += `<div class="loose"><h4>${cls.length && !state.q.trim() ? "Weitere Schiffe" : "Schiffe"} (${fmt(loose.length)})</h4><ul class="shiplist">${loose
         .slice(0, all ? Infinity : 120)
         .map((s) => `<li><button type="button" data-ship="${s.i}"><span class="sn">${esc(s.n)}</span><span class="sr-reg">${esc(s.r || "")}</span></button></li>`)
         .join("")}</ul>${loose.length > 120 && !all ? `<button type="button" class="btn-ghost more" data-all="${fid}">Alle ${fmt(loose.length)} Schiffe zeigen</button>` : ""}</div>`;
@@ -324,7 +330,7 @@
     h += spec([
       ["Registrierung", esc(s.r || "")],
       ["Klasse", cls ? `<a href="#" data-class="${cls.i}">${esc(cls.n)}</a>` : esc(s.cn || "")],
-      ["Status", s.st ? `<span class="tag ${statusTone(s.st)}">${esc(statusDe(s.st))}</span>${s.d ? ` <span class="muted">(${esc(s.d)})</span>` : ""}` : ""],
+      ["Status", s.st ? `<span class="tag ${statusTone(s.st)}">${esc(statusDe(s.st))}</span>${s.d ? ` <span class="muted">(${esc(s.d)})</span>` : ""}${s.sd ? `<br><span class="muted">${esc(s.sd)}</span>` : ""}` : ""],
       ["Eigentümer", esc(s.own || "")],
       ["Betreiber", esc(s.op || "")],
       ["Zugehörigkeit", esc(s.aff || "")],
