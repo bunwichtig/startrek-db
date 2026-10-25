@@ -309,7 +309,10 @@ def main():
     def enrich(rec, page):
         rec["ma"] = MA_URL + urllib.parse.quote(page["title"].replace(" ", "_"))
         if page.get("intro") and not rec.get("intro"):
-            rec["intro"] = page["intro"]
+            text = page["intro"].replace(" ()", "")
+            if len(text) >= 690 and ". " in text:
+                text = text[:text.rfind(". ") + 1]
+            rec["intro"] = text
 
     seen_class_pages = set()
     for page in ma_classes:
