@@ -265,6 +265,13 @@
    "note": ""
   },
   {
+   "id": "alpha-other",
+   "name": "Weitere Völker im Alpha- und Beta-Quadranten",
+   "q": "alpha",
+   "color": "#a6b4c8",
+   "note": "Kleinere Völker, Mitgliedswelten der Föderation und Unabhängige. Der Quadrant ist bei manchen nur grob bekannt."
+  },
+  {
    "id": "species8472",
    "name": "Spezies 8472",
    "q": "extra",
@@ -287,7 +294,7 @@
   },
   {
    "id": "none",
-   "name": "Ohne erkennbare Fraktion",
+   "name": "Unabhängige und Unbekannte",
    "q": "none",
    "color": "#8a93a6",
    "note": ""
@@ -378,7 +385,7 @@
    "i": 3,
    "uid": "SCMA0000171321",
    "n": "Agena target vehicle",
-   "f": "none",
+   "f": "earth",
    "fr": "20th century",
    "to": "20th century",
    "op": [
@@ -437,7 +444,7 @@
    "i": 7,
    "uid": "SCMA0000067470",
    "n": "Aksani vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Aksani",
    "ships": []
   },
@@ -645,7 +652,7 @@
    "i": 22,
    "uid": "SCMA0000137512",
    "n": "Angosian escape pod",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Angosian",
    "fr": "2360s",
    "to": "2360s",
@@ -658,7 +665,7 @@
    "i": 23,
    "uid": "SCMA0000025440",
    "n": "Angosian police shuttle",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Angosian",
    "cr": "2",
    "fr": "2360s",
@@ -673,7 +680,7 @@
    "i": 24,
    "uid": "SCMA0000145197",
    "n": "Ankari vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Ankari",
    "ships": []
   },
@@ -802,7 +809,7 @@
    "i": 32,
    "uid": "SCMA0000067468",
    "n": "Antarian starship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Antarian",
    "ships": []
   },
@@ -810,7 +817,7 @@
    "i": 33,
    "uid": "SCMA0000053931",
    "n": "Antidean transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Antidean",
    "ships": []
   },
@@ -848,7 +855,7 @@
    "i": 36,
    "uid": "SCMA0000181329",
    "n": "Apollo spacecraft",
-   "f": "none",
+   "f": "earth",
    "ships": []
   },
   {
@@ -924,7 +931,7 @@
    "i": 41,
    "uid": "SCMA0000031453",
    "n": "Ardanan shuttle",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Ardanan",
    "ships": []
   },
@@ -958,7 +965,7 @@
    "i": 45,
    "uid": "SCMA0000174998",
    "n": "Ares V",
-   "f": "none",
+   "f": "earth",
    "a": true,
    "ships": []
   },
@@ -966,7 +973,7 @@
    "i": 46,
    "uid": "SCMA0000038822",
    "n": "Arkonian military vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Arkonian",
    "ships": []
   },
@@ -974,7 +981,7 @@
    "i": 47,
    "uid": "SCMA0000038823",
    "n": "Arkonian patrol ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Arkonian",
    "ships": []
   },
@@ -997,7 +1004,7 @@
    "i": 49,
    "uid": "SCMA0000240374",
    "n": "Arretan vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Arretan",
    "ships": []
   },
@@ -1043,7 +1050,7 @@
    "i": 53,
    "uid": "SCMA0000116905",
    "n": "Atlas-Agena",
-   "f": "none",
+   "f": "earth",
    "fr": "20th century",
    "to": "20th century",
    "ty": [
@@ -1071,7 +1078,7 @@
    "i": 55,
    "uid": "SCMA0000025563",
    "n": "Axanar cargo ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Axanar",
    "ships": []
   },
@@ -1079,7 +1086,7 @@
    "i": 56,
    "uid": "SCMA0000092667",
    "n": "Axanar warship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Axanar",
    "ships": []
   },
@@ -1095,7 +1102,7 @@
    "i": 58,
    "uid": "SCMA0000110112",
    "n": "Ba'Neth ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Ba'Neth",
    "fr": "24th century",
    "to": "24th century",
@@ -1221,14 +1228,14 @@
    "i": 67,
    "uid": "SCMA0000145198",
    "n": "Banean warship",
-   "f": "none",
+   "f": "delta-other",
    "ships": []
   },
   {
    "i": 68,
    "uid": "SCMA0000019316",
    "n": "Bardeezan merchant ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Bardeezan",
    "ships": []
   },
@@ -1236,7 +1243,7 @@
    "i": 69,
    "uid": "SCMA0000019398",
    "n": "Barolian freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Barolian",
    "ships": []
   },
@@ -1244,7 +1251,7 @@
    "i": 70,
    "uid": "SCMA0000004881",
    "n": "BBI-993",
-   "f": "none",
+   "f": "earth",
    "sp": "Human",
    "ships": [
     656
@@ -1275,7 +1282,7 @@
    "i": 73,
    "uid": "SCMA0000133239",
    "n": "Benthan fighter ship",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Benthan",
    "ships": []
   },
@@ -1283,7 +1290,7 @@
    "i": 74,
    "uid": "SCMA0000211837",
    "n": "Benzite ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Benzite",
    "ships": []
   },
@@ -1319,7 +1326,7 @@
    "i": 77,
    "uid": "SCMA0000018877",
    "n": "Bolian freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Bolian",
    "ships": []
   },
@@ -1327,7 +1334,7 @@
    "i": 78,
    "uid": "SCMA0000093950",
    "n": "Bolian transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Bolian",
    "ships": []
   },
@@ -1335,7 +1342,7 @@
    "i": 79,
    "uid": "SCMA0000071961",
    "n": "Bolian vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Bolian",
    "ships": []
   },
@@ -1513,7 +1520,7 @@
    "i": 88,
    "uid": "SCMA0000029968",
    "n": "Boslic freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Boslic",
    "ships": []
   },
@@ -1521,7 +1528,7 @@
    "i": 89,
    "uid": "SCMA0000094267",
    "n": "Bothan starships",
-   "f": "none",
+   "f": "delta-other",
    "ships": []
   },
   {
@@ -1580,7 +1587,7 @@
    "i": 93,
    "uid": "SCMA0000145203",
    "n": "Brenari freighter",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Brenari",
    "ships": []
   },
@@ -1588,7 +1595,7 @@
    "i": 94,
    "uid": "SCMA0000215782",
    "n": "Briori ship",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Briori",
    "ships": []
   },
@@ -1611,7 +1618,7 @@
    "i": 97,
    "uid": "SCMA0000224832",
    "n": "Caatati vessel",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Caatati",
    "cr": "approx. 88",
    "w": true,
@@ -1623,7 +1630,7 @@
    "i": 98,
    "uid": "SCMA0000224833",
    "n": "Caatati vessel",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Caatati",
    "w": true,
    "fr": "24th century",
@@ -1918,7 +1925,7 @@
    "i": 113,
    "uid": "SCMA0000110913",
    "n": "Cheron scout vessel",
-   "f": "none",
+   "f": "alpha-other",
    "ships": []
   },
   {
@@ -2367,14 +2374,14 @@
    "i": 136,
    "uid": "SCMA0000145201",
    "n": "Coridan ship",
-   "f": "none",
+   "f": "alpha-other",
    "ships": []
   },
   {
    "i": 137,
    "uid": "SCMA0000018502",
    "n": "Corvallen freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Corvallen",
    "ships": []
   },
@@ -3005,7 +3012,7 @@
    "i": 167,
    "uid": "SCMA0000145204",
    "n": "Deltan ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Deltan",
    "ships": []
   },
@@ -3029,7 +3036,7 @@
    "i": 170,
    "uid": "SCMA0000106373",
    "n": "Denobulan medical ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Denobulan",
    "ships": [
     48
@@ -3039,7 +3046,7 @@
    "i": 171,
    "uid": "SCMA0000104070",
    "n": "Denobulan shuttle",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Denobulan",
    "ships": []
   },
@@ -3093,7 +3100,7 @@
    "i": 176,
    "uid": "SCMA0000054453",
    "n": "Dramen patrol ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Dramen",
    "cr": "1",
    "fr": "23rd century",
@@ -3107,7 +3114,7 @@
    "i": 177,
    "uid": "SCMA0000090560",
    "n": "Drayan shuttle",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Drayan",
    "fr": "2370s",
    "to": "2370s",
@@ -3120,7 +3127,7 @@
    "i": 178,
    "uid": "SCMA0000094268",
    "n": "Drayan starship",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Drayan",
    "ships": []
   },
@@ -3236,7 +3243,7 @@
    "i": 185,
    "uid": "SCMA0000125803",
    "n": "DY-100 class",
-   "f": "none",
+   "f": "earth",
    "ty": [
     "Sleeper ship"
    ],
@@ -3248,7 +3255,7 @@
    "i": 186,
    "uid": "SCMA0000004977",
    "n": "DY-1200",
-   "f": "none",
+   "f": "earth",
    "sp": "Human",
    "ships": [
     1412
@@ -3258,7 +3265,7 @@
    "i": 187,
    "uid": "SCMA0000005237",
    "n": "DY-245",
-   "f": "none",
+   "f": "earth",
    "sp": "Human",
    "ships": [
     663
@@ -3268,7 +3275,7 @@
    "i": 188,
    "uid": "SCMA0000005238",
    "n": "DY-430",
-   "f": "none",
+   "f": "earth",
    "sp": "Human",
    "ships": [
     682
@@ -3278,7 +3285,7 @@
    "i": 189,
    "uid": "SCMA0000004980",
    "n": "DY-500 class",
-   "f": "none",
+   "f": "earth",
    "sp": "Human",
    "fr": "22nd century",
    "to": "22nd century",
@@ -3296,7 +3303,7 @@
    "i": 190,
    "uid": "SCMA0000004904",
    "n": "DY-732",
-   "f": "none",
+   "f": "earth",
    "sp": "Human",
    "ships": [
     325,
@@ -3307,7 +3314,7 @@
    "i": 191,
    "uid": "SCMA0000005239",
    "n": "DY-950",
-   "f": "none",
+   "f": "earth",
    "sp": "Human",
    "ships": [
     182
@@ -3402,7 +3409,7 @@
    "i": 198,
    "uid": "SCMA0000211532",
    "n": "Elasian ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Elasian",
    "ships": []
   },
@@ -3468,7 +3475,7 @@
    "i": 202,
    "uid": "SCMA0000063976",
    "n": "Enolian patrol ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Enolian",
    "fr": "2150s",
    "to": "2150s",
@@ -3487,7 +3494,7 @@
    "i": 203,
    "uid": "SCMA0000033349",
    "n": "Enolian prison transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Enolian",
    "cr": "3",
    "fr": "2150s",
@@ -3507,7 +3514,7 @@
    "i": 204,
    "uid": "SCMA0000066591",
    "n": "Enolian shuttle",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Enolian",
    "ships": []
   },
@@ -3923,7 +3930,7 @@
    "i": 228,
    "uid": "SCMA0000016591",
    "n": "Flaxian ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Flaxian",
    "ships": []
   },
@@ -3994,7 +4001,7 @@
    "i": 232,
    "uid": "SCMA0000032330",
    "n": "Frunalian science vessel",
-   "f": "none",
+   "f": "alpha-other",
    "ships": []
   },
   {
@@ -4180,7 +4187,7 @@
    "i": 243,
    "uid": "SCMA0000174999",
    "n": "Gemini capsule",
-   "f": "none",
+   "f": "earth",
    "a": true,
    "ships": [
     293
@@ -4525,7 +4532,7 @@
    "i": 264,
    "uid": "SCMA0000022328",
    "n": "Husnock warship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Husnock",
    "ships": []
   },
@@ -4549,7 +4556,7 @@
    "i": 266,
    "uid": "SCMA0000110113",
    "n": "Imhotep ship",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Imhotep",
    "cr": "2",
    "fr": "24th century",
@@ -4953,7 +4960,7 @@
    "i": 288,
    "uid": "SCMA0000018821",
    "n": "Kaelon warship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Kaelon",
    "fr": "24th century",
    "to": "24th century",
@@ -4981,7 +4988,7 @@
    "i": 291,
    "uid": "SCMA0000145243",
    "n": "Kantare escape pod",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Kantare",
    "fr": "22nd century",
    "to": "22nd century",
@@ -4994,7 +5001,7 @@
    "i": 292,
    "uid": "SCMA0000025617",
    "n": "Kantare supply ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Kantare",
    "ships": []
   },
@@ -5303,7 +5310,7 @@
    "i": 311,
    "uid": "SCMA0000024847",
    "n": "Klaestron starship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Klaestron",
    "ships": []
   },
@@ -5533,7 +5540,7 @@
    "i": 324,
    "uid": "SCMA0000024049",
    "n": "Kobheerian freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Kobheerian",
    "ships": [
     558
@@ -5543,7 +5550,7 @@
    "i": 325,
    "uid": "SCMA0000121992",
    "n": "Kobliad transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Kobliad",
    "ships": [
     582
@@ -5617,7 +5624,7 @@
    "i": 331,
    "uid": "SCMA0000040728",
    "n": "Kreetassan ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Kreetassan",
    "ships": []
   },
@@ -5676,7 +5683,7 @@
    "i": 335,
    "uid": "SCMA0000042924",
    "n": "Kressari freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Kressari",
    "ships": [
     72
@@ -5693,7 +5700,7 @@
    "i": 337,
    "uid": "SCMA0000107292",
    "n": "Kriosian ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Kriosian",
    "ships": []
   },
@@ -5701,7 +5708,7 @@
    "i": 338,
    "uid": "SCMA0000029006",
    "n": "Kriosian transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Kriosian",
    "ships": []
   },
@@ -5709,7 +5716,7 @@
    "i": 339,
    "uid": "SCMA0000019143",
    "n": "Ktarian vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Ktarian",
    "fr": "24th century",
    "to": "24th century",
@@ -5824,7 +5831,7 @@
    "i": 348,
    "uid": "SCMA0000123159",
    "n": "Lissepian cargo ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Lissepian",
    "ships": []
   },
@@ -5832,7 +5839,7 @@
    "i": 349,
    "uid": "SCMA0000061707",
    "n": "Lissepian supply ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Lissepian",
    "ships": []
   },
@@ -5840,7 +5847,7 @@
    "i": 350,
    "uid": "SCMA0000049875",
    "n": "Lissepian transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Lissepian",
    "ships": []
   },
@@ -5952,7 +5959,7 @@
    "i": 356,
    "uid": "SCMA0000018856",
    "n": "Lysian destroyer",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Lysian",
    "cr": "53",
    "fr": "24th century",
@@ -6045,7 +6052,7 @@
    "i": 361,
    "uid": "SCMA0000036539",
    "n": "Malcorian warp ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Malcorian",
    "ships": []
   },
@@ -6127,7 +6134,7 @@
    "i": 368,
    "uid": "SCMA0000040722",
    "n": "Malurian shuttle",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Malurian",
    "ships": []
   },
@@ -6135,7 +6142,7 @@
    "i": 369,
    "uid": "SCMA0000040720",
    "n": "Malurian vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Malurian",
    "ships": []
   },
@@ -6263,7 +6270,7 @@
    "i": 379,
    "uid": "SCMA0000025597",
    "n": "Mazarite ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Mazarite",
    "w": true,
    "fr": "22nd century",
@@ -6286,7 +6293,7 @@
    "i": 380,
    "uid": "SCMA0000038834",
    "n": "Mazarite shuttle",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Mazarite",
    "ships": []
   },
@@ -6301,7 +6308,7 @@
    "i": 382,
    "uid": "SCMA0000097111",
    "n": "Medusan vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Medusan",
    "w": true,
    "fr": "23rd century",
@@ -6498,7 +6505,7 @@
    "i": 395,
    "uid": "SCMA0000260771",
    "n": "Mondor type",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Pakled",
    "ships": [
     438
@@ -6549,7 +6556,7 @@
    "i": 400,
    "uid": "SCMA0000070720",
    "n": "NAR18834",
-   "f": "none",
+   "f": "earth",
    "sp": "Human",
    "ships": [
     677
@@ -6865,7 +6872,7 @@
    "i": 418,
    "uid": "SCMA0000135121",
    "n": "Nuu'Bari mining vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Nuu'Bari",
    "ships": []
   },
@@ -6940,7 +6947,7 @@
    "i": 424,
    "uid": "SCMA0000011231",
    "n": "Nyrian biosphere vessel",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Nyrian",
    "ships": []
   },
@@ -7174,7 +7181,7 @@
    "i": 438,
    "uid": "SCMA0000039844",
    "n": "Ornaran freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Ornaran",
    "fr": "22nd century",
    "to": "24th century",
@@ -7223,7 +7230,7 @@
    "i": 441,
    "uid": "SCMA0000270319",
    "n": "Pakled battle harpy",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Pakled",
    "ships": []
   },
@@ -7231,7 +7238,7 @@
    "i": 442,
    "uid": "SCMA0000272569",
    "n": "Pakled Clumpship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Pakled",
    "ships": [
     525
@@ -7241,7 +7248,7 @@
    "i": 443,
    "uid": "SCMA0000270532",
    "n": "Pakled shuttle",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Pakled",
    "ships": []
   },
@@ -7249,7 +7256,7 @@
    "i": 444,
    "uid": "SCMA0000224831",
    "n": "Pakled trade ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Pakled",
    "ships": []
   },
@@ -7257,7 +7264,7 @@
    "i": 445,
    "uid": "SCMA0000019284",
    "n": "Pakled transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Pakled",
    "ships": []
   },
@@ -7486,7 +7493,7 @@
    "i": 460,
    "uid": "SCMA0000015351",
    "n": "Promellian battle cruiser",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Promellian",
    "fr": "14th century",
    "to": "14th century",
@@ -7641,7 +7648,7 @@
    "i": 468,
    "uid": "SCMA0000034370",
    "n": "Qomar starships",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Qomar",
    "ships": []
   },
@@ -7649,7 +7656,7 @@
    "i": 469,
    "uid": "SCMA0000034367",
    "n": "Qomar transport",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Qomar",
    "ships": []
   },
@@ -7729,7 +7736,7 @@
    "i": 476,
    "uid": "SCMA0000008499",
    "n": "Rakosan fighter",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Rakosan",
    "ships": []
   },
@@ -7737,7 +7744,7 @@
    "i": 477,
    "uid": "SCMA0000145251",
    "n": "Ramuran vessel",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Ramuran",
    "ships": []
   },
@@ -7978,14 +7985,14 @@
    "i": 492,
    "uid": "SCMA0000185542",
    "n": "Rigel class",
-   "f": "none",
+   "f": "alpha-other",
    "ships": []
   },
   {
    "i": 493,
    "uid": "SCMA0000016441",
    "n": "Rigelian freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Rigelian",
    "ships": []
   },
@@ -7993,7 +8000,7 @@
    "i": 494,
    "uid": "SCMA0000034835",
    "n": "Rigelian freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Rigelian",
    "w": true,
    "fr": "24th century",
@@ -8267,7 +8274,7 @@
    "i": 509,
    "uid": "SCMA0000005262",
    "n": "RT-2203",
-   "f": "none",
+   "f": "earth",
    "sp": "Human",
    "ships": [
     680
@@ -8301,7 +8308,7 @@
    "i": 512,
    "uid": "SCMA0000019391",
    "n": "Rutian archaeological vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Rutian",
    "ships": []
   },
@@ -8400,7 +8407,7 @@
    "i": 518,
    "uid": "SCMA0000018855",
    "n": "Satarran starship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Satarran",
    "cr": "One",
    "fr": "24th century",
@@ -8426,7 +8433,7 @@
    "i": 520,
    "uid": "SCMA0000062806",
    "n": "Saturn V",
-   "f": "none",
+   "f": "earth",
    "fr": "20th century",
    "to": "20th century",
    "ty": [
@@ -8540,7 +8547,7 @@
    "i": 528,
    "uid": "SCMA0000067264",
    "n": "Sheliak colony ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Sheliak",
    "fr": "2366",
    "to": "2366",
@@ -8658,7 +8665,7 @@
    "i": 535,
    "uid": "SCMA0000145289",
    "n": "Skagaran starship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Skagaran",
    "ships": []
   },
@@ -8830,7 +8837,7 @@
    "i": 545,
    "uid": "SCMA0000109481",
    "n": "Soyuz",
-   "f": "none",
+   "f": "earth",
    "ships": []
   },
   {
@@ -8854,7 +8861,7 @@
    "i": 547,
    "uid": "SCMA0000279358",
    "n": "Space capsule",
-   "f": "none",
+   "f": "earth",
    "ships": [
     195
    ]
@@ -8863,7 +8870,7 @@
    "i": 548,
    "uid": "SCMA0000125518",
    "n": "Space shuttle orbiter",
-   "f": "none",
+   "f": "earth",
    "fr": "1981",
    "to": "2011",
    "ty": [
@@ -9498,7 +9505,7 @@
    "i": 593,
    "uid": "SCMA0000038861",
    "n": "Tandaran patrol ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Tandaran",
    "ships": []
   },
@@ -9506,7 +9513,7 @@
    "i": 594,
    "uid": "SCMA0000145291",
    "n": "Tandaran transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Tandaran",
    "ships": []
   },
@@ -9514,7 +9521,7 @@
    "i": 595,
    "uid": "SCMA0000019150",
    "n": "Tarellian starship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Tarellian",
    "fr": "2360s",
    "to": "2360s",
@@ -9527,7 +9534,7 @@
    "i": 596,
    "uid": "SCMA0000145172",
    "n": "Taresian starship",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Taresian",
    "ships": []
   },
@@ -9535,7 +9542,7 @@
    "i": 597,
    "uid": "SCMA0000058653",
    "n": "Tarkalean freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Tarkalean",
    "dk": 2,
    "cr": "At least 22",
@@ -9550,7 +9557,7 @@
    "i": 598,
    "uid": "SCMA0000101640",
    "n": "Tarkalean vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Tarkalean",
    "ships": []
   },
@@ -9777,7 +9784,7 @@
    "i": 616,
    "uid": "SCMA0000135488",
    "n": "Thasian ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Thasian",
    "fr": "23rd century",
    "to": "23rd century",
@@ -9977,7 +9984,7 @@
    "i": 633,
    "uid": "SCMA0000145182",
    "n": "Triannon vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Triannon",
    "cr": "23",
    "fr": "2150s",
@@ -9991,7 +9998,7 @@
    "i": 634,
    "uid": "SCMA0000018404",
    "n": "Trill transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Trill",
    "ships": []
   },
@@ -9999,7 +10006,7 @@
    "i": 635,
    "uid": "SCMA0000055302",
    "n": "Trill transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Trill",
    "w": true,
    "fr": "24th century",
@@ -10021,7 +10028,7 @@
    "i": 637,
    "uid": "SCMA0000028922",
    "n": "Tygarian freighter",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Tygarian",
    "ships": [
     446
@@ -10425,7 +10432,7 @@
    "i": 658,
    "uid": "SCMA0000123428",
    "n": "Valerian transport",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Valerian",
    "ships": [
     620
@@ -10450,7 +10457,7 @@
    "i": 661,
    "uid": "SCMA0000026382",
    "n": "Varro generational ship",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Varro",
    "ships": []
   },
@@ -10523,7 +10530,7 @@
    "i": 666,
    "uid": "SCMA0000051058",
    "n": "Vissian starship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Vissian",
    "ships": []
   },
@@ -10531,7 +10538,7 @@
    "i": 667,
    "uid": "SCMA0000018062",
    "n": "Vissian stratopod",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Vissian",
    "fr": "2150s",
    "to": "2150s",
@@ -10859,7 +10866,7 @@
    "i": 689,
    "uid": "SCMA0000067456",
    "n": "Wysanti starship",
-   "f": "none",
+   "f": "delta-other",
    "sp": "Wysanti",
    "ships": []
   },
@@ -10890,7 +10897,7 @@
    "i": 693,
    "uid": "SCMA0000016958",
    "n": "Xepolite Free Trader",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Xepolite",
    "w": true,
    "fr": "24th century",
@@ -11086,7 +11093,7 @@
    "i": 709,
    "uid": "SCMA0000017200",
    "n": "Xyrillian ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Xyrillian",
    "cr": "36",
    "fr": "2150s",
@@ -11124,7 +11131,7 @@
    "i": 711,
    "uid": "SCMA0000022075",
    "n": "Y-500 class",
-   "f": "none",
+   "f": "earth",
    "sp": "Human",
    "ships": []
   },
@@ -11194,7 +11201,7 @@
    "i": 717,
    "uid": "SCMA0000247896",
    "n": "Yridian ship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Yridian",
    "ships": []
   },
@@ -11202,7 +11209,7 @@
    "i": 718,
    "uid": "SCMA0000050186",
    "n": "Yridian shuttle",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Yridian",
    "fr": "24th century",
    "to": "24th century",
@@ -11217,7 +11224,7 @@
    "i": 719,
    "uid": "SCMA0000064067",
    "n": "Yridian starship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Yridian",
    "fr": "24th century",
    "to": "24th century",
@@ -11231,7 +11238,7 @@
    "i": 720,
    "uid": "SCMA0000094158",
    "n": "Yridian vessel",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Yridian",
    "fr": "22nd century",
    "to": "22nd century",
@@ -11249,7 +11256,7 @@
    "i": 722,
    "uid": "SCMA0000043138",
    "n": "Zalkonian escape pod",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Zalkonian",
    "fr": "2360s",
    "to": "2360s",
@@ -11262,7 +11269,7 @@
    "i": 723,
    "uid": "SCMA0000019156",
    "n": "Zalkonian warship",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Zalkonian",
    "w": true,
    "fr": "24th century",
@@ -11290,7 +11297,7 @@
    "i": 725,
    "uid": "SCMA0000145300",
    "n": "Zibalian escape pod",
-   "f": "none",
+   "f": "alpha-other",
    "sp": "Zibalian",
    "fr": "2360s",
    "to": "2360s",
@@ -11478,7 +11485,7 @@
    "st": "Active",
    "d": "1969",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -11532,7 +11539,7 @@
    "st": "Derelict",
    "d": "2376",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "aff": "International Space Agency"
   },
   {
@@ -11551,14 +11558,14 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 27,
    "uid": "SRMA0000116644",
    "n": "Ariane 1",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 28,
@@ -11614,7 +11621,7 @@
    "st": "Retired",
    "d": "2011",
    "c": 548,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -11668,7 +11675,7 @@
    "st": "Active",
    "d": "2328",
    "c": -1,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 40,
@@ -11684,7 +11691,7 @@
    "uid": "SRMA0000222679",
    "n": "Ba'Neth space station",
    "c": -1,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 42,
@@ -11748,7 +11755,7 @@
    "st": "Recovered",
    "d": "2154",
    "c": 170,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 49,
@@ -11954,7 +11961,7 @@
    "st": "Active",
    "d": "2370",
    "c": 335,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 73,
@@ -11997,7 +12004,7 @@
    "uid": "SRMA0000242491",
    "n": "Cassini",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 78,
@@ -12051,7 +12058,7 @@
    "st": "Destroyed",
    "d": "1986",
    "c": 548,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -12061,7 +12068,7 @@
    "st": "Destroyed",
    "d": "21st century",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -12154,7 +12161,7 @@
    "st": "Destroyed",
    "d": "2366",
    "c": 460,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 97,
@@ -12225,7 +12232,7 @@
    "st": "Destroyed",
    "d": "2003",
    "c": 548,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -12291,7 +12298,7 @@
    "st": "Active",
    "d": "2269",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 111,
@@ -12698,7 +12705,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 152,
@@ -12707,7 +12714,7 @@
    "st": "Active",
    "d": "2399",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 153,
@@ -12716,7 +12723,7 @@
    "st": "Active",
    "d": "3189",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 154,
@@ -12725,7 +12732,7 @@
    "st": "Active",
    "d": "2380",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 155,
@@ -12734,7 +12741,7 @@
    "st": "Decommissioned",
    "d": "2400",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 156,
@@ -12743,7 +12750,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 157,
@@ -12752,7 +12759,7 @@
    "st": "Active",
    "d": "2371",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 158,
@@ -12770,14 +12777,14 @@
    "uid": "SRMA0000262783",
    "n": "Deep Space Outpost 36",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 160,
    "uid": "SRMA0000262784",
    "n": "Deep Space Outpost 72",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 161,
@@ -12949,7 +12956,7 @@
    "st": "Active",
    "d": "2183",
    "c": 191,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 183,
@@ -13002,7 +13009,7 @@
    "st": "Retired",
    "d": "2011",
    "c": 548,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -13064,7 +13071,7 @@
    "st": "Active",
    "d": "2020",
    "c": 547,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 196,
@@ -13227,7 +13234,7 @@
    "uid": "SRMA0000009601",
    "n": "Earth Outpost Station",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 212,
@@ -13322,7 +13329,7 @@
    "st": "Active",
    "d": "2328",
    "c": -1,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 222,
@@ -13376,7 +13383,7 @@
    "st": "Retired",
    "d": "2011",
    "c": 548,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -13400,7 +13407,7 @@
    "st": "Retired",
    "d": "2011",
    "c": 548,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -13491,35 +13498,35 @@
    "uid": "SRMA0000230201",
    "n": "Epsilon Outpost",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 239,
    "uid": "SRMA0000229640",
    "n": "Epsilon Outpost 1",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 240,
    "uid": "SRMA0000229632",
    "n": "Epsilon Outpost 10",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 241,
    "uid": "SRMA0000229633",
    "n": "Epsilon Outpost 11",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 242,
    "uid": "SRMA0000280390",
    "n": "Epsilon Outpost 12",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 243,
@@ -13528,56 +13535,56 @@
    "st": "Active",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 244,
    "uid": "SRMA0000229639",
    "n": "Epsilon Outpost 2",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 245,
    "uid": "SRMA0000229638",
    "n": "Epsilon Outpost 3",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 246,
    "uid": "SRMA0000229637",
    "n": "Epsilon Outpost 4",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 247,
    "uid": "SRMA0000229636",
    "n": "Epsilon Outpost 5",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 248,
    "uid": "SRMA0000229619",
    "n": "Epsilon Outpost 6",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 249,
    "uid": "SRMA0000229618",
    "n": "Epsilon Outpost 7",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 250,
    "uid": "SRMA0000229620",
    "n": "Epsilon Outpost 8",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 251,
@@ -13586,7 +13593,7 @@
    "st": "Active",
    "d": "2384",
    "c": 122,
-   "f": "none",
+   "f": "alpha-other",
    "aff": "Coalition of Madena"
   },
   {
@@ -13624,7 +13631,7 @@
    "st": "Active",
    "d": "20th century",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -13764,7 +13771,7 @@
    "st": "Active",
    "d": "1961",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -13852,7 +13859,7 @@
    "st": "Active",
    "d": "1990s",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -13959,7 +13966,7 @@
    "st": "Active",
    "d": "1965",
    "c": 243,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration",
    "alt": true
   },
@@ -14226,7 +14233,7 @@
    "st": "Active",
    "d": "2120",
    "c": 189,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 325,
@@ -14235,7 +14242,7 @@
    "st": "Active",
    "d": "2135",
    "c": 190,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 326,
@@ -14253,7 +14260,7 @@
    "st": "Active",
    "d": "2328",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 328,
@@ -14262,7 +14269,7 @@
    "st": "Active",
    "d": "2328",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 329,
@@ -14342,7 +14349,7 @@
    "st": "Active",
    "d": "2020",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "aff": "National Aeronautics and Space Administration"
   },
   {
@@ -14506,7 +14513,7 @@
    "uid": "SRMA0000114652",
    "n": "Jaradan probe",
    "c": -1,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 354,
@@ -14749,7 +14756,7 @@
    "uid": "SRMA0000057937",
    "n": "Kosygin Base",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 381,
@@ -14927,7 +14934,7 @@
    "uid": "SRMA0000004000",
    "n": "Lunar One Colony",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 401,
@@ -14936,14 +14943,14 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 402,
    "uid": "SRMA0000017849",
    "n": "Lunar V base",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 403,
@@ -14976,14 +14983,14 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 407,
    "uid": "SRMA0000018854",
    "n": "Lysian Central Command",
    "c": -1,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 408,
@@ -15059,7 +15066,7 @@
    "st": "Active",
    "d": "20th century",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -15067,7 +15074,7 @@
    "uid": "SRMA0000034885",
    "n": "Markonian outpost",
    "c": -1,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 418,
@@ -15093,7 +15100,7 @@
    "st": "Active",
    "d": "2385",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 421,
@@ -15128,7 +15135,7 @@
    "st": "Active",
    "d": "2378",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 425,
@@ -15162,7 +15169,7 @@
    "uid": "SRMA0000000240",
    "n": "Memory Alpha",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 429,
@@ -15185,7 +15192,7 @@
    "uid": "SRMA0000239521",
    "n": "Mercury capsule",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 432,
@@ -15218,7 +15225,7 @@
    "uid": "SRMA0000036584",
    "n": "Mir",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 436,
@@ -15243,7 +15250,7 @@
    "st": "Active",
    "d": "2365",
    "c": 395,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 439,
@@ -15309,7 +15316,7 @@
    "st": "Active",
    "d": "2370",
    "c": 637,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 447,
@@ -15319,7 +15326,7 @@
    "st": "Active",
    "d": "2293",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 448,
@@ -15423,7 +15430,7 @@
    "st": "Abandoned",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 459,
@@ -15478,7 +15485,7 @@
    "st": "Active",
    "d": "20th century",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -15497,7 +15504,7 @@
    "st": "Destroyed",
    "d": "2267",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 467,
@@ -15698,7 +15705,7 @@
    "uid": "SRMA0000116904",
    "n": "Orbiting Solar Observatory",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 490,
@@ -15755,7 +15762,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 497,
@@ -15764,7 +15771,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 498,
@@ -15773,7 +15780,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 499,
@@ -15782,7 +15789,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 500,
@@ -15791,7 +15798,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 501,
@@ -15800,7 +15807,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 502,
@@ -15809,7 +15816,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 503,
@@ -15818,7 +15825,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 504,
@@ -15827,7 +15834,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 505,
@@ -15836,7 +15843,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 506,
@@ -15845,7 +15852,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 507,
@@ -15854,7 +15861,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 508,
@@ -15863,7 +15870,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 509,
@@ -15872,7 +15879,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 510,
@@ -15881,7 +15888,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 511,
@@ -15890,7 +15897,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 512,
@@ -15899,7 +15906,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 513,
@@ -15908,7 +15915,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 514,
@@ -15928,7 +15935,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 516,
@@ -15937,7 +15944,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 517,
@@ -15955,7 +15962,7 @@
    "uid": "SRMA0000000745",
    "n": "Outpost 63",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 519,
@@ -15964,7 +15971,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 520,
@@ -15973,7 +15980,7 @@
    "st": "Active",
    "d": "2381",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 521,
@@ -15992,7 +15999,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 523,
@@ -16001,7 +16008,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 524,
@@ -16011,7 +16018,7 @@
    "st": "Active",
    "d": "2024",
    "c": 548,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -16021,7 +16028,7 @@
    "st": "Active",
    "d": "2381",
    "c": 442,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 526,
@@ -16038,14 +16045,14 @@
    "uid": "SRMA0000003147",
    "n": "Phoenix",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 528,
    "uid": "SRMA0000282453",
    "n": "Phoenix",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 529,
@@ -16103,7 +16110,7 @@
    "st": "Destroyed",
    "d": "2287",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -16113,7 +16120,7 @@
    "st": "Active",
    "d": "1979",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -16123,7 +16130,7 @@
    "st": "Active",
    "d": "20th century",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -16329,7 +16336,7 @@
    "st": "Active",
    "d": "2369",
    "c": 324,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 559,
@@ -16345,7 +16352,7 @@
    "st": "Active",
    "d": "20th century",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -16355,7 +16362,7 @@
    "st": "Active",
    "d": "20th century",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -16417,7 +16424,7 @@
    "st": "Active",
    "d": "2285",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 569,
@@ -16438,7 +16445,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 571,
@@ -16447,7 +16454,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 572,
@@ -16456,7 +16463,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 573,
@@ -16465,7 +16472,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 574,
@@ -16474,7 +16481,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 575,
@@ -16483,7 +16490,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 576,
@@ -16492,7 +16499,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 577,
@@ -16501,7 +16508,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 578,
@@ -16547,7 +16554,7 @@
    "st": "Active",
    "d": "2369",
    "c": 325,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 583,
@@ -16556,7 +16563,7 @@
    "st": "Active",
    "d": "2328",
    "c": -1,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 584,
@@ -16656,7 +16663,7 @@
    "st": "Destroyed",
    "d": "2364",
    "c": 438,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 595,
@@ -16874,7 +16881,7 @@
    "st": "Active",
    "d": "2024",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -16894,7 +16901,7 @@
    "st": "Active",
    "d": "2369",
    "c": 658,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 621,
@@ -17066,7 +17073,7 @@
    "uid": "SRMA0000034924",
    "n": "Skylab",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 638,
@@ -17127,7 +17134,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 645,
@@ -17183,7 +17190,7 @@
    "st": "Active",
    "d": "1957",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 651,
@@ -17191,7 +17198,7 @@
    "n": "SS Artemis",
    "d": "2366",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 652,
@@ -17201,7 +17208,7 @@
    "st": "Active",
    "d": "2328",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 653,
@@ -17210,7 +17217,7 @@
    "st": "Destroyed",
    "d": "2262",
    "c": 120,
-   "f": "federation",
+   "f": "earth",
    "op": "Merchant Marine"
   },
   {
@@ -17221,7 +17228,7 @@
    "st": "Abandoned",
    "d": "2364",
    "c": 75,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 655,
@@ -17229,7 +17236,7 @@
    "n": "SS Botany Bay",
    "st": "Adrift",
    "c": 185,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 656,
@@ -17238,14 +17245,14 @@
    "st": "Active",
    "d": "2137",
    "c": 70,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 657,
    "uid": "SRMA0000281478",
    "n": "SS Carlos",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 658,
@@ -17255,14 +17262,14 @@
    "st": "Destroyed",
    "d": "2236",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 659,
    "uid": "SRMA0000047025",
    "n": "SS Conestoga",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 660,
@@ -17271,7 +17278,7 @@
    "st": "Active",
    "d": "2267",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 661,
@@ -17300,7 +17307,7 @@
    "st": "Active",
    "d": "2187",
    "c": 187,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 664,
@@ -17309,7 +17316,7 @@
    "st": "Active",
    "d": "2102",
    "c": 189,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 665,
@@ -17319,7 +17326,7 @@
    "st": "Active",
    "d": "2328",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 666,
@@ -17329,7 +17336,7 @@
    "st": "Active",
    "d": "2401",
    "c": 294,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 667,
@@ -17339,7 +17346,7 @@
    "st": "Destroyed",
    "d": "2293",
    "c": 682,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 668,
@@ -17359,7 +17366,7 @@
    "st": "Active",
    "d": "2328",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 670,
@@ -17379,7 +17386,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 672,
@@ -17388,7 +17395,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 673,
@@ -17405,7 +17412,7 @@
    "uid": "SRMA0000281479",
    "n": "SS Raccoona",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 675,
@@ -17415,7 +17422,7 @@
    "st": "Destroyed",
    "d": "2293",
    "c": 682,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 676,
@@ -17435,7 +17442,7 @@
    "st": "Active",
    "d": "2120",
    "c": 400,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 678,
@@ -17445,14 +17452,14 @@
    "st": "Active",
    "d": "24th century",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 679,
    "uid": "SRMA0000281480",
    "n": "SS Tiptree",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 680,
@@ -17461,7 +17468,7 @@
    "st": "Active",
    "d": "2119",
    "c": 509,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 681,
@@ -17480,7 +17487,7 @@
    "st": "Active",
    "d": "2146",
    "c": 188,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 683,
@@ -17489,7 +17496,7 @@
    "st": "Destroyed",
    "d": "2065",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 684,
@@ -17509,7 +17516,7 @@
    "st": "Active",
    "d": "2328",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 686,
@@ -17537,7 +17544,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 689,
@@ -17546,7 +17553,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 690,
@@ -17575,7 +17582,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 693,
@@ -17594,7 +17601,7 @@
    "st": "Active",
    "d": "2399",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 695,
@@ -17603,7 +17610,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 696,
@@ -17612,7 +17619,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 697,
@@ -17621,7 +17628,7 @@
    "st": "Active",
    "d": "2368",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 698,
@@ -17630,7 +17637,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 699,
@@ -17639,7 +17646,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 700,
@@ -17648,7 +17655,7 @@
    "st": "Active",
    "d": "2366",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 701,
@@ -17657,7 +17664,7 @@
    "st": "Active",
    "d": "2366",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 702,
@@ -17666,7 +17673,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 703,
@@ -17675,7 +17682,7 @@
    "st": "Active",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 704,
@@ -17694,7 +17701,7 @@
    "st": "Active",
    "d": "2350s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 706,
@@ -17703,7 +17710,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 707,
@@ -17712,7 +17719,7 @@
    "st": "Active",
    "d": "2366",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 708,
@@ -17721,7 +17728,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 709,
@@ -17740,7 +17747,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 711,
@@ -17749,7 +17756,7 @@
    "st": "Active",
    "d": "2399",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 712,
@@ -17758,7 +17765,7 @@
    "st": "Active",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 713,
@@ -17767,7 +17774,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 714,
@@ -17786,7 +17793,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 716,
@@ -17805,7 +17812,7 @@
    "st": "Active",
    "d": "2269",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 718,
@@ -17814,7 +17821,7 @@
    "st": "Active",
    "d": "2267",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 719,
@@ -17823,7 +17830,7 @@
    "st": "Active",
    "d": "2371",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 720,
@@ -17832,7 +17839,7 @@
    "st": "Active",
    "d": "3189",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 721,
@@ -17841,7 +17848,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 722,
@@ -17850,7 +17857,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 723,
@@ -17859,7 +17866,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 724,
@@ -17868,7 +17875,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 725,
@@ -17877,7 +17884,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 726,
@@ -17896,7 +17903,7 @@
    "st": "Active",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 728,
@@ -17905,7 +17912,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 729,
@@ -17924,7 +17931,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 731,
@@ -17933,7 +17940,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 732,
@@ -17952,7 +17959,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 734,
@@ -17971,7 +17978,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 736,
@@ -17980,7 +17987,7 @@
    "st": "Active",
    "d": "2381",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 737,
@@ -17989,7 +17996,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 738,
@@ -17998,7 +18005,7 @@
    "st": "Active",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 739,
@@ -18007,7 +18014,7 @@
    "st": "Active",
    "d": "2267",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 740,
@@ -18026,7 +18033,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 742,
@@ -18035,7 +18042,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 743,
@@ -18044,7 +18051,7 @@
    "st": "Active",
    "d": "2368",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 744,
@@ -18053,7 +18060,7 @@
    "st": "Active",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 745,
@@ -18062,7 +18069,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 746,
@@ -18071,7 +18078,7 @@
    "st": "Active",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 747,
@@ -18080,7 +18087,7 @@
    "st": "Active",
    "d": "2353",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 748,
@@ -18089,7 +18096,7 @@
    "st": "Active",
    "d": "2366",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 749,
@@ -18098,7 +18105,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 750,
@@ -18107,7 +18114,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 751,
@@ -18126,7 +18133,7 @@
    "st": "Active",
    "d": "2399",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 753,
@@ -18145,14 +18152,14 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 755,
    "uid": "SRMA0000177843",
    "n": "Starbase 384",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 756,
@@ -18161,7 +18168,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 757,
@@ -18170,7 +18177,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 758,
@@ -18189,7 +18196,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 760,
@@ -18198,7 +18205,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 761,
@@ -18207,7 +18214,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 762,
@@ -18216,7 +18223,7 @@
    "st": "Active",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 763,
@@ -18225,7 +18232,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 764,
@@ -18234,7 +18241,7 @@
    "st": "Active",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 765,
@@ -18243,7 +18250,7 @@
    "st": "Active",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 766,
@@ -18262,7 +18269,7 @@
    "st": "Active",
    "d": "2368",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 768,
@@ -18281,7 +18288,7 @@
    "st": "Active",
    "d": "3189",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 770,
@@ -18300,7 +18307,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 772,
@@ -18319,7 +18326,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 774,
@@ -18328,7 +18335,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 775,
@@ -18337,7 +18344,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 776,
@@ -18346,7 +18353,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 777,
@@ -18355,7 +18362,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 778,
@@ -18364,7 +18371,7 @@
    "st": "Active",
    "d": "2381",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 779,
@@ -18373,7 +18380,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 780,
@@ -18392,7 +18399,7 @@
    "st": "Active",
    "d": "2399",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 782,
@@ -18401,7 +18408,7 @@
    "st": "Active",
    "d": "2373",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 783,
@@ -18410,7 +18417,7 @@
    "st": "Active",
    "d": "2368",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 784,
@@ -18429,7 +18436,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 786,
@@ -18438,7 +18445,7 @@
    "st": "Active",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 787,
@@ -18447,7 +18454,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 788,
@@ -18466,7 +18473,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 790,
@@ -18485,7 +18492,7 @@
    "st": "Active",
    "d": "2368",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 792,
@@ -18494,7 +18501,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 793,
@@ -18503,7 +18510,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 794,
@@ -18522,7 +18529,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 796,
@@ -18541,7 +18548,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 798,
@@ -18550,14 +18557,14 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 799,
    "uid": "SRMA0000165911",
    "n": "Starbase Allen",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 800,
@@ -18566,7 +18573,7 @@
    "st": "Active",
    "d": "2381",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 801,
@@ -18575,7 +18582,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 802,
@@ -18584,7 +18591,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 803,
@@ -18593,7 +18600,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 804,
@@ -18602,7 +18609,7 @@
    "st": "Active",
    "d": "2373",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 805,
@@ -18611,7 +18618,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 806,
@@ -19189,7 +19196,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 870,
@@ -19198,7 +19205,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 871,
@@ -19207,7 +19214,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 872,
@@ -19247,7 +19254,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 876,
@@ -19266,7 +19273,7 @@
    "st": "Active",
    "d": "24th century",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 878,
@@ -19276,7 +19283,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 879,
@@ -19297,7 +19304,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 881,
@@ -19317,7 +19324,7 @@
    "st": "Decommissioned",
    "d": "2368",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 883,
@@ -19356,7 +19363,7 @@
    "n": "USS Angelou",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 887,
@@ -19365,7 +19372,7 @@
    "st": "Destroyed",
    "d": "2258",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 888,
@@ -19383,7 +19390,7 @@
    "n": "USS Antares",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 890,
@@ -19393,7 +19400,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 891,
@@ -19423,7 +19430,7 @@
    "r": "NCC-44278",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 894,
@@ -19452,7 +19459,7 @@
    "st": "Active",
    "d": "2239",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 897,
@@ -19482,7 +19489,7 @@
    "st": "Abandoned",
    "d": "2269",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 900,
@@ -19512,7 +19519,7 @@
    "st": "Active",
    "d": "2373",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 903,
@@ -19552,7 +19559,7 @@
    "n": "USS Aryabhatta",
    "d": "2257",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 907,
@@ -19572,7 +19579,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 909,
@@ -19582,7 +19589,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 910,
@@ -19612,7 +19619,7 @@
    "st": "Active",
    "d": "2381",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 913,
@@ -19621,7 +19628,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 914,
@@ -19681,7 +19688,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 920,
@@ -19710,7 +19717,7 @@
    "st": "Active",
    "d": "2250s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 923,
@@ -19739,7 +19746,7 @@
    "st": "Active",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 926,
@@ -19828,7 +19835,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 935,
@@ -19858,7 +19865,7 @@
    "st": "Active",
    "d": "2267",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 938,
@@ -19867,7 +19874,7 @@
    "st": "Active",
    "d": "2377",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 939,
@@ -19876,7 +19883,7 @@
    "st": "Active",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 940,
@@ -19916,7 +19923,7 @@
    "st": "Active",
    "d": "2293",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 944,
@@ -19955,7 +19962,7 @@
    "n": "USS Chatelet",
    "d": "2257",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 948,
@@ -19984,7 +19991,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 951,
@@ -20023,7 +20030,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 955,
@@ -20032,7 +20039,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 956,
@@ -20042,7 +20049,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 957,
@@ -20104,7 +20111,7 @@
    "st": "Active",
    "d": "2270s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 963,
@@ -20113,7 +20120,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 964,
@@ -20133,7 +20140,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 966,
@@ -20164,7 +20171,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 969,
@@ -20173,7 +20180,7 @@
    "st": "Active",
    "d": "2250s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 970,
@@ -20193,7 +20200,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 972,
@@ -20212,7 +20219,7 @@
    "n": "USS Cortez",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 974,
@@ -20240,7 +20247,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 977,
@@ -20269,7 +20276,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 980,
@@ -20288,7 +20295,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 982,
@@ -20297,7 +20304,7 @@
    "st": "Active",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 983,
@@ -20306,7 +20313,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 984,
@@ -20316,7 +20323,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "gamma-other"
+   "f": "federation"
   },
   {
    "i": 985,
@@ -20410,7 +20417,7 @@
    "st": "Destroyed",
    "d": "2368",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 994,
@@ -20419,7 +20426,7 @@
    "st": "Active",
    "d": "2375",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 995,
@@ -20429,7 +20436,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 996,
@@ -20447,7 +20454,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 998,
@@ -20455,7 +20462,7 @@
    "n": "USS Drake",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 999,
@@ -20464,7 +20471,7 @@
    "st": "Active",
    "d": "2373",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1000,
@@ -20545,7 +20552,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1008,
@@ -20575,7 +20582,7 @@
    "st": "Active",
    "d": "2373",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1011,
@@ -20585,7 +20592,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1012,
@@ -20595,7 +20602,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1013,
@@ -20615,7 +20622,7 @@
    "st": "Active",
    "d": "2270s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1015,
@@ -20643,7 +20650,7 @@
    "n": "USS Enterprise",
    "r": "XCV 330",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1018,
@@ -20746,7 +20753,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1028,
@@ -20859,7 +20866,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1039,
@@ -20879,7 +20886,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1041,
@@ -20911,7 +20918,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1044,
@@ -20931,7 +20938,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1046,
@@ -21061,7 +21068,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1059,
@@ -21110,7 +21117,7 @@
    "n": "USS Gallant",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1064,
@@ -21119,7 +21126,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1065,
@@ -21137,7 +21144,7 @@
    "st": "Active",
    "d": "2371",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1067,
@@ -21157,7 +21164,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1069,
@@ -21167,7 +21174,7 @@
    "st": "Active",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1070,
@@ -21176,7 +21183,7 @@
    "st": "Active",
    "d": "2375",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1071,
@@ -21186,7 +21193,7 @@
    "st": "Destroyed",
    "d": "3069",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1072,
@@ -21255,7 +21262,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1079,
@@ -21265,7 +21272,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1080,
@@ -21274,7 +21281,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1081,
@@ -21293,7 +21300,7 @@
    "st": "Destroyed",
    "d": "2375",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1083,
@@ -21302,7 +21309,7 @@
    "st": "Active",
    "d": "2258",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1084,
@@ -21322,7 +21329,7 @@
    "st": "Active",
    "d": "3189",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1086,
@@ -21364,7 +21371,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1090,
@@ -21374,7 +21381,7 @@
    "st": "Active",
    "d": "2293",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1091,
@@ -21393,7 +21400,7 @@
    "st": "Missing",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1093,
@@ -21403,7 +21410,7 @@
    "st": "Active",
    "d": "2368",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1094,
@@ -21445,7 +21452,7 @@
    "st": "Destroyed",
    "d": "31st century",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1098,
@@ -21454,7 +21461,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1099,
@@ -21464,7 +21471,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1100,
@@ -21542,7 +21549,7 @@
    "st": "Active",
    "d": "2375",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1108,
@@ -21641,7 +21648,7 @@
    "uid": "SRMA0000259029",
    "n": "USS Illinois",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1118,
@@ -21681,7 +21688,7 @@
    "st": "Active",
    "d": "2346",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1122,
@@ -21691,7 +21698,7 @@
    "st": "Active",
    "d": "2379",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1123,
@@ -21722,7 +21729,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1126,
@@ -21731,7 +21738,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1127,
@@ -21770,7 +21777,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1131,
@@ -21791,7 +21798,7 @@
    "st": "Active",
    "d": "2293",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1133,
@@ -21800,7 +21807,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1134,
@@ -21838,7 +21845,7 @@
    "st": "Active",
    "d": "2293",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1138,
@@ -21876,7 +21883,7 @@
    "n": "USS Lalo",
    "d": "2366",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1142,
@@ -21895,7 +21902,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1144,
@@ -21946,7 +21953,7 @@
    "st": "Destroyed",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1149,
@@ -21955,14 +21962,14 @@
    "st": "Active",
    "d": "2350s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1150,
    "uid": "SRMA0000004801",
    "n": "USS Lollipop",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1151,
@@ -21990,7 +21997,7 @@
    "n": "USS Madison",
    "d": "2373",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1154,
@@ -21999,7 +22006,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1155,
@@ -22038,7 +22045,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "malon"
+   "f": "federation"
   },
   {
    "i": 1159,
@@ -22058,7 +22065,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1161,
@@ -22067,7 +22074,7 @@
    "st": "Active",
    "d": "23rd century",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1162,
@@ -22076,7 +22083,7 @@
    "st": "Missing",
    "d": "2373",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1163,
@@ -22097,7 +22104,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1165,
@@ -22107,7 +22114,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1166,
@@ -22116,7 +22123,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1167,
@@ -22167,7 +22174,7 @@
    "st": "Active",
    "d": "2270s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1172,
@@ -22196,7 +22203,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1175,
@@ -22206,7 +22213,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1176,
@@ -22254,7 +22261,7 @@
    "n": "USS Muleskinner",
    "st": "Active",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1181,
@@ -22263,7 +22270,7 @@
    "st": "Destroyed",
    "d": "2256",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1182,
@@ -22283,7 +22290,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1184,
@@ -22323,7 +22330,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1188,
@@ -22366,7 +22373,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1192,
@@ -22376,7 +22383,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1193,
@@ -22405,7 +22412,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1196,
@@ -22425,7 +22432,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1198,
@@ -22435,7 +22442,7 @@
    "st": "Active",
    "d": "2379",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1199,
@@ -22484,7 +22491,7 @@
    "st": "Destroyed",
    "d": "2258",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1204,
@@ -22493,7 +22500,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1205,
@@ -22512,7 +22519,7 @@
    "st": "Destroyed",
    "d": "2371",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1207,
@@ -22522,7 +22529,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1208,
@@ -22567,7 +22574,7 @@
    "n": "USS Palenque",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1213,
@@ -22587,7 +22594,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1215,
@@ -22616,7 +22623,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1218,
@@ -22625,7 +22632,7 @@
    "st": "Active",
    "d": "2363",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1219,
@@ -22654,7 +22661,7 @@
    "st": "Active",
    "d": "2371",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1222,
@@ -22693,7 +22700,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1226,
@@ -22744,7 +22751,7 @@
    "st": "Missing",
    "d": "2373",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1231,
@@ -22753,7 +22760,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1232,
@@ -22763,7 +22770,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1233,
@@ -22782,7 +22789,7 @@
    "st": "Active",
    "d": "2369",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1235,
@@ -22811,7 +22818,7 @@
    "st": "Destroyed",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1238,
@@ -22868,7 +22875,7 @@
    "st": "Active",
    "d": "2320s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1244,
@@ -22887,7 +22894,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1246,
@@ -22897,7 +22904,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1247,
@@ -22927,7 +22934,7 @@
    "st": "Active",
    "d": "2270s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1250,
@@ -22987,7 +22994,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1256,
@@ -22996,7 +23003,7 @@
    "st": "Destroyed",
    "d": "2366",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1257,
@@ -23045,7 +23052,7 @@
    "st": "Active",
    "d": "2373",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1262,
@@ -23064,7 +23071,7 @@
    "st": "Active",
    "d": "2263",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1264,
@@ -23123,7 +23130,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1270,
@@ -23152,7 +23159,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1273,
@@ -23161,7 +23168,7 @@
    "st": "Destroyed",
    "d": "2256",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1274,
@@ -23171,7 +23178,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1275,
@@ -23180,7 +23187,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1276,
@@ -23190,7 +23197,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1277,
@@ -23199,7 +23206,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1278,
@@ -23208,7 +23215,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1279,
@@ -23268,7 +23275,7 @@
    "st": "Active",
    "d": "2286",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1285,
@@ -23278,7 +23285,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1286,
@@ -23327,7 +23334,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1291,
@@ -23355,7 +23362,7 @@
    "st": "Active",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1294,
@@ -23364,7 +23371,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1295,
@@ -23415,7 +23422,7 @@
    "st": "Active",
    "d": "2293",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1300,
@@ -23423,7 +23430,7 @@
    "n": "USS Stamets",
    "r": "NCC-1019",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1301,
@@ -23433,7 +23440,7 @@
    "st": "Active",
    "d": "2263",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1302,
@@ -23479,7 +23486,7 @@
    "st": "Active",
    "d": "2355",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1307,
@@ -23488,7 +23495,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1308,
@@ -23557,7 +23564,7 @@
    "st": "Active",
    "d": "2375",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1315,
@@ -23607,7 +23614,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1320,
@@ -23617,7 +23624,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1321,
@@ -23645,7 +23652,7 @@
    "n": "USS Titan",
    "d": "2381",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1324,
@@ -23653,7 +23660,7 @@
    "n": "USS Titan",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1325,
@@ -23662,7 +23669,7 @@
    "st": "Destroyed",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1326,
@@ -23671,7 +23678,7 @@
    "st": "Assimilated",
    "d": "2362",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1327,
@@ -23692,7 +23699,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1329,
@@ -23722,7 +23729,7 @@
    "st": "Active",
    "d": "2374",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1332,
@@ -23742,7 +23749,7 @@
    "st": "Active",
    "d": "2375",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1334,
@@ -23772,7 +23779,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1337,
@@ -23791,7 +23798,7 @@
    "st": "Active",
    "d": "2371",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1339,
@@ -23800,7 +23807,7 @@
    "st": "Active",
    "d": "2360s",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1340,
@@ -23810,7 +23817,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1341,
@@ -23830,7 +23837,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1343,
@@ -23851,7 +23858,7 @@
    "st": "Active",
    "d": "2379",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1345,
@@ -23860,7 +23867,7 @@
    "st": "Destroyed",
    "d": "2217",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1346,
@@ -23951,7 +23958,7 @@
    "st": "Active",
    "d": "2381",
    "c": -1,
-   "f": "delta-other"
+   "f": "federation"
   },
   {
    "i": 1355,
@@ -23980,7 +23987,7 @@
    "st": "Active",
    "d": "2375",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1358,
@@ -24006,7 +24013,7 @@
    "uid": "SRMA0000044497",
    "n": "USS Vortex",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1361,
@@ -24035,7 +24042,7 @@
    "n": "USS Voyager",
    "r": "NCC-74656-D",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1364,
@@ -24044,7 +24051,7 @@
    "r": "NCC-74656-A",
    "d": "2401",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1365,
@@ -24061,7 +24068,7 @@
    "uid": "SRMA0000040522",
    "n": "USS Voyeur",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1367,
@@ -24091,7 +24098,7 @@
    "st": "Active",
    "d": "2367",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1370,
@@ -24121,7 +24128,7 @@
    "st": "Active",
    "d": "2364",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1373,
@@ -24131,7 +24138,7 @@
    "st": "Active",
    "d": "2293",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1374,
@@ -24151,7 +24158,7 @@
    "st": "Active",
    "d": "2375",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1376,
@@ -24198,7 +24205,7 @@
    "n": "USS Yangtze",
    "d": "2259",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1381,
@@ -24248,7 +24255,7 @@
    "st": "Destroyed",
    "d": "3069",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1386,
@@ -24257,7 +24264,7 @@
    "st": "Active",
    "d": "3190",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1387,
@@ -24266,7 +24273,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1388,
@@ -24294,7 +24301,7 @@
    "st": "Active",
    "d": "2293",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1391,
@@ -24304,7 +24311,7 @@
    "st": "Active",
    "d": "2370",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1392,
@@ -24343,7 +24350,7 @@
    "st": "Active",
    "d": "2365",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1396,
@@ -24353,7 +24360,7 @@
    "st": "Active",
    "d": "2375",
    "c": -1,
-   "f": "none"
+   "f": "federation"
   },
   {
    "i": 1397,
@@ -24504,7 +24511,7 @@
    "st": "Active",
    "d": "2105",
    "c": 190,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 1414,
@@ -24533,7 +24540,7 @@
    "st": "Active",
    "d": "20th century",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 1417,
@@ -24542,7 +24549,7 @@
    "st": "Active",
    "d": "1979",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -24552,7 +24559,7 @@
    "st": "Active",
    "d": "1979",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -24562,7 +24569,7 @@
    "st": "Disappeared",
    "d": "20th century",
    "c": -1,
-   "f": "none",
+   "f": "earth",
    "op": "National Aeronautics and Space Administration"
   },
   {
@@ -24614,7 +24621,7 @@
    "uid": "SRMA0000024610",
    "n": "Weather balloon",
    "c": -1,
-   "f": "none"
+   "f": "earth"
   },
   {
    "i": 1426,
@@ -24701,7 +24708,7 @@
    "st": "Active",
    "d": "2369",
    "c": 718,
-   "f": "none"
+   "f": "alpha-other"
   },
   {
    "i": 1435,

@@ -26,7 +26,7 @@ FACTIONS = [
     ("federation", "Vereinigte Föderation der Planeten", "alpha", "#5b9cf0",
      r"federation|starfleet|\bufp\b|section 31|daystrom|federation news|temporal integrity|kelvin|utopia planitia", ""),
     ("earth", "Erde (vor der Föderation)", "alpha", "#7fb8d8",
-     r"united earth|earth starfleet|\bnasa\b|united nations|\bunsc\b|earth cargo|\becs\b|zefram|confederation of earth|eugenics|augment|european|soviet|united states|us air force|royal navy|terran(?! empire)",
+     r"united earth|earth starfleet|\bnasa\b|national aeronautics|space agency|space probe agency|esa\b|space shuttle|apollo|gemini|mercury capsule|agena|atlas|\bares\b|\bdy-\d|saturn v|soyuz|vostok|skylab|phoenix|space capsule|olympus|friendship 1|charybdis|merchant marine|madred|\bhuman\b|united nations|\bunsc\b|earth cargo|\becs\b|zefram|confederation of earth|eugenics|augment|european|soviet|united states|us air force|royal navy|terran(?! empire)",
      "Raumfahrt der Menschen bis zur Gründung der Föderation 2161."),
     ("terran", "Terranisches Imperium", "alpha", "#c9a227", r"terran empire|imperial starfleet", "Spiegeluniversum."),
     ("vulcan", "Vulkan", "alpha", "#c98a52", r"vulcan|v'tosh|syrrannite", ""),
@@ -62,8 +62,11 @@ FACTIONS = [
     ("krenim", "Krenim-Imperium", "delta", "#c7685d", r"krenim", ""),
     ("talaxian", "Talaxianer", "delta", "#d8a64e", r"talax|haakon", ""),
     ("delta-other", "Weitere Völker im Delta-Quadranten", "delta", "#b7c25a",
-     r"ocampa|vaadwaur|devore|kobali|mokra|turei|trabe|sikari|kyrian|vaskan|nygean|benkaran|annari|ledosian|voth|srivani|swarm|nihydron|b'omar|lokirrim|vostigye|hazari|brunali|druoda|pralor|cravic|etanian|mikhal|nezu|haakonian|kraylor|enaran|baneans|numiri|akritiri|tak tak|krowtonan|quarren|zahl|rilnar|ventu|hierarchy|kradin|vau n'akat|delta quadrant|protostar",
+     r"caatati|benthan|briori|akritiri|b'omar|banean|dinaali|drayan|entharan|kmada|botha|qomar|varro|vojean|yallitian|nyrian|taresian|rakosan|ramuran|mari\b|vori\b|wysanti|overlooker|brenari|dala\b|kesat|imhotep|tarkan|nasari|ventu|ilari|komar|gree\b|norcadian|ocampa|vaadwaur|devore|kobali|mokra|turei|trabe|sikari|kyrian|vaskan|nygean|benkaran|annari|ledosian|voth|srivani|swarm|nihydron|b'omar|lokirrim|vostigye|hazari|brunali|druoda|pralor|cravic|etanian|mikhal|nezu|haakonian|kraylor|enaran|baneans|numiri|akritiri|tak tak|krowtonan|quarren|zahl|rilnar|ventu|hierarchy|kradin|vau n'akat|delta quadrant|protostar",
      ""),
+    ("alpha-other", "Weitere Völker im Alpha- und Beta-Quadranten", "alpha", "#a6b4c8",
+     r"bolian|benzite|betazoid|trill|denobula|coridan|axanar|antarian|antedean|antidean|barolian|boslic|kressari|pakled|lissepian|yridian|xepolite|miradorn|zakdorn|bynar|ktarian|lurian|kobliad|kobheerian|valerian|promellian|menthar|tygarian|ornaran|brekkian|mizarian|angosian|arkonian|ardanan|arretan|corvallen|bardeezan|ba'neth|ankari|aksani|satarran|sheliak|paxan|jarada|tarellian|haliian|takaran|elaysian|kaelon|ullian|zalkonian|malcorian|mintakan|selay|antican|tarkalean|kreetassan|klaestron|rigel|tiburon|deltan|efrosian|saurian|caitian|edosian|grazerite|xyrillian|akaali|malurian|yonadan|halkan|medusan|first federation|fesarius|flaxian|frunalian|gallamite|kriosian|ligonian|lysian|mordanite|napean|ramatis|risian|scalosian|tellun|elasian|troyian|zibalian|platonian|metron|excalbian|organian|thasian|talosian|cheron|dramen|elba|mazarite|chalnoth|husnock|douwd|nuu'bari|aenar|wadi|tosk|kobali|coalition of madena|madena|dopterian|hupyrian|tandaran|ikaaran|kantare|kreetassan|enolian|axanar|ventaxian|rutian|ennis|nol-ennis|skagaran|triannon|antaran|vissian|kreechta|arcadian|gallamite|kaferian|evora|kazarite|lethean|letheans|pendari|bolarus|benzar|brekka|ornara|angel one|tiburonian",
+     "Kleinere Völker, Mitgliedswelten der Föderation und Unabhängige. Der Quadrant ist bei manchen nur grob bekannt."),
     ("species8472", "Spezies 8472", "extra", "#e06aa8", r"8472|undine", "Fluidraum."),
     ("kelpien", "Kelpianer und Ba'ul", "extra", "#7ea4c9", r"kelpien|ba'ul", ""),
     ("kelvan", "Kelvanisches Imperium", "extra", "#8888c8", r"kelvan|andromeda", "Andromeda-Galaxie."),
@@ -78,6 +81,51 @@ def classify(*names):
         for fid, rx in COMPILED:
             if rx.search(n):
                 return fid
+    return "none"
+
+
+PREFIXES = [
+    (r"^(USS|NSS|NCV)\b", "federation"),
+    (r"^(IKS|IKC|IKV)\b", "klingon"),
+    (r"^(IRW|RIS|RSV)\b", "romulan"),
+    (r"^(ECS|UES|ESS)\b", "earth"),
+    (r"^(ISS)\b", "terran"),
+    (r"^(CDS|CUS)\b", "cardassian"),
+]
+PREFIX_RX = [(re.compile(p), f) for p, f in PREFIXES]
+
+# Stationen und Sonden ohne Eigentümerangabe, deren Name die Herkunft verrät
+NAME_RULES = [
+    (r"^(starbase|outpost \d|deep space \d|deep space station|relay station|epsilon outpost|spacedock|space station k-|"
+     r"regula|jupiter station|utopia planitia|mckinley|deep space outpost|subspace relay|starfleet|argus array|"
+     r"emergency medical|federation|mars orbital|lya station|sherman's planet|station salem|memory alpha|"
+     r"spacedock one|earth spacedock|copernicus|tango sierra|ds\d|sb-)", "federation"),
+    (r"(hubble|ariane|weather balloon|orbiting solar|explorer|pioneer|mariner|sputnik|telescope|nomad|friendship 1|"
+     r"voyager \d|viking|vanguard|international space station|mir\b|skylab|cassini|galileo|juno|rosetta|"
+     r"kosygin|usgs|earth outpost|botany bay|valiant|lunar|moon base|tranquility)", "earth"),
+]
+NAME_RX = [(re.compile(p, re.I), f) for p, f in NAME_RULES]
+
+
+def year(date):
+    m = re.search(r"\d{4}", date or "")
+    return int(m.group()) if m else None
+
+
+def from_name(name, registry, date):
+    """Leitet die Fraktion aus Schiffspräfix und Registriernummer ab."""
+    for rx, fid in PREFIX_RX:
+        if rx.search(name or ""):
+            return fid
+    for rx, fid in NAME_RX:
+        if rx.search(name or ""):
+            return "earth" if fid == "federation" and year(date) and year(date) < 2161 else fid
+    reg = (registry or "").upper()
+    y = year(date)
+    if reg.startswith(("NCC", "NAR", "NCV", "NDT")):
+        return "federation"
+    if reg.startswith("NX") or (name or "").startswith("SS "):
+        return "earth" if y and y < 2161 else "federation"
     return "none"
 
 
@@ -182,6 +230,8 @@ def main():
         if f == "none" and cls:
             f = cls["f"]
         if f == "none":
+            f = from_name(s["name"], s.get("registry"), s.get("dateStatus"))
+        if f == "none":
             f = classify(s["name"])
         rec = {
             "i": len(ships), "uid": s["uid"], "n": s["name"], "r": s.get("registry"),
@@ -200,7 +250,7 @@ def main():
         for f in FACTIONS if f[0] in used
     ]
     if "none" in used:
-        factions.append({"id": "none", "name": "Ohne erkennbare Fraktion", "q": "none", "color": "#8a93a6", "note": ""})
+        factions.append({"id": "none", "name": "Unabhängige und Unbekannte", "q": "none", "color": "#8a93a6", "note": ""})
 
     built = dt.date.today().isoformat()
     sources = [

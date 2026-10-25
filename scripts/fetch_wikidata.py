@@ -16,11 +16,14 @@ UA = "startrek-db/0.1 (+https://github.com/bunwichtig/startrek-db)"
 OUT = Path(__file__).resolve().parent.parent / "data" / "raw"
 SPARQL = "https://query.wikidata.org/sparql"
 COMMONS = "https://commons.wikimedia.org/w/api.php"
+WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 
 QUERY = """
 SELECT ?item ?ma ?en ?de ?descEn ?descDe ?image ?type ?typeLabel WHERE {
-  VALUES ?wdt { %s }
-  ?item ?wdt ?ma .
+  { VALUES ?wdt { %s } ?item ?wdt ?ma . }
+  UNION
+  { ?item wdt:P6262 ?fandom . FILTER(STRSTARTS(?fandom, "memory-alpha:"))
+    BIND(SUBSTR(?fandom, 14) AS ?ma) }
   OPTIONAL { ?item rdfs:label ?en FILTER(LANG(?en) = "en") }
   OPTIONAL { ?item rdfs:label ?de FILTER(LANG(?de) = "de") }
   OPTIONAL { ?item schema:description ?descEn FILTER(LANG(?descEn) = "en") }
@@ -47,26 +50,25 @@ def fetch(url, data=None):
     raise RuntimeError(f"Abruf fehlgeschlagen: {url}")
 
 
-PROP_QUERY = """
-SELECT ?prop ?wdt ?l WHERE {
-  ?prop a wikibase:Property ; wikibase:directClaim ?wdt ; rdfs:label ?l .
-  FILTER(LANG(?l) = "en" && CONTAINS(LCASE(?l), "memory alpha"))
-}
-"""
-
-
 def sparql(query):
     body = urllib.parse.urlencode({"query": query, "format": "json"}).encode()
     return fetch(SPARQL, data=body)["results"]["bindings"]
 
 
+def find_properties():
+    """Sucht Wikidata-Eigenschaften, deren Name „Memory Alpha“ enthält."""
+    params = {"action": "wbsearchentities", "search": "Memory Alpha", "type": "property",
+              "language": "en", "limit": 20, "format": "json"}
+    res = fetch(f"{WIKIDATA_API}?{urllib.parse.urlencode(params)}").get("search", [])
+    props = [r["id"] for r in res if "memory alpha" in (r.get("label") or "").lower()]
+    for r in res:
+        print("Gefundene Eigenschaft:", r["id"], r.get("label"))
+    return props
+
+
 def wikidata():
-    props = sparql(PROP_QUERY)
-    for p in props:
-        print("Memory-Alpha-Eigenschaft:", p["prop"]["value"], p["l"]["value"])
-    wdts = " ".join("<%s>" % p["wdt"]["value"] for p in props)
-    if not wdts:
-        raise RuntimeError("Keine Memory-Alpha-Eigenschaft in Wikidata gefunden")
+    props = find_properties()
+    wdts = " ".join(f"wdt:{p}" for p in props) or "wdt:P6262"
     rows = sparql(QUERY % wdts)
     items = {}
     for r in rows:
