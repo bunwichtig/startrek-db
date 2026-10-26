@@ -66,6 +66,11 @@
           <select id="f-status" aria-label="Status">
             <option value="">Jeder Status</option>
           </select>
+          <fieldset class="seg">
+            <legend class="sr">Zeichenstil der Schiffe</legend>
+            <label><input type="radio" name="art" id="art-bauplan" value="bauplan" checked><span>Bauplan</span></label>
+            <label><input type="radio" name="art" id="art-modell" value="modell"><span>Modell</span></label>
+          </fieldset>
           <button type="button" class="btn-ghost" id="expand-all">Alle aufklappen</button>
           <button type="button" class="btn-ghost" id="collapse-all">Alle zuklappen</button>
         </div>
@@ -94,7 +99,7 @@
           <li><strong>Beschreibungstexte</strong> in der Detailansicht sind der erste Absatz des jeweiligen Memory-Alpha-Artikels, auf Englisch, mit Link zum Original. Auch sie stehen unter CC BY-NC 4.0.</li>
           <li><strong>Wikidata-Angaben</strong> (deutsche Namen, Beschreibungen, Verknüpfungen) sind CC0 und frei nutzbar.</li>
           <li><strong>Bilder</strong> kommen nur von Wikimedia Commons. Jedes Bild trägt seine eigene Lizenz und Urheberangabe, die in der Detailansicht direkt am Bild steht. Fotos von Studiomodellen zeigen trotzdem ein geschütztes Design; sie sind für Fanzwecke unproblematisch, aber nicht für Merchandise.</li>
-          <li><strong>Schiffsgrafiken</strong> ohne Foto sind schematische Silhouetten, die dieses Projekt aus Fraktion und Schiffstyp erzeugt. Sie bilden keine offiziellen Entwürfe nach und stehen unter CC0.</li>
+          <li><strong>Schiffsgrafiken</strong> ohne Foto sind eigene schematische Zeichnungen in Draufsicht, wahlweise als Bauplan oder als Modell. Bekannte Klassen sind nach ihrer typischen Grundform gezeichnet, alle anderen erhalten eine feste, aus Fraktion und Name abgeleitete Form. Die Zeichnungen sind keine Kopien offizieller Entwürfe und stehen unter CC0.</li>
           <li><strong>Eigener Code</strong> dieses Repositorys steht unter MIT-Lizenz.</li>
         </ul>
 
@@ -123,6 +128,7 @@
 </footer>
 <!--/BODY-->
 <script src="data.js"></script>
+<script src="ships.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

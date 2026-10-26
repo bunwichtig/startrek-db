@@ -35,6 +35,7 @@ def main(out):
         "<style>\n" + (SITE / "styles.css").read_text() + "\n</style>",
         body,
         "<script>\n" + inline_images((SITE / "data.js").read_text()) + "\n</script>",
+        "<script>\n" + (SITE / "ships.js").read_text() + "\n</script>",
         "<script>\n" + (SITE / "app.js").read_text() + "\n</script>",
     ]
     Path(out).write_text("\n".join(parts))

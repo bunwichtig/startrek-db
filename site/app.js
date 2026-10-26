@@ -17,7 +17,7 @@
   const statusDe = (s) => (s ? STATUS_DE[s] || s : "");
   const statusTone = (s) => (/Active/.test(s || "") ? "ok" : /Destroy|Crash|Lost|Assimil|Scrap/.test(s || "") ? "bad" : "");
 
-  /* ---------- Schematische Silhouetten (eigene Grafik, CC0) ---------- */
+  /* ---------- Schiffsgrafiken ---------- */
   function hash(str) {
     let h = 2166136261;
     for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
@@ -27,98 +27,12 @@
     let s = seed || 1;
     return () => ((s = Math.imul(s ^ (s >>> 15), 2246822507) ^ Math.imul(s ^ (s >>> 13), 3266489909)) >>> 0) / 4294967296;
   }
-  function archetype(item) {
-    const n = (item.n || "").toLowerCase();
-    const t = (item.ty || []).join(" ").toLowerCase();
-    if (/station|starbase|outpost|space dock|spacedock|drydock|depot|array|platform|colony/.test(n + " " + t)) return "station";
-    if (/shuttle|pod|runabout|probe|fighter|craft|capsule|bee|skimmer|scout/.test(n + " " + t) && !/cruiser/.test(n)) return "small";
-    if (/cube/.test(n)) return "cube";
-    if (/sphere/.test(n)) return "sphere";
-    const f = item.f || "";
-    if (f === "borg") return /probe|diamond/.test(n) ? "diamond" : "cube";
-    if (f === "klingon") return "bird";
-    if (f === "romulan" || f === "reman") return "warbird";
-    if (f === "cardassian") return "arrow";
-    if (f === "dominion") return "beetle";
-    if (f === "ferengi") return "horseshoe";
-    if (["federation", "starfleet", "earth", "vulcan", "andorian"].includes(f)) return "saucer";
-    return ["wedge", "arrow", "beetle", "wedge"][hash(n) % 4];
-  }
-  function shipSVG(item, color) {
-    const r = rng(hash(item.n + (item.id || "")));
-    const a = archetype(item);
-    const c = color || "#8aa";
-    const hull = `fill="${c}" fill-opacity="0.16" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"`;
-    const line = `fill="none" stroke="${c}" stroke-opacity="0.55" stroke-width="0.9"`;
-    const glow = `fill="${c}"`;
-    let g = "";
-    const W = 320, H = 180, cx = 160, cy = 90;
-    if (a === "saucer") {
-      const sr = 34 + r() * 16, sx = cx - 40 - r() * 20;
-      const nl = 70 + r() * 40, ny = 22 + r() * 16, nw = 7 + r() * 3, nx = cx + 10 + r() * 20;
-      g += `<path d="M${sx + sr * 0.6} ${cy} L${nx + 20} ${cy - 6} L${nx + 34} ${cy} L${nx + 20} ${cy + 6} Z" ${hull}/>`;
-      g += `<path d="M${nx - 10} ${cy - 4} L${nx + 8} ${cy - ny + 3} M${nx - 10} ${cy + 4} L${nx + 8} ${cy + ny - 3}" ${line}/>`;
-      for (const s of [-1, 1]) {
-        g += `<rect x="${nx - 6}" y="${cy + s * ny - nw / 2}" width="${nl}" height="${nw}" rx="${nw / 2}" ${hull}/>`;
-        g += `<rect x="${nx - 6}" y="${cy + s * ny - 1.5}" width="10" height="3" rx="1.5" ${glow} fill-opacity="0.9"/>`;
-      }
-      g += `<ellipse cx="${sx}" cy="${cy}" rx="${sr}" ry="${sr}" ${hull}/>`;
-      g += `<ellipse cx="${sx}" cy="${cy}" rx="${sr * 0.62}" ry="${sr * 0.62}" ${line}/>`;
-      g += `<circle cx="${sx}" cy="${cy}" r="4" ${glow}/>`;
-    } else if (a === "bird") {
-      const span = 60 + r() * 22, sweep = 18 + r() * 26;
-      g += `<path d="M${cx - 70} ${cy} L${cx - 40} ${cy - 7} L${cx + 6} ${cy - 12} L${cx + 30 + sweep} ${cy - span} L${cx + 46 + sweep} ${cy - span + 6} L${cx + 40} ${cy - 10} L${cx + 58} ${cy} L${cx + 40} ${cy + 10} L${cx + 46 + sweep} ${cy + span - 6} L${cx + 30 + sweep} ${cy + span} L${cx + 6} ${cy + 12} L${cx - 40} ${cy + 7} Z" ${hull}/>`;
-      g += `<ellipse cx="${cx - 76}" cy="${cy}" rx="16" ry="11" ${hull}/>`;
-      g += `<path d="M${cx + 6} ${cy - 12} L${cx + 30 + sweep} ${cy - span} M${cx + 6} ${cy + 12} L${cx + 30 + sweep} ${cy + span}" ${line}/>`;
-      g += `<circle cx="${cx + 30}" cy="${cy}" r="5" ${glow}/>`;
-    } else if (a === "warbird") {
-      const w = 54 + r() * 18;
-      g += `<path d="M${cx - 92} ${cy} C ${cx - 40} ${cy - w} ${cx + 40} ${cy - w} ${cx + 82} ${cy - w * 0.55} L ${cx + 60} ${cy - 8} L ${cx + 60} ${cy + 8} L ${cx + 82} ${cy + w * 0.55} C ${cx + 40} ${cy + w} ${cx - 40} ${cy + w} ${cx - 92} ${cy} Z" ${hull}/>`;
-      g += `<path d="M${cx - 92} ${cy} L${cx + 60} ${cy}" ${line}/>`;
-      g += `<path d="M${cx - 60} ${cy - 6} C ${cx - 20} ${cy - w * 0.62} ${cx + 30} ${cy - w * 0.62} ${cx + 70} ${cy - w * 0.4} M${cx - 60} ${cy + 6} C ${cx - 20} ${cy + w * 0.62} ${cx + 30} ${cy + w * 0.62} ${cx + 70} ${cy + w * 0.4}" ${line}/>`;
-      g += `<circle cx="${cx - 10}" cy="${cy}" r="5" ${glow}/>`;
-    } else if (a === "arrow") {
-      const l = 110 + r() * 30, w = 38 + r() * 20;
-      g += `<path d="M${cx - l / 2 - 20} ${cy} L${cx + l / 2} ${cy - w} L${cx + l / 2 - 18} ${cy - w * 0.35} L${cx + l / 2 + 12} ${cy} L${cx + l / 2 - 18} ${cy + w * 0.35} L${cx + l / 2} ${cy + w} Z" ${hull}/>`;
-      g += `<path d="M${cx - l / 2} ${cy} L${cx + l / 2 - 10} ${cy}" ${line}/>`;
-      g += `<path d="M${cx - 10} ${cy - 10} L${cx + 30} ${cy - w * 0.6} M${cx - 10} ${cy + 10} L${cx + 30} ${cy + w * 0.6}" ${line}/>`;
-      g += `<circle cx="${cx - l / 2 + 6}" cy="${cy}" r="4" ${glow}/>`;
-    } else if (a === "beetle") {
-      const w = 34 + r() * 16;
-      g += `<path d="M${cx - 80} ${cy} C ${cx - 70} ${cy - w} ${cx + 30} ${cy - w - 10} ${cx + 74} ${cy - w * 0.4} L ${cx + 60} ${cy} L ${cx + 74} ${cy + w * 0.4} C ${cx + 30} ${cy + w + 10} ${cx - 70} ${cy + w} ${cx - 80} ${cy} Z" ${hull}/>`;
-      for (let i = 0; i < 4; i++) g += `<path d="M${cx - 50 + i * 28} ${cy - w * 0.8} L${cx - 40 + i * 28} ${cy + w * 0.8}" ${line}/>`;
-      g += `<circle cx="${cx - 66}" cy="${cy}" r="5" ${glow}/>`;
-    } else if (a === "horseshoe") {
-      g += `<path d="M${cx - 90} ${cy - 18} C ${cx - 40} ${cy - 70} ${cx + 60} ${cy - 60} ${cx + 90} ${cy - 20} L ${cx + 40} ${cy - 10} L ${cx + 40} ${cy + 10} L ${cx + 90} ${cy + 20} C ${cx + 60} ${cy + 60} ${cx - 40} ${cy + 70} ${cx - 90} ${cy + 18} Z" ${hull}/>`;
-      g += `<path d="M${cx - 60} ${cy} L${cx + 40} ${cy}" ${line}/>`;
-      g += `<circle cx="${cx - 40}" cy="${cy}" r="5" ${glow}/>`;
-    } else if (a === "cube") {
-      const s = 54;
-      g += `<path d="M${cx - s} ${cy - s * 0.55} L${cx} ${cy - s * 0.95} L${cx + s} ${cy - s * 0.55} L${cx + s} ${cy + s * 0.55} L${cx} ${cy + s * 0.95} L${cx - s} ${cy + s * 0.55} Z" ${hull}/>`;
-      g += `<path d="M${cx - s} ${cy - s * 0.55} L${cx} ${cy - s * 0.15} L${cx + s} ${cy - s * 0.55} M${cx} ${cy - s * 0.15} L${cx} ${cy + s * 0.95}" ${line}/>`;
-      for (let i = 0; i < 9; i++) { const x = cx - s + 8 + r() * (s - 14), y = cy - 10 + r() * 50; g += `<rect x="${x}" y="${y}" width="${4 + r() * 8}" height="2" ${glow} fill-opacity="0.7"/>`; }
-    } else if (a === "sphere" || a === "diamond") {
-      if (a === "sphere") g += `<circle cx="${cx}" cy="${cy}" r="58" ${hull}/><ellipse cx="${cx}" cy="${cy}" rx="58" ry="18" ${line}/><ellipse cx="${cx}" cy="${cy}" rx="22" ry="58" ${line}/>`;
-      else g += `<path d="M${cx} ${cy - 66} L${cx + 50} ${cy} L${cx} ${cy + 66} L${cx - 50} ${cy} Z" ${hull}/><path d="M${cx - 50} ${cy} L${cx + 50} ${cy} M${cx} ${cy - 66} L${cx} ${cy + 66}" ${line}/>`;
-      g += `<circle cx="${cx}" cy="${cy}" r="5" ${glow}/>`;
-    } else if (a === "station") {
-      const R = 54 + r() * 14, spokes = 3 + Math.floor(r() * 4);
-      g += `<circle cx="${cx}" cy="${cy}" r="${R}" ${hull}/><circle cx="${cx}" cy="${cy}" r="${R - 10}" fill="var(--surface-2)" stroke="${c}" stroke-opacity="0.5"/>`;
-      for (let i = 0; i < spokes; i++) { const an = (i / spokes) * Math.PI * 2 + r(); g += `<path d="M${cx} ${cy} L${cx + Math.cos(an) * (R - 10)} ${cy + Math.sin(an) * (R - 10)}" ${line}/>`; }
-      g += `<circle cx="${cx}" cy="${cy}" r="16" ${hull}/><circle cx="${cx}" cy="${cy}" r="4" ${glow}/>`;
-    } else if (a === "small") {
-      const l = 70 + r() * 30, w = 22 + r() * 10;
-      g += `<path d="M${cx - l / 2} ${cy - w * 0.5} L${cx + l / 2 - 10} ${cy - w * 0.5} L${cx + l / 2 + 8} ${cy} L${cx + l / 2 - 10} ${cy + w * 0.5} L${cx - l / 2} ${cy + w * 0.5} Z" ${hull}/>`;
-      g += `<rect x="${cx - l / 2 + 4}" y="${cy - w * 0.5 - 9}" width="${l * 0.6}" height="7" rx="3" ${hull}/><rect x="${cx - l / 2 + 4}" y="${cy + w * 0.5 + 2}" width="${l * 0.6}" height="7" rx="3" ${hull}/>`;
-      g += `<circle cx="${cx + l / 2 - 6}" cy="${cy}" r="3" ${glow}/>`;
-    } else {
-      const l = 120 + r() * 40, w = 30 + r() * 26;
-      g += `<path d="M${cx - l / 2} ${cy - w} L${cx + l / 2} ${cy - 6} L${cx + l / 2} ${cy + 6} L${cx - l / 2} ${cy + w} L${cx - l / 2 + 18} ${cy} Z" ${hull}/>`;
-      g += `<path d="M${cx - l / 2 + 18} ${cy} L${cx + l / 2} ${cy}" ${line}/>`;
-      g += `<circle cx="${cx - l / 2 + 26}" cy="${cy}" r="4" ${glow}/>`;
-    }
-    return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Schematische Silhouette"><g>${g}</g></svg>`;
-  }
+  // Zeichenstil der Schiffsgrafiken (ships.js). Standard ist der Bauplan, die Wahl merkt sich der Browser.
+  const ART_KEY = "sternenregister-grafik";
+  let artStyle = "bauplan";
+  try { if (localStorage.getItem(ART_KEY) === "modell") artStyle = "modell"; } catch (e) { /* ohne Speicher gilt der Standard */ }
+  const shipSVG = (item, color) => window.shipArt(item, color, artStyle);
+  let drawerArt = null;
 
   function artHTML(item, color) {
     const img = item.img && D.images[item.img];
@@ -176,7 +90,7 @@
 
   function cardHTML(c, shipCount) {
     const fac = factions.get(c.f);
-    const color = fac ? fac.color : "#8a9";
+    const color = fac ? fac.color : "#88aa99";
     const era = !c.fr && !c.to ? "" : c.fr === c.to || !c.to ? c.fr : `${c.fr || "?"}–${c.to}`;
     const tags = [];
     if (c.m) tags.push('<span class="tag alt">Spiegeluniversum</span>');
@@ -268,11 +182,12 @@
   /* ---------- Detailansicht ---------- */
   function imgBlock(item, color) {
     const img = item.img && D.images[item.img];
+    drawerArt = { item, color };
     let h = `<div class="d-art">${artHTML(item, color)}</div>`;
     if (img) {
       h += `<p class="credit">Bild: ${esc(img.artist || "unbekannt")} · <a href="${esc(img.licenseUrl || img.page)}" target="_blank" rel="noopener">${esc(img.license || "Lizenz siehe Commons")}</a> · <a href="${esc(img.page)}" target="_blank" rel="noopener">Wikimedia Commons</a></p>`;
     } else {
-      h += `<p class="credit">Schematische Silhouette, erzeugt aus Fraktion und Schiffstyp. Kein offizieller Entwurf.</p>`;
+      h += `<p class="credit">Schematische Zeichnung nach Klasse und Fraktion. Eigene Grafik, kein offizieller Entwurf.</p>`;
     }
     return h;
   }
@@ -292,7 +207,7 @@
   function openClass(i) {
     const c = D.classes[i];
     const f = factions.get(c.f);
-    const color = f ? f.color : "#8a9";
+    const color = f ? f.color : "#88aa99";
     const ships = c.ships.map((j) => D.ships[j]).sort((a, b) => a.n.localeCompare(b.n));
     let h = `<div style="--fc:${color}"><p class="d-kicker">Schiffsklasse · ${esc(f ? f.name : "")}</p><h3 class="d-title" id="d-title">${esc(c.n)}</h3>`;
     if (c.desc) h += `<p class="d-sub">${esc(c.desc)}</p>`;
@@ -321,9 +236,10 @@
   function openShip(i) {
     const s = D.ships[i];
     const f = factions.get(s.f);
-    const color = f ? f.color : "#8a9";
+    const color = f ? f.color : "#88aa99";
     const cls = s.c >= 0 ? D.classes[s.c] : null;
-    const art = s.img ? s : cls && cls.img ? { ...cls, n: s.n } : { ...s, ty: cls ? cls.ty : s.ty, f: s.f };
+    // Ohne eigenes Foto zeigt ein Schiff das Bild oder die Zeichnung seiner Klasse.
+    const art = s.img ? s : cls && cls.img ? { ...cls, n: s.n } : cls ? { ...cls, f: s.f || cls.f } : s;
     let h = `<div style="--fc:${color}"><p class="d-kicker">Raumschiff · ${esc(f ? f.name : "Ohne Zuordnung")}</p><h3 class="d-title" id="d-title">${esc(s.n)}</h3>`;
     if (s.desc) h += `<p class="d-sub">${esc(s.desc)}</p>`;
     h += imgBlock(art, color) + introBlock(s);
@@ -361,7 +277,8 @@
         const host = img.closest("[data-class],[data-ship]") || img.closest(".d-art");
         const btn = img.closest("[data-class]");
         const item = btn ? D.classes[+btn.dataset.class] : null;
-        img.replaceWith(document.createRange().createContextualFragment(shipSVG(item || { n: img.alt }, "#8a9")));
+        const fac = item && factions.get(item.f);
+        img.replaceWith(document.createRange().createContextualFragment(shipSVG(item || { n: img.alt }, fac ? fac.color : "#88aa99")));
         void host;
       }, { once: true });
     });
@@ -416,6 +333,20 @@
     const st = [...new Set(D.ships.map((s) => s.st).filter(Boolean))].sort((a, b) => statusDe(a).localeCompare(statusDe(b)));
     $("#f-status").insertAdjacentHTML("beforeend", st.map((s) => `<option value="${esc(s)}">${esc(statusDe(s))}</option>`).join(""));
     $("#f-status").addEventListener("change", (e) => { state.status = e.target.value; render(); });
+    const setArt = (v) => {
+      artStyle = v;
+      try { localStorage.setItem(ART_KEY, v); } catch (e) { /* nicht schlimm */ }
+      document.querySelectorAll(".card[data-class] .card-art svg").forEach((svg) => {
+        const c = D.classes[+svg.closest(".card").dataset.class], f = factions.get(c.f);
+        svg.outerHTML = shipSVG(c, f ? f.color : "#88aa99");
+      });
+      const d = $("#drawer-body .d-art svg");
+      if (d && drawerArt) d.outerHTML = shipSVG(drawerArt.item, drawerArt.color);
+    };
+    document.querySelectorAll('input[name="art"]').forEach((el) => {
+      el.checked = el.value === artStyle;
+      el.addEventListener("change", () => el.checked && setArt(el.value));
+    });
     $("#expand-all").addEventListener("click", () => {
       document.querySelectorAll(".quad, .fac").forEach((d) => (d.open = true));
     });
