@@ -4161,7 +4161,7 @@
    "operator": "[[Confederation Corps]]",
    "affiliation": "Confederation of Earth"
   },
-  "intro": "The CSS World Razer was a 24th century warship that was operated by the Confederation of Earth in an alternate timeline."
+  "intro": "The CSS World Razer (NCC-2101-D) was a 24th century warship that was operated by the Confederation of Earth in an alternate timeline."
  },
  {
   "title": "CSS World Razer",
@@ -4181,7 +4181,7 @@
    "operator": "[[Confederation Corps]]",
    "affiliation": "Confederation of Earth"
   },
-  "intro": "The CSS World Razer was a 24th century warship that was operated by the Confederation of Earth in an alternate timeline."
+  "intro": "The CSS World Razer (NCC-2101-D) was a 24th century warship that was operated by the Confederation of Earth in an alternate timeline."
  },
  {
   "title": "CSS Zin Kibaru",
@@ -11997,7 +11997,7 @@
   ],
   "sidebar": null,
   "infobox": {},
-  "intro": "In starship classification, a frigate was a fast, medium-sized starship intended to protect other vessels."
+  "intro": "In starship classification, a frigate was a fast, medium-sized starship intended to protect other vessels. The term was originally used for naval vessels."
  },
  {
   "title": "Frunalian science vessel",
@@ -16959,9 +16959,11 @@
    "type": "[[Planet]]",
    "affiliation": "[[Enolian]]s",
    "class": "[[Class M|M]]",
-   "location": "[[Alpha Quadrant|Alpha]] or [[Beta Quadrant]]"
+   "location": "[[Alpha Quadrant|Alpha]] or [[Beta Quadrant]]",
+   "status": "Inhabited",
+   "datestatus": "2152"
   },
-  "intro": "Keto-Enol was an inhabited class M planet settled by the Enolians. It was the busiest trading outpost in its star system."
+  "intro": "Keto-Enol was an inhabited class M planet settled by the Enolians. It was the busiest trading outpost in its star system. It was located somewhere in the Alpha or Beta Quadrant."
  },
  {
   "title": "Khitomer",
@@ -23849,13 +23851,14 @@
   "infobox": {
    "name": "Pikaru",
    "type": "[[Outpost]]",
-   "affiliation": "{{Federation}}",
-   "location": "[[Unnamed Alpha and Beta Quadrant planets#Pikaru planet|Unnamed planet]]<br>[[Alpha Quadrant|Alpha]] or [[Beta Quadrant]]",
+   "owner": "{{Federation}}",
+   "operator": "[[Starfleet]]",
+   "location": "[[Unnamed Alpha and Beta Quadrant planets#Pikaru planet|Unnamed planet]]<br>[[Beta Quadrant]]",
    "status": "Active",
-   "datestatus": "3180",
+   "datestatus": "3196",
    "image": "Pikaru.jpg"
   },
-  "intro": "Pikaru, also referred to as Pikaru Settlement, was a Federation outpost operated by Starfleet during the 32nd century. It was located on the surface of a planet that experienced level-3 sandstorms."
+  "intro": "Pikaru, also referred to as Pikaru Settlement, was a Federation outpost in the Beta Quadrant operated by Starfleet during the 32nd century. It was located on the surface of a planet that experienced level-3 sandstorms."
  },
  {
   "title": "Pike (shuttlepod)",
@@ -27190,7 +27193,7 @@
    "dt": "SS ''Xhosa''",
    "class": "{{class|Antares}}",
    "owner": "[[Kasidy Yates]]",
-   "operator": "[[Kasidy Yates Interstellar Freights]]",
+   "operator": "[[Kasidy Yates Interstellar Freights]]<br>[[Maquis]]",
    "status": "Impounded",
    "datestatus": "2372"
   },
@@ -29324,7 +29327,7 @@
    "caption2": "Three-quarter view",
    "image3": "Space Shuttle sketch.jpg",
    "caption3": "Overview",
-   "logo": "NASA logo.png"
+   "logo": "NASA logo.svg"
   },
   "intro": "A space shuttle orbiter was a type of low-orbit spacecraft developed on Earth by the National Aeronautics and Space Administration of the United States of America."
  },
@@ -31286,16 +31289,16 @@
   "sidebar": "station",
   "infobox": {
    "name": "Starbase 5",
-   "image": "",
-   "type": "",
+   "image": "File:Spock's last known location - helm.jpg",
+   "caption": "A flight path leading away from Starbase 5",
+   "type": "[[Starbase]]",
    "owner": "[[United Federation of Planets]]",
    "operator": "[[Starfleet]]",
-   "status": "Active",
    "location": "[[Alpha Quadrant]]",
-   "datestatus": "2257",
-   "image2": ""
+   "status": "Active",
+   "datestatus": "2257"
   },
-  "intro": "Starbase 5 was a Federation starbase administered by Starfleet. This base was located in the Alpha Quadrant. It had a medical facility that included a psychiatric ward. As of 2257, it was administered by Captain Diego Vela. ()"
+  "intro": "Starbase 5 was a Federation starbase administered by Starfleet. This base was located in the Alpha Quadrant."
  },
  {
   "title": "Starbase 514",
@@ -40761,7 +40764,7 @@
    "caption": "Battle Group Omega, including the Intrepid",
    "name": "USS ''Intrepid''",
    "dt": "USS ''Intrepid'' (NCC-74600)",
-   "class": "",
+   "class": "{{class|Intrepid}}",
    "registry": "[[NCC]]-74600",
    "owner": "{{Federation}}",
    "operator": "[[Starfleet]]",
@@ -48946,7 +48949,7 @@
    "crew": "1",
    "armament": "None"
   },
-  "intro": "The Xindi-Aquatic escape pod was a type of small one-man escape pod of fairly typical design used aboard Xindi-Aquatic cruisers. This type of vessel was had no armaments, and was capable of maneuvering under water."
+  "intro": "The Xindi-Aquatic escape pod was a type of small one-man escape pod of fairly typical design used aboard Xindi-Aquatic cruisers. This type of vessel had no armaments, and was capable of maneuvering under water."
  },
  {
   "title": "Xindi-Aquatic scout ship",

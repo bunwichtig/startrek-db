@@ -1,5 +1,5 @@
 {
- "built": "2026-10-25",
+ "built": "2026-11-01",
  "quadrants": [
   {
    "id": "alpha",
@@ -12416,7 +12416,7 @@
    ],
    "ships": [],
    "ma": "https://memory-alpha.fandom.com/wiki/Xindi-Aquatic_escape_pod",
-   "intro": "The Xindi-Aquatic escape pod was a type of small one-man escape pod of fairly typical design used aboard Xindi-Aquatic cruisers. This type of vessel was had no armaments, and was capable of maneuvering under water."
+   "intro": "The Xindi-Aquatic escape pod was a type of small one-man escape pod of fairly typical design used aboard Xindi-Aquatic cruisers. This type of vessel had no armaments, and was capable of maneuvering under water."
   },
   {
    "i": 700,
@@ -16447,7 +16447,7 @@
    "f": "earth",
    "own": "Confederation of Earth",
    "ma": "https://memory-alpha.fandom.com/wiki/CSS_World_Razer",
-   "intro": "The CSS World Razer was a 24th century warship that was operated by the Confederation of Earth in an alternate timeline."
+   "intro": "The CSS World Razer (NCC-2101-D) was a 24th century warship that was operated by the Confederation of Earth in an alternate timeline."
   },
   {
    "i": 129,
@@ -23496,7 +23496,7 @@
    "f": "federation",
    "own": "United Federation of Planets",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_5",
-   "intro": "Starbase 5 was a Federation starbase administered by Starfleet. This base was located in the Alpha Quadrant. It had a medical facility that included a psychiatric ward. As of 2257, it was administered by Captain Diego Vela."
+   "intro": "Starbase 5 was a Federation starbase administered by Starfleet. This base was located in the Alpha Quadrant."
   },
   {
    "i": 773,
@@ -32803,16 +32803,17 @@
    "i": 1554,
    "n": "Pikaru",
    "st": "Active",
-   "d": "3180",
+   "d": "3196",
    "c": -1,
    "f": "federation",
-   "aff": "Federation",
+   "own": "Federation",
+   "op": "Starfleet",
    "ty": [
     "Outpost"
    ],
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Pikaru",
-   "intro": "Pikaru, also referred to as Pikaru Settlement, was a Federation outpost operated by Starfleet during the 32nd century. It was located on the surface of a planet that experienced level-3 sandstorms."
+   "intro": "Pikaru, also referred to as Pikaru Settlement, was a Federation outpost in the Beta Quadrant operated by Starfleet during the 32nd century. It was located on the surface of a planet that experienced level-3 sandstorms."
   },
   {
    "i": 1555,
