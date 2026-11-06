@@ -19,6 +19,11 @@ Die Browser verbinden sich direkt miteinander (WebRTC über [PeerJS](https://pee
 - Wer vom Feuer getroffen wird, ist für die Runde raus. Wer zuerst 3 Runden gewinnt, gewinnt das Spiel.
 - Power-ups aus Kisten: 💣 eine Bombe mehr, 🔥 größere Explosion, 👟 schneller laufen, 🦶 Bomben wegkicken.
 
+## Sound
+
+Alle Geräusche (Bombe legen, Explosion, Power-up, Treffer, Rundenstart, Sieg, Countdown in den letzten 10 Sekunden) werden direkt im Browser erzeugt.
+Unter dem Spielfeld lässt sich der Ton aus- und einschalten.
+
 ## Rangliste
 
 Auf der Startseite steht eine Rangliste mit Siegen, gespielten Spielen und gewonnenen Runden.
