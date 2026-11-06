@@ -695,10 +695,90 @@ try {
 
 renderRanking();
 
+// ---------- Sound ----------
+// Alle Geräusche werden mit der Web Audio API erzeugt, es gibt keine Sounddateien.
+const Sound = (() => {
+  let ac = null, master = null, noiseBuf = null;
+  let muted = false;
+  try { muted = localStorage.getItem('ff-mute') === '1'; } catch (e) {}
+  function init() {
+    if (ac) { if (ac.state === 'suspended') ac.resume(); return; }
+    const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+    ac = new AC(); master = ac.createGain(); master.gain.value = muted ? 0 : 0.5; master.connect(ac.destination);
+    noiseBuf = ac.createBuffer(1, ac.sampleRate, ac.sampleRate);
+    const d = noiseBuf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+  }
+  function env(g, t, a, peak, dur) {
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  }
+  function tone(type, f1, f2, dur, vol, delay = 0) {
+    if (!ac || muted) return;
+    const t = ac.currentTime + delay, o = ac.createOscillator(), g = ac.createGain();
+    o.type = type; o.frequency.setValueAtTime(f1, t); if (f2) o.frequency.exponentialRampToValueAtTime(f2, t + dur);
+    env(g, t, 0.01, vol, dur); o.connect(g); g.connect(master); o.start(t); o.stop(t + dur + 0.05);
+  }
+  function noise(dur, vol, f1, f2, delay = 0) {
+    if (!ac || muted) return;
+    const t = ac.currentTime + delay, src = ac.createBufferSource(), flt = ac.createBiquadFilter(), g = ac.createGain();
+    src.buffer = noiseBuf; flt.type = 'lowpass'; flt.frequency.setValueAtTime(f1, t); flt.frequency.exponentialRampToValueAtTime(f2, t + dur);
+    env(g, t, 0.005, vol, dur); src.connect(flt); flt.connect(g); g.connect(master); src.start(t); src.stop(t + dur + 0.05);
+  }
+  const fx = {
+    place: () => { tone('square', 220, 110, 0.08, 0.25); },
+    boom: () => { noise(0.7, 0.9, 2400, 80); tone('sine', 90, 30, 0.5, 0.7); },
+    pickup: () => { [660, 880, 1320].forEach((f, i) => tone('triangle', f, 0, 0.09, 0.3, i * 0.06)); },
+    death: () => { tone('sawtooth', 500, 60, 0.6, 0.3); },
+    start: () => { [523, 659, 784].forEach((f, i) => tone('square', f, 0, 0.12, 0.18, i * 0.12)); },
+    round: () => { [784, 659, 784, 1047].forEach((f, i) => tone('triangle', f, 0, 0.15, 0.3, i * 0.13)); },
+    draw: () => { [392, 330].forEach((f, i) => tone('triangle', f, 0, 0.25, 0.3, i * 0.2)); },
+    win: () => { [523, 659, 784, 1047, 784, 1047].forEach((f, i) => tone('square', f, 0, i === 5 ? 0.5 : 0.14, 0.2, i * 0.14)); },
+    tick: () => { tone('square', 1200, 0, 0.04, 0.12); },
+  };
+  return {
+    init, play: (name) => fx[name] && fx[name](),
+    get muted() { return muted; },
+    toggle() {
+      muted = !muted; try { localStorage.setItem('ff-mute', muted ? '1' : '0'); } catch (e) {}
+      init(); if (master) master.gain.value = muted ? 0 : 0.5;
+      return muted;
+    },
+  };
+})();
+// Browser erlauben Ton erst nach einer Nutzeraktion
+for (const ev of ['pointerdown', 'keydown']) addEventListener(ev, () => Sound.init(), { capture: true });
+function updateMuteBtn() { $('btn-mute').textContent = Sound.muted ? '🔇 Ton aus' : '🔊 Ton an'; }
+$('btn-mute').onclick = () => { Sound.toggle(); updateMuteBtn(); $('btn-mute').blur(); };
+updateMuteBtn();
+
+// Geräusche aus Änderungen des Spielstands ableiten (funktioniert beim Gastgeber und bei Mitspielern gleich)
+let prevView = null;
+function soundsFor(v) {
+  const p = prevView; prevView = v;
+  if (!p || p === v) return;
+  if (v.phase === 'play' && (p.phase !== 'play' || v.round !== p.round)) Sound.play('start');
+  if (v.phase !== p.phase) {
+    if (v.phase === 'matchEnd') Sound.play('win');
+    else if (v.phase === 'roundEnd') Sound.play(/gewinnt/.test(v.msg) ? 'round' : 'draw');
+  }
+  if (v.phase !== 'play' && p.phase !== 'play') return;
+  const key = (b) => b[0] + ',' + b[1];
+  const oldF = new Set(p.flames.map(key));
+  if (v.flames.some((f) => !oldF.has(key(f)))) Sound.play('boom');
+  else if (v.bombs.length > p.bombs.length) Sound.play('place');
+  const before = new Map(p.players.map((q) => [q.id, q]));
+  for (const q of v.players) {
+    const o = before.get(q.id); if (!o) continue;
+    if (o.alive && !q.alive) Sound.play('death');
+    else if (q.alive && (q.bombs > o.bombs || q.range > o.range || q.speed > o.speed || (q.kick && !o.kick))) Sound.play('pickup');
+  }
+  if (v.clock <= 10 && v.clock < p.clock && v.clock > 0) Sound.play('tick');
+}
+
 // ---------- Zeichnen ----------
 const cv = $('cv'), ctx = cv.getContext('2d');
 let lastHud = '';
 function draw(v, isHost) {
+  soundsFor(v);
   const now = performance.now() / 1000;
   const grid = v.grid;
   // Boden
@@ -821,5 +901,5 @@ function roundRect(x, y, w, h, r) {
 }
 
 // Für Tests von außen erreichbar
-window.Funkenfeld = { Game, S };
+window.Funkenfeld = { Game, S, Sound };
 })();
