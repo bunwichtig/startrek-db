@@ -76,3 +76,15 @@ canvas { display: block; width: 100%; height: auto; border-radius: 8px; image-re
 .pad [data-dir=down] { grid-column: 2; grid-row: 3; }
 #touch-bomb { flex: none; width: 96px; height: 96px; min-width: 0; border-radius: 50%; font-size: 2.2rem; touch-action: none; }
 @media (pointer: coarse) { #touch { display: flex; } }
+
+/* Rangliste */
+.rank-panel { margin-top: 16px; }
+.rank-title { margin: 20px 0 8px; font-size: 1.2rem; }
+.ranking table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.ranking th, .ranking td { padding: 7px 6px; text-align: right; border-bottom: 1px solid var(--border); }
+.ranking th:nth-child(2), .ranking td:nth-child(2) { text-align: left; width: 100%; }
+.ranking th:first-child, .ranking td:first-child { text-align: center; }
+.ranking th { color: var(--muted); font-weight: 600; font-size: .85rem; }
+.ranking tbody tr:first-child td { color: var(--accent); font-weight: 700; }
+.muted, .note { color: var(--muted); font-size: .9rem; }
+.note { margin: 10px 0 0; }
