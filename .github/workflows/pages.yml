@@ -3,15 +3,6 @@ name: Webseite veröffentlichen
 on:
   push:
     branches: [main]
-    paths:
-      - "site/**"
-      - ".github/workflows/pages.yml"
-  # Nach der monatlichen Datenaktualisierung neu veröffentlichen.
-  # (Commits der Action selbst lösen kein push-Ereignis aus.)
-  workflow_run:
-    workflows: ["Daten abrufen"]
-    types: [completed]
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -25,18 +16,16 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: main
       - uses: actions/configure-pages@v5
+      # Veröffentlicht das Spiel (Hauptordner) und die alte Datenbank unter /startrek-backup/site/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: .
       - id: deployment
         uses: actions/deploy-pages@v4

@@ -1,41 +1,35 @@
-# Sternenregister – Star-Trek-Schiffsdatenbank
+# Funkenfeld
 
-Fan-Datenbank über Raumschiffe und Schiffsklassen aus Star Trek, aufgebaut aus frei verfügbaren Quellen.
-Sie ist die Grundlage für spätere Projekte wie Sternenkarten oder kleine Story-Spiele.
+Eine Bomben-Arena für 2 bis 4 Spieler direkt im Browser. Eigene Grafik, klassische Regeln.
 
-## Aufbau
+**Spielen:** https://bunwichtig.github.io/startrek-db/
 
-| Pfad | Inhalt |
-| --- | --- |
-| `site/` | Die Hauptseite: Bereich **Datenbank** (durchsuchbar, nach Quadranten aufklappbar, nach Fraktionen gruppiert) und Bereich **Datenbasis** (Quellen, Lizenzen, Rechte). Statisch, ohne Build-Schritt. |
-| `data/raw/` | Unveränderte Rohdaten aus STAPI, Wikidata und Wikimedia Commons. |
-| `data/ships.json` | Aufbereitete Datenbank mit Klassen, Schiffen, Fraktionen, Quadranten und Bildnachweisen. |
-| `scripts/fetch_stapi.py` | Lädt Schiffe und Schiffsklassen von [STAPI](https://stapi.co). |
-| `scripts/fetch_wikidata.py` | Lädt deutsche Namen, Beschreibungen und Bilder aus Wikidata und Commons. |
-| `scripts/build.py` | Ordnet Fraktionen und Quadranten zu und schreibt `data/ships.json` und `site/data.js`. |
-| `scripts/bundle.py` | Fasst die Seite zu einer einzigen HTML-Datei zusammen. |
+## So spielt ihr zusammen
 
-Die GitHub Action `Daten abrufen` führt alle Schritte einmal im Monat aus und committet das Ergebnis.
-Lokal geht es genauso:
+1. Einer öffnet die Seite, gibt Name, Raumname und Passwort ein und klickt **Raum erstellen**.
+2. Die anderen öffnen dieselbe Seite, geben denselben Raumnamen und dasselbe Passwort ein und klicken **Raum beitreten**.
+3. Der Gastgeber klickt **Spiel starten**. Sein Browser berechnet das Spiel und muss offen bleiben.
+
+Die Browser verbinden sich direkt miteinander (WebRTC über [PeerJS](https://peerjs.com)). Es gibt keinen eigenen Server.
+
+## Regeln
+
+- Pfeiltasten oder WASD zum Laufen, Leertaste oder Enter für eine Bombe. Auf dem Handy gibt es Tasten.
+- Bomben explodieren nach 2,5 Sekunden als Kreuz, sprengen Kisten und lösen andere Bomben aus.
+- Wer vom Feuer getroffen wird, ist für die Runde raus. Wer zuerst 3 Runden gewinnt, gewinnt das Spiel.
+- Power-ups aus Kisten: 💣 eine Bombe mehr, 🔥 größere Explosion, 👟 schneller laufen, 🦶 Bomben wegkicken.
+
+## Lokal testen
 
 ```sh
-python scripts/fetch_stapi.py
-python scripts/fetch_wikidata.py
-python scripts/build.py
-python -m http.server -d site   # dann http://localhost:8000
+python -m http.server 8000
 ```
 
-## Quellen und Lizenzen
+Dann `http://localhost:8000/?local` in zwei Tabs öffnen. Mit `?local` laufen die Tabs ohne Internet über den Browser selbst.
 
-| Quelle | Lizenz | Verwendung |
-| --- | --- | --- |
-| [Memory Alpha](https://memory-alpha.fandom.com) über [STAPI](https://stapi.co) | Inhalte CC BY-NC 4.0, STAPI-Code MIT | Schiffe, Klassen, Status, Bewaffnung, Zugehörigkeit |
-| [Wikidata](https://www.wikidata.org) | CC0 | Deutsche Namen, Beschreibungen, Bildverknüpfungen |
-| [Wikimedia Commons](https://commons.wikimedia.org) | je Bild (meist CC BY-SA oder gemeinfrei) | Fotos, mit Urheber und Lizenz an jedem Bild |
-| Eigene Silhouetten | CC0 | Schematische Schiffsgrafiken, erzeugt aus Fraktion und Typ |
+## Backup der Star-Trek-Datenbank
 
-Weil die Kerndaten aus Memory Alpha stammen, gilt für die Datenbank insgesamt **CC BY-NC 4.0**:
-Weitergabe mit Namensnennung, keine kommerzielle Nutzung. Der Code dieses Repositorys steht unter MIT.
-
-Star Trek und alle zugehörigen Marken gehören Paramount Global (CBS Studios). Dies ist ein
-nicht-kommerzielles Fanprojekt ohne Verbindung zu Paramount oder CBS.
+Die frühere Star-Trek-Schiffsdatenbank liegt unverändert in [`startrek-backup/`](startrek-backup/) und ist weiter erreichbar unter
+https://bunwichtig.github.io/startrek-db/startrek-backup/site/ .
+Der Stand vor dem Umbau ist ausserdem in der Git-Historie erhalten (Commit `54d6f9c`).
+Die monatliche Datenaktualisierung ist abgeschaltet (der Workflow liegt im Backup-Ordner).
