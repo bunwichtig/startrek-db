@@ -19,6 +19,13 @@ Die Browser verbinden sich direkt miteinander (WebRTC über [PeerJS](https://pee
 - Wer vom Feuer getroffen wird, ist für die Runde raus. Wer zuerst 3 Runden gewinnt, gewinnt das Spiel.
 - Power-ups aus Kisten: 💣 eine Bombe mehr, 🔥 größere Explosion, 👟 schneller laufen, 🦶 Bomben wegkicken.
 
+## Rangliste
+
+Auf der Startseite steht eine Rangliste mit Siegen, gespielten Spielen und gewonnenen Runden.
+Ein Spiel zählt, sobald jemand 3 Runden gewonnen hat. Gespeichert wird im Browser (localStorage).
+Beim Beitreten tauschen Gastgeber und Mitspieler ihre Spiele aus, so haben alle denselben Stand.
+Spieler werden über ihren Namen zugeordnet, also immer denselben Namen benutzen.
+
 ## Lokal testen
 
 ```sh

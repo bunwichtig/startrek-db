@@ -31,6 +31,11 @@
       <p><b>Regeln:</b> Wer von einer Explosion getroffen wird, ist für die Runde raus. Wer zuerst 3 Runden gewinnt, gewinnt das Spiel.</p>
     </details>
   </section>
+  <section id="rank-start" class="panel rank-panel">
+    <h2>🏆 Rangliste</h2>
+    <div class="ranking"></div>
+    <p class="note">Gespeichert in diesem Browser. Beim Beitreten gleichen alle Mitspieler ihre Ranglisten ab.</p>
+  </section>
 
   <!-- Lobby -->
   <section id="screen-lobby" class="panel hidden">
@@ -41,6 +46,8 @@
       <button id="btn-start" class="hidden">Spiel starten</button>
       <button id="btn-leave" class="secondary">Verlassen</button>
     </div>
+    <h2 class="rank-title">🏆 Rangliste</h2>
+    <div class="ranking"></div>
   </section>
 
   <!-- Spiel -->
@@ -63,6 +70,10 @@
       <button id="btn-again" class="hidden">Neues Spiel</button>
       <button id="btn-quit" class="secondary">Verlassen</button>
     </div>
+    <section id="rank-game" class="panel rank-panel hidden">
+      <h2>🏆 Rangliste</h2>
+      <div class="ranking"></div>
+    </section>
   </section>
 </main>
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>

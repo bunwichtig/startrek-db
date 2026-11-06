@@ -175,6 +175,7 @@ class Game {
     }
   }
   startMatch() {
+    this.recorded = false;
     for (const p of this.players) p.score = 0;
     this.round = 0;
     this.startRound();
@@ -374,6 +375,67 @@ class Game {
   }
 }
 
+// ---------- Rangliste ----------
+// Jedes beendete Spiel wird als Eintrag gespeichert (im Browser, localStorage).
+// Beim Beitreten tauschen Gastgeber und Mitspieler ihre Listen aus, so haben alle denselben Stand.
+const RANK_KEY = 'ff-matches', RANK_MAX = 300;
+function loadMatches() {
+  try { const l = JSON.parse(localStorage.getItem(RANK_KEY) || '[]'); return Array.isArray(l) ? l : []; } catch (e) { return []; }
+}
+function cleanMatch(m) {
+  if (!m || typeof m.id !== 'string' || !Array.isArray(m.players) || m.players.length < 2 || m.players.length > MAX_PLAYERS) return null;
+  const players = m.players.map((p) => ({ name: String(p && p.name || '').slice(0, 12), score: Math.max(0, Math.min(WIN_ROUNDS, p && p.score | 0)) }));
+  if (players.some((p) => !p.name)) return null;
+  const winner = String(m.winner || '').slice(0, 12);
+  if (!players.some((p) => p.name === winner)) return null;
+  return { id: m.id.slice(0, 40), date: +m.date || 0, players, winner };
+}
+function mergeMatches(list) {
+  if (!Array.isArray(list)) return false;
+  const all = loadMatches(); const ids = new Set(all.map((m) => m.id));
+  let added = false;
+  for (const raw of list.slice(-RANK_MAX)) {
+    const m = cleanMatch(raw);
+    if (m && !ids.has(m.id)) { all.push(m); ids.add(m.id); added = true; }
+  }
+  if (added) {
+    all.sort((a, b) => a.date - b.date);
+    try { localStorage.setItem(RANK_KEY, JSON.stringify(all.slice(-RANK_MAX))); } catch (e) {}
+    renderRanking();
+  }
+  return added;
+}
+function ranking() {
+  const by = new Map();
+  for (const m of loadMatches()) for (const p of m.players) {
+    const key = p.name.trim().toLowerCase();
+    const r = by.get(key) || { name: p.name, games: 0, wins: 0, rounds: 0, last: 0 };
+    r.games++; r.rounds += p.score; if (p.name === m.winner) r.wins++;
+    if (m.date >= r.last) { r.last = m.date; r.name = p.name; }
+    by.set(key, r);
+  }
+  return [...by.values()].sort((a, b) => b.wins - a.wins || (b.wins / b.games) - (a.wins / a.games) || b.rounds - a.rounds || a.name.localeCompare(b.name));
+}
+function renderRanking() {
+  const rows = ranking();
+  const html = rows.length
+    ? '<table><thead><tr><th>#</th><th>Name</th><th title="Gewonnene Spiele">Siege</th><th title="Gespielte Spiele">Spiele</th><th title="Gewonnene Runden">Runden</th></tr></thead><tbody>' +
+      rows.slice(0, 20).map((r, i) => `<tr><td>${['🥇', '🥈', '🥉'][i] || i + 1}</td><td>${esc(r.name)}</td><td>${r.wins}</td><td>${r.games}</td><td>${r.rounds}</td></tr>`).join('') +
+      '</tbody></table>'
+    : '<p class="muted">Noch keine Spiele. Nach dem ersten ganzen Spiel (3 Rundensiege) steht hier, wer vorne liegt.</p>';
+  document.querySelectorAll('.ranking').forEach((el) => { el.innerHTML = html; });
+}
+function recordMatch(g) {
+  const winner = g.players.find((p) => p.score >= WIN_ROUNDS);
+  if (!winner) return;
+  const m = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 8), date: Date.now(),
+    players: g.players.map((p) => ({ name: p.name, score: p.score })), winner: winner.name };
+  mergeMatches([m]);
+  renderRanking();
+  const msg = { t: 'matches', list: loadMatches() };
+  for (const c of S.conns.values()) c.send(msg);
+}
+
 // ---------- App-Zustand ----------
 const S = {
   role: null,        // 'host' | 'client'
@@ -389,6 +451,8 @@ const S = {
 // ---------- Oberfläche ----------
 function show(screen) {
   for (const s of ['start', 'lobby', 'game']) $('screen-' + s).classList.toggle('hidden', s !== screen);
+  $('rank-start').classList.toggle('hidden', screen !== 'start');
+  renderRanking();
 }
 function startMsg(text, err) { const m = $('start-msg'); m.textContent = text; m.classList.toggle('err', !!err); }
 
@@ -437,6 +501,8 @@ function onClientConnect(conn) {
       g.addPlayer(pid, String(m.name || 'Spieler').slice(0, 12));
       S.conns.set(pid, conn);
       conn.send({ t: 'welcome', id: pid });
+      if (mergeMatches(m.matches)) { const msg = { t: 'matches', list: loadMatches() }; for (const c of S.conns.values()) c.send(msg); }
+      else conn.send({ t: 'matches', list: loadMatches() });
       broadcastLobby();
       return;
     }
@@ -475,7 +541,7 @@ async function joinRoom() {
         else if (m.t === 'reject') { clearTimeout(timer); reject(new Error(m.reason)); }
       };
       conn.onClose = () => { clearTimeout(timer); reject(new Error('Verbindung getrennt.')); };
-      conn.send({ t: 'join', name: f.name, pw });
+      conn.send({ t: 'join', name: f.name, pw, matches: loadMatches() });
     });
     conn.onData = onHostMessage;
     conn.onClose = () => { if (S.role === 'client') leave('Der Gastgeber hat das Spiel verlassen.'); };
@@ -494,6 +560,8 @@ function onHostMessage(m) {
   if (m.t === 'lobby') {
     renderLobby(m);
     if (m.phase === 'lobby' && !$('screen-game').classList.contains('hidden')) enterLobby();
+  } else if (m.t === 'matches') {
+    mergeMatches(m.list); renderRanking();
   } else if (m.t === 'state') {
     S.view = m;
     if (m.phase !== 'lobby' && $('screen-game').classList.contains('hidden')) show('game');
@@ -539,6 +607,7 @@ function runHostLoop() {
     const me = g.players.find((p) => p.id === 'host'); if (me) me.input = { ...S.input };
     while (acc >= TICK) {
       g.step(TICK); acc -= TICK;
+      if (g.phase === 'matchEnd' && !g.recorded) { g.recorded = true; recordMatch(g); }
       if (++n % SEND_EVERY === 0) {
         const snap = g.snapshot();
         for (const c of S.conns.values()) c.send(snap);
@@ -624,6 +693,8 @@ try {
   $('in-room').value = localStorage.getItem('ff-room') || '';
 } catch (e) {}
 
+renderRanking();
+
 // ---------- Zeichnen ----------
 const cv = $('cv'), ctx = cv.getContext('2d');
 let lastHud = '';
@@ -665,6 +736,7 @@ function draw(v, isHost) {
   ov.classList.toggle('hidden', !v.msg);
   if (v.msg && ov.textContent !== v.msg) ov.textContent = v.msg;
   $('btn-again').classList.toggle('hidden', !(isHost && v.phase === 'matchEnd'));
+  $('rank-game').classList.toggle('hidden', v.phase !== 'matchEnd');
 }
 
 function drawWall(px, py) {
