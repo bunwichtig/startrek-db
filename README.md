@@ -31,5 +31,5 @@ Dann `http://localhost:8000/?local` in zwei Tabs öffnen. Mit `?local` laufen di
 
 Die frühere Star-Trek-Schiffsdatenbank liegt unverändert in [`startrek-backup/`](startrek-backup/) und ist weiter erreichbar unter
 https://bunwichtig.github.io/startrek-db/startrek-backup/site/ .
-Zusätzlich markiert der Git-Tag `backup-startrek-db-2026-11-06` den Stand vor dem Umbau.
+Der Stand vor dem Umbau ist ausserdem in der Git-Historie erhalten (Commit `54d6f9c`).
 Die monatliche Datenaktualisierung ist abgeschaltet (der Workflow liegt im Backup-Ordner).
