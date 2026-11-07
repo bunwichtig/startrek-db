@@ -98,3 +98,5 @@ canvas { display: block; width: 100%; height: auto; border-radius: 8px; image-re
 .settings input[type=range] { padding: 0; border: 0; background: none; accent-color: var(--accent); }
 .settings select:disabled, .settings input:disabled { opacity: .7; }
 .settings b { color: var(--text); }
+.settings label.check { display: flex; align-items: center; gap: 8px; color: var(--text); }
+.settings label.check input { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--accent); }

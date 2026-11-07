@@ -18,6 +18,8 @@ Die Browser verbinden sich direkt miteinander (WebRTC über [PeerJS](https://pee
 - Bomben explodieren nach 2,5 Sekunden als Kreuz, sprengen Kisten und lösen andere Bomben aus.
 - Wer vom Feuer getroffen wird, ist für die Runde raus. Wer zuerst die eingestellte Zahl an Runden gewinnt (Standard 3), gewinnt das Spiel.
 - Power-ups aus Kisten: 💣 eine Bombe mehr, 🔥 größere Explosion, 👟 schneller laufen, 🦶 Bomben wegkicken.
+- Seltene **Mega-Items** mit bunt leuchtendem Rahmen: 🌟 Megafeuer (maximale Explosion, eine Bombe mehr), 💥 Durchschlag (Explosionen gehen durch Kisten), 🛡️ Schild (übersteht einen Treffer), 👻 Geist (10 Sekunden durch Kisten und Bomben laufen).
+- Ecken-Hilfe: Wer knapp an einer Abzweigung vorbei ist oder vor einer Ecke steht, rutscht automatisch in den freien Gang.
 
 ## Einstellungen (Gastgeber, in der Lobby)
 
@@ -25,6 +27,7 @@ Die Browser verbinden sich direkt miteinander (WebRTC über [PeerJS](https://pee
 - **Feldgröße:** Klein (11 × 9), Mittel (15 × 13), Groß (19 × 15), Riesig (23 × 17).
 - **Power-up-Chance:** 0 bis 100 % pro gesprengter Kiste.
 - **Rundensiege zum Gewinnen:** 1 bis 5.
+- **Mega-Items:** an oder aus.
 
 ## Sound
 

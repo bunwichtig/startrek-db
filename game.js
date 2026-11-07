@@ -21,16 +21,19 @@ const WIN_ROUNDS = 3;        // Standard: Runden bis zum Gesamtsieg
 const MAX_WINS = 5;
 const KICK_SPEED = 10;       // Felder pro Sekunde für gekickte Bomben
 const BASE_SPEED = 3.6, SPEED_STEP = 0.6, MAX_SPEED = 6;
-const ITEMS = ['bomb', 'fire', 'speed', 'kick'];
-const ITEM_WEIGHTS = [4, 4, 3, 1.5];
-const ITEM_ICON = { bomb: '💣', fire: '🔥', speed: '👟', kick: '🦶' };
+const ITEMS = ['bomb', 'fire', 'speed', 'kick', 'mega', 'pierce', 'shield', 'ghost'];
+const ITEM_WEIGHTS = [4, 4, 3, 1.5, 0.4, 0.4, 0.4, 0.4];
+const ITEM_ICON = { bomb: '💣', fire: '🔥', speed: '👟', kick: '🦶', mega: '🌟', pierce: '💥', shield: '🛡️', ghost: '👻' };
+const MEGA = new Set(['mega', 'pierce', 'shield', 'ghost']); // seltene Mega-Items
+const GHOST_TIME = 10;       // Sekunden durch Kisten und Bomben laufen
+const SHIELD_GRACE = 1.5;    // Sekunden unverwundbar, nachdem der Schild ein Feuer abgefangen hat
 const COLORS = ['#ff8a3d', '#3dc6ff', '#7ee06a', '#e56bff'];
 const spawns = () => [[1, 1], [W - 2, H - 2], [W - 2, 1], [1, H - 2]];
 const SIZES = { klein: [11, 9], mittel: [15, 13], gross: [19, 15], riesig: [23, 17] };
 const SIZE_LABEL = { klein: 'Klein (11 × 9)', mittel: 'Mittel (15 × 13)', gross: 'Groß (19 × 15)', riesig: 'Riesig (23 × 17)' };
 const VARIANTS = { klassisch: 'Klassisch', schrumpf: 'Schrumpfendes Feld' };
 const SHRINK_AT = 60;        // Sekunden vor Rundenende, ab denen das Feld schrumpft
-const DEFAULT_SETTINGS = { variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS };
+const DEFAULT_SETTINGS = { variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS, mega: true };
 function cleanSettings(o) {
   o = o || {};
   return {
@@ -38,6 +41,7 @@ function cleanSettings(o) {
     size: SIZES[o.size] ? o.size : DEFAULT_SETTINGS.size,
     items: Math.max(0, Math.min(100, Math.round((+o.items || 0) / 5) * 5)),
     wins: Math.max(1, Math.min(MAX_WINS, o.wins | 0 || WIN_ROUNDS)),
+    mega: o.mega === undefined ? true : !!o.mega,
   };
 }
 function applySize(w, h) {
@@ -65,10 +69,11 @@ async function hashPw(room, pw) {
   for (const c of text) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }
   return 'f' + (h >>> 0).toString(16);
 }
-function pickItem() {
-  let r = Math.random() * ITEM_WEIGHTS.reduce((a, b) => a + b, 0);
-  for (let i = 0; i < ITEMS.length; i++) { r -= ITEM_WEIGHTS[i]; if (r <= 0) return ITEMS[i]; }
-  return ITEMS[0];
+function pickItem(withMega) {
+  const pool = ITEMS.map((t, i) => [t, ITEM_WEIGHTS[i]]).filter(([t]) => withMega || !MEGA.has(t));
+  let r = Math.random() * pool.reduce((a, [, w]) => a + w, 0);
+  for (const [t, w] of pool) { r -= w; if (r <= 0) return t; }
+  return pool[0][0];
 }
 function esc(s) { return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
@@ -167,7 +172,7 @@ class Game {
     const used = new Set(this.players.map((p) => p.slot));
     let slot = 0; while (used.has(slot)) slot++;
     const p = { id, name, slot, color: COLORS[slot], score: 0, alive: false, x: 0, y: 0, dir: 'down', moving: false,
-      maxBombs: 1, range: 2, speed: BASE_SPEED, kick: false, input: { dx: 0, dy: 0, bomb: 0 }, lastBomb: 0 };
+      maxBombs: 1, range: 2, speed: BASE_SPEED, kick: false, pierce: false, shield: false, ghost: 0, grace: 0, input: { dx: 0, dy: 0, bomb: 0 }, lastBomb: 0 };
     this.players.push(p);
     return p;
   }
@@ -212,7 +217,7 @@ class Game {
     this.bombs = []; this.flames = []; this.items = [];
     this.players.forEach((p) => {
       const [x, y] = spawns()[p.slot];
-      Object.assign(p, { x, y, alive: true, dir: 'down', moving: false, maxBombs: 1, range: 2, speed: BASE_SPEED, kick: false });
+      Object.assign(p, { x, y, alive: true, dir: 'down', moving: false, maxBombs: 1, range: 2, speed: BASE_SPEED, kick: false, pierce: false, shield: false, ghost: 0, grace: 0 });
       p.lastBomb = p.input.bomb;
     });
     this.clock = ROUND_TIME;
@@ -246,9 +251,16 @@ class Game {
     for (const p of this.players) if (p.alive && Math.abs(p.x - x) < 0.85 && Math.abs(p.y - y) < 0.85) p.alive = false;
   }
 
-  blocked(x, y) { return this.tile(x, y) !== EMPTY || !!this.bombAt(x, y); }
+  // p (optional): Spieler, für den geprüft wird. Mit Geist-Item sind Kisten und Bomben kein Hindernis.
+  blocked(x, y, p) {
+    const t = this.tile(x, y);
+    if (p && p.ghost > 0) return t === WALL;
+    return t !== EMPTY || !!this.bombAt(x, y);
+  }
 
   movePlayer(p, dt) {
+    const hold = p.cornerHold || 0;
+    p.cornerHold = 0;
     const { dx, dy } = p.input;
     p.moving = false;
     if (!dx && !dy) return;
@@ -259,42 +271,66 @@ class Game {
     const d = horiz ? dx : dy;
     let along = horiz ? p.x : p.y;      // Achse der Bewegung
     let cross = horiz ? p.y : p.x;      // Querachse
+    const startCross = cross;
     const cc = Math.round(cross);
     const off = cross - cc;
     const ca = Math.round(along);
-    const tileAhead = (a) => horiz ? [a + d, cc] : [cc, a + d];
+    const cell = (a, c) => horiz ? [a, c] : [c, a];
+    const blk = (a, c) => { const [x, y] = cell(a, c); return this.blocked(x, y, p); };
 
     // Kick: Bombe direkt vor uns anstoßen
-    const [ax, ay] = tileAhead(ca);
+    const [ax, ay] = cell(ca + d, cc);
     const b = this.bombAt(ax, ay);
-    if (b && p.kick && !b.vx && !b.vy && Math.abs(off) < 0.3 && (along - ca) * d >= -0.05) {
+    if (b && p.kick && !(p.ghost > 0) && !b.vx && !b.vy && Math.abs(off) < 0.3 && (along - ca) * d >= -0.05) {
       if (!this.blocked(ax + (horiz ? d : 0), ay + (horiz ? 0 : d))) { b.vx = horiz ? d : 0; b.vy = horiz ? 0 : d; b.slide = 0; }
     }
 
-    // Erst auf die Mitte der Querachse rutschen (Ecken-Hilfe)
+    const blockedAhead = blk(ca + d, cc);
     if (Math.abs(off) > 0.001) {
-      const [tx, ty] = tileAhead(ca);
-      if (this.blocked(tx, ty) && (along - ca) * d >= 0) return;
+      if (blockedAhead && (along - ca) * d >= 0) {
+        // Ecken-Hilfe: Vor uns ist zu, aber die Nachbarspur, zu der wir schon versetzt stehen, ist frei.
+        // Dann rutschen wir seitlich hinüber und können sofort abbiegen.
+        const n = cc + Math.sign(off);
+        if (Math.abs(off) >= 0.1 && Math.abs(along - ca) < 0.02 && !blk(ca, n) && !blk(ca + d, n)) {
+          along = ca;
+          cross += Math.sign(off) * Math.min(dist, Math.abs(n - cross));
+          this.setPos(p, horiz, along, cross, startCross);
+        }
+        return;
+      }
+      // Sonst zur Mitte der eigenen Spur rutschen
       const step = Math.min(dist, Math.abs(off));
       cross -= Math.sign(off) * step;
       dist -= step;
+    } else if (blockedAhead && Math.abs(along - ca) < 0.02) {
+      // Genau mittig vor einer Wand: ist nur eine Nachbarspur frei, dorthin ausweichen (wie um eine Ecke laufen)
+      const opts = [-1, 1].filter((s2) => !blk(ca, cc + s2) && !blk(ca + d, cc + s2));
+      p.cornerHold = hold + dt;
+      if (opts.length === 1 && p.cornerHold > 0.12) {
+        cross += opts[0] * Math.min(dist, 1);
+        this.setPos(p, horiz, ca, cross, startCross);
+        return;
+      }
     }
     // Dann entlang der Bewegungsachse
     let na = along + d * dist;
-    const [tx, ty] = tileAhead(ca);
-    if (this.blocked(tx, ty)) {
+    if (blk(ca + d, cc)) {
       if (d > 0) na = Math.min(na, ca); else na = Math.max(na, ca);
       if ((along - ca) * d > 0) na = along; // schon über die Mitte hinaus (z. B. auf eigener Bombe)
     }
-    p.moving = Math.abs(na - along) > 1e-4 || Math.abs(cross - (horiz ? p.y : p.x)) > 1e-4;
-    if (horiz) { p.x = na; p.y = cross; } else { p.y = na; p.x = cross; }
+    this.setPos(p, horiz, na, cross, startCross, along);
+  }
+  setPos(p, horiz, along, cross, startCross, startAlong) {
+    const sa = startAlong === undefined ? (horiz ? p.x : p.y) : startAlong;
+    p.moving = Math.abs(along - sa) > 1e-4 || Math.abs(cross - startCross) > 1e-4;
+    if (horiz) { p.x = along; p.y = cross; } else { p.y = along; p.x = cross; }
   }
 
   placeBomb(p) {
     const x = Math.round(p.x), y = Math.round(p.y);
     if (this.tile(x, y) !== EMPTY || this.bombAt(x, y)) return;
     if (this.bombs.filter((b) => b.owner === p.id).length >= p.maxBombs) return;
-    this.bombs.push({ x, y, owner: p.id, range: p.range, fuse: FUSE, vx: 0, vy: 0, slide: 0 });
+    this.bombs.push({ x, y, owner: p.id, range: p.range, pierce: p.pierce, fuse: FUSE, vx: 0, vy: 0, slide: 0 });
   }
 
   explode(first) {
@@ -313,7 +349,8 @@ class Game {
           if (t === CRATE) {
             this.setTile(x, y, EMPTY);
             this.addFlame(x, y, born);
-            if (Math.random() * 100 < this.settings.items) this.items.push({ x, y, type: pickItem(), born: born + 1e-6 });
+            if (Math.random() * 100 < this.settings.items) this.items.push({ x, y, type: pickItem(this.settings.mega), born: born + 1e-6 });
+            if (b.pierce) continue; // Durchschlag: Feuer geht durch Kisten hindurch
             break;
           }
           this.addFlame(x, y, born);
@@ -356,6 +393,8 @@ class Game {
 
     for (const p of this.players) {
       if (!p.alive) { p.lastBomb = p.input.bomb; continue; }
+      if (p.ghost > 0) p.ghost = Math.max(0, p.ghost - dt);
+      if (p.grace > 0) p.grace = Math.max(0, p.grace - dt);
       this.movePlayer(p, dt);
       if (p.input.bomb !== p.lastBomb) { p.lastBomb = p.input.bomb; this.placeBomb(p); }
       // Power-ups einsammeln
@@ -367,6 +406,10 @@ class Game {
         if (it.type === 'fire') p.range = Math.min(10, p.range + 1);
         if (it.type === 'speed') p.speed = Math.min(MAX_SPEED, p.speed + SPEED_STEP);
         if (it.type === 'kick') p.kick = true;
+        if (it.type === 'mega') { p.range = 10; p.maxBombs = Math.min(8, p.maxBombs + 1); }
+        if (it.type === 'pierce') p.pierce = true;
+        if (it.type === 'shield') p.shield = true;
+        if (it.type === 'ghost') p.ghost = GHOST_TIME;
       }
     }
 
@@ -402,7 +445,10 @@ class Game {
     for (const p of this.players) {
       if (!p.alive) continue;
       const px = Math.round(p.x), py = Math.round(p.y);
-      if (this.flames.some((f) => f.x === px && f.y === py)) p.alive = false;
+      if (p.grace > 0) continue;
+      if (this.flames.some((f) => f.x === px && f.y === py)) {
+        if (p.shield) { p.shield = false; p.grace = SHIELD_GRACE; } else p.alive = false;
+      }
     }
     this.checkRoundEnd(false);
   }
@@ -429,7 +475,8 @@ class Game {
       grid: this.grid.join(''),
       players: this.players.map((p) => ({ id: p.id, name: p.name, color: p.color, score: p.score, alive: p.alive,
         x: +p.x.toFixed(3), y: +p.y.toFixed(3), dir: p.dir, moving: p.moving, bombs: p.maxBombs, range: p.range,
-        speed: Math.round((p.speed - BASE_SPEED) / SPEED_STEP), kick: p.kick })),
+        speed: Math.round((p.speed - BASE_SPEED) / SPEED_STEP), kick: p.kick,
+        pierce: p.pierce, shield: p.shield, ghost: Math.ceil(p.ghost), grace: p.grace > 0 })),
       bombs: this.bombs.map((b) => [b.x, b.y, +b.fuse.toFixed(2)]),
       flames: this.flames.map((f) => [f.x, f.y]),
       items: this.items.map((i) => [i.x, i.y, i.type]),
@@ -641,14 +688,15 @@ function renderSettings(st, isHost) {
   const form = $('settings');
   for (const el of form.querySelectorAll('select, input')) {
     el.disabled = !isHost;
-    if (document.activeElement !== el) el.value = String(st[el.name]);
+    if (document.activeElement === el) continue;
+    if (el.type === 'checkbox') el.checked = !!st[el.name]; else el.value = String(st[el.name]);
   }
   $('set-items-val').textContent = st.items + ' %';
   $('settings-note').textContent = isHost ? 'Nur du als Gastgeber kannst das ändern.' : 'Der Gastgeber legt die Einstellungen fest.';
 }
 function readSettings() {
   const f = $('settings');
-  return cleanSettings({ variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value });
+  return cleanSettings({ variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value, mega: f.mega.checked });
 }
 function loadSavedSettings() {
   try { return cleanSettings(JSON.parse(localStorage.getItem('ff-settings') || 'null') || DEFAULT_SETTINGS); } catch (e) { return { ...DEFAULT_SETTINGS }; }
@@ -820,6 +868,8 @@ const Sound = (() => {
     round: () => { [784, 659, 784, 1047].forEach((f, i) => tone('triangle', f, 0, 0.15, 0.3, i * 0.13)); },
     draw: () => { [392, 330].forEach((f, i) => tone('triangle', f, 0, 0.25, 0.3, i * 0.2)); },
     win: () => { [523, 659, 784, 1047, 784, 1047].forEach((f, i) => tone('square', f, 0, i === 5 ? 0.5 : 0.14, 0.2, i * 0.14)); },
+    mega: () => { [523, 659, 784, 1047, 1319, 1568].forEach((f, i) => tone('triangle', f, 0, 0.12, 0.3, i * 0.05)); tone('sine', 1568, 2093, 0.4, 0.15, 0.3); },
+    shieldhit: () => { tone('square', 880, 220, 0.25, 0.25); noise(0.2, 0.3, 4000, 500); },
     thud: () => { tone('sine', 140, 50, 0.15, 0.35); },
     tick: () => { tone('square', 1200, 0, 0.04, 0.12); },
   };
@@ -859,7 +909,9 @@ function soundsFor(v) {
   for (const q of v.players) {
     const o = before.get(q.id); if (!o) continue;
     if (o.alive && !q.alive) Sound.play('death');
+    else if (q.alive && ((q.pierce && !o.pierce) || (q.shield && !o.shield) || q.ghost > o.ghost || q.range - o.range > 1)) Sound.play('mega');
     else if (q.alive && (q.bombs > o.bombs || q.range > o.range || q.speed > o.speed || (q.kick && !o.kick))) Sound.play('pickup');
+    else if (q.alive && o.shield && !q.shield) Sound.play('shieldhit');
   }
   if (v.clock <= 10 && v.clock < p.clock && v.clock > 0) Sound.play('tick');
 }
@@ -900,7 +952,7 @@ function draw(v, isHost) {
   // Anzeige oben
   const hud = v.players.map((p) =>
     `<span class="hud-p${p.alive || v.phase === 'lobby' ? '' : ' dead'}"><span class="dot" style="background:${p.color}"></span>${esc(p.name)} <b>${'★'.repeat(p.score)}${'☆'.repeat(Math.max(0, (v.wins || WIN_ROUNDS) - p.score))}</b>` +
-    (p.id === S.myId ? ` <small>💣${p.bombs} 🔥${p.range} 👟${p.speed}${p.kick ? ' 🦶' : ''}</small>` : '') + '</span>').join('') +
+    (p.id === S.myId ? ` <small>💣${p.bombs} 🔥${p.range} 👟${p.speed}${p.kick ? ' 🦶' : ''}${p.pierce ? ' 💥' : ''}${p.shield ? ' 🛡️' : ''}${p.ghost ? ' 👻' + p.ghost : ''}</small>` : '') + '</span>').join('') +
     `<span class="hud-t">⏱ ${Math.floor(v.clock / 60)}:${String(v.clock % 60).padStart(2, '0')}</span>`;
   if (hud !== lastHud) { $('hud').innerHTML = hud; lastHud = hud; }
   const ov = $('overlay');
@@ -925,8 +977,16 @@ function drawCrate(px, py) {
 }
 function drawItem(px, py, type, now) {
   const bob = Math.sin(now * 4 + px) * 2;
-  ctx.fillStyle = '#1d2033'; roundRect(px + 6, py + 6 + bob, T - 12, T - 12, 8); ctx.fill();
-  ctx.strokeStyle = '#ffd34d'; ctx.lineWidth = 2; ctx.stroke();
+  if (MEGA.has(type)) {
+    // Mega-Items: leuchtender, pulsierender Regenbogenrand
+    const glow = 0.5 + Math.sin(now * 6) * 0.5;
+    ctx.save(); ctx.shadowColor = `hsl(${(now * 120) % 360}, 100%, 60%)`; ctx.shadowBlur = 10 + glow * 12;
+    ctx.fillStyle = '#3a2a5c'; roundRect(px + 4, py + 4 + bob, T - 8, T - 8, 10); ctx.fill(); ctx.restore();
+    ctx.strokeStyle = `hsl(${(now * 120) % 360}, 100%, 65%)`; ctx.lineWidth = 3; roundRect(px + 4, py + 4 + bob, T - 8, T - 8, 10); ctx.stroke();
+  } else {
+    ctx.fillStyle = '#1d2033'; roundRect(px + 6, py + 6 + bob, T - 12, T - 12, 8); ctx.fill();
+    ctx.strokeStyle = '#ffd34d'; ctx.lineWidth = 2; ctx.stroke();
+  }
   ctx.font = '24px system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif';
   ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
   ctx.fillText(ITEM_ICON[type], px + T / 2, py + T / 2 + 1 + bob);
@@ -958,6 +1018,23 @@ function drawFlames(flames, now) {
   }
 }
 function drawPlayer(px, py, p, now) {
+  if (p.grace && Math.floor(now * 12) % 2) return; // blinkt nach Schild-Treffer
+  ctx.save();
+  if (p.ghost) ctx.globalAlpha = p.ghost <= 2 && Math.floor(now * 8) % 2 ? 0.75 : 0.45;
+  drawPlayerBody(px, py, p, now);
+  ctx.restore();
+  if (p.shield) {
+    const cx = px + T / 2, cy = py + T / 2 + 2, r = 23 + Math.sin(now * 5) * 1.5;
+    ctx.strokeStyle = 'rgba(140, 220, 255, .85)'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+    ctx.fillStyle = 'rgba(140, 220, 255, .12)'; ctx.fill();
+  }
+  if (p.pierce) {
+    ctx.fillStyle = '#ff5a1f'; ctx.font = '12px system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('💥', px + T - 6, py + 10);
+  }
+}
+function drawPlayerBody(px, py, p, now) {
   const cx = px + T / 2, base = py + T - 6;
   const bounce = p.moving ? Math.abs(Math.sin(now * 14)) * 3 : 0;
   ctx.fillStyle = 'rgba(0,0,0,.3)'; ctx.beginPath(); ctx.ellipse(cx, base, 14, 5, 0, 0, Math.PI * 2); ctx.fill();
