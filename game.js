@@ -10,21 +10,41 @@
 'use strict';
 
 // ---------- Konstanten ----------
-const W = 15, H = 13, T = 48;
+let W = 15, H = 13;         // Feldgröße, wird über die Einstellungen gesetzt
+const T = 48;
 const EMPTY = 0, WALL = 1, CRATE = 2;
 const MAX_PLAYERS = 4;
 const FUSE = 2.5;            // Sekunden bis zur Explosion
 const FLAME_TIME = 0.55;     // Sekunden, die das Feuer brennt
 const ROUND_TIME = 180;      // Sekunden pro Runde
-const WIN_ROUNDS = 3;        // Runden bis zum Gesamtsieg
+const WIN_ROUNDS = 3;        // Standard: Runden bis zum Gesamtsieg
+const MAX_WINS = 5;
 const KICK_SPEED = 10;       // Felder pro Sekunde für gekickte Bomben
 const BASE_SPEED = 3.6, SPEED_STEP = 0.6, MAX_SPEED = 6;
-const ITEM_CHANCE = 0.32;
 const ITEMS = ['bomb', 'fire', 'speed', 'kick'];
 const ITEM_WEIGHTS = [4, 4, 3, 1.5];
 const ITEM_ICON = { bomb: '💣', fire: '🔥', speed: '👟', kick: '🦶' };
 const COLORS = ['#ff8a3d', '#3dc6ff', '#7ee06a', '#e56bff'];
-const SPAWNS = [[1, 1], [W - 2, H - 2], [W - 2, 1], [1, H - 2]];
+const spawns = () => [[1, 1], [W - 2, H - 2], [W - 2, 1], [1, H - 2]];
+const SIZES = { klein: [11, 9], mittel: [15, 13], gross: [19, 15], riesig: [23, 17] };
+const SIZE_LABEL = { klein: 'Klein (11 × 9)', mittel: 'Mittel (15 × 13)', gross: 'Groß (19 × 15)', riesig: 'Riesig (23 × 17)' };
+const VARIANTS = { klassisch: 'Klassisch', schrumpf: 'Schrumpfendes Feld' };
+const SHRINK_AT = 60;        // Sekunden vor Rundenende, ab denen das Feld schrumpft
+const DEFAULT_SETTINGS = { variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS };
+function cleanSettings(o) {
+  o = o || {};
+  return {
+    variant: VARIANTS[o.variant] ? o.variant : DEFAULT_SETTINGS.variant,
+    size: SIZES[o.size] ? o.size : DEFAULT_SETTINGS.size,
+    items: Math.max(0, Math.min(100, Math.round((+o.items || 0) / 5) * 5)),
+    wins: Math.max(1, Math.min(MAX_WINS, o.wins | 0 || WIN_ROUNDS)),
+  };
+}
+function applySize(w, h) {
+  if (w === W && h === H) return;
+  W = w; H = h;
+  const cv = document.getElementById('cv'); cv.width = W * T; cv.height = H * T;
+}
 const TICK = 1 / 60, SEND_EVERY = 3; // Simulation 60 Hz, Senden 20 Hz
 const PEER_PREFIX = 'funkenfeld-v1-';
 
@@ -140,6 +160,8 @@ class Game {
     this.phaseTimer = 0;
     this.grid = new Array(W * H).fill(EMPTY);
     this.bombs = []; this.flames = []; this.items = [];
+    this.settings = { ...DEFAULT_SETTINGS };
+    this.shrink = []; this.shrinkTimer = 0;
   }
   addPlayer(id, name) {
     const used = new Set(this.players.map((p) => p.slot));
@@ -169,13 +191,17 @@ class Game {
       g[y * W + x] = v;
     }
     // Startecken freiräumen
-    for (const [sx, sy] of SPAWNS) {
+    for (const [sx, sy] of spawns()) {
       const dx = sx === 1 ? 1 : -1, dy = sy === 1 ? 1 : -1;
       for (const [x, y] of [[sx, sy], [sx + dx, sy], [sx, sy + dy]]) if (g[y * W + x] === CRATE) g[y * W + x] = EMPTY;
     }
   }
   startMatch() {
     this.recorded = false;
+    this.settings = cleanSettings(this.settings);
+    const [w, h] = SIZES[this.settings.size];
+    applySize(w, h);
+    this.grid = new Array(W * H).fill(EMPTY);
     for (const p of this.players) p.score = 0;
     this.round = 0;
     this.startRound();
@@ -185,14 +211,39 @@ class Game {
     this.buildMap();
     this.bombs = []; this.flames = []; this.items = [];
     this.players.forEach((p) => {
-      const [x, y] = SPAWNS[p.slot];
+      const [x, y] = spawns()[p.slot];
       Object.assign(p, { x, y, alive: true, dir: 'down', moving: false, maxBombs: 1, range: 2, speed: BASE_SPEED, kick: false });
       p.lastBomb = p.input.bomb;
     });
     this.clock = ROUND_TIME;
+    this.shrink = this.settings.variant === 'schrumpf' ? this.spiral() : [];
+    this.shrinkTimer = 0;
     this.phase = 'play';
     this.phaseTimer = 1.2;
     this.msg = 'Runde ' + this.round;
+  }
+
+  // Reihenfolge der Felder von außen nach innen, im Uhrzeigersinn
+  spiral() {
+    const out = [];
+    let x0 = 1, y0 = 1, x1 = W - 2, y1 = H - 2;
+    while (x0 <= x1 && y0 <= y1) {
+      for (let x = x0; x <= x1; x++) out.push([x, y0]);
+      for (let y = y0 + 1; y <= y1; y++) out.push([x1, y]);
+      if (y0 < y1) for (let x = x1 - 1; x >= x0; x--) out.push([x, y1]);
+      if (x0 < x1) for (let y = y1 - 1; y > y0; y--) out.push([x0, y]);
+      x0++; y0++; x1--; y1--;
+    }
+    // Die innersten 3 × 3 Felder bleiben frei, damit am Ende noch Platz ist
+    const cx = (W - 1) / 2, cy = (H - 1) / 2;
+    return out.filter(([x, y]) => Math.abs(x - cx) > 1 || Math.abs(y - cy) > 1);
+  }
+  dropBlock(x, y) {
+    this.setTile(x, y, WALL);
+    this.bombs = this.bombs.filter((b) => b.x !== x || b.y !== y);
+    this.items = this.items.filter((i) => i.x !== x || i.y !== y);
+    this.flames = this.flames.filter((f) => f.x !== x || f.y !== y);
+    for (const p of this.players) if (p.alive && Math.abs(p.x - x) < 0.85 && Math.abs(p.y - y) < 0.85) p.alive = false;
   }
 
   blocked(x, y) { return this.tile(x, y) !== EMPTY || !!this.bombAt(x, y); }
@@ -262,7 +313,7 @@ class Game {
           if (t === CRATE) {
             this.setTile(x, y, EMPTY);
             this.addFlame(x, y, born);
-            if (Math.random() < ITEM_CHANCE) this.items.push({ x, y, type: pickItem(), born: born + 1e-6 });
+            if (Math.random() * 100 < this.settings.items) this.items.push({ x, y, type: pickItem(), born: born + 1e-6 });
             break;
           }
           this.addFlame(x, y, born);
@@ -290,7 +341,18 @@ class Game {
     }
     // play
     if (this.phaseTimer > 0) { this.phaseTimer -= dt; if (this.phaseTimer <= 0) this.msg = ''; }
+    const before = this.clock;
     this.clock -= dt;
+    if (this.shrink.length && this.clock <= SHRINK_AT) {
+      if (before > SHRINK_AT) { this.msg = 'Das Feld schrumpft!'; this.phaseTimer = 1.5; }
+      const every = (SHRINK_AT - 2) / (this.spiral().length || 1);
+      this.shrinkTimer -= dt;
+      while (this.shrinkTimer <= 0 && this.shrink.length) {
+        this.shrinkTimer += every;
+        const [x, y] = this.shrink.shift();
+        this.dropBlock(x, y);
+      }
+    }
 
     for (const p of this.players) {
       if (!p.alive) { p.lastBomb = p.input.bomb; continue; }
@@ -354,7 +416,7 @@ class Game {
     if (this.clock <= 0 && alive.length > 1) { this.msg = 'Zeit abgelaufen – unentschieden'; }
     else if (alive.length === 1 && !solo) {
       const w = alive[0]; w.score++;
-      if (w.score >= WIN_ROUNDS) { this.phase = 'matchEnd'; this.msg = w.name + ' gewinnt das Spiel! 🏆'; return; }
+      if (w.score >= this.settings.wins) { this.phase = 'matchEnd'; this.msg = w.name + ' gewinnt das Spiel! 🏆'; return; }
       this.msg = w.name + ' gewinnt die Runde';
     } else this.msg = solo ? 'Erwischt!' : 'Unentschieden';
     this.phase = 'roundEnd';
@@ -363,7 +425,7 @@ class Game {
 
   snapshot() {
     return {
-      t: 'state', phase: this.phase, round: this.round, msg: this.msg, clock: Math.max(0, Math.ceil(this.clock)),
+      t: 'state', w: W, h: H, wins: this.settings.wins, variant: this.settings.variant, phase: this.phase, round: this.round, msg: this.msg, clock: Math.max(0, Math.ceil(this.clock)),
       grid: this.grid.join(''),
       players: this.players.map((p) => ({ id: p.id, name: p.name, color: p.color, score: p.score, alive: p.alive,
         x: +p.x.toFixed(3), y: +p.y.toFixed(3), dir: p.dir, moving: p.moving, bombs: p.maxBombs, range: p.range,
@@ -384,7 +446,7 @@ function loadMatches() {
 }
 function cleanMatch(m) {
   if (!m || typeof m.id !== 'string' || !Array.isArray(m.players) || m.players.length < 2 || m.players.length > MAX_PLAYERS) return null;
-  const players = m.players.map((p) => ({ name: String(p && p.name || '').slice(0, 12), score: Math.max(0, Math.min(WIN_ROUNDS, p && p.score | 0)) }));
+  const players = m.players.map((p) => ({ name: String(p && p.name || '').slice(0, 12), score: Math.max(0, Math.min(MAX_WINS, p && p.score | 0)) }));
   if (players.some((p) => !p.name)) return null;
   const winner = String(m.winner || '').slice(0, 12);
   if (!players.some((p) => p.name === winner)) return null;
@@ -422,11 +484,11 @@ function renderRanking() {
     ? '<table><thead><tr><th>#</th><th>Name</th><th title="Gewonnene Spiele">Siege</th><th title="Gespielte Spiele">Spiele</th><th title="Gewonnene Runden">Runden</th></tr></thead><tbody>' +
       rows.slice(0, 20).map((r, i) => `<tr><td>${['🥇', '🥈', '🥉'][i] || i + 1}</td><td>${esc(r.name)}</td><td>${r.wins}</td><td>${r.games}</td><td>${r.rounds}</td></tr>`).join('') +
       '</tbody></table>'
-    : '<p class="muted">Noch keine Spiele. Nach dem ersten ganzen Spiel (3 Rundensiege) steht hier, wer vorne liegt.</p>';
+    : '<p class="muted">Noch keine Spiele. Nach dem ersten ganzen Spiel steht hier, wer vorne liegt.</p>';
   document.querySelectorAll('.ranking').forEach((el) => { el.innerHTML = html; });
 }
 function recordMatch(g) {
-  const winner = g.players.find((p) => p.score >= WIN_ROUNDS);
+  const winner = g.players.find((p) => p.score >= g.settings.wins);
   if (!winner) return;
   const m = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 8), date: Date.now(),
     players: g.players.map((p) => ({ name: p.name, score: p.score })), winner: winner.name };
@@ -475,6 +537,7 @@ async function hostRoom() {
     S.game = new Game();
     S.myId = 'host';
     S.game.addPlayer('host', f.name);
+    S.game.settings = loadSavedSettings();
     S.hostNet = await Net.host(f.room, onClientConnect);
     startMsg('');
     enterLobby();
@@ -522,7 +585,7 @@ function onClientConnect(conn) {
 }
 
 function broadcastLobby() {
-  const msg = { t: 'lobby', players: S.game.players.map((p) => ({ id: p.id, name: p.name, color: p.color })), phase: S.game.phase };
+  const msg = { t: 'lobby', players: S.game.players.map((p) => ({ id: p.id, name: p.name, color: p.color })), phase: S.game.phase, settings: S.game.settings };
   for (const c of S.conns.values()) c.send(msg);
   renderLobby(msg);
 }
@@ -573,11 +636,30 @@ function enterLobby() {
   $('lobby-room').textContent = '„' + S.room + '“';
   if (S.role === 'host') broadcastLobby();
 }
+function renderSettings(st, isHost) {
+  st = cleanSettings(st);
+  const form = $('settings');
+  for (const el of form.querySelectorAll('select, input')) {
+    el.disabled = !isHost;
+    if (document.activeElement !== el) el.value = String(st[el.name]);
+  }
+  $('set-items-val').textContent = st.items + ' %';
+  $('settings-note').textContent = isHost ? 'Nur du als Gastgeber kannst das ändern.' : 'Der Gastgeber legt die Einstellungen fest.';
+}
+function readSettings() {
+  const f = $('settings');
+  return cleanSettings({ variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value });
+}
+function loadSavedSettings() {
+  try { return cleanSettings(JSON.parse(localStorage.getItem('ff-settings') || 'null') || DEFAULT_SETTINGS); } catch (e) { return { ...DEFAULT_SETTINGS }; }
+}
+
 function renderLobby(m) {
   $('lobby-players').innerHTML = m.players.map((p) =>
     `<li><span class="dot" style="background:${p.color}"></span>${esc(p.name)}${p.id === 'host' ? ' <small>(Gastgeber)</small>' : ''}${p.id === S.myId ? ' <small>– du</small>' : ''}</li>`).join('');
   const isHost = S.role === 'host';
   $('btn-start').classList.toggle('hidden', !isHost);
+  renderSettings(m.settings, isHost);
   $('lobby-hint').textContent = isHost
     ? (m.players.length < 2 ? 'Warte auf Mitspieler. Gib ihnen Raumname und Passwort. (Allein starten geht zum Ausprobieren.)' : m.players.length + ' von 4 Spielern sind da.')
     : 'Warte, bis der Gastgeber das Spiel startet …';
@@ -693,6 +775,12 @@ try {
   $('in-room').value = localStorage.getItem('ff-room') || '';
 } catch (e) {}
 
+$('settings').addEventListener('input', () => {
+  if (S.role !== 'host' || S.game.phase !== 'lobby') return;
+  S.game.settings = readSettings();
+  try { localStorage.setItem('ff-settings', JSON.stringify(S.game.settings)); } catch (e) {}
+  broadcastLobby();
+});
 renderRanking();
 
 // ---------- Sound ----------
@@ -732,6 +820,7 @@ const Sound = (() => {
     round: () => { [784, 659, 784, 1047].forEach((f, i) => tone('triangle', f, 0, 0.15, 0.3, i * 0.13)); },
     draw: () => { [392, 330].forEach((f, i) => tone('triangle', f, 0, 0.25, 0.3, i * 0.2)); },
     win: () => { [523, 659, 784, 1047, 784, 1047].forEach((f, i) => tone('square', f, 0, i === 5 ? 0.5 : 0.14, 0.2, i * 0.14)); },
+    thud: () => { tone('sine', 140, 50, 0.15, 0.35); },
     tick: () => { tone('square', 1200, 0, 0.04, 0.12); },
   };
   return {
@@ -764,6 +853,7 @@ function soundsFor(v) {
   const key = (b) => b[0] + ',' + b[1];
   const oldF = new Set(p.flames.map(key));
   if (v.flames.some((f) => !oldF.has(key(f)))) Sound.play('boom');
+  else if (v.grid !== p.grid && v.variant === 'schrumpf' && v.clock <= SHRINK_AT && (v.grid.split('1').length > p.grid.split('1').length)) Sound.play('thud');
   else if (v.bombs.length > p.bombs.length) Sound.play('place');
   const before = new Map(p.players.map((q) => [q.id, q]));
   for (const q of v.players) {
@@ -778,6 +868,7 @@ function soundsFor(v) {
 const cv = $('cv'), ctx = cv.getContext('2d');
 let lastHud = '';
 function draw(v, isHost) {
+  if (v.w && v.h) applySize(v.w, v.h);
   soundsFor(v);
   const now = performance.now() / 1000;
   const grid = v.grid;
@@ -808,7 +899,7 @@ function draw(v, isHost) {
 
   // Anzeige oben
   const hud = v.players.map((p) =>
-    `<span class="hud-p${p.alive || v.phase === 'lobby' ? '' : ' dead'}"><span class="dot" style="background:${p.color}"></span>${esc(p.name)} <b>${'★'.repeat(p.score)}${'☆'.repeat(Math.max(0, WIN_ROUNDS - p.score))}</b>` +
+    `<span class="hud-p${p.alive || v.phase === 'lobby' ? '' : ' dead'}"><span class="dot" style="background:${p.color}"></span>${esc(p.name)} <b>${'★'.repeat(p.score)}${'☆'.repeat(Math.max(0, (v.wins || WIN_ROUNDS) - p.score))}</b>` +
     (p.id === S.myId ? ` <small>💣${p.bombs} 🔥${p.range} 👟${p.speed}${p.kick ? ' 🦶' : ''}</small>` : '') + '</span>').join('') +
     `<span class="hud-t">⏱ ${Math.floor(v.clock / 60)}:${String(v.clock % 60).padStart(2, '0')}</span>`;
   if (hud !== lastHud) { $('hud').innerHTML = hud; lastHud = hud; }

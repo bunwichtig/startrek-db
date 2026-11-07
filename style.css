@@ -88,3 +88,13 @@ canvas { display: block; width: 100%; height: auto; border-radius: 8px; image-re
 .ranking tbody tr:first-child td { color: var(--accent); font-weight: 700; }
 .muted, .note { color: var(--muted); font-size: .9rem; }
 .note { margin: 10px 0 0; }
+
+/* Einstellungen in der Lobby */
+.settings { margin: 12px 0 4px; padding: 12px 0 0; border-top: 1px solid var(--border); }
+.settings select {
+  display: block; width: 100%; margin-top: 4px; padding: 10px 12px; font-size: 1rem;
+  background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px;
+}
+.settings input[type=range] { padding: 0; border: 0; background: none; accent-color: var(--accent); }
+.settings select:disabled, .settings input:disabled { opacity: .7; }
+.settings b { color: var(--text); }
