@@ -34,7 +34,11 @@ const SIZES = { klein: [11, 9], mittel: [15, 13], gross: [19, 15], riesig: [23, 
 const SIZE_LABEL = { klein: 'Klein (11 × 9)', mittel: 'Mittel (15 × 13)', gross: 'Groß (19 × 15)', riesig: 'Riesig (23 × 17)' };
 const VARIANTS = { klassisch: 'Klassisch', schrumpf: 'Schrumpfendes Feld' };
 const SHRINK_AT = 60;        // Sekunden vor Rundenende, ab denen das Feld schrumpft
-const DEFAULT_SETTINGS = { variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS, mega: 10 };
+const MEGA_LIST = ['mega', 'pierce', 'shield', 'ghost', 'remote'];
+const MEGA_NAME = { mega: 'Megafeuer', pierce: 'Durchschlag', shield: 'Schild', ghost: 'Geist', remote: 'Fernzünder' };
+// megaW: Gewichtung der einzelnen Mega-Items untereinander (0 = kommt nicht vor)
+const DEFAULT_SETTINGS = { variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS, mega: 10,
+  megaW: Object.fromEntries(MEGA_LIST.map((t) => [t, 100])) };
 function cleanSettings(o) {
   o = o || {};
   return {
@@ -45,6 +49,10 @@ function cleanSettings(o) {
     // Anteil der Mega-Items an allen Power-ups in Prozent (früher ein Schalter an/aus)
     mega: o.mega === true || o.mega === undefined ? DEFAULT_SETTINGS.mega : o.mega === false ? 0
       : Math.max(0, Math.min(100, Math.round((+o.mega || 0) / 5) * 5)),
+    megaW: Object.fromEntries(MEGA_LIST.map((t) => {
+      const v = o.megaW && o.megaW[t] !== undefined ? +o.megaW[t] : 100;
+      return [t, Math.max(0, Math.min(100, Math.round((v || 0) / 5) * 5))];
+    })),
   };
 }
 function applySize(w, h) {
@@ -72,10 +80,13 @@ async function hashPw(room, pw) {
   for (const c of text) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }
   return 'f' + (h >>> 0).toString(16);
 }
-// megaPct: Wahrscheinlichkeit in Prozent, dass ein Power-up ein Mega-Item ist
-function pickItem(megaPct) {
-  const mega = Math.random() * 100 < megaPct;
-  const pool = ITEMS.map((t, i) => [t, ITEM_WEIGHTS[i]]).filter(([t]) => MEGA.has(t) === mega);
+// st.mega: Wahrscheinlichkeit in Prozent, dass ein Power-up ein Mega-Item ist.
+// st.megaW: Gewichtung der Mega-Items untereinander.
+function pickItem(st) {
+  const weights = st.megaW || DEFAULT_SETTINGS.megaW;
+  const megaPool = MEGA_LIST.map((t) => [t, weights[t] || 0]).filter(([, w]) => w > 0);
+  const mega = megaPool.length > 0 && Math.random() * 100 < st.mega;
+  const pool = mega ? megaPool : ITEMS.map((t, i) => [t, ITEM_WEIGHTS[i]]).filter(([t]) => !MEGA.has(t));
   let r = Math.random() * pool.reduce((a, [, w]) => a + w, 0);
   for (const [t, w] of pool) { r -= w; if (r <= 0) return t; }
   return pool[0][0];
@@ -354,7 +365,7 @@ class Game {
           if (t === CRATE) {
             this.setTile(x, y, EMPTY);
             this.addFlame(x, y, born);
-            if (Math.random() * 100 < this.settings.items) this.items.push({ x, y, type: pickItem(this.settings.mega), born: born + 1e-6 });
+            if (Math.random() * 100 < this.settings.items) this.items.push({ x, y, type: pickItem(this.settings), born: born + 1e-6 });
             if (b.pierce) continue; // Durchschlag: Feuer geht durch Kisten hindurch
             break;
           }
@@ -701,15 +712,22 @@ function renderSettings(st, isHost) {
   for (const el of form.querySelectorAll('select, input')) {
     el.disabled = !isHost;
     if (document.activeElement === el) continue;
-    el.value = String(st[el.name]);
+    el.value = String(el.name.startsWith('w_') ? st.megaW[el.name.slice(2)] : st[el.name]);
   }
   $('set-items-val').textContent = st.items + ' %';
   $('set-mega-val').textContent = st.mega + ' %';
+  // Wie viel Prozent aller Power-ups ergibt das je Mega-Item?
+  const sum = MEGA_LIST.reduce((a, t) => a + st.megaW[t], 0);
+  for (const t of MEGA_LIST) {
+    const share = sum ? st.mega * st.megaW[t] / sum : 0;
+    $('w-' + t).textContent = st.megaW[t] ? `Gewicht ${st.megaW[t]} · ≈ ${share < 1 && share > 0 ? share.toFixed(1) : Math.round(share)} % der Power-ups` : 'aus';
+  }
   $('settings-note').textContent = isHost ? 'Nur du als Gastgeber kannst das ändern.' : 'Der Gastgeber legt die Einstellungen fest.';
 }
 function readSettings() {
   const f = $('settings');
-  return cleanSettings({ variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value, mega: f.mega.value });
+  return cleanSettings({ variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value, mega: f.mega.value,
+    megaW: Object.fromEntries(MEGA_LIST.map((t) => [t, f['w_' + t].value])) });
 }
 function loadSavedSettings() {
   try { return cleanSettings(JSON.parse(localStorage.getItem('ff-settings') || 'null') || DEFAULT_SETTINGS); } catch (e) { return { ...DEFAULT_SETTINGS }; }
@@ -1027,19 +1045,38 @@ function drawBomb(px, py, fuse, now, remote) {
   ctx.beginPath(); ctx.arc(cx + 8, cy - 23, 3.5, 0, Math.PI * 2); ctx.fill();
 }
 function drawFlames(flames, now) {
+  if (!flames.length) return;
   const set = new Set(flames.map(([x, y]) => x + ',' + y));
-  for (const [x, y] of flames) {
-    const px = x * T, py = y * T, cx = px + T / 2, cy = py + T / 2;
-    const flick = 0.85 + Math.sin(now * 30 + x * 7 + y * 3) * 0.15;
-    const h = set.has((x - 1) + ',' + y) || set.has((x + 1) + ',' + y);
-    const v = set.has(x + ',' + (y - 1)) || set.has(x + ',' + (y + 1));
-    for (const [col, s] of [['#ff5a1f', 1], ['#ffb02e', 0.68], ['#fff3b0', 0.36]]) {
-      ctx.fillStyle = col;
-      const w = T * s * flick;
-      if (h || !v) ctx.fillRect(px, cy - w / 2, T, w);
-      if (v || !h) ctx.fillRect(cx - w / 2, py, w, T);
+  const DIRS4 = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+  const flick = 0.9 + Math.sin(now * 30) * 0.1;
+  ctx.save();
+  ctx.lineCap = 'round';
+  // Drei Schichten von außen (orange) nach innen (hell); jede Schicht über alle Felder,
+  // damit sich benachbarte Flammen nahtlos verbinden. Enden laufen rund aus.
+  for (const [col, sc] of [['#ff5a1f', 0.92], ['#ffb02e', 0.64], ['#fff3b0', 0.34]]) {
+    ctx.strokeStyle = col; ctx.fillStyle = col;
+    ctx.lineWidth = T * sc * flick;
+    for (const [x, y] of flames) {
+      const cx = x * T + T / 2, cy = y * T + T / 2;
+      const nb = DIRS4.filter(([dx, dy]) => set.has((x + dx) + ',' + (y + dy)));
+      const wob = Math.sin(now * 25 + x * 7 + y * 3) * 0.04;
+      if (!nb.length) {
+        // Einzelnes Feld (Bombe ohne Platz): runder Feuerball
+        ctx.beginPath(); ctx.arc(cx, cy, T * (0.52 + wob) * (sc / 0.92) * flick, 0, Math.PI * 2); ctx.fill();
+        continue;
+      }
+      ctx.beginPath();
+      for (const [dx, dy] of nb) { ctx.moveTo(cx, cy); ctx.lineTo(cx + dx * T / 2, cy + dy * T / 2); }
+      if (nb.length === 1) {
+        // Ende eines Strahls: Spitze läuft ins Feld hinein aus und wird rund abgeschlossen
+        const [dx, dy] = nb[0];
+        const tip = T * (0.22 + wob);
+        ctx.moveTo(cx, cy); ctx.lineTo(cx - dx * tip, cy - dy * tip);
+      }
+      ctx.stroke();
     }
   }
+  ctx.restore();
 }
 function drawPlayer(px, py, p, now) {
   if (p.grace && Math.floor(now * 12) % 2) return; // blinkt nach Schild-Treffer

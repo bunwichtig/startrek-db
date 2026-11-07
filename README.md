@@ -28,6 +28,7 @@ Die Browser verbinden sich direkt miteinander (WebRTC über [PeerJS](https://pee
 - **Power-up-Chance:** 0 bis 100 % pro gesprengter Kiste.
 - **Rundensiege zum Gewinnen:** 1 bis 5.
 - **Anteil Mega-Items:** 0 bis 100 % der Power-ups (Standard 10 %). Bei 0 % gibt es keine, bei 100 % nur Mega-Items.
+  Aufklappbar „Mega-Items einzeln einstellen“: Gewichtung jedes Mega-Items von 0 (aus) bis 100, mit Anzeige, wie viel Prozent der Power-ups das ergibt.
 
 ## Sound
 

@@ -63,6 +63,25 @@
       <label>Anteil Mega-Items (🌟 💥 🛡️ 👻 📡) an den Power-ups: <b id="set-mega-val">10 %</b>
         <input name="mega" type="range" min="0" max="100" step="5" value="10">
       </label>
+      <details class="mega-detail">
+        <summary>Mega-Items einzeln einstellen</summary>
+        <p class="note">Gewichtung untereinander. 0 schaltet ein Item ab. Gleiche Werte bedeuten gleich häufig.</p>
+          <label>🌟 Megafeuer: <b id="w-mega"></b>
+            <input name="w_mega" type="range" min="0" max="100" step="5" value="100">
+          </label>
+          <label>💥 Durchschlag: <b id="w-pierce"></b>
+            <input name="w_pierce" type="range" min="0" max="100" step="5" value="100">
+          </label>
+          <label>🛡️ Schild: <b id="w-shield"></b>
+            <input name="w_shield" type="range" min="0" max="100" step="5" value="100">
+          </label>
+          <label>👻 Geist: <b id="w-ghost"></b>
+            <input name="w_ghost" type="range" min="0" max="100" step="5" value="100">
+          </label>
+          <label>📡 Fernzünder: <b id="w-remote"></b>
+            <input name="w_remote" type="range" min="0" max="100" step="5" value="100">
+          </label>
+      </details>
       <label>Rundensiege zum Gewinnen
         <select name="wins">
           <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
