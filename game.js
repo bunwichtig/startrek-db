@@ -33,7 +33,7 @@ const SIZES = { klein: [11, 9], mittel: [15, 13], gross: [19, 15], riesig: [23, 
 const SIZE_LABEL = { klein: 'Klein (11 × 9)', mittel: 'Mittel (15 × 13)', gross: 'Groß (19 × 15)', riesig: 'Riesig (23 × 17)' };
 const VARIANTS = { klassisch: 'Klassisch', schrumpf: 'Schrumpfendes Feld' };
 const SHRINK_AT = 60;        // Sekunden vor Rundenende, ab denen das Feld schrumpft
-const DEFAULT_SETTINGS = { variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS, mega: true };
+const DEFAULT_SETTINGS = { variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS, mega: 10 };
 function cleanSettings(o) {
   o = o || {};
   return {
@@ -41,7 +41,9 @@ function cleanSettings(o) {
     size: SIZES[o.size] ? o.size : DEFAULT_SETTINGS.size,
     items: Math.max(0, Math.min(100, Math.round((+o.items || 0) / 5) * 5)),
     wins: Math.max(1, Math.min(MAX_WINS, o.wins | 0 || WIN_ROUNDS)),
-    mega: o.mega === undefined ? true : !!o.mega,
+    // Anteil der Mega-Items an allen Power-ups in Prozent (früher ein Schalter an/aus)
+    mega: o.mega === true || o.mega === undefined ? DEFAULT_SETTINGS.mega : o.mega === false ? 0
+      : Math.max(0, Math.min(100, Math.round((+o.mega || 0) / 5) * 5)),
   };
 }
 function applySize(w, h) {
@@ -69,8 +71,10 @@ async function hashPw(room, pw) {
   for (const c of text) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }
   return 'f' + (h >>> 0).toString(16);
 }
-function pickItem(withMega) {
-  const pool = ITEMS.map((t, i) => [t, ITEM_WEIGHTS[i]]).filter(([t]) => withMega || !MEGA.has(t));
+// megaPct: Wahrscheinlichkeit in Prozent, dass ein Power-up ein Mega-Item ist
+function pickItem(megaPct) {
+  const mega = Math.random() * 100 < megaPct;
+  const pool = ITEMS.map((t, i) => [t, ITEM_WEIGHTS[i]]).filter(([t]) => MEGA.has(t) === mega);
   let r = Math.random() * pool.reduce((a, [, w]) => a + w, 0);
   for (const [t, w] of pool) { r -= w; if (r <= 0) return t; }
   return pool[0][0];
@@ -689,14 +693,15 @@ function renderSettings(st, isHost) {
   for (const el of form.querySelectorAll('select, input')) {
     el.disabled = !isHost;
     if (document.activeElement === el) continue;
-    if (el.type === 'checkbox') el.checked = !!st[el.name]; else el.value = String(st[el.name]);
+    el.value = String(st[el.name]);
   }
   $('set-items-val').textContent = st.items + ' %';
+  $('set-mega-val').textContent = st.mega + ' %';
   $('settings-note').textContent = isHost ? 'Nur du als Gastgeber kannst das ändern.' : 'Der Gastgeber legt die Einstellungen fest.';
 }
 function readSettings() {
   const f = $('settings');
-  return cleanSettings({ variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value, mega: f.mega.checked });
+  return cleanSettings({ variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value, mega: f.mega.value });
 }
 function loadSavedSettings() {
   try { return cleanSettings(JSON.parse(localStorage.getItem('ff-settings') || 'null') || DEFAULT_SETTINGS); } catch (e) { return { ...DEFAULT_SETTINGS }; }
