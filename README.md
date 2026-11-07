@@ -16,8 +16,15 @@ Die Browser verbinden sich direkt miteinander (WebRTC über [PeerJS](https://pee
 
 - Pfeiltasten oder WASD zum Laufen, Leertaste oder Enter für eine Bombe. Auf dem Handy gibt es Tasten.
 - Bomben explodieren nach 2,5 Sekunden als Kreuz, sprengen Kisten und lösen andere Bomben aus.
-- Wer vom Feuer getroffen wird, ist für die Runde raus. Wer zuerst 3 Runden gewinnt, gewinnt das Spiel.
+- Wer vom Feuer getroffen wird, ist für die Runde raus. Wer zuerst die eingestellte Zahl an Runden gewinnt (Standard 3), gewinnt das Spiel.
 - Power-ups aus Kisten: 💣 eine Bombe mehr, 🔥 größere Explosion, 👟 schneller laufen, 🦶 Bomben wegkicken.
+
+## Einstellungen (Gastgeber, in der Lobby)
+
+- **Spielvariante:** Klassisch oder Schrumpfendes Feld. Bei Letzterem fallen ab 1:00 Restzeit von außen nach innen Blöcke, wer darunter steht, ist raus.
+- **Feldgröße:** Klein (11 × 9), Mittel (15 × 13), Groß (19 × 15), Riesig (23 × 17).
+- **Power-up-Chance:** 0 bis 100 % pro gesprengter Kiste.
+- **Rundensiege zum Gewinnen:** 1 bis 5.
 
 ## Sound
 
@@ -27,7 +34,7 @@ Unter dem Spielfeld lässt sich der Ton aus- und einschalten.
 ## Rangliste
 
 Auf der Startseite steht eine Rangliste mit Siegen, gespielten Spielen und gewonnenen Runden.
-Ein Spiel zählt, sobald jemand 3 Runden gewonnen hat. Gespeichert wird im Browser (localStorage).
+Ein Spiel zählt, sobald jemand die eingestellten Rundensiege erreicht hat. Gespeichert wird im Browser (localStorage).
 Beim Beitreten tauschen Gastgeber und Mitspieler ihre Spiele aus, so haben alle denselben Stand.
 Spieler werden über ihren Namen zugeordnet, also immer denselben Namen benutzen.
 
