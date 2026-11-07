@@ -1027,19 +1027,38 @@ function drawBomb(px, py, fuse, now, remote) {
   ctx.beginPath(); ctx.arc(cx + 8, cy - 23, 3.5, 0, Math.PI * 2); ctx.fill();
 }
 function drawFlames(flames, now) {
+  if (!flames.length) return;
   const set = new Set(flames.map(([x, y]) => x + ',' + y));
-  for (const [x, y] of flames) {
-    const px = x * T, py = y * T, cx = px + T / 2, cy = py + T / 2;
-    const flick = 0.85 + Math.sin(now * 30 + x * 7 + y * 3) * 0.15;
-    const h = set.has((x - 1) + ',' + y) || set.has((x + 1) + ',' + y);
-    const v = set.has(x + ',' + (y - 1)) || set.has(x + ',' + (y + 1));
-    for (const [col, s] of [['#ff5a1f', 1], ['#ffb02e', 0.68], ['#fff3b0', 0.36]]) {
-      ctx.fillStyle = col;
-      const w = T * s * flick;
-      if (h || !v) ctx.fillRect(px, cy - w / 2, T, w);
-      if (v || !h) ctx.fillRect(cx - w / 2, py, w, T);
+  const DIRS4 = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+  const flick = 0.9 + Math.sin(now * 30) * 0.1;
+  ctx.save();
+  ctx.lineCap = 'round';
+  // Drei Schichten von außen (orange) nach innen (hell); jede Schicht über alle Felder,
+  // damit sich benachbarte Flammen nahtlos verbinden. Enden laufen rund aus.
+  for (const [col, sc] of [['#ff5a1f', 0.92], ['#ffb02e', 0.64], ['#fff3b0', 0.34]]) {
+    ctx.strokeStyle = col; ctx.fillStyle = col;
+    ctx.lineWidth = T * sc * flick;
+    for (const [x, y] of flames) {
+      const cx = x * T + T / 2, cy = y * T + T / 2;
+      const nb = DIRS4.filter(([dx, dy]) => set.has((x + dx) + ',' + (y + dy)));
+      const wob = Math.sin(now * 25 + x * 7 + y * 3) * 0.04;
+      if (!nb.length) {
+        // Einzelnes Feld (Bombe ohne Platz): runder Feuerball
+        ctx.beginPath(); ctx.arc(cx, cy, T * (0.52 + wob) * (sc / 0.92) * flick, 0, Math.PI * 2); ctx.fill();
+        continue;
+      }
+      ctx.beginPath();
+      for (const [dx, dy] of nb) { ctx.moveTo(cx, cy); ctx.lineTo(cx + dx * T / 2, cy + dy * T / 2); }
+      if (nb.length === 1) {
+        // Ende eines Strahls: Spitze läuft ins Feld hinein aus und wird rund abgeschlossen
+        const [dx, dy] = nb[0];
+        const tip = T * (0.22 + wob);
+        ctx.moveTo(cx, cy); ctx.lineTo(cx - dx * tip, cy - dy * tip);
+      }
+      ctx.stroke();
     }
   }
+  ctx.restore();
 }
 function drawPlayer(px, py, p, now) {
   if (p.grace && Math.floor(now * 12) % 2) return; // blinkt nach Schild-Treffer
