@@ -1,63 +1,41 @@
-# Funkenfeld
+# Sternenregister – Star-Trek-Schiffsdatenbank
 
-Eine Bomben-Arena für 2 bis 6 Spieler direkt im Browser. Eigene Grafik, klassische Regeln.
+Fan-Datenbank über Raumschiffe und Schiffsklassen aus Star Trek, aufgebaut aus frei verfügbaren Quellen.
+Sie ist die Grundlage für spätere Projekte wie Sternenkarten oder kleine Story-Spiele.
 
-**Spielen:** https://bunwichtig.github.io/startrek-db/
+## Aufbau
 
-## So spielt ihr zusammen
+| Pfad | Inhalt |
+| --- | --- |
+| `site/` | Die Hauptseite: Bereich **Datenbank** (durchsuchbar, nach Quadranten aufklappbar, nach Fraktionen gruppiert) und Bereich **Datenbasis** (Quellen, Lizenzen, Rechte). Statisch, ohne Build-Schritt. |
+| `data/raw/` | Unveränderte Rohdaten aus STAPI, Wikidata und Wikimedia Commons. |
+| `data/ships.json` | Aufbereitete Datenbank mit Klassen, Schiffen, Fraktionen, Quadranten und Bildnachweisen. |
+| `scripts/fetch_stapi.py` | Lädt Schiffe und Schiffsklassen von [STAPI](https://stapi.co). |
+| `scripts/fetch_wikidata.py` | Lädt deutsche Namen, Beschreibungen und Bilder aus Wikidata und Commons. |
+| `scripts/build.py` | Ordnet Fraktionen und Quadranten zu und schreibt `data/ships.json` und `site/data.js`. |
+| `scripts/bundle.py` | Fasst die Seite zu einer einzigen HTML-Datei zusammen. |
 
-1. Einer öffnet die Seite, gibt Name, Raumname und Passwort ein und klickt **Raum erstellen**.
-2. Die anderen öffnen dieselbe Seite, geben denselben Raumnamen und dasselbe Passwort ein und klicken **Raum beitreten**.
-3. Der Gastgeber klickt **Spiel starten**. Sein Browser berechnet das Spiel und muss offen bleiben.
-
-Die Browser verbinden sich direkt miteinander (WebRTC über [PeerJS](https://peerjs.com)). Es gibt keinen eigenen Server.
-
-## Regeln
-
-- Pfeiltasten oder WASD zum Laufen, Leertaste oder Enter für eine Bombe, Strg zündet Fernzünder-Bomben. Auf dem Handy gibt es Tasten.
-- Bomben explodieren nach 2,5 Sekunden als Kreuz, sprengen Kisten und lösen andere Bomben aus.
-- Wer vom Feuer getroffen wird, ist für die Runde raus. Wer zuerst die eingestellte Zahl an Runden gewinnt (Standard 3), gewinnt das Spiel.
-- Power-ups aus Kisten: 💣 eine Bombe mehr, 🔥 größere Explosion, 👟 schneller laufen, 🦶 Bomben wegkicken.
-- **Mega-Items** (Anteil einstellbar) mit bunt leuchtendem Rahmen: 🌟 Megafeuer (maximale Explosion, eine Bombe mehr), 💥 Durchschlag (Explosionen gehen durch Kisten), 🛡️ Schild (übersteht einen Treffer), 👻 Geist (10 Sekunden durch Kisten und Bomben laufen), 📡 Fernzünder (Bomben gehen erst auf Strg hoch, spätestens nach 20 Sekunden).
-- Ecken-Hilfe: Wer knapp an einer Abzweigung vorbei ist oder vor einer Ecke steht, rutscht automatisch in den freien Gang.
-
-## Einstellungen (Gastgeber, in der Lobby)
-
-Zuerst wählt der Gastgeber den **Spielmodus**:
-
-- **Klassisch:** feste Regeln (3 Rundensiege, 30 % Power-ups, keine Mega-Items). Wählbar sind 4, 5 oder 6 Spieler. Das Feld ist 15 × 13 bei 4, 17 × 13 bei 5 und 19 × 15 bei 6 Spielern. Spieler 5 und 6 starten oben und unten in der Mitte.
-- **Individuell:** alle folgenden Einstellungen frei wählbar, dazu 2 bis 6 Spieler.
-
-- **Spielvariante:** Klassisch oder Schrumpfendes Feld. Bei Letzterem fallen ab 1:00 Restzeit von außen nach innen Blöcke, wer darunter steht, ist raus.
-- **Feldgröße:** Klein (11 × 9), Mittel (15 × 13), Groß (19 × 15), Riesig (23 × 17).
-- **Power-up-Chance:** 0 bis 100 % pro gesprengter Kiste.
-- **Rundensiege zum Gewinnen:** 1 bis 5.
-- **Anteil Mega-Items:** 0 bis 100 % der Power-ups (Standard 10 %). Bei 0 % gibt es keine, bei 100 % nur Mega-Items.
-  Aufklappbar „Mega-Items einzeln einstellen“: Gewichtung jedes Mega-Items von 0 (aus) bis 100, mit Anzeige, wie viel Prozent der Power-ups das ergibt.
-
-## Sound
-
-Alle Geräusche (Bombe legen, Explosion, Power-up, Treffer, Rundenstart, Sieg, Countdown in den letzten 10 Sekunden) werden direkt im Browser erzeugt.
-Unter dem Spielfeld lässt sich der Ton aus- und einschalten.
-
-## Rangliste
-
-Auf der Startseite steht eine Rangliste mit Siegen, gespielten Spielen und gewonnenen Runden.
-Ein Spiel zählt, sobald jemand die eingestellten Rundensiege erreicht hat. Gespeichert wird im Browser (localStorage).
-Beim Beitreten tauschen Gastgeber und Mitspieler ihre Spiele aus, so haben alle denselben Stand.
-Spieler werden über ihren Namen zugeordnet, also immer denselben Namen benutzen.
-
-## Lokal testen
+Die GitHub Action `Daten abrufen` führt alle Schritte einmal im Monat aus und committet das Ergebnis.
+Lokal geht es genauso:
 
 ```sh
-python -m http.server 8000
+python scripts/fetch_stapi.py
+python scripts/fetch_wikidata.py
+python scripts/build.py
+python -m http.server -d site   # dann http://localhost:8000
 ```
 
-Dann `http://localhost:8000/?local` in zwei Tabs öffnen. Mit `?local` laufen die Tabs ohne Internet über den Browser selbst.
+## Quellen und Lizenzen
 
-## Backup der Star-Trek-Datenbank
+| Quelle | Lizenz | Verwendung |
+| --- | --- | --- |
+| [Memory Alpha](https://memory-alpha.fandom.com) über [STAPI](https://stapi.co) | Inhalte CC BY-NC 4.0, STAPI-Code MIT | Schiffe, Klassen, Status, Bewaffnung, Zugehörigkeit |
+| [Wikidata](https://www.wikidata.org) | CC0 | Deutsche Namen, Beschreibungen, Bildverknüpfungen |
+| [Wikimedia Commons](https://commons.wikimedia.org) | je Bild (meist CC BY-SA oder gemeinfrei) | Fotos, mit Urheber und Lizenz an jedem Bild |
+| Eigene Silhouetten | CC0 | Schematische Schiffsgrafiken, erzeugt aus Fraktion und Typ |
 
-Die frühere Star-Trek-Schiffsdatenbank liegt unverändert in [`startrek-backup/`](startrek-backup/) und ist weiter erreichbar unter
-https://bunwichtig.github.io/startrek-db/startrek-backup/site/ .
-Der Stand vor dem Umbau ist ausserdem in der Git-Historie erhalten (Commit `54d6f9c`).
-Die monatliche Datenaktualisierung ist abgeschaltet (der Workflow liegt im Backup-Ordner).
+Weil die Kerndaten aus Memory Alpha stammen, gilt für die Datenbank insgesamt **CC BY-NC 4.0**:
+Weitergabe mit Namensnennung, keine kommerzielle Nutzung. Der Code dieses Repositorys steht unter MIT.
+
+Star Trek und alle zugehörigen Marken gehören Paramount Global (CBS Studios). Dies ist ein
+nicht-kommerzielles Fanprojekt ohne Verbindung zu Paramount oder CBS.

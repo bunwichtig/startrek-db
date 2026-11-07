@@ -1,5 +1,5 @@
 {
- "built": "2026-11-01",
+ "built": "2026-11-07",
  "quadrants": [
   {
    "id": "alpha",
@@ -315,7 +315,7 @@
    "license": "CC BY-NC 4.0",
    "url": "https://memory-alpha.fandom.com",
    "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.de",
-   "count": 3248,
+   "count": 3250,
    "unit": "Artikel ausgewertet",
    "text": "Das Fan-Wiki zum Star-Trek-Kanon. Direkt gelesen werden Kategorien, Infoboxen und der erste Absatz jedes Schiffsartikels. Die Lizenz erlaubt Weitergabe mit Namensnennung, aber keine kommerzielle Nutzung. Bilder aus Memory Alpha werden nicht übernommen."
   },
@@ -10815,7 +10815,7 @@
    ],
    "ships": [],
    "ma": "https://memory-alpha.fandom.com/wiki/Tarkalean_freighter",
-   "intro": "Tarkalean freighters were starships utilized by the Tarkaleans during the 22nd century. They had two decks and carried at least twenty-two crewmembers."
+   "intro": "Tarkalean freighters were starships utilized by the Tarkaleans during the 22nd century. They had at least two decks and carried at least twenty-two crewmembers."
   },
   {
    "i": 598,
@@ -12707,7 +12707,7 @@
    ],
    "ships": [
     1434,
-    1698
+    1700
    ],
    "ma": "https://memory-alpha.fandom.com/wiki/Yridian_shuttle",
    "intro": "The Yridian shuttle was a shuttlecraft-sized vessel utilized by the Yridians during the 2360s. Such a vessel was capable of traveling at warp speeds, and performing planetary landings."
@@ -23630,7 +23630,7 @@
    "f": "federation",
    "own": "United Federation of Planets",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_7",
-   "intro": "Starbase 7 was a Federation starbase administered by Starfleet."
+   "intro": "Starbase 7 was a Federation starbase administered by Starfleet in the Beta Quadrant."
   },
   {
    "i": 785,
@@ -33103,12 +33103,28 @@
   },
   {
    "i": 1578,
+   "n": "Starbase 15",
+   "st": "Active",
+   "d": "3196",
+   "c": -1,
+   "f": "federation",
+   "own": "Federation",
+   "op": "Starfleet",
+   "ty": [
+    "Starbase"
+   ],
+   "src": "ma",
+   "ma": "https://memory-alpha.fandom.com/wiki/Starbase_15",
+   "intro": "Starbase 15, abbreviated as SB15, was a Federation starbase administered by Starfleet in the Beta Quadrant."
+  },
+  {
+   "i": 1579,
    "n": "Starbase 16",
    "st": "Active",
    "d": "3195",
    "c": -1,
    "f": "federation",
-   "own": "United Federation of Planets",
+   "own": "Federation",
    "op": "Starfleet",
    "ty": [
     "Starbase"
@@ -33118,13 +33134,13 @@
    "intro": "Starbase 16, abbreviated as SB16, was a Federation starbase administered by Starfleet. This base was located in the Alpha Quadrant."
   },
   {
-   "i": 1579,
+   "i": 1580,
    "n": "Starbase 17",
    "st": "Active",
    "d": "3196",
    "c": -1,
    "f": "federation",
-   "own": "United Federation of Planets",
+   "own": "Federation",
    "op": "Starfleet",
    "ty": [
     "Starbase"
@@ -33134,7 +33150,7 @@
    "intro": "Starbase 17, abbreviated as SB17, was a Federation starbase administered by Starfleet. This base was located in the Alpha Quadrant."
   },
   {
-   "i": 1580,
+   "i": 1581,
    "n": "Starbase 184",
    "st": "Active",
    "d": "2293",
@@ -33147,7 +33163,7 @@
    "intro": "Starbase 184 was a Federation starbase that was administered by Starfleet in the late 23rd century."
   },
   {
-   "i": 1581,
+   "i": 1582,
    "n": "Starbase 20",
    "st": "Active",
    "d": "2259",
@@ -33160,7 +33176,7 @@
    "intro": "Starbase 20, abbreviated SB20, was a Federation starbase administered by Starfleet. This base was located in the Beta Quadrant."
   },
   {
-   "i": 1582,
+   "i": 1583,
    "n": "Starbase 245",
    "st": "Active",
    "d": "2364",
@@ -33176,7 +33192,23 @@
    "intro": "Starbase 245, abbreviated as SB245, was a Federation starbase administered by Starfleet. This starbase was located in the Alpha or Beta Quadrant."
   },
   {
-   "i": 1583,
+   "i": 1584,
+   "n": "Starbase 3",
+   "st": "Active",
+   "d": "3196",
+   "c": -1,
+   "f": "federation",
+   "own": "Federation",
+   "op": "Starfleet",
+   "ty": [
+    "Starbase"
+   ],
+   "src": "ma",
+   "ma": "https://memory-alpha.fandom.com/wiki/Starbase_3",
+   "intro": "Starbase 3, abbreviated as SB3, was a Federation starbase administered by Starfleet in the Beta Quadrant."
+  },
+  {
+   "i": 1585,
    "n": "Starbase 411",
    "st": "Active",
    "d": "2293",
@@ -33189,7 +33221,7 @@
    "intro": "Starbase 411 was a Federation starbase that was administered by Starfleet in the late 23rd century."
   },
   {
-   "i": 1584,
+   "i": 1586,
    "n": "Starbase 45",
    "st": "Active",
    "d": "3196",
@@ -33202,23 +33234,23 @@
    "intro": "Starbase 45 was a Federation starbase administered by Starfleet. This base was located in the Alpha Quadrant."
   },
   {
-   "i": 1585,
+   "i": 1587,
    "n": "Starbase 8",
    "st": "Active",
    "d": "3196",
    "c": -1,
    "f": "federation",
-   "own": "United Federation of Planets",
+   "own": "Federation",
    "op": "Starfleet",
    "ty": [
     "Starbase"
    ],
    "src": "ma",
    "ma": "https://memory-alpha.fandom.com/wiki/Starbase_8",
-   "intro": "Starbase 8 was a Federation starbase administered by Starfleet."
+   "intro": "Starbase 8, abbreviated as SB8, was a Federation starbase administered by Starfleet in the Beta Quadrant."
   },
   {
-   "i": 1586,
+   "i": 1588,
    "n": "Starbase J19-Alpha",
    "st": "Unknown",
    "sd": "Wrecked",
@@ -33235,7 +33267,7 @@
    "intro": "Starbase J19-Alpha was a Federation starbase operated by Starfleet in the late 32nd century. The space station was an experimental platform for developing new weapons. The was assigned to its defense."
   },
   {
-   "i": 1587,
+   "i": 1589,
    "n": "Starbase Zetta",
    "st": "Unknown",
    "d": "2250s",
@@ -33248,7 +33280,7 @@
    "intro": "Starbase Zetta was a Federation starbase operated by Starfleet during the mid-23rd century."
   },
   {
-   "i": 1588,
+   "i": 1590,
    "n": "Starfleet Six",
    "st": "Active",
    "d": "3195",
@@ -33262,7 +33294,7 @@
    "intro": "Starfleet Six was the call sign for a 32nd century Federation shuttlecraft operated by Starfleet."
   },
   {
-   "i": 1589,
+   "i": 1591,
    "n": "Starship",
    "c": -1,
    "f": "none",
@@ -33274,7 +33306,7 @@
    "desc": "fictional spacecraft from the Star Trek universe"
   },
   {
-   "i": 1590,
+   "i": 1592,
    "n": "Starships in the Dominion War",
    "c": -1,
    "f": "none",
@@ -33283,7 +33315,7 @@
    "intro": "The following is a list of starships known to have participated in the Dominion War. This included starships operated by Starfleet, as well as the Cardassian, Klingon and Romulan Empires."
   },
   {
-   "i": 1591,
+   "i": 1593,
    "n": "Station K43",
    "st": "Active",
    "d": "2293",
@@ -33298,7 +33330,7 @@
    "intro": "Station K43 was a Federation station in the late-23rd century."
   },
   {
-   "i": 1592,
+   "i": 1594,
    "n": "Tau Ceti",
    "st": "Active",
    "d": "3191",
@@ -33313,7 +33345,7 @@
    "intro": "The Tau Ceti was a Breen Imperium warship in service during the 32nd century."
   },
   {
-   "i": 1593,
+   "i": 1595,
    "n": "Teracaq",
    "st": "Active",
    "d": "3195",
@@ -33326,7 +33358,7 @@
    "intro": "In 3195, the Teracaq was assigned to transport prisoner Caleb Mir to the V'Rilik Penal Colony on . En route, Mir overpowered the two guards and the pilot and seized the controls, incidentally sending the shuttle into an out-of-control spiral. Mir used the shuttle to connect with Federation subspace relays and ordered its computer to search for prison records of his mother, but found nothing. However, the shuttle was then caught in a tractor beam, and afterward delivered Mir to the penal colony."
   },
   {
-   "i": 1594,
+   "i": 1596,
    "n": "Terran Empire shuttlecraft",
    "c": -1,
    "f": "earth",
@@ -33336,7 +33368,7 @@
    "intro": "The shuttlecraft and shuttlepods of the Terran Empire in the mirror universe. (; )"
   },
   {
-   "i": 1595,
+   "i": 1597,
    "n": "Tieran's ship",
    "st": "Destroyed",
    "d": "2373",
@@ -33349,7 +33381,7 @@
    "intro": "Tieran's ship was a type of ship utilized by the Ilari during the late 24th century. One of these vessels was used by the Ilari tyrant Tieran, along with and Adin."
   },
   {
-   "i": 1596,
+   "i": 1598,
    "n": "Tosk's ship",
    "st": "Active",
    "d": "2369",
@@ -33363,7 +33395,7 @@
    "intro": "The Tosk's ship was a type of small spacecraft used by the during the late-24th century. Their engineering systems were equipped with arva nodes for collecting space matter and converting it into usable coladrium fuel. When in motion, the ship's engines also gave off detectable ionized L-band emissions, identical to that of the Hunters' ship."
   },
   {
-   "i": 1597,
+   "i": 1599,
    "n": "Tyrus VIIA research station",
    "st": "Active",
    "d": "2381",
@@ -33378,7 +33410,7 @@
    "intro": "The Tyrus VIIA research station was a Tyran research station located in orbit of the moon Tyrus VIIA."
   },
   {
-   "i": 1598,
+   "i": 1600,
    "n": "UEF Enterprise",
    "st": "Unknown",
    "sd": "Encountered in an alternate timeline",
@@ -33393,7 +33425,7 @@
    "intro": "The UEF Enterprise was a starship class Constitution starship operated by the United Earth Fleet in an alternate 23rd century."
   },
   {
-   "i": 1599,
+   "i": 1601,
    "n": "UFP-47",
    "r": "UFP-47",
    "st": "Active",
@@ -33408,7 +33440,7 @@
    "intro": "UFP-47 was a Federation shuttlecraft operated by Starfleet in the 33rd century."
   },
   {
-   "i": 1600,
+   "i": 1602,
    "n": "UFP-99",
    "r": "UFP-99",
    "st": "Active",
@@ -33423,7 +33455,7 @@
    "intro": "UFP-99 was a Federation shuttlecraft operated by Starfleet in the late 32nd century. At the beginning of the pathway drive program, it was fitted with the prototype drive for testing."
   },
   {
-   "i": 1601,
+   "i": 1603,
    "n": "USS Albert Einstein",
    "r": "NCC-65123",
    "st": "Active",
@@ -33437,7 +33469,7 @@
    "intro": "The USS Albert Einstein (NCC-65123) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1602,
+   "i": 1604,
    "n": "USS Alka-Celsior",
    "r": "NCC-1404",
    "st": "Decommissioned",
@@ -33452,7 +33484,7 @@
    "intro": "The USS Alka-Celsior (NCC-1404) was a Federation starship operated by Starfleet."
   },
   {
-   "i": 1603,
+   "i": 1605,
    "n": "USS Anaximander",
    "st": "Active",
    "d": "2382",
@@ -33466,7 +33498,7 @@
    "intro": "The USS Anaximander, nicknamed \"The Nax\", was a Federation starship operated by Section 31 during the 24th century."
   },
   {
-   "i": 1604,
+   "i": 1606,
    "n": "USS Antares",
    "r": "NCC-325501",
    "st": "Active",
@@ -33481,7 +33513,7 @@
    "intro": "The USS Antares (NCC-325501) was an Federation starship operated by Starfleet during the 32nd century. The ship's technology dated back to the Burn a century earlier."
   },
   {
-   "i": 1605,
+   "i": 1607,
    "n": "USS Apollo",
    "r": "NCC-50585",
    "st": "Active",
@@ -33495,7 +33527,7 @@
    "intro": "The USS Apollo (NCC-50585) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1606,
+   "i": 1608,
    "n": "USS Ark Royal",
    "r": "NCC-75922",
    "st": "Active",
@@ -33510,7 +33542,7 @@
    "intro": "The USS Ark Royal (NCC-75922) was a Federation starship that was in service to Starfleet in the early 25th century."
   },
   {
-   "i": 1607,
+   "i": 1609,
    "n": "USS Artemis",
    "r": "NCC-50532",
    "st": "Active",
@@ -33524,7 +33556,7 @@
    "intro": "USS Artemis (NCC-50532) was a Federation starship that was in service with Starfleet in the mid-24th century."
   },
   {
-   "i": 1608,
+   "i": 1610,
    "n": "USS Athena",
    "r": "BNCC-392023↓",
    "st": "Active",
@@ -33539,7 +33571,7 @@
    "intro": "The USS Athena (NCC-392023) was a Federation starship operated by Starfleet in the 32nd century."
   },
   {
-   "i": 1609,
+   "i": 1611,
    "n": "USS Atlantis",
    "r": "NCC-52716",
    "st": "Active",
@@ -33553,7 +33585,7 @@
    "intro": "The USS Atlantis (NCC-52716) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1610,
+   "i": 1612,
    "n": "USS Atlantis",
    "r": "NCC-72507",
    "st": "Active",
@@ -33567,7 +33599,7 @@
    "intro": "The USS Atlantis (NCC-72507) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1611,
+   "i": 1613,
    "n": "USS Beagle",
    "st": "Destroyed",
    "d": "Prime reality!primebracket right bracket left2382",
@@ -33579,7 +33611,7 @@
    "intro": "The USS Beagle was a Earth spacecraft from an alternate quantum reality."
   },
   {
-   "i": 1612,
+   "i": 1614,
    "n": "USS Bushwacker",
    "r": "NCC-52518",
    "st": "Active",
@@ -33593,7 +33625,7 @@
    "intro": "USS Bushwacker (NCC-52518) was a Federation starship that in service with Starfleet in the mid-24th century."
   },
   {
-   "i": 1613,
+   "i": 1615,
    "n": "USS Cairo",
    "r": "NCC-42136",
    "st": "Destroyed",
@@ -33610,7 +33642,7 @@
    "desc": "Fictional starship from Star Trek with registry number NCC-42136"
   },
   {
-   "i": 1614,
+   "i": 1616,
    "n": "USS Callisto",
    "r": "NCC-65616",
    "st": "Active",
@@ -33624,7 +33656,7 @@
    "intro": "The USS Callisto (NCC-65616) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1615,
+   "i": 1617,
    "n": "USS Capricorn",
    "st": "Active",
    "d": "3195",
@@ -33638,7 +33670,7 @@
    "intro": "The USS Capricorn was a Federation starship operated by Starfleet in the 32nd century."
   },
   {
-   "i": 1616,
+   "i": 1618,
    "n": "USS Cayuga",
    "r": "NCC-1557",
    "st": "Destroyed",
@@ -33654,7 +33686,7 @@
    "intro": "The USS Cayuga (NCC-1557) was a Federation starship operated by Starfleet in the 23rd century."
   },
   {
-   "i": 1617,
+   "i": 1619,
    "n": "USS Constitution",
    "r": "NCC-1700",
    "st": "Active",
@@ -33669,7 +33701,7 @@
    "intro": "The USS Constitution (NCC-1700) was a 23rd century Federation starship operated by Starfleet. This was the prototype ship of the class."
   },
   {
-   "i": 1618,
+   "i": 1620,
    "n": "USS Copernicus",
    "r": "NCC-55632",
    "st": "Active",
@@ -33683,7 +33715,7 @@
    "intro": "The USS Copernicus (NCC-55632) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1619,
+   "i": 1621,
    "n": "USS Crimson",
    "st": "Active",
    "d": "3195",
@@ -33697,7 +33729,7 @@
    "intro": "The USS Crimson was a Federation starship operated by Starfleet in the 32nd century."
   },
   {
-   "i": 1620,
+   "i": 1622,
    "n": "USS Defiant",
    "r": "NCC-75633B, NX-74205B",
    "st": "Unknown",
@@ -33713,7 +33745,7 @@
    "intro": "The USS Defiant (NX-74205), formerly the USS Sao Paulo (NCC-75633), was a Federation starship operated by Starfleet during the 24th century. It was assigned to Deep Space 9 in the final weeks of the Dominion War. This vessel was the third known Federation starship, and the second ship of the Defiant class, to bear the name Defiant."
   },
   {
-   "i": 1621,
+   "i": 1623,
    "n": "USS Discovery",
    "r": "NCC-1031 (original, final mission), NCC-1031-A (post-refit)",
    "st": "Destroyed",
@@ -33732,7 +33764,7 @@
    "desc": "fiktives Raumschiff aus Star Trek"
   },
   {
-   "i": 1622,
+   "i": 1624,
    "n": "USS Discovery",
    "r": "NCC-63748",
    "st": "Active",
@@ -33746,7 +33778,7 @@
    "intro": "The USS Discovery (NCC-63748) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1623,
+   "i": 1625,
    "n": "USS El-Tejear",
    "r": "NCC-50587",
    "st": "Active",
@@ -33760,7 +33792,7 @@
    "intro": "The USS El-Tejear (NCC-50587) was a Federation starship operated by Starfleet during the mid-24th century."
   },
   {
-   "i": 1624,
+   "i": 1626,
    "n": "USS Elmer Fudd",
    "r": "NCC-25343",
    "st": "Active",
@@ -33774,7 +33806,7 @@
    "intro": "The USS Elmer Fudd (NCC-25343) was a 24th century Federation starship operated by Starfleet. In 2364, this starship was commanded by Mary van de Ven."
   },
   {
-   "i": 1625,
+   "i": 1627,
    "n": "USS Endeavour",
    "r": "NCC-39222",
    "st": "Active",
@@ -33788,7 +33820,7 @@
    "intro": "The USS Endeavour (NCC-39222) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1626,
+   "i": 1628,
    "n": "USS Endeavour",
    "st": "Active",
    "d": "2382",
@@ -33802,7 +33834,7 @@
    "intro": "The USS Endeavour was an Federation starship operated by Starfleet in a parallel universe during the late 24th century."
   },
   {
-   "i": 1627,
+   "i": 1629,
    "n": "USS Enterprise",
    "r": "NCC-80102-A (2396-2401), NCC-1701-G (2402-)",
    "st": "Active",
@@ -33817,7 +33849,7 @@
    "intro": "The USS Enterprise (NCC-1701-G), formerly the USS Titan (NCC-80102-A), was a Federation starship operated by Starfleet in the 24th and 25th centuries."
   },
   {
-   "i": 1628,
+   "i": 1630,
    "n": "USS Excel",
    "r": "NCC-2020",
    "st": "Active",
@@ -33832,7 +33864,7 @@
    "intro": "USS Excel (NCC-2020) was a Federation starship operated by Starfleet during the 24th century."
   },
   {
-   "i": 1629,
+   "i": 1631,
    "n": "USS Excelsior",
    "r": "NCC-0220",
    "st": "Decommissioned",
@@ -33847,7 +33879,7 @@
    "intro": "The USS Excelsior (NCC-0220) was a Federation starship operated by Starfleet."
   },
   {
-   "i": 1630,
+   "i": 1632,
    "n": "USS Excelsior",
    "r": "NCC-27445",
    "st": "Active",
@@ -33861,7 +33893,7 @@
    "intro": "The USS Excelsior (NCC-27445) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1631,
+   "i": 1633,
    "n": "USS Farouk El-Baz",
    "r": "NCC-51823",
    "st": "Active",
@@ -33875,7 +33907,7 @@
    "intro": "The USS Farouk El-Baz (NCC-51823) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1632,
+   "i": 1634,
    "n": "USS Ganymede",
    "r": "NCC-53451",
    "st": "Active",
@@ -33889,7 +33921,7 @@
    "intro": "The USS Ganymede (NCC-53451) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1633,
+   "i": 1635,
    "n": "USS Gregory Jein",
    "r": "NCC-103145",
    "st": "Unknown",
@@ -33905,7 +33937,7 @@
    "intro": "The USS Gregory Jein (NCC-103145) was a Federation starship that was service with Starfleet during the early 25th century."
   },
   {
-   "i": 1634,
+   "i": 1636,
    "n": "USS Gremlin",
    "r": "NCC-72922",
    "st": "Active",
@@ -33919,7 +33951,7 @@
    "intro": "The USS Gremlin (NCC-72922) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1635,
+   "i": 1637,
    "n": "USS Griffin",
    "r": "NCC-1067",
    "st": "Damaged",
@@ -33935,7 +33967,7 @@
    "intro": "The USS Griffin (NCC-1067) was a Federation starship operated by Starfleet during the 23rd century. For nine years, the Griffin was considered lost."
   },
   {
-   "i": 1636,
+   "i": 1638,
    "n": "USS Hanson",
    "r": "NCC-76726",
    "st": "Active",
@@ -33949,7 +33981,7 @@
    "intro": "The USS Hanson (NCC-76726) was a Federation starship that was in service to Starfleet in the early 25th century."
   },
   {
-   "i": 1637,
+   "i": 1639,
    "n": "USS Hokule'a",
    "r": "NCC-52187",
    "st": "Active",
@@ -33963,7 +33995,7 @@
    "intro": "The USS Hokule'a (NCC-52187) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1638,
+   "i": 1640,
    "n": "USS Intrepid",
    "r": "NCC-1707",
    "st": "Active",
@@ -33978,7 +34010,7 @@
    "intro": "The USS Intrepid (NCC-1707) was a 23rd century Federation starship operated by Starfleet."
   },
   {
-   "i": 1639,
+   "i": 1641,
    "n": "USS Iowa",
    "st": "Unknown",
    "d": "2259",
@@ -33991,7 +34023,7 @@
    "intro": "The USS Iowa was a starship operated by United Earth during the 23rd century in an alternate timeline."
   },
   {
-   "i": 1640,
+   "i": 1642,
    "n": "USS Janaran",
    "r": "NCC-86518",
    "st": "Active",
@@ -34006,7 +34038,7 @@
    "intro": "The USS Janaran (NCC-86518) was a Federation starship that was in service to Starfleet in the early 25th century."
   },
   {
-   "i": 1641,
+   "i": 1643,
    "n": "USS John F. Kennedy",
    "r": "NCC-65133",
    "st": "Active",
@@ -34020,7 +34052,7 @@
    "intro": "The USS John F. Kennedy (NCC-65133) was a 24th century Federation starship operated by Starfleet. In 2364, this starship was commanded by Tod Miles."
   },
   {
-   "i": 1642,
+   "i": 1644,
    "n": "USS Kelcie Mae",
    "r": "NCC-618",
    "st": "Active",
@@ -34035,7 +34067,7 @@
    "intro": "The USS Kelcie Mae (NCC-618) was a Federation starship operated by Starfleet during the mid-23rd century."
   },
   {
-   "i": 1643,
+   "i": 1645,
    "n": "USS Kumari",
    "r": "NCC-86610",
    "st": "Active",
@@ -34050,7 +34082,7 @@
    "intro": "The USS Kumari (NCC-86610) was a Federation starship that was in service to Starfleet in the early 25th century."
   },
   {
-   "i": 1644,
+   "i": 1646,
    "n": "USS LaMar",
    "st": "Active",
    "d": "3191",
@@ -34064,7 +34096,7 @@
    "intro": "The USS LaMar was a Federation starship operated by Starfleet during the late 32nd century."
   },
   {
-   "i": 1645,
+   "i": 1647,
    "n": "USS Laser",
    "r": "NCC-21335",
    "st": "Active",
@@ -34078,7 +34110,7 @@
    "intro": "USS Laser (NCC-21335) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1646,
+   "i": 1648,
    "n": "USS Late",
    "r": "NCC-9481",
    "st": "Active",
@@ -34093,7 +34125,7 @@
    "intro": "The USS Late (NCC-9481) was a Federation starship operated by Starfleet during the 24th century."
   },
   {
-   "i": 1647,
+   "i": 1649,
    "n": "USS Lexington",
    "st": "Active",
    "d": "3195",
@@ -34107,7 +34139,7 @@
    "intro": "The USS Lexington was a Federation starship operated by Starfleet in the 32nd century."
   },
   {
-   "i": 1648,
+   "i": 1650,
    "n": "USS Locherer",
    "r": "NCC-325062",
    "st": "Active",
@@ -34122,7 +34154,7 @@
    "intro": "The USS Locherer (NCC-325062) was a Federation starship operated by Starfleet during the 32nd century."
   },
   {
-   "i": 1649,
+   "i": 1651,
    "n": "USS Maha Naree",
    "r": "NCC-90221",
    "st": "Active",
@@ -34137,7 +34169,7 @@
    "intro": "The USS Maha Naree (NCC-90221) was a Federation starship that was in service to Starfleet in the early 25th century."
   },
   {
-   "i": 1650,
+   "i": 1652,
    "n": "USS Manitoba",
    "st": "Active",
    "d": "2382",
@@ -34150,7 +34182,7 @@
    "intro": "The USS Manitoba, nicknamed \"The Toba\", was a Federation starship operated by Starfleet in the 24th century."
   },
   {
-   "i": 1651,
+   "i": 1653,
    "n": "USS Manticore",
    "st": "Unknown",
    "d": "2382",
@@ -34164,7 +34196,7 @@
    "intro": "The USS Manticore was an Federation starship operated by Starfleet during the 24th century."
   },
   {
-   "i": 1652,
+   "i": 1654,
    "n": "USS Matte Fringe",
    "r": "NCC-12622",
    "st": "Active",
@@ -34178,7 +34210,7 @@
    "intro": "The USS Matte Fringe (NCC-12622) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1653,
+   "i": 1655,
    "n": "USS Mekong",
    "r": "NCC-72617",
    "st": "Abandoned",
@@ -34193,7 +34225,7 @@
    "intro": "The USS Mekong (NCC-72617) was a 24th century Federation runabout operated by Starfleet. This ship, a replacement for the , was assigned to Deep Space 9."
   },
   {
-   "i": 1654,
+   "i": 1656,
    "n": "USS Miyazaki",
    "r": "NCC-316608",
    "st": "Abandoned",
@@ -34209,7 +34241,7 @@
    "intro": "The USS Miyazaki (NCC-316608) was a 31st century Federation starship operated by Starfleet under the command of Captain from 3067 to 3069, when mechanical failures of the ship's prototype singularity drive killed the entire crew."
   },
   {
-   "i": 1655,
+   "i": 1657,
    "n": "USS Mustang",
    "r": "NCC-65543",
    "st": "Active",
@@ -34223,7 +34255,7 @@
    "intro": "The USS Mustang (NCC-65543) was a 24th century Federation starship operated by Starfleet. In 2364, this starship was commanded by Jimmy Arakaki."
   },
   {
-   "i": 1656,
+   "i": 1658,
    "n": "USS Nausicaä",
    "r": "NCC-51054",
    "st": "Active",
@@ -34237,7 +34269,7 @@
    "intro": "USS Nausicaä (NCC-51054) was a Federation starship that was in service with Starfleet in the mid-24th century."
   },
   {
-   "i": 1657,
+   "i": 1659,
    "n": "USS Neil Armstrong",
    "r": "NCC-51865",
    "st": "Active",
@@ -34251,7 +34283,7 @@
    "intro": "The USS Neil Armstrong (NCC-51865) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1658,
+   "i": 1660,
    "n": "USS Ni'Var",
    "r": "NCC-90237",
    "st": "Active",
@@ -34266,7 +34298,7 @@
    "intro": "The USS Ni'Var (NCC-90237) was a Federation starship that was in service to Starfleet in the early 25th century."
   },
   {
-   "i": 1659,
+   "i": 1661,
    "n": "USS Nightwing",
    "r": "NCC-6342",
    "st": "Active",
@@ -34280,7 +34312,7 @@
    "intro": "The USS Nightwing (NCC-6342) was a 24th century Federation starship operated by Starfleet. The ship had the capacity of traveling at warp factor 7. In 2364, this starship was commanded by Captain ."
   },
   {
-   "i": 1660,
+   "i": 1662,
    "n": "USS Nimerfro",
    "st": "Active",
    "d": "2259",
@@ -34293,7 +34325,7 @@
    "intro": "The USS Nimerfro was a Federation starship operated by Starfleet during the 23rd century."
   },
   {
-   "i": 1661,
+   "i": 1663,
    "n": "USS Non Sequitur",
    "r": "NCC-12628",
    "st": "Active",
@@ -34307,7 +34339,7 @@
    "intro": "The USS Non Sequitur (NCC-12628) was a 24th century Federation starship operated by Starfleet. In 2364, Captain was the commander of this ship."
   },
   {
-   "i": 1662,
+   "i": 1664,
    "n": "USS Origin",
    "st": "Unknown",
    "d": "3195",
@@ -34320,7 +34352,7 @@
    "intro": "The USS Origin was a Federation starship operated by Starfleet during the 23rd century."
   },
   {
-   "i": 1663,
+   "i": 1665,
    "n": "USS Pablo Picasso",
    "r": "NCC-1375",
    "st": "Active",
@@ -34335,7 +34367,7 @@
    "intro": "The USS Pablo Picasso (NCC-1375) was a Federation starship operated by Starfleet during the 23rd century."
   },
   {
-   "i": 1664,
+   "i": 1666,
    "n": "USS Passaro",
    "r": "NCC-52670",
    "st": "Destroyed",
@@ -34351,7 +34383,7 @@
    "intro": "The USS Passaro (NCC-52670) was a Federation starship, formerly operated by Starfleet before it was appropriated by Nick Locarno for his Nova Fleet in the late 24th century. It was considered old and appeared to have been disused long enough for Starfleet to not notice that Locarno had stolen it. In 2381, it was commandeered and reclaimed by Lieutenant jg Beckett Mariner, but a trynar shield prevented her from escaping the Detrion system and thus returning the Passaro to Federation space. Mariner was ultimately forced to detonate a Genesis Device she had seized from Locarno and brought on board to prevent Locarno from reclaiming it, leading to the ship's destruction."
   },
   {
-   "i": 1665,
+   "i": 1667,
    "n": "USS Passaro",
    "r": "NCC-97955",
    "st": "Active",
@@ -34366,7 +34398,7 @@
    "intro": "The USS Passaro (NCC-97955) was a Federation starship in service to Starfleet during the early 25th century."
   },
   {
-   "i": 1666,
+   "i": 1668,
    "n": "USS Prodigy",
    "r": "NCC-81084",
    "st": "Active",
@@ -34381,7 +34413,7 @@
    "intro": "The USS Prodigy (NCC-81084) was a Federation starship launched in 2385. Shortly after being launched, the Attack on Mars has caused Starfleet to temporarily put its mission of exploration on hold while all the other remaining starships to be used mainly for homeworld defense for all Federation planets."
   },
   {
-   "i": 1667,
+   "i": 1669,
    "n": "USS Prometheus",
    "r": "BNX-59650↓, NX-74913↓",
    "st": "Active",
@@ -34398,7 +34430,7 @@
    "desc": "fictional spacecraft of the Star Trek multiverse"
   },
   {
-   "i": 1668,
+   "i": 1670,
    "n": "USS Puget Sound",
    "r": "NCC-65343",
    "st": "Active",
@@ -34412,7 +34444,7 @@
    "intro": "The USS Puget Sound (NCC-65343) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1669,
+   "i": 1671,
    "n": "USS Reseda",
    "st": "Active",
    "d": "2382",
@@ -34425,7 +34457,7 @@
    "intro": "The USS Reseda was a Federation starship operated by Starfleet during the late 24th century. The crew was comprised of reformed Maquis who survived the destruction of their organisation before the Dominion War."
   },
   {
-   "i": 1670,
+   "i": 1672,
    "n": "USS Riker",
    "st": "Active",
    "d": "3195",
@@ -34439,7 +34471,7 @@
    "intro": "The USS Riker was a Federation starship operated by Starfleet in the 32nd century."
   },
   {
-   "i": 1671,
+   "i": 1673,
    "n": "USS Robert Louis Stevenson",
    "r": "NCC-1781",
    "st": "Active",
@@ -34453,7 +34485,7 @@
    "intro": "The USS Robert Louis Stevenson (NCC-1781) was a 24th century Federation starship operated by Starfleet. In 2364, Captain was the commander of the ship."
   },
   {
-   "i": 1672,
+   "i": 1674,
    "n": "USS Saratoga",
    "r": "NCC-1887 (2286), NCC-31911 (2401), for museum purposes",
    "st": "Unknown",
@@ -34469,7 +34501,7 @@
    "intro": "The USS Saratoga (NCC-1887) was a 23rd century Federation starship operated by Starfleet."
   },
   {
-   "i": 1673,
+   "i": 1675,
    "n": "USS Saratoga",
    "r": "NCC-51843",
    "st": "Active",
@@ -34483,7 +34515,7 @@
    "intro": "The USS Saratoga (NCC-51843) was a 24th century Federation starship operated by Starfleet in the mid-2360s, under the command of Captain ."
   },
   {
-   "i": 1674,
+   "i": 1676,
    "n": "USS Sargasso",
    "st": "Disabled",
    "d": "3195",
@@ -34497,7 +34529,7 @@
    "intro": "The USS Sargasso was an Federation starship operated by Starfleet in the late 32nd century."
   },
   {
-   "i": 1675,
+   "i": 1677,
    "n": "USS Solkar",
    "r": "NCC-91863",
    "st": "Active",
@@ -34512,7 +34544,7 @@
    "intro": "The USS Solkar (NCC-91863) was a Federation starship that was in service to Starfleet in the early 25th century."
   },
   {
-   "i": 1676,
+   "i": 1678,
    "n": "USS Stardiver",
    "st": "Destroyed",
    "d": "2260",
@@ -34525,7 +34557,7 @@
    "intro": "The USS Stardiver was a Federation solar research vessel operated by Starfleet during the 23rd century."
   },
   {
-   "i": 1677,
+   "i": 1679,
    "n": "USS Stratford",
    "st": "Destroyed",
    "d": "2314",
@@ -34538,7 +34570,7 @@
    "intro": "The USS Stratford was a Federation starship in service to Starfleet in the early 24th century."
   },
   {
-   "i": 1678,
+   "i": 1680,
    "n": "USS Sunita",
    "st": "Active",
    "d": "2262",
@@ -34551,7 +34583,7 @@
    "intro": "The USS Sunita was a Federation starship operated by Starfleet in the 23rd century."
   },
   {
-   "i": 1679,
+   "i": 1681,
    "n": "USS Thorn",
    "st": "Active",
    "d": "2262",
@@ -34565,7 +34597,7 @@
    "intro": "The USS Thorn was a Federation starship operated by Starfleet during the 23rd century."
   },
   {
-   "i": 1680,
+   "i": 1682,
    "n": "USS Ticonderoga",
    "r": "NCC-32270",
    "st": "Active",
@@ -34579,7 +34611,7 @@
    "intro": "The USS Ticonderoga (NCC-32270) was a 24th century Federation starship operated by Starfleet. In 2364, the ship's commander was Captain Itzak Arrat."
   },
   {
-   "i": 1681,
+   "i": 1683,
    "n": "USS Toronto",
    "r": "NCC-70494",
    "st": "Active",
@@ -34594,7 +34626,7 @@
    "intro": "The USS Toronto (NCC-70494) was a Federation starship operated by Starfleet in the 24th century."
   },
   {
-   "i": 1682,
+   "i": 1684,
    "n": "USS Tranquillity Base",
    "r": "NCC-16585",
    "st": "Active",
@@ -34608,7 +34640,7 @@
    "intro": "The USS Tranquillity Base (NCC-16585) was a 24th century Federation starship operated by Starfleet. In 2364, this starship was commanded by ."
   },
   {
-   "i": 1683,
+   "i": 1685,
    "n": "USS Transcendence",
    "st": "Active",
    "d": "32nd century",
@@ -34621,7 +34653,7 @@
    "intro": "The USS Transcendence was a Federation starship operated by Starfleet in the 32nd century."
   },
   {
-   "i": 1684,
+   "i": 1686,
    "n": "USS Tycho",
    "r": "NCC-65183",
    "st": "Active",
@@ -34635,7 +34667,7 @@
    "intro": "The USS Tycho (NCC-65183) was a 24th century Federation starship operated by Starfleet. In 2364, this starship was commanded by ."
   },
   {
-   "i": 1685,
+   "i": 1687,
    "n": "USS Unicorn",
    "r": "NCC-65117",
    "st": "Active",
@@ -34649,7 +34681,7 @@
    "intro": "The USS Unicorn (NCC-65117) was a 24th century Federation starship operated by Starfleet, and commanded by Captain Terry Ann."
   },
   {
-   "i": 1686,
+   "i": 1688,
    "n": "USS Vasa",
    "r": "NCC-77690",
    "st": "Active",
@@ -34664,7 +34696,7 @@
    "intro": "The USS Vasa (NCC-77690) was a Federation starship that was in service to Starfleet in the early 25th century."
   },
   {
-   "i": 1687,
+   "i": 1689,
    "n": "USS Wellington",
    "r": "NCC-53421",
    "st": "Active",
@@ -34678,7 +34710,7 @@
    "intro": "The USS Wellington (NCC-53421) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1688,
+   "i": 1690,
    "n": "USS White Sands",
    "r": "NAR-1957",
    "st": "Active",
@@ -34692,7 +34724,7 @@
    "intro": "The USS White Sands (NAR-1957) was a Federation starship operated by Starfleet. In 2364, this starship was commanded by G. Harry Stein."
   },
   {
-   "i": 1689,
+   "i": 1691,
    "n": "USS Witmere",
    "st": "Active",
    "d": "2262",
@@ -34705,7 +34737,7 @@
    "intro": "The USS Witmere was a Federation starship operated by Starfleet during the 23rd century."
   },
   {
-   "i": 1690,
+   "i": 1692,
    "n": "USS Yamato",
    "r": "BNCC-24383↓, NCC-71807↓",
    "st": "Destroyed",
@@ -34723,7 +34755,7 @@
    "desc": "fiktives Raumschiff"
   },
   {
-   "i": 1691,
+   "i": 1693,
    "n": "USS Yang",
    "r": "NCC-321616",
    "st": "Active",
@@ -34738,7 +34770,7 @@
    "intro": "The USS Yang (NCC-321616) was a Federation starship operated by Starfleet in the 32nd century."
   },
   {
-   "i": 1692,
+   "i": 1694,
    "n": "USS Yorktown",
    "r": "NCC-25345",
    "st": "Active",
@@ -34752,7 +34784,7 @@
    "intro": "The USS Yorktown (NCC-25345) was a 24th century Federation starship operated by Starfleet."
   },
   {
-   "i": 1693,
+   "i": 1695,
    "n": "USS Zantra",
    "r": "NCC-75441",
    "st": "Active",
@@ -34767,7 +34799,7 @@
    "intro": "The USS Zantra (NCC-75441) was a Federation starship that was in service to Starfleet in the early 25th century."
   },
   {
-   "i": 1694,
+   "i": 1696,
    "n": "USS Zhukov",
    "r": "NCC-62136",
    "st": "Active",
@@ -34782,7 +34814,7 @@
    "intro": "The USS Zhukov (NCC-62136) was a 24th century Federation starship operated by Starfleet. It was under the command of Captain ."
   },
   {
-   "i": 1695,
+   "i": 1697,
    "n": "VCF Sh'vhal",
    "st": "Active",
    "d": "2381",
@@ -34795,7 +34827,7 @@
    "intro": "The VCF Sh'vhal was a Vulcan cruiser in service during the late 24th century under the command of Sokel."
   },
   {
-   "i": 1696,
+   "i": 1698,
    "n": "XCV-100",
    "r": "XCV-100",
    "st": "Lost",
@@ -34810,7 +34842,7 @@
    "intro": "XCV-100 was the registry of a ship built on Earth by the United States of America in the aftermath of World War III. It gained a fearsome reputation in space over the next 200 years as a monstrous scavenger ship, variously called Asaasllich, \"Destroyer of Worlds\" or Chach-Ka, \"the Annihilator\", or Astrovore."
   },
   {
-   "i": 1697,
+   "i": 1699,
    "n": "Xarantine outpost",
    "c": -1,
    "f": "none",
@@ -34819,7 +34851,7 @@
    "intro": "The Xarantine outpost was an outpost in space known to have been inhabited or operated by the Xarantine."
   },
   {
-   "i": 1698,
+   "i": 1700,
    "n": "YLT-3069",
    "r": "YLT-3069",
    "st": "Active",

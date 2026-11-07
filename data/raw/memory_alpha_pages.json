@@ -463,11 +463,12 @@
   "sidebar": "planet",
   "infobox": {
    "name": "Aldebaran III",
+   "image": "Name wall with Braslota.png",
    "type": "[[Planet]]",
-   "location": "[[Aldebaran]] [[star system|system]]<br>[[Beta Quadrant]]<br>~67 [[light year]]s from [[Sol]]",
    "affiliation": "{{Federation}} {{small|([[3196]])}}",
    "status": "Habitable",
-   "datestatus": "3196"
+   "datestatus": "3196",
+   "location": "[[Aldebaran]] [[star system|system]]<br>[[Beta Quadrant]]<br>~67 [[light year]]s from [[Sol]]"
   },
   "intro": "Aldebaran III was the inhabited third planet in the Aldebaran system. Located in the Beta Quadrant, this planet was approximately 67 light years from Sol. (; , okudagram)"
  },
@@ -4720,13 +4721,13 @@
   "infobox": {
    "name": "Cestus III",
    "orbital": "Cestus III remastered.jpg",
-   "surface": "Cestus III outpost destroyed, remastered.jpg",
-   "scaption": "Cestus III outpost after the Gorn attack of 2267",
    "type": "[[Planet]]",
-   "location": "[[Cestus system]]<br>[[Beta Quadrant]]",
    "affiliation": "{{Federation}} {{small|([[3196]])}}",
    "status": "Habitable",
-   "datestatus": "3196"
+   "datestatus": "3196",
+   "location": "[[Cestus system]]<br>[[Beta Quadrant]]",
+   "surface": "Cestus III outpost destroyed, remastered.jpg",
+   "scaption": "Cestus III outpost after the Gorn attack of 2267"
   },
   "intro": "Cestus III was the inhabited third planet of the Cestus system. This planet was located in the Beta Quadrant and was the home to a Federation colony in the 24th century."
  },
@@ -12206,7 +12207,7 @@
    "decks": "42",
    "crew": "1,000-6,000 ''(normal complement depending on assignment)''<br>15,000 ''(maximum capacity)''",
    "speed": "Warp 9.8 ''(theoretically achievable velocity, at extreme risk)''<br>Warp 9.6 ''(could be maintained for a few hours)''<br>Warp 6 ''(initial average [[cruise velocity]])''",
-   "armament": "12/14 [[Phaser array]]s<br>2 [[Torpedo launcher]]s ''(250 [[photon torpedo|photon]])''<br>[[Antimatter mine]]s",
+   "armament": "Saucer section: <br> 2x [[Phaser array]]s <br> 1x aft [[Torpedo launcher]] <br> <br> Stardrive section: <br> 10x [[Phaser array]]s ''(standard configuration)'' <br> 12x Phaser arrays ''(USS ''Venture'')'' <br> 2x [[Torpedo launcher]]s <br> <br> 250x [[photon torpedo|Photon torpedoes]] ''(standard compliment)'' <br> [[Antimatter mine]]s",
    "defenses": "[[Deflector shield]]s",
    "image2": "Galaxy-class starship, aft view.jpg",
    "caption2": "Aft view",
@@ -13894,7 +13895,7 @@
    "caption": "Forward view",
    "owner": "",
    "operator": "",
-   "affiliation": "",
+   "affiliation": "[[Iden's Rebellion]]",
    "type": "",
    "active": "",
    "speed": "[[High warp]]",
@@ -18796,7 +18797,7 @@
    "status": "Active",
    "type": "[[Outpost]]",
    "location": "[[Beta Quadrant]]",
-   "datestatus": "2399"
+   "datestatus": "3196"
   },
   "intro": "M-Zed-5, also known as Outpost MZ-5, was an outpost in the Beta Quadrant. ()"
  },
@@ -30038,6 +30039,23 @@
   "intro": "Starbase 14, abbreviated SB14, was a Federation starbase administered by Starfleet. The starbase was located in the Alpha or Beta Quadrant."
  },
  {
+  "title": "Starbase 15",
+  "categories": [
+   "Starbases"
+  ],
+  "sidebar": "station",
+  "infobox": {
+   "name": "Starbase 15",
+   "type": "[[Starbase]]",
+   "owner": "{{Federation}}",
+   "operator": "[[Starfleet]]",
+   "status": "Active",
+   "location": "[[Beta Quadrant]]",
+   "datestatus": "3196"
+  },
+  "intro": "Starbase 15, abbreviated as SB15, was a Federation starbase administered by Starfleet in the Beta Quadrant."
+ },
+ {
   "title": "Starbase 152",
   "categories": [
    "Starbases"
@@ -30099,7 +30117,7 @@
    "name": "Starbase 16",
    "image": "Partial star chart on Athena bridge.png",
    "type": "[[Starbase]]",
-   "owner": "[[United Federation of Planets]]",
+   "owner": "{{Federation}}",
    "operator": "[[Starfleet]]",
    "location": "[[Alpha Quadrant]]",
    "status": "Active",
@@ -30116,7 +30134,7 @@
   "infobox": {
    "name": "Starbase 17",
    "type": "[[Starbase]]",
-   "owner": "[[United Federation of Planets]]",
+   "owner": "{{Federation}}",
    "operator": "[[Starfleet]]",
    "location": "[[Alpha Quadrant]]",
    "status": "Active",
@@ -30203,12 +30221,13 @@
   "sidebar": "station",
   "infobox": {
    "name": "Starbase 18",
-   "map": "Section 31 map",
-   "owner": "[[United Federation of Planets]]",
+   "type": "[[Starbase]]",
+   "image": "New Federation-Klingon border, 2259.png",
+   "owner": "{{Federation}}",
    "operator": "[[Starfleet]]",
    "status": "Active",
    "location": "[[Beta Quadrant]]",
-   "datestatus": "2401"
+   "datestatus": "3196"
   },
   "intro": "Starbase 18 was a Federation starbase administered by Starfleet. This base was located in the Beta Quadrant."
  },
@@ -30441,7 +30460,7 @@
    "name": "Starbase 22",
    "image": "Romulan Neutral Zone star chart, 2259.png",
    "caption": "Romulan Neutral Zone star chart (2259)",
-   "owner": "[[United Federation of Planets]]",
+   "owner": "{{Federation}}",
    "operator": "[[Starfleet]]",
    "status": "Active",
    "location": "[[Beta Quadrant]]",
@@ -30494,11 +30513,12 @@
   "infobox": {
    "name": "Starbase 23",
    "image": "Omega-47 barrier.png",
-   "owner": "[[United Federation of Planets]]<br>[[Klingon Empire]] {{small|([[2257]])}}",
-   "operator": "[[Starfleet]]",
+   "owner": "{{Federation}}<br>[[Klingon Empire]] {{small|([[2257]])}}",
+   "operator": "[[Starfleet]]<br/>[[Klingon Defense Force]] {{small|([[2257]])}}",
    "status": "Active",
    "location": "[[Beta Quadrant]]",
-   "datestatus": "3196"
+   "datestatus": "3196",
+   "type": "[[Starbase]]"
   },
   "intro": "Starbase 23, abbreviated SB23, was a Federation starbase administered by Starfleet. This base was located in the Beta Quadrant. (; )"
  },
@@ -30586,7 +30606,8 @@
    "operator": "[[Starfleet]]<br>[[Klingon Defense Force]] {{Small|([[2257]])}}",
    "status": "Active",
    "location": "[[Beta Quadrant]]",
-   "datestatus": "3196"
+   "datestatus": "3196",
+   "type": "[[Starbase]]"
   },
   "intro": "Starbase 24, abbreviated as SB24, was a Federation starbase administered by Starfleet. The base was located in the Beta Quadrant."
  },
@@ -30747,6 +30768,23 @@
   "intro": "Starbase 295 was a Federation starbase in the 24th century."
  },
  {
+  "title": "Starbase 3",
+  "categories": [
+   "Starbases"
+  ],
+  "sidebar": "station",
+  "infobox": {
+   "name": "Starbase 3",
+   "type": "[[Starbase]]",
+   "owner": "{{Federation}}",
+   "operator": "[[Starfleet]]",
+   "status": "Active",
+   "location": "[[Beta Quadrant]]",
+   "datestatus": "3196"
+  },
+  "intro": "Starbase 3, abbreviated as SB3, was a Federation starbase administered by Starfleet in the Beta Quadrant."
+ },
+ {
   "title": "Starbase 301",
   "categories": [
    "Starbases"
@@ -30903,12 +30941,13 @@
   "sidebar": "station",
   "infobox": {
    "name": "Starbase 36",
+   "image": "Alpha Beta Quadrant star chart, 2399.jpg",
+   "type": "[[Starbase]]",
    "owner": "{{Federation}}",
    "operator": "[[Starfleet]]",
    "status": "Active",
    "location": "[[Beta Quadrant]]",
-   "datestatus": "2399",
-   "type": "[[Starbase]]"
+   "datestatus": "2399"
   },
   "intro": "Starbase 36, abbreviated as SB36, was a Federation starbase that was administered by Starfleet. This base was located in the Beta Quadrant."
  },
@@ -31486,13 +31525,13 @@
    "name": "Starbase 7",
    "image": "Athena viewscreen star chart.png",
    "type": "[[Starbase]]",
-   "owner": "[[United Federation of Planets]]",
+   "owner": "{{Federation}}",
    "operator": "[[Starfleet]]",
    "status": "Active",
-   "location": "[[Alpha Quadrant|Alpha]] or [[Beta Quadrant]]",
+   "location": "[[Beta Quadrant]]",
    "datestatus": "3196"
   },
-  "intro": "Starbase 7 was a Federation starbase administered by Starfleet."
+  "intro": "Starbase 7 was a Federation starbase administered by Starfleet in the Beta Quadrant."
  },
  {
   "title": "Starbase 718",
@@ -31591,13 +31630,13 @@
    "name": "Starbase 8",
    "image": "Omega-47 warp dead zone star chart.png",
    "type": "[[Starbase]]",
-   "owner": "[[United Federation of Planets]]",
+   "owner": "{{Federation}}",
    "operator": "[[Starfleet]]",
    "status": "Active",
-   "location": "[[Alpha Quadrant]]",
+   "location": "[[Beta Quadrant]]",
    "datestatus": "3196"
   },
-  "intro": "Starbase 8 was a Federation starbase administered by Starfleet."
+  "intro": "Starbase 8, abbreviated as SB8, was a Federation starbase administered by Starfleet in the Beta Quadrant."
  },
  {
   "title": "Starbase 80",
@@ -33297,9 +33336,9 @@
    "active": "[[2150s]]",
    "affiliation": "[[Tarkalean]]s",
    "crew": "At least 22",
-   "decks": "2"
+   "decks": "At least 2"
   },
-  "intro": "Tarkalean freighters were starships utilized by the Tarkaleans during the 22nd century. They had two decks and carried at least twenty-two crewmembers."
+  "intro": "Tarkalean freighters were starships utilized by the Tarkaleans during the 22nd century. They had at least two decks and carried at least twenty-two crewmembers."
  },
  {
   "title": "Tarkalean vessel",
