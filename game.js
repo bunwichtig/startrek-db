@@ -1,4 +1,4 @@
-/* Funkenfeld – Bomben-Arena für 2 bis 4 Spieler im Browser.
+/* Funkenfeld – Bomben-Arena für 2 bis 6 Spieler im Browser.
  *
  * Netzwerk: Peer-to-Peer über WebRTC (PeerJS). Der Browser, der den Raum erstellt,
  * ist der Gastgeber: Er prüft das Passwort, berechnet das Spiel und schickt den
@@ -13,7 +13,7 @@
 let W = 15, H = 13;         // Feldgröße, wird über die Einstellungen gesetzt
 const T = 48;
 const EMPTY = 0, WALL = 1, CRATE = 2;
-const MAX_PLAYERS = 4;
+const MAX_PLAYERS = 6;
 const FUSE = 2.5;            // Sekunden bis zur Explosion
 const FLAME_TIME = 0.55;     // Sekunden, die das Feuer brennt
 const ROUND_TIME = 180;      // Sekunden pro Runde
@@ -28,8 +28,12 @@ const MEGA = new Set(['mega', 'pierce', 'shield', 'ghost', 'remote']); // selten
 const REMOTE_MAX = 20;       // Sekunden, nach denen eine Fernzünder-Bombe spätestens von selbst hochgeht
 const GHOST_TIME = 10;       // Sekunden durch Kisten und Bomben laufen
 const SHIELD_GRACE = 1.5;    // Sekunden unverwundbar, nachdem der Schild ein Feuer abgefangen hat
-const COLORS = ['#ff8a3d', '#3dc6ff', '#7ee06a', '#e56bff'];
-const spawns = () => [[1, 1], [W - 2, H - 2], [W - 2, 1], [1, H - 2]];
+const COLORS = ['#ff8a3d', '#3dc6ff', '#7ee06a', '#e56bff', '#ffd23d', '#ff5c8a'];
+// Startplätze: vier Ecken, Spieler 5 und 6 oben und unten in der Mitte
+const spawns = () => { const mx = (W - 1) >> 1; return [[1, 1], [W - 2, H - 2], [W - 2, 1], [1, H - 2], [mx, 1], [mx, H - 2]]; };
+// Klassischer Modus: Feldgröße nach Spielerzahl (4: klassisch, 5–6: etwas größer)
+const CLASSIC_SIZE = { 4: [15, 13], 5: [17, 13], 6: [19, 15] };
+const MODES = { klassisch: 'Klassisch', individuell: 'Individuell' };
 const SIZES = { klein: [11, 9], mittel: [15, 13], gross: [19, 15], riesig: [23, 17] };
 const SIZE_LABEL = { klein: 'Klein (11 × 9)', mittel: 'Mittel (15 × 13)', gross: 'Groß (19 × 15)', riesig: 'Riesig (23 × 17)' };
 const VARIANTS = { klassisch: 'Klassisch', schrumpf: 'Schrumpfendes Feld' };
@@ -37,11 +41,14 @@ const SHRINK_AT = 60;        // Sekunden vor Rundenende, ab denen das Feld schru
 const MEGA_LIST = ['mega', 'pierce', 'shield', 'ghost', 'remote'];
 const MEGA_NAME = { mega: 'Megafeuer', pierce: 'Durchschlag', shield: 'Schild', ghost: 'Geist', remote: 'Fernzünder' };
 // megaW: Gewichtung der einzelnen Mega-Items untereinander (0 = kommt nicht vor)
-const DEFAULT_SETTINGS = { variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS, mega: 10,
+const DEFAULT_SETTINGS = { mode: 'klassisch', players: 4, variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS, mega: 10,
   megaW: Object.fromEntries(MEGA_LIST.map((t) => [t, 100])) };
 function cleanSettings(o) {
   o = o || {};
+  const mode = MODES[o.mode] ? o.mode : DEFAULT_SETTINGS.mode;
   return {
+    mode,
+    players: Math.max(mode === 'klassisch' ? 4 : 2, Math.min(MAX_PLAYERS, o.players | 0 || DEFAULT_SETTINGS.players)),
     variant: VARIANTS[o.variant] ? o.variant : DEFAULT_SETTINGS.variant,
     size: SIZES[o.size] ? o.size : DEFAULT_SETTINGS.size,
     items: Math.max(0, Math.min(100, Math.round((+o.items || 0) / 5) * 5)),
@@ -55,10 +62,20 @@ function cleanSettings(o) {
     })),
   };
 }
+// Die tatsächlich gespielten Regeln. Klassisch: feste Regeln ohne Mega-Items, Feld passend zur Spielerzahl.
+function rulesFor(st, joined) {
+  st = cleanSettings(st);
+  if (st.mode === 'klassisch') {
+    const n = Math.max(4, Math.min(6, Math.max(st.players, joined)));
+    return { ...st, variant: 'klassisch', items: 30, wins: WIN_ROUNDS, mega: 0, dims: CLASSIC_SIZE[n] };
+  }
+  return { ...st, dims: SIZES[st.size] };
+}
 function applySize(w, h) {
   if (w === W && h === H) return;
   W = w; H = h;
   const cv = document.getElementById('cv'); cv.width = W * T; cv.height = H * T;
+  document.documentElement.style.setProperty('--ar', (W / H).toFixed(4));
 }
 const TICK = 1 / 60, SEND_EVERY = 3; // Simulation 60 Hz, Senden 20 Hz
 const PEER_PREFIX = 'funkenfeld-v1-';
@@ -182,6 +199,7 @@ class Game {
     this.grid = new Array(W * H).fill(EMPTY);
     this.bombs = []; this.flames = []; this.items = [];
     this.settings = { ...DEFAULT_SETTINGS };
+    this.rules = rulesFor(this.settings, 1);
     this.shrink = []; this.shrinkTimer = 0;
   }
   addPlayer(id, name) {
@@ -213,14 +231,14 @@ class Game {
     }
     // Startecken freiräumen
     for (const [sx, sy] of spawns()) {
-      const dx = sx === 1 ? 1 : -1, dy = sy === 1 ? 1 : -1;
-      for (const [x, y] of [[sx, sy], [sx + dx, sy], [sx, sy + dy]]) if (g[y * W + x] === CRATE) g[y * W + x] = EMPTY;
+      for (const [x, y] of [[sx, sy], [sx + 1, sy], [sx - 1, sy], [sx, sy + 1], [sx, sy - 1]]) if (g[y * W + x] === CRATE) g[y * W + x] = EMPTY;
     }
   }
   startMatch() {
     this.recorded = false;
     this.settings = cleanSettings(this.settings);
-    const [w, h] = SIZES[this.settings.size];
+    this.rules = rulesFor(this.settings, this.players.length);
+    const [w, h] = this.rules.dims;
     applySize(w, h);
     this.grid = new Array(W * H).fill(EMPTY);
     for (const p of this.players) p.score = 0;
@@ -237,7 +255,7 @@ class Game {
       p.lastBomb = p.input.bomb; p.lastDet = p.input.det;
     });
     this.clock = ROUND_TIME;
-    this.shrink = this.settings.variant === 'schrumpf' ? this.spiral() : [];
+    this.shrink = this.rules.variant === 'schrumpf' ? this.spiral() : [];
     this.shrinkTimer = 0;
     this.phase = 'play';
     this.phaseTimer = 1.2;
@@ -365,7 +383,7 @@ class Game {
           if (t === CRATE) {
             this.setTile(x, y, EMPTY);
             this.addFlame(x, y, born);
-            if (Math.random() * 100 < this.settings.items) this.items.push({ x, y, type: pickItem(this.settings), born: born + 1e-6 });
+            if (Math.random() * 100 < this.rules.items) this.items.push({ x, y, type: pickItem(this.rules), born: born + 1e-6 });
             if (b.pierce) continue; // Durchschlag: Feuer geht durch Kisten hindurch
             break;
           }
@@ -485,7 +503,7 @@ class Game {
     if (this.clock <= 0 && alive.length > 1) { this.msg = 'Zeit abgelaufen – unentschieden'; }
     else if (alive.length === 1 && !solo) {
       const w = alive[0]; w.score++;
-      if (w.score >= this.settings.wins) { this.phase = 'matchEnd'; this.msg = w.name + ' gewinnt das Spiel! 🏆'; return; }
+      if (w.score >= this.rules.wins) { this.phase = 'matchEnd'; this.msg = w.name + ' gewinnt das Spiel! 🏆'; return; }
       this.msg = w.name + ' gewinnt die Runde';
     } else this.msg = solo ? 'Erwischt!' : 'Unentschieden';
     this.phase = 'roundEnd';
@@ -494,7 +512,7 @@ class Game {
 
   snapshot() {
     return {
-      t: 'state', w: W, h: H, wins: this.settings.wins, variant: this.settings.variant, phase: this.phase, round: this.round, msg: this.msg, clock: Math.max(0, Math.ceil(this.clock)),
+      t: 'state', w: W, h: H, wins: this.rules.wins, variant: this.rules.variant, phase: this.phase, round: this.round, msg: this.msg, clock: Math.max(0, Math.ceil(this.clock)),
       grid: this.grid.join(''),
       players: this.players.map((p) => ({ id: p.id, name: p.name, color: p.color, score: p.score, alive: p.alive,
         x: +p.x.toFixed(3), y: +p.y.toFixed(3), dir: p.dir, moving: p.moving, bombs: p.maxBombs, range: p.range,
@@ -558,7 +576,7 @@ function renderRanking() {
   document.querySelectorAll('.ranking').forEach((el) => { el.innerHTML = html; });
 }
 function recordMatch(g) {
-  const winner = g.players.find((p) => p.score >= g.settings.wins);
+  const winner = g.players.find((p) => p.score >= g.rules.wins);
   if (!winner) return;
   const m = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 8), date: Date.now(),
     players: g.players.map((p) => ({ name: p.name, score: p.score })), winner: winner.name };
@@ -584,6 +602,7 @@ const S = {
 function show(screen) {
   for (const s of ['start', 'lobby', 'game']) $('screen-' + s).classList.toggle('hidden', s !== screen);
   $('rank-start').classList.toggle('hidden', screen !== 'start');
+  document.body.classList.toggle('ingame', screen === 'game');
   renderRanking();
 }
 function startMsg(text, err) { const m = $('start-msg'); m.textContent = text; m.classList.toggle('err', !!err); }
@@ -627,7 +646,7 @@ function onClientConnect(conn) {
       const g = S.game;
       let reason = null;
       if (m.pw !== S.pwHash) reason = 'Falsches Passwort.';
-      else if (g.players.length >= MAX_PLAYERS) reason = 'Der Raum ist voll (maximal 4 Spieler).';
+      else if (g.players.length >= cleanSettings(g.settings).players) reason = `Der Raum ist voll (maximal ${cleanSettings(g.settings).players} Spieler).`;
       else if (g.phase !== 'lobby') reason = 'Das Spiel läuft schon. Warte, bis die Partie vorbei ist.';
       if (reason) { conn.send({ t: 'reject', reason }); setTimeout(() => conn.close(), 300); return; }
       pid = 'p' + Math.random().toString(36).slice(2, 8);
@@ -712,8 +731,16 @@ function renderSettings(st, isHost) {
   for (const el of form.querySelectorAll('select, input')) {
     el.disabled = !isHost;
     if (document.activeElement === el) continue;
+    if (el.type === 'radio') { el.checked = el.value === st[el.name]; continue; }
     el.value = String(el.name.startsWith('w_') ? st.megaW[el.name.slice(2)] : st[el.name]);
   }
+  const classic = st.mode === 'klassisch';
+  $('set-indiv').classList.toggle('hidden', classic);
+  for (const o of form.players.options) o.hidden = classic && +o.value < 4;
+  const [cw, ch] = CLASSIC_SIZE[st.players] || CLASSIC_SIZE[4];
+  $('mode-note').textContent = classic
+    ? `Klassische Regeln: 3 Rundensiege, 30 % Power-ups, keine Mega-Items. Feld ${cw} × ${ch}.`
+    : 'Alles selbst einstellen: Variante, Feldgröße, Power-ups, Mega-Items und Rundensiege.';
   $('set-items-val').textContent = st.items + ' %';
   $('set-mega-val').textContent = st.mega + ' %';
   // Wie viel Prozent aller Power-ups ergibt das je Mega-Item?
@@ -726,7 +753,7 @@ function renderSettings(st, isHost) {
 }
 function readSettings() {
   const f = $('settings');
-  return cleanSettings({ variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value, mega: f.mega.value,
+  return cleanSettings({ mode: f.querySelector('input[name=mode]:checked').value, players: f.players.value, variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value, mega: f.mega.value,
     megaW: Object.fromEntries(MEGA_LIST.map((t) => [t, f['w_' + t].value])) });
 }
 function loadSavedSettings() {
@@ -740,7 +767,7 @@ function renderLobby(m) {
   $('btn-start').classList.toggle('hidden', !isHost);
   renderSettings(m.settings, isHost);
   $('lobby-hint').textContent = isHost
-    ? (m.players.length < 2 ? 'Warte auf Mitspieler. Gib ihnen Raumname und Passwort. (Allein starten geht zum Ausprobieren.)' : m.players.length + ' von 4 Spielern sind da.')
+    ? (m.players.length < 2 ? 'Warte auf Mitspieler. Gib ihnen Raumname und Passwort. (Allein starten geht zum Ausprobieren.)' : m.players.length + ' von ' + cleanSettings(m.settings).players + ' Spielern sind da.')
     : 'Warte, bis der Gastgeber das Spiel startet …';
 }
 
@@ -993,7 +1020,6 @@ function draw(v, isHost) {
   ov.classList.toggle('hidden', !v.msg);
   if (v.msg && ov.textContent !== v.msg) ov.textContent = v.msg;
   $('btn-again').classList.toggle('hidden', !(isHost && v.phase === 'matchEnd'));
-  $('rank-game').classList.toggle('hidden', v.phase !== 'matchEnd');
 }
 
 function drawWall(px, py) {

@@ -59,7 +59,7 @@ summary { cursor: pointer; color: var(--text); }
 .hud-p { display: flex; align-items: center; gap: 6px; padding: 4px 10px; background: var(--panel); border-radius: 999px; border: 1px solid var(--border); }
 .hud-p.dead { opacity: .45; }
 .hud-t { padding: 4px 10px; font-variant-numeric: tabular-nums; color: var(--muted); }
-#stage { position: relative; width: 100%; max-width: 720px; margin: 0 auto; }
+#stage { position: relative; width: 100%; margin: 0 auto; }
 canvas { display: block; width: 100%; height: auto; border-radius: 8px; image-rendering: pixelated; }
 #overlay {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
@@ -104,3 +104,30 @@ canvas { display: block; width: 100%; height: auto; border-radius: 8px; image-re
 .mega-detail summary { color: var(--text); font-size: .92rem; }
 .mega-detail label { margin: 10px 0 0; }
 .mega-detail b { font-weight: 500; color: var(--muted); }
+
+/* Spielmodus-Auswahl */
+.mode-pick { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px; }
+.mode-pick label { margin: 0; position: relative; }
+.mode-pick input { position: absolute; opacity: 0; pointer-events: none; }
+.mode-pick span {
+  display: block; text-align: center; padding: 12px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--border); color: var(--text); font-weight: 600; font-size: 1rem;
+}
+.mode-pick input:checked + span { background: var(--accent); color: #1b1006; border-color: var(--accent); }
+.mode-pick input:focus-visible + span { outline: 2px solid var(--accent2); }
+.mode-pick input:disabled + span { cursor: default; }
+#mode-note { margin: 6px 0 14px; }
+
+/* Spielansicht: Rangliste links, Spielfeld rechts und größer */
+body.ingame #app { max-width: 1280px; }
+.game-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 16px; align-items: start; }
+.rank-side { max-width: none; margin: 0; padding: 14px; position: sticky; top: 16px; }
+.rank-side h2 { font-size: 1.1rem; margin-bottom: 8px; }
+.rank-side .ranking table { font-size: .85rem; }
+.rank-side .ranking th, .rank-side .ranking td { padding: 6px 3px; }
+#stage { max-width: min(100%, calc((100vh - 250px) * var(--ar, 1.15))); }
+@media (max-width: 860px) {
+  .game-layout { grid-template-columns: 1fr; }
+  .rank-side { order: 2; position: static; }
+  #stage { max-width: 100%; }
+}

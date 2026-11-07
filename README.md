@@ -1,6 +1,6 @@
 # Funkenfeld
 
-Eine Bomben-Arena für 2 bis 4 Spieler direkt im Browser. Eigene Grafik, klassische Regeln.
+Eine Bomben-Arena für 2 bis 6 Spieler direkt im Browser. Eigene Grafik, klassische Regeln.
 
 **Spielen:** https://bunwichtig.github.io/startrek-db/
 
@@ -22,6 +22,11 @@ Die Browser verbinden sich direkt miteinander (WebRTC über [PeerJS](https://pee
 - Ecken-Hilfe: Wer knapp an einer Abzweigung vorbei ist oder vor einer Ecke steht, rutscht automatisch in den freien Gang.
 
 ## Einstellungen (Gastgeber, in der Lobby)
+
+Zuerst wählt der Gastgeber den **Spielmodus**:
+
+- **Klassisch:** feste Regeln (3 Rundensiege, 30 % Power-ups, keine Mega-Items). Wählbar sind 4, 5 oder 6 Spieler. Das Feld ist 15 × 13 bei 4, 17 × 13 bei 5 und 19 × 15 bei 6 Spielern. Spieler 5 und 6 starten oben und unten in der Mitte.
+- **Individuell:** alle folgenden Einstellungen frei wählbar, dazu 2 bis 6 Spieler.
 
 - **Spielvariante:** Klassisch oder Schrumpfendes Feld. Bei Letzterem fallen ab 1:00 Restzeit von außen nach innen Blöcke, wer darunter steht, ist raus.
 - **Feldgröße:** Klein (11 × 9), Mittel (15 × 13), Groß (19 × 15), Riesig (23 × 17).
