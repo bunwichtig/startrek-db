@@ -30747,7 +30747,8 @@
    "status": "Active",
    "location": "[[Alpha Quadrant]]",
    "datestatus": "3196",
-   "image": "Omega-47 barrier.png"
+   "image": "Omega-47 barrier.png",
+   "type": "[[Starbase]]"
   },
   "intro": "Starbase 29, abbreviated as SB29, was a Starfleet starbase that was located in the Alpha Quadrant."
  },
@@ -30947,7 +30948,7 @@
    "operator": "[[Starfleet]]",
    "status": "Active",
    "location": "[[Beta Quadrant]]",
-   "datestatus": "2399"
+   "datestatus": "3196"
   },
   "intro": "Starbase 36, abbreviated as SB36, was a Federation starbase that was administered by Starfleet. This base was located in the Beta Quadrant."
  },
@@ -31052,12 +31053,12 @@
   "infobox": {
    "name": "Starbase 40",
    "image": "",
-   "type": "",
+   "type": "[[Starbase]]",
    "owner": "{{Federation}}",
    "operator": "[[Starfleet]]",
    "status": "Active",
    "location": "[[Alpha Quadrant]]",
-   "datestatus": "2254",
+   "datestatus": "3196",
    "image2": ""
   },
   "intro": "Starbase 40 was a Federation starbase administered by Starfleet. This base was located in the Alpha Quadrant."
