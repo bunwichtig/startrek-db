@@ -21,10 +21,11 @@ const WIN_ROUNDS = 3;        // Standard: Runden bis zum Gesamtsieg
 const MAX_WINS = 5;
 const KICK_SPEED = 10;       // Felder pro Sekunde für gekickte Bomben
 const BASE_SPEED = 3.6, SPEED_STEP = 0.6, MAX_SPEED = 6;
-const ITEMS = ['bomb', 'fire', 'speed', 'kick', 'mega', 'pierce', 'shield', 'ghost'];
-const ITEM_WEIGHTS = [4, 4, 3, 1.5, 0.4, 0.4, 0.4, 0.4];
-const ITEM_ICON = { bomb: '💣', fire: '🔥', speed: '👟', kick: '🦶', mega: '🌟', pierce: '💥', shield: '🛡️', ghost: '👻' };
-const MEGA = new Set(['mega', 'pierce', 'shield', 'ghost']); // seltene Mega-Items
+const ITEMS = ['bomb', 'fire', 'speed', 'kick', 'mega', 'pierce', 'shield', 'ghost', 'remote'];
+const ITEM_WEIGHTS = [4, 4, 3, 1.5, 0.4, 0.4, 0.4, 0.4, 0.4];
+const ITEM_ICON = { bomb: '💣', fire: '🔥', speed: '👟', kick: '🦶', mega: '🌟', pierce: '💥', shield: '🛡️', ghost: '👻', remote: '📡' };
+const MEGA = new Set(['mega', 'pierce', 'shield', 'ghost', 'remote']); // seltene Mega-Items
+const REMOTE_MAX = 20;       // Sekunden, nach denen eine Fernzünder-Bombe spätestens von selbst hochgeht
 const GHOST_TIME = 10;       // Sekunden durch Kisten und Bomben laufen
 const SHIELD_GRACE = 1.5;    // Sekunden unverwundbar, nachdem der Schild ein Feuer abgefangen hat
 const COLORS = ['#ff8a3d', '#3dc6ff', '#7ee06a', '#e56bff'];
@@ -33,7 +34,7 @@ const SIZES = { klein: [11, 9], mittel: [15, 13], gross: [19, 15], riesig: [23, 
 const SIZE_LABEL = { klein: 'Klein (11 × 9)', mittel: 'Mittel (15 × 13)', gross: 'Groß (19 × 15)', riesig: 'Riesig (23 × 17)' };
 const VARIANTS = { klassisch: 'Klassisch', schrumpf: 'Schrumpfendes Feld' };
 const SHRINK_AT = 60;        // Sekunden vor Rundenende, ab denen das Feld schrumpft
-const DEFAULT_SETTINGS = { variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS, mega: true };
+const DEFAULT_SETTINGS = { variant: 'klassisch', size: 'mittel', items: 30, wins: WIN_ROUNDS, mega: 10 };
 function cleanSettings(o) {
   o = o || {};
   return {
@@ -41,7 +42,9 @@ function cleanSettings(o) {
     size: SIZES[o.size] ? o.size : DEFAULT_SETTINGS.size,
     items: Math.max(0, Math.min(100, Math.round((+o.items || 0) / 5) * 5)),
     wins: Math.max(1, Math.min(MAX_WINS, o.wins | 0 || WIN_ROUNDS)),
-    mega: o.mega === undefined ? true : !!o.mega,
+    // Anteil der Mega-Items an allen Power-ups in Prozent (früher ein Schalter an/aus)
+    mega: o.mega === true || o.mega === undefined ? DEFAULT_SETTINGS.mega : o.mega === false ? 0
+      : Math.max(0, Math.min(100, Math.round((+o.mega || 0) / 5) * 5)),
   };
 }
 function applySize(w, h) {
@@ -69,8 +72,10 @@ async function hashPw(room, pw) {
   for (const c of text) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }
   return 'f' + (h >>> 0).toString(16);
 }
-function pickItem(withMega) {
-  const pool = ITEMS.map((t, i) => [t, ITEM_WEIGHTS[i]]).filter(([t]) => withMega || !MEGA.has(t));
+// megaPct: Wahrscheinlichkeit in Prozent, dass ein Power-up ein Mega-Item ist
+function pickItem(megaPct) {
+  const mega = Math.random() * 100 < megaPct;
+  const pool = ITEMS.map((t, i) => [t, ITEM_WEIGHTS[i]]).filter(([t]) => MEGA.has(t) === mega);
   let r = Math.random() * pool.reduce((a, [, w]) => a + w, 0);
   for (const [t, w] of pool) { r -= w; if (r <= 0) return t; }
   return pool[0][0];
@@ -172,7 +177,7 @@ class Game {
     const used = new Set(this.players.map((p) => p.slot));
     let slot = 0; while (used.has(slot)) slot++;
     const p = { id, name, slot, color: COLORS[slot], score: 0, alive: false, x: 0, y: 0, dir: 'down', moving: false,
-      maxBombs: 1, range: 2, speed: BASE_SPEED, kick: false, pierce: false, shield: false, ghost: 0, grace: 0, input: { dx: 0, dy: 0, bomb: 0 }, lastBomb: 0 };
+      maxBombs: 1, range: 2, speed: BASE_SPEED, kick: false, pierce: false, shield: false, ghost: 0, grace: 0, remote: false, input: { dx: 0, dy: 0, bomb: 0, det: 0 }, lastBomb: 0, lastDet: 0 };
     this.players.push(p);
     return p;
   }
@@ -217,8 +222,8 @@ class Game {
     this.bombs = []; this.flames = []; this.items = [];
     this.players.forEach((p) => {
       const [x, y] = spawns()[p.slot];
-      Object.assign(p, { x, y, alive: true, dir: 'down', moving: false, maxBombs: 1, range: 2, speed: BASE_SPEED, kick: false, pierce: false, shield: false, ghost: 0, grace: 0 });
-      p.lastBomb = p.input.bomb;
+      Object.assign(p, { x, y, alive: true, dir: 'down', moving: false, maxBombs: 1, range: 2, speed: BASE_SPEED, kick: false, pierce: false, shield: false, ghost: 0, grace: 0, remote: false });
+      p.lastBomb = p.input.bomb; p.lastDet = p.input.det;
     });
     this.clock = ROUND_TIME;
     this.shrink = this.settings.variant === 'schrumpf' ? this.spiral() : [];
@@ -330,7 +335,7 @@ class Game {
     const x = Math.round(p.x), y = Math.round(p.y);
     if (this.tile(x, y) !== EMPTY || this.bombAt(x, y)) return;
     if (this.bombs.filter((b) => b.owner === p.id).length >= p.maxBombs) return;
-    this.bombs.push({ x, y, owner: p.id, range: p.range, pierce: p.pierce, fuse: FUSE, vx: 0, vy: 0, slide: 0 });
+    this.bombs.push({ x, y, owner: p.id, range: p.range, pierce: p.pierce, remote: p.remote, fuse: p.remote ? REMOTE_MAX : FUSE, vx: 0, vy: 0, slide: 0 });
   }
 
   explode(first) {
@@ -392,11 +397,17 @@ class Game {
     }
 
     for (const p of this.players) {
-      if (!p.alive) { p.lastBomb = p.input.bomb; continue; }
+      if (!p.alive) { p.lastBomb = p.input.bomb; p.lastDet = p.input.det; continue; }
       if (p.ghost > 0) p.ghost = Math.max(0, p.ghost - dt);
       if (p.grace > 0) p.grace = Math.max(0, p.grace - dt);
       this.movePlayer(p, dt);
       if (p.input.bomb !== p.lastBomb) { p.lastBomb = p.input.bomb; this.placeBomb(p); }
+      if (p.input.det !== p.lastDet) {
+        // Fernzünder (Strg): die älteste eigene Fernzünder-Bombe sofort zünden
+        p.lastDet = p.input.det;
+        const rb = this.bombs.find((b) => b.owner === p.id && b.remote);
+        if (rb) this.explode(rb);
+      }
       // Power-ups einsammeln
       const px = Math.round(p.x), py = Math.round(p.y);
       const i = this.items.findIndex((it) => it.x === px && it.y === py);
@@ -410,6 +421,7 @@ class Game {
         if (it.type === 'pierce') p.pierce = true;
         if (it.type === 'shield') p.shield = true;
         if (it.type === 'ghost') p.ghost = GHOST_TIME;
+        if (it.type === 'remote') p.remote = true;
       }
     }
 
@@ -476,8 +488,8 @@ class Game {
       players: this.players.map((p) => ({ id: p.id, name: p.name, color: p.color, score: p.score, alive: p.alive,
         x: +p.x.toFixed(3), y: +p.y.toFixed(3), dir: p.dir, moving: p.moving, bombs: p.maxBombs, range: p.range,
         speed: Math.round((p.speed - BASE_SPEED) / SPEED_STEP), kick: p.kick,
-        pierce: p.pierce, shield: p.shield, ghost: Math.ceil(p.ghost), grace: p.grace > 0 })),
-      bombs: this.bombs.map((b) => [b.x, b.y, +b.fuse.toFixed(2)]),
+        pierce: p.pierce, shield: p.shield, ghost: Math.ceil(p.ghost), grace: p.grace > 0, remote: p.remote })),
+      bombs: this.bombs.map((b) => [b.x, b.y, +b.fuse.toFixed(2), b.remote ? 1 : 0]),
       flames: this.flames.map((f) => [f.x, f.y]),
       items: this.items.map((i) => [i.x, i.y, i.type]),
     };
@@ -553,7 +565,7 @@ const S = {
   conn: null,        // Verbindung des Clients zum Gastgeber
   view: null,        // zuletzt empfangener / berechneter Spielstand
   disp: new Map(),   // geglättete Positionen für die Anzeige
-  input: { dx: 0, dy: 0, bomb: 0 },
+  input: { dx: 0, dy: 0, bomb: 0, det: 0 },
   lastSent: '',
 };
 
@@ -618,7 +630,7 @@ function onClientConnect(conn) {
     }
     if (m.t === 'input') {
       const p = S.game.players.find((q) => q.id === pid);
-      if (p) p.input = { dx: Math.sign(m.dx) | 0, dy: Math.sign(m.dy) | 0, bomb: m.bomb | 0 };
+      if (p) p.input = { dx: Math.sign(m.dx) | 0, dy: Math.sign(m.dy) | 0, bomb: m.bomb | 0, det: m.det | 0 };
     }
   };
   conn.onClose = () => {
@@ -689,14 +701,15 @@ function renderSettings(st, isHost) {
   for (const el of form.querySelectorAll('select, input')) {
     el.disabled = !isHost;
     if (document.activeElement === el) continue;
-    if (el.type === 'checkbox') el.checked = !!st[el.name]; else el.value = String(st[el.name]);
+    el.value = String(st[el.name]);
   }
   $('set-items-val').textContent = st.items + ' %';
+  $('set-mega-val').textContent = st.mega + ' %';
   $('settings-note').textContent = isHost ? 'Nur du als Gastgeber kannst das ändern.' : 'Der Gastgeber legt die Einstellungen fest.';
 }
 function readSettings() {
   const f = $('settings');
-  return cleanSettings({ variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value, mega: f.mega.checked });
+  return cleanSettings({ variant: f.variant.value, size: f.size.value, items: f.items.value, wins: f.wins.value, mega: f.mega.value });
 }
 function loadSavedSettings() {
   try { return cleanSettings(JSON.parse(localStorage.getItem('ff-settings') || 'null') || DEFAULT_SETTINGS); } catch (e) { return { ...DEFAULT_SETTINGS }; }
@@ -762,7 +775,7 @@ function runClientLoop() {
   const id = ++loopId;
   const frame = () => {
     if (id !== loopId || S.role !== 'client') return;
-    const key = S.input.dx + ',' + S.input.dy + ',' + S.input.bomb;
+    const key = S.input.dx + ',' + S.input.dy + ',' + S.input.bomb + ',' + S.input.det;
     if (key !== S.lastSent) { S.lastSent = key; S.conn.send({ t: 'input', ...S.input }); }
     if (S.view) draw(S.view, false);
     requestAnimationFrame(frame);
@@ -783,6 +796,7 @@ function press(dir) { if (!held.includes(dir)) held.unshift(dir); updateDir(); }
 function release(dir) { const i = held.indexOf(dir); if (i >= 0) held.splice(i, 1); updateDir(); }
 function updateDir() { const d = held[0]; [S.input.dx, S.input.dy] = d ? DIRS[d] : [0, 0]; }
 function bomb() { S.input.bomb = (S.input.bomb + 1) % 1000; }
+function detonate() { S.input.det = (S.input.det + 1) % 1000; }
 function inGame() { return !$('screen-game').classList.contains('hidden'); }
 
 addEventListener('keydown', (e) => {
@@ -790,6 +804,7 @@ addEventListener('keydown', (e) => {
   const d = KEYMAP[e.code];
   if (d) { press(d); e.preventDefault(); }
   else if ((e.code === 'Space' || e.code === 'Enter') && !e.repeat) { bomb(); e.preventDefault(); }
+  else if ((e.code === 'ControlLeft' || e.code === 'ControlRight') && !e.repeat) { detonate(); e.preventDefault(); }
 });
 addEventListener('keyup', (e) => { const d = KEYMAP[e.code]; if (d) release(d); });
 addEventListener('blur', () => { held.length = 0; updateDir(); });
@@ -799,6 +814,7 @@ document.querySelectorAll('#touch [data-dir]').forEach((btn) => {
   for (const ev of ['pointerup', 'pointercancel', 'pointerleave']) btn.addEventListener(ev, () => release(d));
 });
 $('touch-bomb').addEventListener('pointerdown', (e) => { e.preventDefault(); bomb(); });
+$('touch-det').addEventListener('pointerdown', (e) => { e.preventDefault(); detonate(); });
 
 $('btn-host').onclick = hostRoom;
 $('btn-join').onclick = joinRoom;
@@ -909,7 +925,7 @@ function soundsFor(v) {
   for (const q of v.players) {
     const o = before.get(q.id); if (!o) continue;
     if (o.alive && !q.alive) Sound.play('death');
-    else if (q.alive && ((q.pierce && !o.pierce) || (q.shield && !o.shield) || q.ghost > o.ghost || q.range - o.range > 1)) Sound.play('mega');
+    else if (q.alive && ((q.pierce && !o.pierce) || (q.shield && !o.shield) || q.ghost > o.ghost || (q.remote && !o.remote) || q.range - o.range > 1)) Sound.play('mega');
     else if (q.alive && (q.bombs > o.bombs || q.range > o.range || q.speed > o.speed || (q.kick && !o.kick))) Sound.play('pickup');
     else if (q.alive && o.shield && !q.shield) Sound.play('shieldhit');
   }
@@ -936,7 +952,7 @@ function draw(v, isHost) {
     }
   }
   for (const [x, y, type] of v.items) drawItem(x * T, y * T, type, now);
-  for (const [x, y, fuse] of v.bombs) drawBomb(x * T, y * T, fuse, now);
+  for (const [x, y, fuse, remote] of v.bombs) drawBomb(x * T, y * T, remote ? FUSE : fuse, now, remote);
   drawFlames(v.flames, now);
 
   // Spieler (beim Client geglättet)
@@ -952,7 +968,7 @@ function draw(v, isHost) {
   // Anzeige oben
   const hud = v.players.map((p) =>
     `<span class="hud-p${p.alive || v.phase === 'lobby' ? '' : ' dead'}"><span class="dot" style="background:${p.color}"></span>${esc(p.name)} <b>${'★'.repeat(p.score)}${'☆'.repeat(Math.max(0, (v.wins || WIN_ROUNDS) - p.score))}</b>` +
-    (p.id === S.myId ? ` <small>💣${p.bombs} 🔥${p.range} 👟${p.speed}${p.kick ? ' 🦶' : ''}${p.pierce ? ' 💥' : ''}${p.shield ? ' 🛡️' : ''}${p.ghost ? ' 👻' + p.ghost : ''}</small>` : '') + '</span>').join('') +
+    (p.id === S.myId ? ` <small>💣${p.bombs} 🔥${p.range} 👟${p.speed}${p.kick ? ' 🦶' : ''}${p.pierce ? ' 💥' : ''}${p.shield ? ' 🛡️' : ''}${p.ghost ? ' 👻' + p.ghost : ''}${p.remote ? ' 📡 Strg' : ''}</small>` : '') + '</span>').join('') +
     `<span class="hud-t">⏱ ${Math.floor(v.clock / 60)}:${String(v.clock % 60).padStart(2, '0')}</span>`;
   if (hud !== lastHud) { $('hud').innerHTML = hud; lastHud = hud; }
   const ov = $('overlay');
@@ -991,13 +1007,21 @@ function drawItem(px, py, type, now) {
   ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
   ctx.fillText(ITEM_ICON[type], px + T / 2, py + T / 2 + 1 + bob);
 }
-function drawBomb(px, py, fuse, now) {
+function drawBomb(px, py, fuse, now, remote) {
   const pulse = 1 + Math.sin(now * (6 + (FUSE - fuse) * 8)) * 0.06;
   const cx = px + T / 2, cy = py + T / 2 + 3, r = 15 * pulse;
   ctx.fillStyle = 'rgba(0,0,0,.3)'; ctx.beginPath(); ctx.ellipse(cx, py + T - 7, 14, 4, 0, 0, Math.PI * 2); ctx.fill();
   ctx.fillStyle = fuse < 0.6 && Math.floor(now * 12) % 2 ? '#7a1f1f' : '#1b1c26';
   ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.fill();
   ctx.fillStyle = 'rgba(255,255,255,.25)'; ctx.beginPath(); ctx.arc(cx - 5, cy - 5, 4, 0, Math.PI * 2); ctx.fill();
+  if (remote) {
+    // Fernzünder-Bombe: Antenne mit blinkendem roten Licht statt Zündschnur
+    ctx.strokeStyle = '#9aa0b4'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cx + 4, cy - 13); ctx.lineTo(cx + 9, cy - 24); ctx.stroke();
+    ctx.fillStyle = Math.floor(now * 3) % 2 ? '#ff3b3b' : '#7a1f1f';
+    ctx.beginPath(); ctx.arc(cx + 9, cy - 25, 3.5, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = 'rgba(255,59,59,.8)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(cx, cy, r - 3, 0, Math.PI * 2); ctx.stroke();
+    return;
+  }
   ctx.strokeStyle = '#c9b48a'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(cx + 6, cy - 12); ctx.quadraticCurveTo(cx + 12, cy - 20, cx + 8, cy - 23); ctx.stroke();
   ctx.fillStyle = Math.floor(now * 16) % 2 ? '#ffe066' : '#ff7b2e';
   ctx.beginPath(); ctx.arc(cx + 8, cy - 23, 3.5, 0, Math.PI * 2); ctx.fill();
